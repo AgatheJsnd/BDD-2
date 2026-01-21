@@ -1,10 +1,23 @@
+# Virtual environment
+.venv/
 venv/
-__pycache__/
-*.py[cod]
-*$py.class
-.env
-.venv
 env/
 ENV/
 env.bak/
 venv.bak/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables
+.env
