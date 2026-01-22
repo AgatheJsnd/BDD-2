@@ -2,6 +2,9 @@
 .venv/
 venv/
 env/
+ENV/
+env.bak/
+venv.bak/
 
 # Python cache
 __pycache__/
@@ -15,3 +18,6 @@ __pycache__/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Environment variables
+.env
