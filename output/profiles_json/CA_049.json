@@ -1,0 +1,50 @@
+{
+  "client_id": "CA_049",
+  "metadata": {
+    "date_conversation": "2026-02-11",
+    "duration": "25 min",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "46-55",
+    "statut_relationnel": "Fidèle"
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Rose_gold",
+      "Cognac"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

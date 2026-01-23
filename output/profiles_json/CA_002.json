@@ -1,0 +1,54 @@
+{
+  "client_id": "CA_002",
+  "metadata": {
+    "date_conversation": "2026-01-08",
+    "duration": "25 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau"
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Tennis"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien"
+  }
+}

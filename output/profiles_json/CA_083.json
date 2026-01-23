@@ -1,0 +1,50 @@
+{
+  "client_id": "CA_083",
+  "metadata": {
+    "date_conversation": "2026-03-06",
+    "duration": "45 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Fitness"
+      ]
+    },
+    "art_culture": [
+      "Art"
+    ],
+    "voyage": [
+      "Aventure"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy",
+      "Beige"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

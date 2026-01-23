@@ -1,0 +1,58 @@
+{
+  "client_id": "CA_016",
+  "metadata": {
+    "date_conversation": "2026-01-17",
+    "duration": "25 min",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "36-45",
+    "statut_relationnel": "Fidèle"
+  },
+  "localisation": {
+    "europe": [
+      "Berlin"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Running"
+      ]
+    },
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Sacs",
+      "Montres"
+    ]
+  },
+  "projet_achat": {
+    "budget": "<5k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

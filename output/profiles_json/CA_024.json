@@ -1,0 +1,65 @@
+{
+  "client_id": "CA_024",
+  "metadata": {
+    "date_conversation": "2026-01-23",
+    "duration": "50 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "36-45",
+    "statut_relationnel": "VIP",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ],
+    "amerique": [
+      "New_York"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [
+        "Football"
+      ],
+      "individuel": [
+        "Tennis"
+      ]
+    },
+    "art_culture": [
+      "Opera"
+    ],
+    "voyage": [
+      "Luxe",
+      "Aventure"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy",
+      "Rose_gold",
+      "Cognac"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

@@ -1,0 +1,48 @@
+{
+  "client_id": "CA_078",
+  "metadata": {
+    "date_conversation": "2026-03-03",
+    "duration": "40 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "56+",
+    "statut_relationnel": "Fidèle",
+    "profession": "Artiste"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ],
+    "voyage": [
+      "Culturel"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Bordeaux",
+      "Cognac"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

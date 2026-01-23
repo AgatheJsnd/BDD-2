@@ -1,0 +1,50 @@
+{
+  "client_id": "CA_097",
+  "metadata": {
+    "date_conversation": "2026-03-17",
+    "duration": "40 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Fitness",
+        "Running"
+      ]
+    },
+    "art_culture": [
+      "Opera",
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy",
+      "Bordeaux"
+    ]
+  },
+  "projet_achat": {
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

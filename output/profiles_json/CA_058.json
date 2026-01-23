@@ -1,0 +1,54 @@
+{
+  "client_id": "CA_058",
+  "metadata": {
+    "date_conversation": "2026-02-17",
+    "duration": "45 min",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "46-55",
+    "statut_relationnel": "VIP",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ],
+    "voyage": [
+      "Luxe",
+      "Aventure"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Beige",
+      "Cognac"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
+}

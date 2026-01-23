@@ -1,0 +1,55 @@
+{
+  "client_id": "CA_066",
+  "metadata": {
+    "date_conversation": "2026-02-21",
+    "duration": "50 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Yoga"
+      ]
+    },
+    "art_culture": [
+      "Musees",
+      "Art"
+    ],
+    "voyage": [
+      "Luxe",
+      "Culturel"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy",
+      "Beige",
+      "Rose_gold"
+    ]
+  },
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien"
+  }
+}

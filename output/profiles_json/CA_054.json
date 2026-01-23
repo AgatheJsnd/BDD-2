@@ -1,0 +1,33 @@
+{
+  "client_id": "CA_054",
+  "metadata": {
+    "date_conversation": "2026-02-13",
+    "duration": "40 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "46-55",
+    "statut_relationnel": "Régulier",
+    "profession": "Cadre"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

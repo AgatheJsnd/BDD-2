@@ -1,0 +1,51 @@
+{
+  "total_clients": 100,
+  "par_genre": {
+    "Femme": 93,
+    "Homme": 5
+  },
+  "par_age": {
+    "36-45": 15,
+    "56+": 14,
+    "46-55": 12,
+    "26-35": 3
+  },
+  "par_statut": {
+    "VIP": 47,
+    "Nouveau": 8,
+    "Fidèle": 33,
+    "Occasionnel": 3,
+    "Régulier": 9
+  },
+  "par_budget": {
+    "<5k": 7,
+    "5-10k": 27,
+    "10-15k": 22,
+    "25k+": 17,
+    "15-25k": 27
+  },
+  "sports_populaires": {
+    "Golf": 9,
+    "Tennis": 4,
+    "Yoga": 14,
+    "Running": 10,
+    "Ski": 1,
+    "Football": 2,
+    "Fitness": 9
+  },
+  "couleurs_populaires": {
+    "Noir": 45,
+    "Cognac": 43,
+    "Navy": 35,
+    "Bordeaux": 22,
+    "Rose_gold": 20,
+    "Beige": 18,
+    "Gris": 9,
+    "Blanc": 3
+  },
+  "regimes_alimentaires": {
+    "Pescetarien": 7,
+    "Végétarien": 31,
+    "Végane": 34
+  }
+}

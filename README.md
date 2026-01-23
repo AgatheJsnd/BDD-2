@@ -1,44 +1,53 @@
-# BDD-2 - Analyse Données LVMH
+# LVMH Client Analytics Dashboard
 
-Projet d'analyse de données clients LVMH.
+Dashboard interactif pour l'analyse des profils clients LVMH, propulsé par Streamlit et Mistral AI.
+
+## Fonctionnalités
+- **Vue d'ensemble** : KPIs et graphiques de distribution.
+- **Clients** : Recherche avancée et fiches clients détaillées avec badges (Lifestyle, Style, etc.).
+- **Analyses** : Croisement de données (Budget vs Statut, etc.).
+- **Actions** : Recommandations marketing et CRM.
+- **IA Mistral** : Analyse sémantique des conversations clients.
 
 ## Installation
 
+### Prérequis
+- Python 3.10+
+- Clé API Mistral (pour les fonctionnalités IA)
+
+### 1. Cloner et installer les dépendances
 ```bash
-# Créer l'environnement virtuel
-python -m venv .venv
-
-# Activer l'environnement (Windows PowerShell)
-.\.venv\Scripts\Activate.ps1
-
-# Installer les dépendances
 pip install -r requirements.txt
 ```
 
-## Utilisation
+### 2. Configuration
+Créez un fichier `.env` à la racine du projet et ajoutez votre clé API :
+```
+MISTRAL_API_KEY=votre_cle_api_ici
+```
 
+## Lancement Local
+
+Pour lancer le dashboard :
 ```bash
-python main.py
+streamlit run dashboard.py
+```
+Accédez ensuite à `http://localhost:8501`.
+
+## Déploiement Docker
+
+### 1. Construire l'image
+```bash
+docker build -t lvmh-dashboard .
 ```
 
-## Structure du projet
-
-```
-BDD-2/
-├── .venv/              # Environnement virtuel (ignoré par git)
-├── .gitignore          # Fichiers à ignorer
-├── main.py             # Script principal
-├── requirements.txt    # Dépendances Python
-├── README.md           # Documentation
-└── LVMH_Realistic_Merged_CA001-100.csv  # Données
+### 2. Lancer le conteneur
+```bash
+docker run -p 8501:8501 --env-file .env lvmh-dashboard
 ```
 
-## Données
-
-Le fichier CSV contient 100 transcriptions de rendez-vous clients avec :
-- **ID** : Identifiant unique (CA_001 à CA_100)
-- **Date** : Date du rendez-vous
-- **Duration** : Durée en minutes
-- **Language** : Langue (FR, EN, IT, ES, DE)
-- **Length** : Catégorie (short, medium, long)
-- **Transcription** : Contenu du rendez-vous
+## Structure du Projet
+- `dashboard.py` : Point d'entrée de l'application.
+- `src/` : Modules de traitement (CSV, Profils, IA).
+- `data/` : Base de données SQLite.
+- `output/` : Profils JSON générés.

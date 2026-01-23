@@ -1,0 +1,56 @@
+{
+  "client_id": "CA_026",
+  "metadata": {
+    "date_conversation": "2026-01-24",
+    "duration": "45 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {
+    "europe": [
+      "Madrid"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Golf"
+      ]
+    },
+    "art_culture": [
+      "Art"
+    ],
+    "voyage": [
+      "Luxe"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Beige",
+      "Cognac"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien"
+  }
+}

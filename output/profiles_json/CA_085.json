@@ -1,0 +1,48 @@
+{
+  "client_id": "CA_085",
+  "metadata": {
+    "date_conversation": "2026-03-09",
+    "duration": "40 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP"
+  },
+  "localisation": {
+    "europe": [
+      "Madrid"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Gris",
+      "Navy"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien"
+  }
+}

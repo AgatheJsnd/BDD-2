@@ -1,0 +1,41 @@
+{
+  "client_id": "CA_059",
+  "metadata": {
+    "date_conversation": "2026-02-18",
+    "duration": "25 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "36-45",
+    "statut_relationnel": "Fidèle",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Rose_gold"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "<5k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

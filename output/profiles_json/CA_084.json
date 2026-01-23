@@ -1,0 +1,53 @@
+{
+  "client_id": "CA_084",
+  "metadata": {
+    "date_conversation": "2026-03-06",
+    "duration": "25 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "36-45",
+    "statut_relationnel": "Fidèle",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {
+    "amerique": [
+      "New_York"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Running"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Cognac"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
+}

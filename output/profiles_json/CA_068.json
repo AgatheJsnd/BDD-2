@@ -1,0 +1,53 @@
+{
+  "client_id": "CA_068",
+  "metadata": {
+    "date_conversation": "2026-02-24",
+    "duration": "35 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "36-45",
+    "statut_relationnel": "Fidèle"
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ],
+    "voyage": [
+      "Luxe"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Rose_gold",
+      "Cognac"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "allergies": [
+      "nickel"
+    ]
+  }
+}

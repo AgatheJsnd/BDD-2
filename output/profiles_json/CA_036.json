@@ -1,0 +1,43 @@
+{
+  "client_id": "CA_036",
+  "metadata": {
+    "date_conversation": "2026-01-31",
+    "duration": "25 min",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "56+",
+    "statut_relationnel": "Nouveau",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "pieces_favorites": [
+      "Montres"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "client_id": "CA_048",
+  "metadata": {
+    "date_conversation": "2026-02-10",
+    "duration": "40 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "56+",
+    "statut_relationnel": "VIP"
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Running"
+      ]
+    },
+    "art_culture": [
+      "Musees",
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Cognac"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien",
+    "allergies": [
+      "nickel"
+    ]
+  }
+}

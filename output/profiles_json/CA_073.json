@@ -1,0 +1,48 @@
+{
+  "client_id": "CA_073",
+  "metadata": {
+    "date_conversation": "2026-02-27",
+    "duration": "50 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "age": "56+",
+    "statut_relationnel": "VIP",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy",
+      "Cognac"
+    ]
+  },
+  "projet_achat": {
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane",
+    "allergies": [
+      "nickel"
+    ]
+  }
+}

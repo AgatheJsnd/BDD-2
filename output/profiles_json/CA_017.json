@@ -1,0 +1,53 @@
+{
+  "client_id": "CA_017",
+  "metadata": {
+    "date_conversation": "2026-01-20",
+    "duration": "40 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "56+",
+    "statut_relationnel": "VIP",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Opera",
+      "Art"
+    ],
+    "voyage": [
+      "Luxe"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Beige",
+      "Cognac"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

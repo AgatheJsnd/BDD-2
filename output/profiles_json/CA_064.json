@@ -1,0 +1,36 @@
+{
+  "client_id": "CA_064",
+  "metadata": {
+    "date_conversation": "2026-02-20",
+    "duration": "25 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Fidèle"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "voyage": [
+      "Luxe"
+    ]
+  },
+  "style_personnel": {},
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

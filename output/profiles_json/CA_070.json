@@ -1,0 +1,57 @@
+{
+  "client_id": "CA_070",
+  "metadata": {
+    "date_conversation": "2026-02-25",
+    "duration": "45 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP"
+  },
+  "localisation": {
+    "europe": [
+      "Berlin"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Running"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Navy",
+      "Rose_gold",
+      "Noir",
+      "Gris",
+      "Beige"
+    ],
+    "pieces_favorites": [
+      "Chaussures",
+      "Sacs"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

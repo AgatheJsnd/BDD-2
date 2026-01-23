@@ -1,0 +1,60 @@
+{
+  "client_id": "CA_037",
+  "metadata": {
+    "date_conversation": "2026-02-03",
+    "duration": "50 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Fitness",
+        "Running"
+      ]
+    },
+    "art_culture": [
+      "Art"
+    ],
+    "voyage": [
+      "Luxe"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy",
+      "Bordeaux",
+      "Cognac"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Anniversaire",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

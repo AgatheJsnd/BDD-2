@@ -1,0 +1,31 @@
+{
+  "client_id": "CA_093",
+  "metadata": {
+    "date_conversation": "2026-03-13",
+    "duration": "30 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

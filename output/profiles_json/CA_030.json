@@ -1,0 +1,53 @@
+{
+  "client_id": "CA_030",
+  "metadata": {
+    "date_conversation": "2026-01-28",
+    "duration": "50 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "age": "56+",
+    "statut_relationnel": "VIP"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ],
+    "voyage": [
+      "Luxe"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Cognac",
+      "Noir",
+      "Gris",
+      "Beige",
+      "Bordeaux"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien",
+    "allergies": [
+      "nickel"
+    ]
+  }
+}
