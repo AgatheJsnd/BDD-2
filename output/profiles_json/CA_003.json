@@ -26,15 +26,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Bordeaux"
+      "Bordeaux",
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Diplome",
     "budget": "10-15k"
   },
   "appetence_evenementielle": {},

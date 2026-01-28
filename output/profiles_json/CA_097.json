@@ -17,8 +17,8 @@
   "lifestyle_centres_interet": {
     "sport": {
       "individuel": [
-        "Running",
-        "Fitness"
+        "Fitness",
+        "Running"
       ]
     },
     "art_culture": [
@@ -28,9 +28,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
       "Bordeaux",
-      "Noir"
+      "Noir",
+      "Navy"
     ]
   },
   "projet_achat": {

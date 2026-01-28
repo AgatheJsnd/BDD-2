@@ -15,9 +15,9 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
+      "Musees",
       "Opera",
-      "Art",
-      "Musees"
+      "Art"
     ],
     "voyage": [
       "Culturel"
@@ -25,15 +25,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
-      "Cognac",
-      "Navy",
       "Noir",
-      "Rose_gold"
+      "Cognac",
+      "Rose_gold",
+      "Bordeaux",
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

@@ -25,14 +25,14 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
+      "Noir",
       "Gris",
-      "Navy",
       "Beige",
-      "Noir"
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Mariage",
+    "motif": "Anniversaire",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

@@ -21,9 +21,9 @@
   "lifestyle_centres_interet": {
     "sport": {
       "individuel": [
-        "Yoga",
+        "Ski",
         "Golf",
-        "Ski"
+        "Yoga"
       ]
     },
     "art_culture": [
@@ -39,7 +39,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Diplome",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

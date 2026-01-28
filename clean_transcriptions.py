@@ -3,8 +3,9 @@ import re
 import os
 
 # Configuration
-INPUT_FILE = 'LVMH_Notes_CA101-400.csv'
-OUTPUT_FILE = 'transcriptions_clean.csv'
+# Configuration
+INPUT_FILE = 'LVMH_Realistic_Merged_CA001-100.csv'
+OUTPUT_FILE = 'LVMH_Realistic_Merged_CA001-100_cleaned.csv'
 COLUMN_NAME = 'Transcription'
 
 # Liste étendue des marqueurs d'hésitation et tocs de langage (Multilingue)

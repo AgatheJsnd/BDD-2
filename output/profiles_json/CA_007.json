@@ -12,8 +12,8 @@
   },
   "localisation": {
     "europe": [
-      "Milan",
-      "Berlin"
+      "Berlin",
+      "Milan"
     ]
   },
   "mobilite_rythme_vie": {
@@ -35,7 +35,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},

@@ -22,8 +22,8 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Art",
-      "Musees"
+      "Musees",
+      "Art"
     ],
     "voyage": [
       "Culturel"
@@ -31,15 +31,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
-      "Cognac",
-      "Navy",
       "Noir",
-      "Rose_gold"
+      "Cognac",
+      "Rose_gold",
+      "Bordeaux",
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

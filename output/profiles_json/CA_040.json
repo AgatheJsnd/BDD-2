@@ -22,14 +22,14 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Blanc",
       "Bordeaux",
-      "Noir"
+      "Noir",
+      "Cognac",
+      "Blanc"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

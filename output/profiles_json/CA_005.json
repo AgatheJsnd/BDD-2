@@ -21,8 +21,8 @@
       ]
     },
     "art_culture": [
-      "Art",
-      "Musees"
+      "Musees",
+      "Art"
     ],
     "voyage": [
       "Aventure"
@@ -30,9 +30,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Rose_gold",
-      "Beige"
+      "Beige",
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
@@ -42,7 +42,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Diplome",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

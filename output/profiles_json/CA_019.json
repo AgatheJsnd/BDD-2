@@ -25,9 +25,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
       "Gris",
       "Cognac",
+      "Bordeaux",
       "Beige",
       "Navy"
     ],
@@ -36,7 +36,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

@@ -30,9 +30,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Beige",
-      "Noir"
+      "Noir",
+      "Cognac"
     ]
   },
   "projet_achat": {

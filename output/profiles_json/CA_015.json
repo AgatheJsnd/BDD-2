@@ -24,21 +24,21 @@
       ]
     },
     "art_culture": [
+      "Musees",
       "Opera",
-      "Art",
-      "Musees"
+      "Art"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Rose_gold",
-      "Navy",
-      "Noir"
+      "Noir",
+      "Cognac",
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "10-15k"
   },
   "appetence_evenementielle": {},

@@ -28,15 +28,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Noir"
+      "Noir",
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},

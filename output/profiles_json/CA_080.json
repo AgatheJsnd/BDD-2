@@ -18,16 +18,16 @@
       "Art"
     ],
     "voyage": [
-      "Culturel",
-      "Luxe"
+      "Luxe",
+      "Culturel"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Navy",
       "Bordeaux",
-      "Noir"
+      "Noir",
+      "Cognac",
+      "Navy"
     ]
   },
   "projet_achat": {

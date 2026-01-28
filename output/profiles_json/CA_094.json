@@ -22,16 +22,16 @@
   "lifestyle_centres_interet": {},
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Rose_gold",
-      "Noir"
+      "Noir",
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Diplome",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},

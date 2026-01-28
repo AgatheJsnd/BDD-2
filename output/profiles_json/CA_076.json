@@ -16,19 +16,19 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Art",
-      "Musees"
+      "Musees",
+      "Art"
     ],
     "voyage": [
-      "Culturel",
-      "Luxe"
+      "Luxe",
+      "Culturel"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
+      "Beige",
       "Gris",
       "Cognac",
-      "Beige",
       "Navy"
     ],
     "matieres_preferees": [
@@ -36,7 +36,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Mariage",
+    "motif": "Anniversaire",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

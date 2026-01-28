@@ -26,15 +26,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
-      "Cognac",
-      "Navy",
       "Noir",
-      "Rose_gold"
+      "Cognac",
+      "Rose_gold",
+      "Bordeaux",
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

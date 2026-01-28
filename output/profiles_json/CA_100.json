@@ -16,8 +16,8 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Art",
-      "Musees"
+      "Musees",
+      "Art"
     ],
     "voyage": [
       "Culturel"
@@ -25,13 +25,13 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
       "Bordeaux",
-      "Noir"
+      "Noir",
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

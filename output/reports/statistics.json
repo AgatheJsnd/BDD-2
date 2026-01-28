@@ -21,8 +21,8 @@
     "<5k": 7,
     "5-10k": 27,
     "10-15k": 22,
-    "25k+": 17,
-    "15-25k": 27
+    "15-25k": 27,
+    "25k+": 14
   },
   "sports_populaires": {
     "Golf": 9,
@@ -34,8 +34,8 @@
     "Fitness": 9
   },
   "couleurs_populaires": {
-    "Cognac": 43,
     "Noir": 45,
+    "Cognac": 43,
     "Navy": 35,
     "Bordeaux": 22,
     "Rose_gold": 20,

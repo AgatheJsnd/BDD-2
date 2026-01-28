@@ -31,20 +31,20 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Noir"
+      "Noir",
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
     ],
     "pieces_favorites": [
-      "Sacs",
+      "Montres",
       "Portefeuille",
-      "Montres"
+      "Sacs"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "<5k"
   },
   "appetence_evenementielle": {},

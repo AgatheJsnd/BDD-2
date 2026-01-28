@@ -20,22 +20,22 @@
       "Art"
     ],
     "voyage": [
-      "Aventure",
-      "Luxe"
+      "Luxe",
+      "Aventure"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Beige",
-      "Noir"
+      "Noir",
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
     ]
   },
   "projet_achat": {
-    "motif": "Mariage",
+    "motif": "Anniversaire",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

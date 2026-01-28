@@ -28,13 +28,13 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Rose_gold",
-      "Noir"
+      "Noir",
+      "Cognac"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},

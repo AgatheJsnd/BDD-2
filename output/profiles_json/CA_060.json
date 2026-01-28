@@ -24,12 +24,12 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Beige"
+      "Beige",
+      "Cognac"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "10-15k"
   },
   "appetence_evenementielle": {},

@@ -28,6 +28,12 @@ class CSVProcessor:
             self.load_data()
 
         conversations = []
+        # Detection automatique de la colonne de transcription
+        transcription_col = "Transcription"
+        if "transcription_cleaned" in self.data.columns:
+            transcription_col = "transcription_cleaned"
+            print("INFO - Utilisation de la colonne 'transcription_cleaned' pour la source.")
+
         for _, row in self.data.iterrows():
             conversations.append({
                 "client_id": row["ID"],
@@ -35,7 +41,7 @@ class CSVProcessor:
                 "duration": row["Duration"],
                 "language": row["Language"],
                 "length": row["Length"],
-                "transcription": row["Transcription"],
+                "transcription": row[transcription_col],
             })
 
         return conversations
