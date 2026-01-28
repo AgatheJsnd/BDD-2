@@ -16,20 +16,20 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Musees",
-      "Art"
+      "Art",
+      "Musees"
     ],
     "voyage": [
-      "Luxe",
-      "Culturel"
+      "Culturel",
+      "Luxe"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
       "Gris",
-      "Navy",
+      "Cognac",
       "Beige",
-      "Cognac"
+      "Navy"
     ],
     "matieres_preferees": [
       "Cuir"

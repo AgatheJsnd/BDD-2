@@ -20,15 +20,15 @@
       "Art"
     ],
     "voyage": [
-      "Luxe",
-      "Aventure"
+      "Aventure",
+      "Luxe"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
+      "Cognac",
       "Beige",
-      "Cognac"
+      "Noir"
     ],
     "matieres_preferees": [
       "Cuir"

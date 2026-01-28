@@ -29,9 +29,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
       "Navy",
-      "Beige"
+      "Beige",
+      "Noir"
     ]
   },
   "projet_achat": {

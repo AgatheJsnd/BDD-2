@@ -31,16 +31,16 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
-      "Cognac"
+      "Cognac",
+      "Noir"
     ],
     "matieres_preferees": [
       "Cuir"
     ],
     "pieces_favorites": [
-      "Montres",
       "Sacs",
-      "Portefeuille"
+      "Portefeuille",
+      "Montres"
     ]
   },
   "projet_achat": {

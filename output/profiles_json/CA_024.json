@@ -24,27 +24,27 @@
   },
   "lifestyle_centres_interet": {
     "sport": {
-      "collectif": [
-        "Football"
-      ],
       "individuel": [
         "Tennis"
+      ],
+      "collectif": [
+        "Football"
       ]
     },
     "art_culture": [
       "Opera"
     ],
     "voyage": [
-      "Luxe",
-      "Aventure"
+      "Aventure",
+      "Luxe"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
-      "Navy",
+      "Cognac",
       "Rose_gold",
-      "Cognac"
+      "Navy",
+      "Noir"
     ]
   },
   "projet_achat": {

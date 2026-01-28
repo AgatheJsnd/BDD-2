@@ -34,6 +34,21 @@ streamlit run dashboard.py
 ```
 Accédez ensuite à `http://localhost:8501`.
 
+
+## Maintenance DB
+
+### Migration du schema (legacy -> nouveau)
+Si la base utilise l'ancien schema, lancer :
+```bash
+python src/migrate_db.py
+```
+
+### Nettoyage des snapshots
+Conserver uniquement le dernier profil par client :
+```bash
+python src/cleanup_snapshots.py
+```
+
 ## Déploiement Docker
 
 ### 1. Construire l'image

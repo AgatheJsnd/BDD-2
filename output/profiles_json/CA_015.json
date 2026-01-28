@@ -25,16 +25,16 @@
     },
     "art_culture": [
       "Opera",
-      "Musees",
-      "Art"
+      "Art",
+      "Musees"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
-      "Navy",
+      "Cognac",
       "Rose_gold",
-      "Cognac"
+      "Navy",
+      "Noir"
     ]
   },
   "projet_achat": {

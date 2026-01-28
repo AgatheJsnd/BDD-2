@@ -20,20 +20,20 @@
       ]
     },
     "art_culture": [
-      "Musees",
-      "Art"
+      "Art",
+      "Musees"
     ],
     "voyage": [
-      "Luxe",
-      "Culturel"
+      "Culturel",
+      "Luxe"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
+      "Rose_gold",
       "Navy",
       "Beige",
-      "Rose_gold"
+      "Noir"
     ]
   },
   "projet_achat": {

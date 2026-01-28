@@ -23,15 +23,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Noir",
+      "Bordeaux",
       "Gris",
+      "Cognac",
       "Beige",
-      "Bordeaux"
+      "Noir"
     ]
   },
   "projet_achat": {
-    "motif": "Mariage",
+    "motif": "Diplome",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

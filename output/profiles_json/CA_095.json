@@ -25,10 +25,10 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
       "Gris",
       "Navy",
-      "Beige"
+      "Beige",
+      "Noir"
     ]
   },
   "projet_achat": {

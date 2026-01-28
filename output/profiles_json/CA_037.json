@@ -21,8 +21,8 @@
   "lifestyle_centres_interet": {
     "sport": {
       "individuel": [
-        "Fitness",
-        "Running"
+        "Running",
+        "Fitness"
       ]
     },
     "art_culture": [
@@ -34,10 +34,10 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
+      "Cognac",
       "Navy",
       "Bordeaux",
-      "Cognac"
+      "Noir"
     ]
   },
   "projet_achat": {

@@ -26,15 +26,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
-      "Rose_gold",
-      "Noir",
       "Gris",
-      "Beige"
+      "Beige",
+      "Navy",
+      "Noir",
+      "Rose_gold"
     ],
     "pieces_favorites": [
-      "Chaussures",
-      "Sacs"
+      "Sacs",
+      "Chaussures"
     ]
   },
   "projet_achat": {

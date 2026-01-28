@@ -16,8 +16,8 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Musees",
-      "Art"
+      "Art",
+      "Musees"
     ],
     "voyage": [
       "Culturel"
@@ -25,9 +25,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
       "Navy",
-      "Bordeaux"
+      "Bordeaux",
+      "Noir"
     ]
   },
   "projet_achat": {

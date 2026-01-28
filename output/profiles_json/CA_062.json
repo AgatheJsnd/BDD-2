@@ -21,8 +21,8 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Musees",
-      "Art"
+      "Art",
+      "Musees"
     ],
     "voyage": [
       "Culturel"
@@ -30,8 +30,8 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
-      "Cognac"
+      "Cognac",
+      "Noir"
     ],
     "matieres_preferees": [
       "Cuir"

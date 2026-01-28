@@ -22,9 +22,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
       "Navy",
-      "Bordeaux"
+      "Bordeaux",
+      "Noir"
     ],
     "matieres_preferees": [
       "Cuir"

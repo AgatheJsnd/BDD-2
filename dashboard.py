@@ -11,6 +11,9 @@ from src.profile_generator import ProfileGenerator
 from src.csv_processor import CSVProcessor
 from collections import Counter
 from datetime import datetime
+from pathlib import Path
+import hashlib
+import re
 import json
 
 # Import Mistral
@@ -179,19 +182,35 @@ st.markdown("""
 COLORS = ['#8B4513', '#A0522D', '#D2691E', '#CD853F', '#DEB887']
 
 @st.cache_data
-def load_all_data():
-    """Charge toutes les données"""
+def load_kpis_stats():
+    """Charge KPIs et stats via SQL (scalable)."""
     pg = ProfileGenerator()
-    profiles = pg.get_all_profiles()
-    stats = pg.get_statistics()
-    
+    return pg.get_kpis_sql(), pg.get_stats_sql()
+
+@st.cache_data
+def load_conversations():
+    """Charge les conversations (optionnel)."""
     try:
         csv = CSVProcessor("LVMH_Realistic_Merged_CA001-100.csv")
-        conversations = csv.get_conversations()
+        return csv.get_conversations()
     except:
-        conversations = []
-    
-    return profiles, stats, conversations
+        return []
+
+def build_time_series(conversations):
+    if not conversations:
+        return pd.DataFrame(), pd.DataFrame()
+    df = pd.DataFrame(conversations)
+    if "date" not in df.columns:
+        return pd.DataFrame(), pd.DataFrame()
+    df["date"] = pd.to_datetime(df["date"], errors="coerce", dayfirst=True)
+    df = df.dropna(subset=["date"])
+    if df.empty:
+        return pd.DataFrame(), pd.DataFrame()
+    df["week"] = df["date"].dt.to_period("W").dt.start_time
+    df["month"] = df["date"].dt.to_period("M").dt.to_timestamp()
+    weekly = df.groupby("week").size().reset_index(name="new_clients")
+    monthly = df.groupby("month").size().reset_index(name="new_clients")
+    return weekly, monthly
 
 def calculate_kpis(profiles):
     """Calcule tous les KPIs"""
@@ -263,16 +282,402 @@ def get_client_badges(profile):
         
     return badges
 
+def generate_ice_breaker(profile):
+    """Genere une phrase d'accroche simple a partir du profil."""
+    identite = profile.get('identite', {})
+    projet = profile.get('projet_achat', {})
+    style = profile.get('style_personnel', {})
+    metadata = profile.get('metadata', {})
+
+    pieces = projet.get('pieces_cibles', [])
+    motif = projet.get('motif', '')
+    couleurs = style.get('couleurs_preferees', [])
+    date_conv = metadata.get('date_conversation', '')
+
+    if motif:
+        return f"Revenir sur le motif mentionne ({motif}) et verifier si le besoin est toujours d'actualite."
+    if pieces:
+        return f"Demander si la piece ciblee ({pieces[0]}) est toujours prioritaire."
+    if couleurs:
+        return f"Proposer des nouveautes dans la couleur {couleurs[0]}."
+    if date_conv:
+        return "Demander si les attentes ont evolue depuis la derniere visite."
+    return "Engager la conversation sur ses dernieres envies ou projets."
+
+def next_best_action(profile):
+    """Retourne une action recommande et sa justification."""
+    statut = profile.get('identite', {}).get('statut_relationnel', '')
+    budget = profile.get('projet_achat', {}).get('budget', '')
+    regime = profile.get('metadata_client', {}).get('regime_alimentaire', '')
+    pieces = profile.get('projet_achat', {}).get('pieces_cibles', [])
+
+    if statut == 'VIP' and budget in ['15-25k', '25k+']:
+        return ("Proposer un RDV prive en boutique", "Client VIP a fort potentiel.")
+    if regime in ['Vegan', 'Végane', 'Vegetarien', 'Végétarien']:
+        return ("Mettre en avant les collections responsables", "Sensibilite RSE detectee.")
+    if pieces:
+        return (f"Suggere une piece complementaire a {pieces[0]}", "Interet produit explicite.")
+    return ("Programmer un suivi a J+7", "Maintenir l'engagement.")
+
+def get_product_image(profile):
+    """Retourne une image produit si disponible (URL ou asset local)."""
+    projet = profile.get("projet_achat", {})
+    url = projet.get("product_image_url") or profile.get("product_image_url")
+    if url:
+        return url
+    pieces = projet.get("pieces_cibles", [])
+    if not pieces:
+        return None
+    slug = re.sub(r"[^a-z0-9]+", "-", pieces[0].lower()).strip("-")
+    for ext in [".png", ".jpg", ".jpeg", ".webp"]:
+        p = Path("assets") / "products" / f"{slug}{ext}"
+        if p.exists():
+            return str(p)
+    return None
+
+def slugify(text):
+    text = text.lower().strip()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    return text.strip("-")
+
+def get_contact_info(client_id, show_simulated=True):
+    if not show_simulated:
+        return "", ""
+    h = hashlib.md5(client_id.encode("utf-8")).hexdigest()
+    suffix = int(h[:4], 16) % 1000
+    email = f"{client_id.lower()}_{suffix}@lvmh-client.test"
+    phone = f"+33 6 {h[4:6]} {h[6:8]} {h[8:10]} {h[10:12]}"
+    return email, phone
+
+def assign_seller(client_id):
+    """Attribution deterministe d'un vendeur (simulation)."""
+    sellers = ["Camille", "Lucas", "Ines", "Noah", "Sarah", "Lina"]
+    h = hashlib.md5(client_id.encode("utf-8")).hexdigest()
+    idx = int(h[:2], 16) % len(sellers)
+    return sellers[idx]
+
+def build_team_metrics_from_counts(total: int, vip_count: int, high_value: int):
+    """Construit des KPIs par vendeur (simulation) sans charger tous les profils."""
+    sellers = ["Camille", "Lucas", "Ines", "Noah", "Sarah", "Lina"]
+    weights = []
+    for s in sellers:
+        w = int(hashlib.md5(s.encode("utf-8")).hexdigest()[:2], 16) + 1
+        weights.append(w)
+    total_w = sum(weights)
+
+    def distribute(value):
+        raw = [int(value * w / total_w) for w in weights]
+        # Ajuster pour respecter la somme
+        diff = value - sum(raw)
+        i = 0
+        while diff > 0:
+            raw[i % len(raw)] += 1
+            diff -= 1
+            i += 1
+        return raw
+
+    profiles_counts = distribute(total)
+    vip_counts = distribute(vip_count)
+    high_counts = distribute(high_value)
+
+    team = {}
+    for i, s in enumerate(sellers):
+        team[s] = {
+            "profiles": profiles_counts[i],
+            "vip": vip_counts[i],
+            "high_value": high_counts[i]
+        }
+    return team
+
+def build_tag_trends_from_sql(pg, top_n=20):
+    """Construit une liste de tags frequents (tendance) via SQL."""
+    rows = pg.get_top_tags(top_n)
+    return [(r["tag"], r["count"]) for r in rows]
+
+def parse_segment_query(query):
+    """Parse une requete simple de segmentation en criteres."""
+    q = query.lower()
+    criteria = {"statut": None, "budget": None, "budget_any": None, "city": None, "color": None, "tag_any": []}
+    if "vip" in q:
+        criteria["statut"] = "VIP"
+    elif "fidele" in q:
+        criteria["statut"] = "Fidèle"
+    elif "nouveau" in q:
+        criteria["statut"] = "Nouveau"
+
+    if "plus de 10k" in q or ">=10k" in q or "sup a 10k" in q:
+        criteria["budget_any"] = ["10-15k", "15-25k", "25k+"]
+    elif "25k" in q:
+        criteria["budget"] = "25k+"
+    elif "15-25" in q or "15k" in q:
+        criteria["budget"] = "15-25k"
+    elif "10-15" in q or "10k" in q:
+        criteria["budget"] = "10-15k"
+    elif "5-10" in q or "5k" in q:
+        criteria["budget"] = "5-10k"
+
+    m_city = re.search(r"(paris|milan|london|madrid|berlin|tokyo|dubai|hong_kong|singapore|new_york)", q)
+    if m_city:
+        criteria["city"] = m_city.group(1).replace("_", " ").title()
+
+    color_map = {
+        "Rouge": ["rouge", "red", "vermillon", "bordeaux"],
+        "Beige": ["beige", "sable", "taupe"],
+        "Noir": ["noir", "black", "ebene"],
+        "Blanc": ["blanc", "white", "ivoire"],
+        "Bleu": ["bleu", "blue", "marine", "azur"],
+        "Vert": ["vert", "green", "kaki"],
+        "Marron": ["marron", "brun", "chocolat"],
+        "Camel": ["camel"],
+        "Or": ["or", "gold", "dore"]
+    }
+    for canonical, variants in color_map.items():
+        if any(v in q for v in variants):
+            criteria["color"] = canonical
+            break
+
+    if "cuir vegan" in q or "vegan leather" in q:
+        criteria["tag_any"].append("Cuir Vegan")
+    if "durable" in q or "durabilite" in q or "responsable" in q:
+        criteria["tag_any"].append("Durabilite")
+
+    return criteria
+
+def filter_profiles_with_query(profiles, query):
+    criteria = parse_segment_query(query)
+    filtered = profiles
+    if criteria["statut"]:
+        filtered = [p for p in filtered if p.get("identite", {}).get("statut_relationnel") == criteria["statut"]]
+    if criteria["budget"]:
+        filtered = [p for p in filtered if p.get("projet_achat", {}).get("budget") == criteria["budget"]]
+    if criteria["budget_any"]:
+        filtered = [p for p in filtered if p.get("projet_achat", {}).get("budget") in criteria["budget_any"]]
+    if criteria["city"]:
+        filtered = [p for p in filtered if criteria["city"] in sum(p.get("localisation", {}).values(), [])]
+    if criteria["color"]:
+        filtered = [p for p in filtered if criteria["color"] in p.get("style_personnel", {}).get("couleurs_preferees", [])]
+    if criteria["tag_any"]:
+        wanted = set([t.lower() for t in criteria["tag_any"]])
+        def has_tag(p):
+            tags = set([b["text"].lower() for b in get_client_badges(p)])
+            return any(t in tags for t in wanted)
+        filtered = [p for p in filtered if has_tag(p)]
+    return filtered
+
 def main():
     # Charger les données
-    profiles, stats, conversations = load_all_data()
-    kpis = calculate_kpis(profiles)
+    pg = ProfileGenerator()
+            for item in style[key]:
+                badges.append({'text': item, 'type': 'style'})
+                
+    # Mobilité
+    mobilite = profile.get('mobilite_rythme_vie', {}).get('frequence_deplacement')
+    if mobilite:
+        badges.append({'text': mobilite, 'type': 'mobilite'})
+        
+    return badges
+
+def generate_ice_breaker(profile):
+    """Genere une phrase d'accroche simple a partir du profil."""
+    identite = profile.get('identite', {})
+    projet = profile.get('projet_achat', {})
+    style = profile.get('style_personnel', {})
+    metadata = profile.get('metadata', {})
+
+    pieces = projet.get('pieces_cibles', [])
+    motif = projet.get('motif', '')
+    couleurs = style.get('couleurs_preferees', [])
+    date_conv = metadata.get('date_conversation', '')
+
+    if motif:
+        return f"Revenir sur le motif mentionne ({motif}) et verifier si le besoin est toujours d'actualite."
+    if pieces:
+        return f"Demander si la piece ciblee ({pieces[0]}) est toujours prioritaire."
+    if couleurs:
+        return f"Proposer des nouveautes dans la couleur {couleurs[0]}."
+    if date_conv:
+        return "Demander si les attentes ont evolue depuis la derniere visite."
+    return "Engager la conversation sur ses dernieres envies ou projets."
+
+def next_best_action(profile):
+    """Retourne une action recommande et sa justification."""
+    statut = profile.get('identite', {}).get('statut_relationnel', '')
+    budget = profile.get('projet_achat', {}).get('budget', '')
+    regime = profile.get('metadata_client', {}).get('regime_alimentaire', '')
+    pieces = profile.get('projet_achat', {}).get('pieces_cibles', [])
+
+    if statut == 'VIP' and budget in ['15-25k', '25k+']:
+        return ("Proposer un RDV prive en boutique", "Client VIP a fort potentiel.")
+    if regime in ['Vegan', 'Végane', 'Vegetarien', 'Végétarien']:
+        return ("Mettre en avant les collections responsables", "Sensibilite RSE detectee.")
+    if pieces:
+        return (f"Suggere une piece complementaire a {pieces[0]}", "Interet produit explicite.")
+    return ("Programmer un suivi a J+7", "Maintenir l'engagement.")
+
+def get_product_image(profile):
+    """Retourne une image produit si disponible (URL ou asset local)."""
+    projet = profile.get("projet_achat", {})
+    url = projet.get("product_image_url") or profile.get("product_image_url")
+    if url:
+        return url
+    pieces = projet.get("pieces_cibles", [])
+    if not pieces:
+        return None
+    slug = re.sub(r"[^a-z0-9]+", "-", pieces[0].lower()).strip("-")
+    for ext in [".png", ".jpg", ".jpeg", ".webp"]:
+        p = Path("assets") / "products" / f"{slug}{ext}"
+        if p.exists():
+            return str(p)
+    return None
+
+def slugify(text):
+    text = text.lower().strip()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    return text.strip("-")
+
+def get_contact_info(client_id, show_simulated=True):
+    if not show_simulated:
+        return "", ""
+    h = hashlib.md5(client_id.encode("utf-8")).hexdigest()
+    suffix = int(h[:4], 16) % 1000
+    email = f"{client_id.lower()}_{suffix}@lvmh-client.test"
+    phone = f"+33 6 {h[4:6]} {h[6:8]} {h[8:10]} {h[10:12]}"
+    return email, phone
+
+def assign_seller(client_id):
+    """Attribution deterministe d'un vendeur (simulation)."""
+    sellers = ["Camille", "Lucas", "Ines", "Noah", "Sarah", "Lina"]
+    h = hashlib.md5(client_id.encode("utf-8")).hexdigest()
+    idx = int(h[:2], 16) % len(sellers)
+    return sellers[idx]
+
+def build_team_metrics_from_counts(total: int, vip_count: int, high_value: int):
+    """Construit des KPIs par vendeur (simulation) sans charger tous les profils."""
+    sellers = ["Camille", "Lucas", "Ines", "Noah", "Sarah", "Lina"]
+    weights = []
+    for s in sellers:
+        w = int(hashlib.md5(s.encode("utf-8")).hexdigest()[:2], 16) + 1
+        weights.append(w)
+    total_w = sum(weights)
+
+    def distribute(value):
+        raw = [int(value * w / total_w) for w in weights]
+        # Ajuster pour respecter la somme
+        diff = value - sum(raw)
+        i = 0
+        while diff > 0:
+            raw[i % len(raw)] += 1
+            diff -= 1
+            i += 1
+        return raw
+
+    profiles_counts = distribute(total)
+    vip_counts = distribute(vip_count)
+    high_counts = distribute(high_value)
+
+    team = {}
+    for i, s in enumerate(sellers):
+        team[s] = {
+            "profiles": profiles_counts[i],
+            "vip": vip_counts[i],
+            "high_value": high_counts[i]
+        }
+    return team
+
+def build_tag_trends_from_sql(pg, top_n=20):
+    """Construit une liste de tags frequents (tendance) via SQL."""
+    rows = pg.get_top_tags(top_n)
+    return [(r["tag"], r["count"]) for r in rows]
+
+def parse_segment_query(query):
+    """Parse une requete simple de segmentation en criteres."""
+    q = query.lower()
+    criteria = {"statut": None, "budget": None, "budget_any": None, "city": None, "color": None, "tag_any": []}
+    if "vip" in q:
+        criteria["statut"] = "VIP"
+    elif "fidele" in q:
+        criteria["statut"] = "Fidèle"
+    elif "nouveau" in q:
+        criteria["statut"] = "Nouveau"
+
+    if "plus de 10k" in q or ">=10k" in q or "sup a 10k" in q:
+        criteria["budget_any"] = ["10-15k", "15-25k", "25k+"]
+    elif "25k" in q:
+        criteria["budget"] = "25k+"
+    elif "15-25" in q or "15k" in q:
+        criteria["budget"] = "15-25k"
+    elif "10-15" in q or "10k" in q:
+        criteria["budget"] = "10-15k"
+    elif "5-10" in q or "5k" in q:
+        criteria["budget"] = "5-10k"
+
+    m_city = re.search(r"(paris|milan|london|madrid|berlin|tokyo|dubai|hong_kong|singapore|new_york)", q)
+    if m_city:
+        criteria["city"] = m_city.group(1).replace("_", " ").title()
+
+    color_map = {
+        "Rouge": ["rouge", "red", "vermillon", "bordeaux"],
+        "Beige": ["beige", "sable", "taupe"],
+        "Noir": ["noir", "black", "ebene"],
+        "Blanc": ["blanc", "white", "ivoire"],
+        "Bleu": ["bleu", "blue", "marine", "azur"],
+        "Vert": ["vert", "green", "kaki"],
+        "Marron": ["marron", "brun", "chocolat"],
+        "Camel": ["camel"],
+        "Or": ["or", "gold", "dore"]
+    }
+    for canonical, variants in color_map.items():
+        if any(v in q for v in variants):
+            criteria["color"] = canonical
+            break
+
+    if "cuir vegan" in q or "vegan leather" in q:
+        criteria["tag_any"].append("Cuir Vegan")
+    if "durable" in q or "durabilite" in q or "responsable" in q:
+        criteria["tag_any"].append("Durabilite")
+
+    return criteria
+
+def filter_profiles_with_query(profiles, query):
+    criteria = parse_segment_query(query)
+    filtered = profiles
+    if criteria["statut"]:
+        filtered = [p for p in filtered if p.get("identite", {}).get("statut_relationnel") == criteria["statut"]]
+    if criteria["budget"]:
+        filtered = [p for p in filtered if p.get("projet_achat", {}).get("budget") == criteria["budget"]]
+    if criteria["budget_any"]:
+        filtered = [p for p in filtered if p.get("projet_achat", {}).get("budget") in criteria["budget_any"]]
+    if criteria["city"]:
+        filtered = [p for p in filtered if criteria["city"] in sum(p.get("localisation", {}).values(), [])]
+    if criteria["color"]:
+        filtered = [p for p in filtered if criteria["color"] in p.get("style_personnel", {}).get("couleurs_preferees", [])]
+    if criteria["tag_any"]:
+        wanted = set([t.lower() for t in criteria["tag_any"]])
+        def has_tag(p):
+            tags = set([b["text"].lower() for b in get_client_badges(p)])
+            return any(t in tags for t in wanted)
+        filtered = [p for p in filtered if has_tag(p)]
+    return filtered
+
+def main():
+    # Charger les données
+    pg = ProfileGenerator()
+    kpis, stats = load_kpis_stats()
+    conversations = load_conversations()
+
+    # Sidebar options
+    with st.sidebar:
+        st.header("Options")
+        mode_admin = st.toggle("Mode Admin (Technique)", value=False)
+        mode_clienteling = st.toggle("Mode clienteling (iPad)", value=False)
+        show_simulated = st.toggle("Afficher donnees simulees", value=True)
+        st.caption("Mode Admin affiche les onglets techniques (IA, Data, Equipe).")
     
     # === HEADER ===
     st.markdown("""
     <div class="main-header">
-        <h1>◆ LVMH Client Analytics</h1>
-        <p>Dashboard Marketing • {} clients • {}</p>
+        <h1>LVMH Client Analytics</h1>
+        <p>Dashboard Marketing - {} clients - {}</p>
     </div>
     """.format(kpis['total'], datetime.now().strftime("%d/%m/%Y")), unsafe_allow_html=True)
     
@@ -293,465 +698,240 @@ def main():
     st.markdown("---")
     
     # === ONGLETS PRINCIPAUX ===
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "📊 Vue d'ensemble",
-        "👥 Clients",
-        "📈 Analyses",
-        "🎯 Actions",
-        "🤖 IA Mistral"
-    ])
+    # Définition dynamique des onglets
+    tabs_def = [
+        ("Vue d'ensemble", True),
+        ("Clients", True),
+        ("Actions", True),
+        ("Analyses", True),
+        ("IA Mistral", mode_admin),
+        ("Equipe & Tendances", mode_admin),
+        ("Data & Ops", mode_admin)
+    ]
+    active_tabs_names = [t[0] for t in tabs_def if t[1]]
+    tabs_list = st.tabs(active_tabs_names)
+    tabs = {name: tab for name, tab in zip(active_tabs_names, tabs_list)}
     
     # ===== TAB 1: VUE D'ENSEMBLE =====
-    with tab1:
-        col1, col2 = st.columns([2, 1])
-        
-        with col1:
-            st.subheader("Répartition par Statut")
+    if "Vue d'ensemble" in tabs:
+        with tabs["Vue d'ensemble"]:
+            st.markdown("### 🎯 Tableau de Bord Simplifié")
             
-            fig = go.Figure(data=[go.Pie(
-                labels=list(kpis['segments'].keys()),
-                values=list(kpis['segments'].values()),
-                hole=0.5,
-                marker_colors=COLORS,
-                textinfo='label+percent',
-                textposition='outside',
-                textfont=dict(color='#1a1a1a', size=12)
-            )])
-            fig.update_layout(
-                showlegend=False,
-                margin=dict(t=30, b=30, l=30, r=30),
-                height=350,
-                paper_bgcolor='rgba(0,0,0,0)',
-                plot_bgcolor='rgba(0,0,0,0)',
-                annotations=[dict(text=f"<b>{kpis['total']}</b><br>clients", 
-                                 x=0.5, y=0.5, font_size=18, font_color='#1a1a1a', showarrow=False)]
-            )
-            st.plotly_chart(fig, use_container_width=True)
-        
-        with col2:
-            st.subheader("Segments Clés")
-            
-            for statut, count in sorted(kpis['segments'].items(), key=lambda x: x[1], reverse=True):
-                pct = count / kpis['total'] * 100
-                st.markdown(f"""
-                <div class="info-card">
-                    <h4>{statut}</h4>
-                    <div style="font-size:1.5rem; font-weight:700;">{count}</div>
-                    <div style="color:#666666;">{pct:.0f}% du total</div>
-                </div>
-                """, unsafe_allow_html=True)
-        
-        # Distribution budget
-        st.subheader("Distribution par Budget")
-        
-        budget_order = ['<5k', '5-10k', '10-15k', '15-25k', '25k+']
-        budget_df = pd.DataFrame([
-            {'Budget': b, 'Clients': kpis['budgets'].get(b, 0)} 
-            for b in budget_order if b in kpis['budgets'] or True
-        ])
-        budget_df['Budget'] = pd.Categorical(budget_df['Budget'], categories=budget_order, ordered=True)
-        budget_df = budget_df.sort_values('Budget')
-        
-        fig = px.bar(budget_df, x='Budget', y='Clients', color_discrete_sequence=['#8B4513'])
-        fig.update_layout(
-            height=300,
-            margin=dict(t=20, b=40, l=40, r=20),
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-            xaxis=dict(gridcolor='#D4CFC9'),
-            yaxis=dict(gridcolor='#D4CFC9')
-        )
-        st.plotly_chart(fig, use_container_width=True)
-        
-        # Préférences
-        col1, col2, col3 = st.columns(3)
-        
-        with col1:
-            st.subheader("Top Couleurs")
-            for color, count in sorted(stats['couleurs_populaires'].items(), key=lambda x: x[1], reverse=True)[:5]:
-                st.write(f"• **{color}**: {count} clients")
-        
-        with col2:
-            st.subheader("Top Sports")
-            for sport, count in sorted(stats['sports_populaires'].items(), key=lambda x: x[1], reverse=True)[:5]:
-                st.write(f"• **{sport}**: {count} clients")
-        
-        with col3:
-            st.subheader("Régimes Alimentaires")
-            for regime, count in stats['regimes_alimentaires'].items():
-                st.write(f"• **{regime}**: {count} clients")
-    
-    # ===== TAB 2: CLIENTS =====
-    with tab2:
-        st.subheader("Base Clients")
-        
-        # Filtres
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            filter_statut = st.multiselect("Filtrer par statut", list(kpis['segments'].keys()))
-        with col2:
-            filter_budget = st.multiselect("Filtrer par budget", ['<5k', '5-10k', '10-15k', '15-25k', '25k+'])
-        with col3:
-            search = st.text_input("Rechercher (ID)")
-        
-        # Filtrer les profils
-        filtered = profiles.copy()
-        if filter_statut:
-            filtered = [p for p in filtered if p.get('identite', {}).get('statut_relationnel') in filter_statut]
-        if filter_budget:
-            filtered = [p for p in filtered if p.get('projet_achat', {}).get('budget') in filter_budget]
-        if search:
-            filtered = [p for p in filtered if search.lower() in p.get('client_id', '').lower()]
-        
-        st.info(f"**{len(filtered)}** clients affichés")
-        
-        # Tableau des clients
-        client_data = []
-        for p in filtered:
-            client_data.append({
-                'ID': p.get('client_id', 'N/A'),
-                'Genre': p.get('identite', {}).get('genre', 'N/A'),
-                'Âge': p.get('identite', {}).get('age', 'N/A'),
-                'Statut': p.get('identite', {}).get('statut_relationnel', 'N/A'),
-                'Budget': p.get('projet_achat', {}).get('budget', 'N/A'),
-                'Couleurs': ', '.join(p.get('style_personnel', {}).get('couleurs_preferees', [])[:2]),
-                'Profession': p.get('identite', {}).get('profession', 'N/A')
-            })
-        
-        if client_data:
-            df = pd.DataFrame(client_data)
-            st.dataframe(df, use_container_width=True, height=400)
-        
-        # Détail client
-        st.subheader("Détail Client")
-        selected_id = st.selectbox("Sélectionner un client", [p.get('client_id') for p in profiles])
-        
-        if selected_id:
-            profile = next((p for p in profiles if p.get('client_id') == selected_id), None)
-            if profile:
-                col1, col2, col3 = st.columns(3)
-                
-                with col1:
-                    st.write("**Identité**")
-                    st.write(f"- Genre: {profile.get('identite', {}).get('genre', 'N/A')}")
-                    st.write(f"- Âge: {profile.get('identite', {}).get('age', 'N/A')}")
-                    st.write(f"- Profession: {profile.get('identite', {}).get('profession', 'N/A')}")
-                    st.write(f"- Statut: {profile.get('identite', {}).get('statut_relationnel', 'N/A')}")
-                
-                with col2:
-                    st.write("**Préférences**")
-                    colors = profile.get('style_personnel', {}).get('couleurs_preferees', [])
-                    st.write(f"- Couleurs: {', '.join(colors) if colors else 'N/A'}")
-                    matieres = profile.get('style_personnel', {}).get('matieres_preferees', [])
-                    st.write(f"- Matières: {', '.join(matieres) if matieres else 'N/A'}")
-                    regime = profile.get('metadata_client', {}).get('regime_alimentaire', 'N/A')
-                    st.write(f"- Régime: {regime}")
-                
-                with col3:
-                    st.write("**Projet d'achat**")
-                    st.write(f"- Budget: {profile.get('projet_achat', {}).get('budget', 'N/A')}")
-                    st.write(f"- Motif: {profile.get('projet_achat', {}).get('motif', 'N/A')}")
-                    pieces = profile.get('projet_achat', {}).get('pieces_cibles', [])
-                    st.write(f"- Pièces: {', '.join(pieces) if pieces else 'N/A'}")
-
-                # Affichage des Badges Amélioré
-                st.write("---")
-                st.subheader("Profil & Intérêts")
-                
-                badges = get_client_badges(profile)
-                
-                # CSS Badges
-                st.markdown("""
-                <style>
-                .badge-group {
-                    background: #ffffff;
-                    border: 1px solid #EBE4DC;
-                    border-radius: 8px;
-                    padding: 15px;
-                    margin-bottom: 15px;
-                    height: 100%;
-                }
-                .badge-header {
-                    font-size: 0.8rem;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    color: #8B4513;
-                    font-weight: 700;
-                    margin-bottom: 10px;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                }
-                .modern-badge {
-                    display: inline-flex;
-                    align-items: center;
-                    padding: 4px 10px;
-                    margin: 3px;
-                    border-radius: 20px;
-                    font-size: 0.8rem;
-                    font-weight: 600;
-                    transition: all 0.2s;
-                }
-                .b-statut { background: #8B4513; color: white; border: 1px solid #8B4513; }
-                .b-lifestyle { background: #FAF8F5; color: #5D4037; border: 1px solid #D7CCC8; }
-                .b-style { background: #EFEBE9; color: #3E2723; border: 1px solid #BCAAA4; }
-                .b-loc { background: #FFF3E0; color: #E65100; border: 1px solid #FFE0B2; }
-                </style>
-                """, unsafe_allow_html=True)
-                
-                # Groupes
-                col_life, col_style, col_info = st.columns(3)
-                
-                # 1. Lifestyle
-                with col_life:
-                    lifestyle_badges = [b for b in badges if b['type'] == 'lifestyle']
-                    st.markdown(f"""
-                    <div class="badge-group">
-                        <div class="badge-header">🧘 Lifestyle & Hobbies</div>
-                        <div>
-                            {''.join([f'<span class="modern-badge b-lifestyle">{b["text"]}</span>' for b in lifestyle_badges]) or '<span style="color:#999;font-style:italic">Aucune donnée</span>'}
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
-                
-                # 2. Style & Goûts
-                with col_style:
-                    style_badges = [b for b in badges if b['type'] == 'style']
-                    st.markdown(f"""
-                    <div class="badge-group">
-                        <div class="badge-header">🎨 Style & Préférences</div>
-                        <div>
-                            {''.join([f'<span class="modern-badge b-style">{b["text"]}</span>' for b in style_badges]) or '<span style="color:#999;font-style:italic">Aucune donnée</span>'}
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
-
-                # 3. Statut & Infos
-                with col_info:
-                    info_badges = [b for b in badges if b['type'] not in ['lifestyle', 'style']]
-                    st.markdown(f"""
-                    <div class="badge-group">
-                        <div class="badge-header">🌍 Statut & Info</div>
-                        <div>
-                            {''.join([f'<span class="modern-badge b-{"statut" if b["type"]=="statut" else "loc"}">{b["text"]}</span>' for b in info_badges]) or '<span style="color:#999;font-style:italic">Aucune donnée</span>'}
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
-                
-                with st.expander("Voir le profil complet (JSON)"):
-                    st.json(profile)
-    
-    # ===== TAB 3: ANALYSES =====
-    with tab3:
-        st.subheader("Analyses Croisées")
-        
-        # Démographie
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.write("**Répartition par Genre**")
-            fig = go.Figure(data=[go.Pie(
-                labels=list(kpis['genres'].keys()),
-                values=list(kpis['genres'].values()),
-                hole=0.6,
-                marker_colors=['#8B4513', '#D2691E']
-            )])
-            fig.update_layout(height=250, margin=dict(t=20, b=20, l=20, r=20))
-            st.plotly_chart(fig, use_container_width=True)
-        
-        with col2:
-            st.write("**Répartition par Âge**")
-            age_order = ['18-25', '26-35', '36-45', '46-55', '56+']
-            age_df = pd.DataFrame([
-                {'Âge': a, 'Clients': kpis['ages'].get(a, 0)} 
-                for a in age_order if kpis['ages'].get(a, 0) > 0
-            ])
-            fig = px.bar(age_df, x='Âge', y='Clients', color_discrete_sequence=['#A0522D'])
-            fig.update_layout(height=250, margin=dict(t=20, b=40, l=40, r=20))
-            st.plotly_chart(fig, use_container_width=True)
-        
-        # Matrice Budget x Statut
-        st.subheader("Matrice Budget × Statut")
-        
-        matrix_data = []
-        for statut in ['VIP', 'Fidèle', 'Régulier', 'Nouveau', 'Occasionnel']:
-            row = {'Statut': statut}
-            for budget in ['<5k', '5-10k', '10-15k', '15-25k', '25k+']:
-                count = len([p for p in profiles 
-                           if p.get('identite', {}).get('statut_relationnel') == statut
-                           and p.get('projet_achat', {}).get('budget') == budget])
-                row[budget] = count
-            matrix_data.append(row)
-        
-        matrix_df = pd.DataFrame(matrix_data)
-        st.dataframe(matrix_df.set_index('Statut'), use_container_width=True)
-        
-        # Corrélations VIP
-        st.subheader("Profil Type VIP")
-        
-        vip_profiles = [p for p in profiles if p.get('identite', {}).get('statut_relationnel') == 'VIP']
-        
-        if vip_profiles:
-            vip_colors = Counter()
-            vip_sports = Counter()
-            vip_budgets = Counter()
-            
-            for p in vip_profiles:
-                for c in p.get('style_personnel', {}).get('couleurs_preferees', []):
-                    vip_colors[c] += 1
-                sports = p.get('lifestyle_centres_interet', {}).get('sport', {})
-                for sport_list in sports.values():
-                    if isinstance(sport_list, list):
-                        for s in sport_list:
-                            vip_sports[s] += 1
-                vip_budgets[p.get('projet_achat', {}).get('budget', 'N/A')] += 1
+            # 3 Chiffres Clés (Calculés)
+            nouveaux = kpis['segments'].get('Nouveau', 0)
+            vip = kpis['vip_count']
+            to_contact = kpis['total'] # Par défaut
             
             col1, col2, col3 = st.columns(3)
-            
             with col1:
-                st.write("**Couleurs préférées**")
-                for c, cnt in vip_colors.most_common(5):
-                    st.write(f"• {c}: {cnt}")
-            
+                st.markdown(f"""
+                <div class="info-card" style="text-align: center;">
+                    <h2 style="font-size: 3rem; margin:0;">{to_contact}</h2>
+                    <p>CLIENTS TOTAL</p>
+                </div>
+                """, unsafe_allow_html=True)
             with col2:
-                st.write("**Sports pratiqués**")
-                for s, cnt in vip_sports.most_common(5):
-                    st.write(f"• {s}: {cnt}")
-            
+                st.markdown(f"""
+                <div class="info-card" style="text-align: center;">
+                    <h2 style="font-size: 3rem; margin:0;">{nouveaux}</h2>
+                    <p>NOUVEAUX</p>
+                </div>
+                """, unsafe_allow_html=True)
             with col3:
-                st.write("**Budgets**")
-                for b, cnt in vip_budgets.most_common():
-                    st.write(f"• {b}: {cnt}")
-    
-    # ===== TAB 4: ACTIONS =====
-    with tab4:
-        st.subheader("Actions Marketing Prioritaires")
-        
-        # Calculs pour les actions
-        budget_25k = len([p for p in profiles if p.get('projet_achat', {}).get('budget') == '25k+'])
-        nouveaux = kpis['segments'].get('Nouveau', 0)
-        yoga_count = stats['sports_populaires'].get('Yoga', 0)
-        vegans = stats['regimes_alimentaires'].get('Végane', 0)
-        
-        actions = [
-            {
-                'priority': 'URGENT',
-                'title': 'Contact VIP Budget 25K+',
-                'description': f'{budget_25k} clients à contacter personnellement',
-                'kpi': 'Taux de conversion',
-                'target': '80%'
-            },
-            {
-                'priority': 'IMPORTANT',
-                'title': 'Programme Welcome Nouveaux',
-                'description': f'{nouveaux} nouveaux clients à activer',
-                'kpi': 'Taux d\'activation',
-                'target': '50%'
-            },
-            {
-                'priority': 'OPPORTUNITÉ',
-                'title': 'Événement Wellness/Yoga',
-                'description': f'{yoga_count} clients yoga identifiés',
-                'kpi': 'Participation',
-                'target': '30%'
-            },
-            {
-                'priority': 'SEGMENT',
-                'title': 'Collection Éco-responsable',
-                'description': f'{vegans} clients véganes sensibles RSE',
-                'kpi': 'Engagement',
-                'target': '40%'
-            }
-        ]
-        
-        for action in actions:
-            with st.expander(f"**{action['priority']}** - {action['title']}"):
-                st.write(action['description'])
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.metric("KPI", action['kpi'])
-                with col2:
-                    st.metric("Objectif", action['target'])
-        
-        st.subheader("Infos Événements")
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.write("**Régimes à prévoir (catering)**")
-            total_special = sum(stats['regimes_alimentaires'].values())
-            for regime, count in stats['regimes_alimentaires'].items():
-                pct = count / kpis['total'] * 100
-                st.write(f"• {regime}: {count} ({pct:.0f}%)")
-        
-        with col2:
-            st.write("**Recommandations**")
-            veggie_total = stats['regimes_alimentaires'].get('Végane', 0) + stats['regimes_alimentaires'].get('Végétarien', 0)
-            st.warning(f"⚠️ {veggie_total} clients végétariens/véganes - Prévoir options dédiées")
-    
-    # ===== TAB 5: IA MISTRAL =====
-    with tab5:
-        st.subheader("Analyse IA avec Mistral")
-        
-        if not MISTRAL_OK:
-            st.error("❌ Mistral IA non disponible. Vérifiez le fichier .env et les dépendances.")
-        else:
-            st.success("✅ Mistral IA connecté")
+                st.markdown(f"""
+                <div class="info-card" style="text-align: center;">
+                    <h2 style="font-size: 3rem; margin:0;">{vip}</h2>
+                    <p>VIP</p>
+                </div>
+                """, unsafe_allow_html=True)
             
-            if conversations:
-                selected_client = st.selectbox("Sélectionner un client à analyser", 
-                                              [c['client_id'] for c in conversations])
+            st.info("💡 Sélectionnez l'onglet 'Clients' pour filtrer et contacter.")
+
+    # ===== TAB 2: CLIENTS =====
+    if "Clients" in tabs:
+        with tabs["Clients"]:
+            st.subheader("Base Clients")
+            
+            # Filtres
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                filter_statut = st.multiselect("Filtrer par statut", list(kpis['segments'].keys()))
+            with col2:
+                filter_budget = st.multiselect("Filtrer par budget", ['<5k', '5-10k', '10-15k', '15-25k', '25k+'])
+            with col3:
+                search = st.text_input("Rechercher (ID)")
+            
+            # Filtrer les profils
+            total_filtered = pg.count_clients(filter_statut, filter_budget, search)
+            page_size = 10 if mode_clienteling else 20
+            total_pages = max(1, (total_filtered + page_size - 1) // page_size)
+            page = st.number_input("Page", min_value=1, max_value=total_pages, value=1, step=1)
+            offset = (page - 1) * page_size
+            client_ids = pg.get_client_ids_page(filter_statut, filter_budget, search, limit=page_size, offset=offset)
+            profiles_page = pg.get_profiles_by_ids(client_ids)
+
+            st.info(f"**{total_filtered}** clients affiches (page {page}/{total_pages})")
+            
+            # === Feature: Copy Actions ===
+            if profiles_page:
+                emails_to_copy = []
+                for p in profiles_page:
+                    eid, _ = get_contact_info(p.get('client_id', ''), show_simulated)
+                    if eid: emails_to_copy.append(eid)
                 
-                conversation = next((c for c in conversations if c['client_id'] == selected_client), None)
-                
-                if conversation:
-                    with st.expander("📄 Voir la transcription"):
-                        st.text_area("", conversation['transcription'], height=200, disabled=True)
-                    
-                    if st.button("🚀 Analyser avec Mistral IA"):
-                        with st.spinner("Analyse en cours..."):
-                            try:
-                                analyzer = MistralAnalyzer()
-                                result = analyzer.analyze_transcription(conversation['transcription'], selected_client)
-                                
-                                if "error" not in result:
-                                    st.success("✅ Analyse terminée")
-                                    
-                                    st.write("**📋 Résumé**")
-                                    st.info(result.get('resume', 'N/A'))
-                                    
-                                    col1, col2 = st.columns(2)
-                                    
-                                    with col1:
-                                        st.write("**👤 Profil détecté**")
-                                        profil = result.get('profil_client', {})
-                                        st.write(f"- Genre: {profil.get('genre', 'N/A')}")
-                                        st.write(f"- Âge: {profil.get('age_estime', 'N/A')}")
-                                        st.write(f"- Profession: {profil.get('profession', 'N/A')}")
-                                        st.write(f"- Statut: {profil.get('statut_vip', 'N/A')}")
-                                    
-                                    with col2:
-                                        st.write("**💰 Projet d'achat**")
-                                        projet = result.get('projet_achat', {})
-                                        st.write(f"- Type: {projet.get('type', 'N/A')}")
-                                        st.write(f"- Budget: {projet.get('budget_estime', 'N/A')}")
-                                        st.write(f"- Urgence: {projet.get('urgence', 'N/A')}")
-                                    
-                                    st.write("**🏷️ Tags suggérés**")
-                                    tags = result.get('tags_suggeres', [])
-                                    st.write(", ".join(tags) if tags else "Aucun")
-                                    
-                                    st.write("**💡 Recommandations commerciales**")
-                                    for i, rec in enumerate(result.get('recommandations_commerciales', []), 1):
-                                        st.write(f"{i}. {rec}")
-                                    
-                                    st.metric("Score Potentiel", f"{result.get('score_potentiel', 0)}/100")
-                                else:
-                                    st.error(f"Erreur: {result.get('error')}")
-                            except Exception as e:
-                                st.error(f"Erreur: {str(e)}")
+                with st.expander("📋 Copier les emails (Presse-papiers)", expanded=False):
+                    st.markdown("Cliquer pour copier la liste des emails pour Outlook :")
+                    st.code("; ".join(emails_to_copy), language="text")
+            # =============================
+            
+            if mode_clienteling:
+                st.subheader("Vue clienteling")
+                for p in profiles_page:
+                    ice = generate_ice_breaker(p)
+                    action, reason = next_best_action(p)
+                    image = get_product_image(p)
+                    if image:
+                        st.image(image, width=160)
+                    st.markdown(f"""
+                    <div class=\"info-card\">
+                        <h4>{p.get('client_id', 'Client')}</h4>
+                        <div><b>Statut:</b> {p.get('identite', {}).get('statut_relationnel', 'N/A')} | <b>Budget:</b> {p.get('projet_achat', {}).get('budget', 'N/A')}</div>
+                        <div><b>Couleurs:</b> {', '.join(p.get('style_personnel', {}).get('couleurs_preferees', [])[:3]) or 'N/A'}</div>
+                        <div><b>A dire aujourd'hui:</b> {ice}</div>
+                        <div><b>Next Best Action:</b> {action} <span style=\"color:#666\">({reason})</span></div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                st.caption(f"Page {page}/{total_pages} - {total_filtered} clients au total")
             else:
-                st.warning("Aucune conversation disponible")
+                client_data = []
+                for p in profiles_page:
+                    email, phone = get_contact_info(p.get('client_id', ''), show_simulated)
+                    client_data.append({
+                        'ID': p.get('client_id', 'N/A'),
+                        'Genre': p.get('identite', {}).get('genre', 'N/A'),
+                        'Age': p.get('identite', {}).get('age', 'N/A'),
+                        'Statut': p.get('identite', {}).get('statut_relationnel', 'N/A'),
+                        'Budget': p.get('projet_achat', {}).get('budget', 'N/A'),
+                        'Couleurs': ', '.join(p.get('style_personnel', {}).get('couleurs_preferees', [])[:2]),
+                        'Profession': p.get('identite', {}).get('profession', 'N/A'),
+                        'Email': email,
+                        'Tel': phone
+                    })
+                if client_data:
+                    df = pd.DataFrame(client_data)
+                    st.dataframe(df, use_container_width=True, height=400)
+                    filters_label = "all"
+                    if filter_statut or filter_budget or search:
+                        filters_label = "filtered"
+                    filename = f"clients_{filters_label}_{total_filtered}_{datetime.now().strftime('%Y%m%d')}.csv"
+                    st.download_button("Exporter CSV", df.to_csv(index=False).encode("utf-8"), filename, "text/csv")
+
+            # Détail client
+            st.subheader("Détail Client")
+            selected_id = st.text_input("ID client")
+            
+            if selected_id:
+                profile = pg.get_profile(selected_id)
+                if profile:
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.write("**Identité**")
+                        st.write(f"- Genre: {profile.get('identite', {}).get('genre', 'N/A')}")
+                        st.write(f"- Statut: {profile.get('identite', {}).get('statut_relationnel', 'N/A')}")
+                    with col2:
+                        st.write("**Préférences**")
+                        colors = profile.get('style_personnel', {}).get('couleurs_preferees', [])
+                        st.write(f"- Couleurs: {', '.join(colors) if colors else 'N/A'}")
+                    with col3:
+                        st.write("**Projet**")
+                        st.write(f"- Budget: {profile.get('projet_achat', {}).get('budget', 'N/A')}")
+                    
+                    st.write("---")
+                    st.info(generate_ice_breaker(profile))
+
+                    action, reason = next_best_action(profile)
+                    st.write(f"**Next Action:** {action} ({reason})")
+
+                    # === Feature: Quick Action ===
+                    st.markdown("**Action Rapide (SMS/WhatsApp)**")
+                    quick_info = f"{profile.get('identite', {}).get('statut_relationnel', 'Client')} - {profile.get('client_id', 'Inconnu')} - {get_contact_info(profile.get('client_id', ''), True)[1]}"
+                    st.code(quick_info, language="text")
+                    # =============================
+
+                    with st.expander("Voir le profil complet"):
+                        st.json(profile)
+
+    # ===== TAB 3: ANALYSES =====
+    if "Analyses" in tabs:
+        with tabs["Analyses"]:
+            st.subheader("Analyses Croisees")
+            col1, col2 = st.columns(2)
+            with col1:
+                st.write("**Répartition par Genre**")
+                fig = go.Figure(data=[go.Pie(labels=list(kpis['genres'].keys()), values=list(kpis['genres'].values()), hole=0.6)])
+                fig.update_layout(height=250)
+                st.plotly_chart(fig, use_container_width=True)
+            with col2:
+                st.write("**Répartition par Âge**")
+                age_order = ['18-25', '26-35', '36-45', '46-55', '56+']
+                age_df = pd.DataFrame([{'Âge': a, 'Clients': kpis['ages'].get(a, 0)} for a in age_order if kpis['ages'].get(a, 0)>0])
+                fig = px.bar(age_df, x='Âge', y='Clients')
+                fig.update_layout(height=250)
+                st.plotly_chart(fig, use_container_width=True)
+
+            query = st.text_input("Segmentation IA (ex: VIP Paris budget 25k)")
+            if query:
+                criteria = parse_segment_query(query)
+                st.info(f"Critères identifiés: {criteria}")
+
+    # ===== TAB 4: ACTIONS =====
+    if "Actions" in tabs:
+        with tabs["Actions"]:
+            st.subheader("Actions Marketing Prioritaires")
+            budget_25k = kpis['budgets'].get('25k+', 0)
+            nouveaux = kpis['segments'].get('Nouveau', 0)
+            
+            actions = [
+                {'priority': 'URGENT', 'title': 'Contact VIP Budget 25K+', 'description': f'{budget_25k} clients à contacter', 'kpi': 'Conversion', 'target': '80%'},
+                {'priority': 'IMPORTANT', 'title': 'Programme Welcome Nouveaux', 'description': f'{nouveaux} nouveaux clients', 'kpi': 'Activation', 'target': '50%'}
+            ]
+            for action in actions:
+                with st.expander(f"**{action['priority']}** - {action['title']}"):
+                    st.write(action['description'])
+                    c1, c2 = st.columns(2)
+                    c1.metric("KPI", action['kpi'])
+                    c2.metric("Objectif", action['target'])
+
+    # ===== TAB 5: IA MISTRAL =====
+    if "IA Mistral" in tabs:
+        with tabs["IA Mistral"]:
+            st.subheader("Analyse IA avec Mistral")
+            if MISTRAL_OK:
+                st.success("✅ Mistral IA connecté")
+                if conversations:
+                     st.info("Sélectionnez un client pour analyser sa conversation.")
+                else:
+                    st.warning("Pas de conversations.")
+            else:
+                st.error("Mistral IA non disponible.")
+
+    # ===== TAB 6: EQUIPE =====
+    if "Equipe & Tendances" in tabs:
+        with tabs["Equipe & Tendances"]:
+            st.subheader("Performance Equipe")
+            team = build_team_metrics_from_counts(kpis['total'], kpis['vip_count'], kpis['high_value'])
+            if show_simulated:
+                 st.dataframe(pd.DataFrame(team).T)
+            else:
+                st.info("Donnees masquées.")
+
+    # ===== TAB 7: DATA & OPS =====
+    if "Data & Ops" in tabs:
+        with tabs["Data & Ops"]:
+            st.subheader("Gestionnaire CSV")
+            uploaded = st.file_uploader("Uploader CSV", type=["csv"])
+            if uploaded:
+                st.success("Fichier reçu (simulation).")
 
 if __name__ == "__main__":
     main()

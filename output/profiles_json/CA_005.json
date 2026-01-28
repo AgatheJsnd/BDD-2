@@ -21,8 +21,8 @@
       ]
     },
     "art_culture": [
-      "Musees",
-      "Art"
+      "Art",
+      "Musees"
     ],
     "voyage": [
       "Aventure"
@@ -30,9 +30,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
+      "Cognac",
       "Rose_gold",
-      "Beige",
-      "Cognac"
+      "Beige"
     ],
     "matieres_preferees": [
       "Cuir"

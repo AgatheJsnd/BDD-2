@@ -16,8 +16,8 @@
   "lifestyle_centres_interet": {
     "art_culture": [
       "Opera",
-      "Musees",
-      "Art"
+      "Art",
+      "Musees"
     ],
     "voyage": [
       "Culturel"
@@ -25,11 +25,11 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
-      "Rose_gold",
-      "Noir",
+      "Bordeaux",
       "Cognac",
-      "Bordeaux"
+      "Navy",
+      "Noir",
+      "Rose_gold"
     ]
   },
   "projet_achat": {
