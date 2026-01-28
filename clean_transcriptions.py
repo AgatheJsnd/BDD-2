@@ -13,23 +13,29 @@ HESITATION_MARKERS = [
     "euh", "ehh", "ahh", "hum", "mmh", "bah", "bon", "ben", "enfin", "en gros", 
     "on va dire", "tu sais", "vous savez", "quoi", "bref", "en quelque sorte", 
     "pour ainsi dire", "voilà", "machin", "truc", "genre", "disons que", 
-    "un petit peu", "un tantinet", "si vous voulez", "c'est-à-dire",
-    
+    "un petit peu", "un tantinet", "si vous voulez", "c'est-à-dire", "du coup",
+    "eh bien", "tu vois", "en quelque manière", "je veux dire", "plus ou moins",
+    "si tu veux", "par exemple", "alors", "donc", "en fait", "bon alors", "là",
+    "hein", "voyez-vous", "euhm", "mouais",
+
     # English
     "uh", "um", "er", "ah", "like", "you know", "i mean", "sort of", "kind of", 
     "basically", "actually", "well", "right", "pretty much", "as it were",
+    "you see", "i guess", "kind of like",
     
     # Español
     "em", "este", "bueno", "o sea", "pues", "digamos", "en plan", "ya sabes",
-    "vamos a ver", "por así decirlo", "más o menos", "un poquito",
+    "vamos a ver", "por así decirlo", "más o menos", "un poquito", "vale",
+    "entonces", "mira", "verdad", "ya veis",
     
     # Italiano
     "tipo", "diciamo", "ehm", "beh", "allora", "insomma", "cioè", "praticamente",
-    "in un certo senso", "per così dire", "pressappoco",
+    "in un certo senso", "per così dire", "pressappoco", "capito", "sai", "bene",
+    "guarda", "vabbè",
     
     # Deutsch
     "äh", "ähmm", "halt", "quasi", "sozusagen", "gewissermaßen", "weißt du",
-    "genau", "eigentlich", "vielleicht", "etwa", "ungefähr"
+    "genau", "eigentlich", "vielleicht", "etwa", "ungefähr", "na ja", "tja"
 ]
 
 def clean_text(text):
@@ -44,23 +50,47 @@ def clean_text(text):
     text = text.lower()
 
     # 2. Suppression des marqueurs d'hésitation
-    # On utilise \b pour s'assurer qu'on supprime le mot entier et pas une partie d'un autre mot
     # On trie par longueur décroissante pour éviter que "ah" ne matche dans "ahh" avant suppression
     sorted_markers = sorted(HESITATION_MARKERS, key=len, reverse=True)
-    pattern = r'\b(?:' + '|'.join(map(re.escape, sorted_markers)) + r')\b'
-    text = re.sub(pattern, '', text)
+    
+    # Échappement des marqueurs et remplacement des espaces par \s+ pour flexibilité
+    escaped_markers = [re.escape(m).replace(r'\ ', r'\s+') for m in sorted_markers]
+    pattern = r'\b(?:' + '|'.join(escaped_markers) + r')\b'
+
+    # Boucle de nettoyage itératif pour gérer les imbrications (ex: "en euh gros")
+    # On limite à 5 itérations pour éviter toute boucle infinie, bien que peu probable ici
+    for _ in range(5):
+        old_text = text
+        
+        # Suppression des marqueurs
+        text = re.sub(pattern, '', text)
+        
+        # Réduction immédiate des espaces pour recoller les expressions cassées (ex: "en  gros" -> "en gros")
+        text = re.sub(r'\s+', ' ', text).strip()
+        
+        if text == old_text:
+            break
 
     # 3. Nettoyage du bruit et ponctuation excessive
     # Remplacer la ponctuation répétée (ex: "!!" devient "!", "..." devient ".")
     text = re.sub(r'([!?,.])\1+', r'\1', text)
     
-    # Supprimer les caractères spéciaux non alpha-numériques (sauf ponctuation basique et espaces)
-    # Optionnel : dépend de si on veut garder la ponctuation ou non.
-    # Ici, on garde les caractères de base et la ponctuation de phrase
-    text = re.sub(r'[^a-z0-9àâçéèêëîïôùûüÿñæœ\s\.,?!]', ' ', text)
+    # Nettoyage des virgules ou points isolés ou résiduels (ex: ", , .")
+    # On remplace les suites de ponctuations/espaces par un seul espace ou ponctuation propre
+    text = re.sub(r'\s*([,?.!])\s*', r'\1 ', text)  # Colle la ponctuation au mot précédent
+    text = re.sub(r'(?:[,?.!]\s*){2,}', ', ', text) # Réduit les suites de ponctuations (ex: ", ." -> ", ")
+    
+    # Supprimer les caractères spéciaux non alpha-numériques 
+    # (sauf ponctuation basique, espaces et accents multilingues)
+    # accents: àâçéèêëîïôùûüÿñæœ (fr) + áéíóú¿¡ (es/it) + äöß (de)
+    text = re.sub(r'[^a-z0-9àâçéèêëîïôùûüÿñæœáéíóúìòäöß¿¡\s\.,?!]', ' ', text)
 
     # 4. Suppression des espaces multiples
     text = re.sub(r'\s+', ' ', text).strip()
+    
+    # Correction finale pour la ponctuation collée ou début de phrase
+    text = re.sub(r'\s+([,?.!])', r'\1', text) # Enlève espace avant ponctuation
+    text = re.sub(r'^[,?.!]\s*', '', text)     # Enlève ponctuation au début
 
     return text
 
