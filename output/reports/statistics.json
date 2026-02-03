@@ -5,10 +5,10 @@
     "Homme": 5
   },
   "par_age": {
-    "36-45": 15,
+    "36-45": 20,
     "56+": 14,
-    "46-55": 12,
-    "26-35": 3
+    "46-55": 18,
+    "26-35": 5
   },
   "par_statut": {
     "VIP": 47,
@@ -18,11 +18,11 @@
     "Régulier": 9
   },
   "par_budget": {
-    "<5k": 7,
+    "<5k": 10,
     "5-10k": 27,
     "10-15k": 22,
-    "25k+": 17,
-    "15-25k": 27
+    "15-25k": 24,
+    "25k+": 17
   },
   "sports_populaires": {
     "Golf": 9,
@@ -34,18 +34,18 @@
     "Fitness": 9
   },
   "couleurs_populaires": {
-    "Cognac": 43,
     "Noir": 45,
+    "Cognac": 43,
     "Navy": 35,
     "Bordeaux": 22,
-    "Rose_gold": 20,
+    "Rose_gold": 18,
     "Beige": 18,
     "Gris": 9,
     "Blanc": 3
   },
   "regimes_alimentaires": {
-    "Pescetarien": 7,
-    "Végétarien": 31,
-    "Végane": 34
+    "Pescetarien": 8,
+    "Végétarien": 25,
+    "Végane": 32
   }
 }

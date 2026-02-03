@@ -1,0 +1,41 @@
+{
+  "client_id": "TEST_0218",
+  "metadata": {
+    "date_conversation": "2026-03-29",
+    "duration": "10 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "26-35",
+    "statut_relationnel": "Régulier",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Blanc"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "budget": "<5k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien"
+  }
+}

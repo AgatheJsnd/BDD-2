@@ -1,0 +1,31 @@
+{
+  "client_id": "DIRTY_115",
+  "metadata": {
+    "date_conversation": "",
+    "duration": "court",
+    "language": "en"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "36-45",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

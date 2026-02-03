@@ -25,19 +25,19 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
-      "Gris",
-      "Cognac",
       "Beige",
-      "Navy"
+      "Cognac",
+      "Navy",
+      "Gris",
+      "Bordeaux"
     ],
     "matieres_preferees": [
       "Cuir"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "15-25k"
+    "motif": "Mariage",
+    "budget": "25k+"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},
@@ -50,7 +50,6 @@
     "canal_contact": "Email"
   },
   "metadata_client": {
-    "regime_alimentaire": "Végétarien",
     "allergies": [
       "fruits_coque"
     ]

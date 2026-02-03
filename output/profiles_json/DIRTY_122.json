@@ -1,0 +1,38 @@
+{
+  "client_id": "DIRTY_122",
+  "metadata": {
+    "date_conversation": "",
+    "duration": "30-45 min",
+    "language": "Spanish"
+  },
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Golf"
+      ]
+    }
+  },
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

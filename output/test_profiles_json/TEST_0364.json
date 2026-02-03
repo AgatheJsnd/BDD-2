@@ -1,0 +1,42 @@
+{
+  "client_id": "TEST_0364",
+  "metadata": {
+    "date_conversation": "2026-06-22",
+    "duration": "30 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art",
+      "Musees"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Gris"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

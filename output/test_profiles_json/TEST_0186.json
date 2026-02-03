@@ -1,0 +1,37 @@
+{
+  "client_id": "TEST_0186",
+  "metadata": {
+    "date_conversation": "2026-01-24",
+    "duration": "40 min",
+    "language": "PT"
+  },
+  "identite": {
+    "age": "46-55",
+    "statut_relationnel": "Nouveau"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Navy"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

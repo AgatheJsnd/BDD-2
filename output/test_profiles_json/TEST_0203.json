@@ -1,0 +1,31 @@
+{
+  "client_id": "TEST_0203",
+  "metadata": {
+    "date_conversation": "2026-03-17",
+    "duration": "25 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "56+",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

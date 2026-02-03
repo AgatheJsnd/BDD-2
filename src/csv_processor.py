@@ -31,11 +31,11 @@ class CSVProcessor:
         for _, row in self.data.iterrows():
             conversations.append({
                 "client_id": row["ID"],
-                "date": row["Date"],
-                "duration": row["Duration"],
-                "language": row["Language"],
-                "length": row["Length"],
-                "transcription": row["Transcription"],
+                "date": row["Date"] if pd.notna(row["Date"]) else "",
+                "duration": row["Duration"] if pd.notna(row["Duration"]) else "",
+                "language": row["Language"] if pd.notna(row["Language"]) else "FR",
+                "length": row["Length"] if pd.notna(row["Length"]) else "medium",
+                "transcription": row["Transcription"] if pd.notna(row["Transcription"]) else "",
             })
 
         return conversations

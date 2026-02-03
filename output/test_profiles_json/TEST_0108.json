@@ -1,0 +1,38 @@
+{
+  "client_id": "TEST_0108",
+  "metadata": {
+    "date_conversation": "2026-06-06",
+    "duration": "120 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "36-45",
+    "statut_relationnel": "Régulier",
+    "profession": "Artiste"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

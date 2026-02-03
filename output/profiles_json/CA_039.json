@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "46-55",
     "statut_relationnel": "VIP",
     "profession": "Entrepreneur"
   },
@@ -29,9 +30,8 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Rose_gold",
-      "Navy",
-      "Noir"
+      "Noir",
+      "Navy"
     ],
     "pieces_favorites": [
       "Sacs"
@@ -39,7 +39,7 @@
   },
   "projet_achat": {
     "motif": "Mariage",
-    "budget": "15-25k"
+    "budget": "25k+"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

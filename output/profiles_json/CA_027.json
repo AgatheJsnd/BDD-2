@@ -11,11 +11,11 @@
     "profession": "Entrepreneur"
   },
   "localisation": {
-    "europe": [
-      "London"
-    ],
     "moyen_orient_asie": [
       "Hong_Kong"
+    ],
+    "europe": [
+      "London"
     ]
   },
   "mobilite_rythme_vie": {
@@ -40,7 +40,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Diplome",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

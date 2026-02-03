@@ -1,0 +1,49 @@
+{
+  "client_id": "DIRTY_065",
+  "metadata": {
+    "date_conversation": "invalid",
+    "duration": "",
+    "language": "fr"
+  },
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Régulier",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Running"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

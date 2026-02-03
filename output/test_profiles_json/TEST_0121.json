@@ -1,0 +1,53 @@
+{
+  "client_id": "TEST_0121",
+  "metadata": {
+    "date_conversation": "2026-03-13",
+    "duration": "5 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP"
+  },
+  "localisation": {
+    "moyen_orient_asie": [
+      "Hong_Kong"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Montres",
+      "Portefeuille"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "allergies": [
+      "fruits_coque"
+    ]
+  }
+}

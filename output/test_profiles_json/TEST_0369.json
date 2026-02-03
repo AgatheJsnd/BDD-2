@@ -1,0 +1,47 @@
+{
+  "client_id": "TEST_0369",
+  "metadata": {
+    "date_conversation": "2026-02-07",
+    "duration": "35 min",
+    "language": "ZH"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "18-25",
+    "statut_relationnel": "Régulier",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Ski"
+      ]
+    }
+  },
+  "style_personnel": {
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Portefeuille"
+    ]
+  },
+  "projet_achat": {
+    "budget": "<5k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

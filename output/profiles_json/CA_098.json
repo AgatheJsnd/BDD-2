@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "46-55",
     "statut_relationnel": "Fidèle",
     "profession": "Profession_libérale"
   },
@@ -26,11 +27,10 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
-      "Cognac",
       "Navy",
       "Noir",
-      "Rose_gold"
+      "Bordeaux",
+      "Cognac"
     ]
   },
   "projet_achat": {

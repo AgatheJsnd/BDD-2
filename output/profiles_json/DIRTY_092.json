@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_092",
+  "metadata": {
+    "date_conversation": "Client M. 李明 (Li Ming), 50ans. Wants to buy un sac pour business trips. \n    Budget environ 15000€. Habite Monte-Carlo mais travels often to München et Milano.\n    Sport: voile. vegan sauf occasionnellement. Cuir bordeaux preferred. intolérances: gluten lactose.",
+    "duration": "January 15, 2026",
+    "language": "environ 30"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

@@ -1,0 +1,44 @@
+{
+  "client_id": "TEST_0104",
+  "metadata": {
+    "date_conversation": "2026-02-17",
+    "duration": "15 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Golf"
+      ]
+    }
+  },
+  "style_personnel": {
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Diplome",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

@@ -26,7 +26,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},
@@ -37,7 +37,5 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
-  }
+  "metadata_client": {}
 }

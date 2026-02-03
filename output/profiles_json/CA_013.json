@@ -29,7 +29,7 @@
   },
   "projet_achat": {
     "motif": "Cadeau",
-    "budget": "25k+"
+    "budget": "<5k"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},
@@ -39,7 +39,5 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
-  }
+  "metadata_client": {}
 }

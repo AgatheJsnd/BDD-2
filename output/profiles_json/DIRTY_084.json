@@ -1,0 +1,46 @@
+{
+  "client_id": "DIRTY_084",
+  "metadata": {
+    "date_conversation": "",
+    "duration": "30 min",
+    "language": "Spanish"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Occasionnel"
+  },
+  "localisation": {
+    "europe": [
+      "Paris"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Golf"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Rose_gold"
+    ]
+  },
+  "projet_achat": {
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_050",
+  "metadata": {
+    "date_conversation": "January 15, 2026",
+    "duration": "M. Signora D'Angelo, nouveau client mais client fidèle depuis 2015.\n    late twenties dynamique et retraité depuis 20 ans.\n    Budget 30000EUR limité mais très généreux illimité.\n    sans gluten sans lactose strict mais mange de tout occasionnellement.\n    Habite milano mais n'a jamais visité cette ville.\n    Aime Noir mais déteste absolument cette couleur.\n    ??? mais aucun problème avec ces allergènes.",
+    "language": "Français"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

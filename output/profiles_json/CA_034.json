@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "46-55",
     "statut_relationnel": "Fidèle"
   },
   "localisation": {},
@@ -21,9 +22,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
+      "Noir",
       "Navy",
-      "Noir"
+      "Cognac"
     ]
   },
   "projet_achat": {

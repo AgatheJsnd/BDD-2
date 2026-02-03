@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "36-45",
     "statut_relationnel": "VIP"
   },
   "localisation": {
@@ -27,10 +28,9 @@
   "style_personnel": {
     "couleurs_preferees": [
       "Gris",
-      "Beige",
       "Navy",
       "Noir",
-      "Rose_gold"
+      "Beige"
     ],
     "pieces_favorites": [
       "Sacs",

@@ -1,0 +1,45 @@
+{
+  "client_id": "TEST_0141",
+  "metadata": {
+    "date_conversation": "2026-04-02",
+    "duration": "5 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "56+",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Tennis"
+      ]
+    }
+  },
+  "style_personnel": {
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Anniversaire"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "allergies": [
+      "lactose"
+    ]
+  }
+}

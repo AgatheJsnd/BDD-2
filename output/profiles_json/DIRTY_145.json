@@ -1,0 +1,53 @@
+{
+  "client_id": "DIRTY_145",
+  "metadata": {
+    "date_conversation": "invalid",
+    "duration": "environ 30",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "56+",
+    "statut_relationnel": "Régulier",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {
+    "europe": [
+      "Milan",
+      "Paris"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [
+        "Football"
+      ]
+    }
+  },
+  "style_personnel": {
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien",
+    "allergies": [
+      "fruits_coque"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "client_id": "TEST_0117",
+  "metadata": {
+    "date_conversation": "2026-02-05",
+    "duration": "40 min",
+    "language": "PT"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "56+",
+    "statut_relationnel": "Régulier",
+    "profession": "Artiste"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "allergies": [
+      "lactose"
+    ]
+  }
+}

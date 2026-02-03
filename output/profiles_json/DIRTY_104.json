@@ -1,0 +1,30 @@
+{
+  "client_id": "DIRTY_104",
+  "metadata": {
+    "date_conversation": "invalid",
+    "duration": "environ 30",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

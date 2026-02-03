@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_123",
+  "metadata": {
+    "date_conversation": "عميل مهم mme durand marie من Inconnu.\n    العمر: fifty-two. الميزانية: Budget: 12000€.\n    يبحث عن حقيبة فاخرة navy.\n    halal. . \n    Sport: running. رياضي جدا.\n    Rappeler en français merci.",
+    "duration": "invalid",
+    "language": "30 minutes"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

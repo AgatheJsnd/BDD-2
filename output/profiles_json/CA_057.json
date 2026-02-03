@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "46-55",
     "statut_relationnel": "Régulier",
     "profession": "Profession_libérale"
   },
@@ -26,8 +27,8 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
-      "Navy"
+      "Navy",
+      "Bordeaux"
     ]
   },
   "projet_achat": {

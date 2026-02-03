@@ -1,0 +1,38 @@
+{
+  "client_id": "TEST_0323",
+  "metadata": {
+    "date_conversation": "2026-01-31",
+    "duration": "35 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "46-55",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Rose_gold"
+    ],
+    "pieces_favorites": [
+      "Portefeuille"
+    ]
+  },
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

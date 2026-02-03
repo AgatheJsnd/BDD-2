@@ -1,0 +1,35 @@
+{
+  "client_id": "DIRTY_129",
+  "metadata": {
+    "date_conversation": "31/02/2026",
+    "duration": "long",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "56+",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Bordeaux"
+    ]
+  },
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

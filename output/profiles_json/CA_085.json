@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "56+",
     "statut_relationnel": "VIP"
   },
   "localisation": {
@@ -30,7 +31,7 @@
   },
   "projet_achat": {
     "motif": "Mariage",
-    "budget": "15-25k"
+    "budget": "25k+"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

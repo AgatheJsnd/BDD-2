@@ -464,41 +464,6 @@ def filter_profiles_with_query(profiles, query):
         filtered = [p for p in filtered if has_tag(p)]
     return filtered
 
-def main():
-    # Charger les données
-    pg = ProfileGenerator()
-            for item in style[key]:
-                badges.append({'text': item, 'type': 'style'})
-                
-    # Mobilité
-    mobilite = profile.get('mobilite_rythme_vie', {}).get('frequence_deplacement')
-    if mobilite:
-        badges.append({'text': mobilite, 'type': 'mobilite'})
-        
-    return badges
-
-def generate_ice_breaker(profile):
-    """Genere une phrase d'accroche simple a partir du profil."""
-    identite = profile.get('identite', {})
-    projet = profile.get('projet_achat', {})
-    style = profile.get('style_personnel', {})
-    metadata = profile.get('metadata', {})
-
-    pieces = projet.get('pieces_cibles', [])
-    motif = projet.get('motif', '')
-    couleurs = style.get('couleurs_preferees', [])
-    date_conv = metadata.get('date_conversation', '')
-
-    if motif:
-        return f"Revenir sur le motif mentionne ({motif}) et verifier si le besoin est toujours d'actualite."
-    if pieces:
-        return f"Demander si la piece ciblee ({pieces[0]}) est toujours prioritaire."
-    if couleurs:
-        return f"Proposer des nouveautes dans la couleur {couleurs[0]}."
-    if date_conv:
-        return "Demander si les attentes ont evolue depuis la derniere visite."
-    return "Engager la conversation sur ses dernieres envies ou projets."
-
 def next_best_action(profile):
     """Retourne une action recommande et sa justification."""
     statut = profile.get('identite', {}).get('statut_relationnel', '')

@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "46-55",
     "statut_relationnel": "VIP",
     "profession": "Cadre"
   },
@@ -21,8 +22,8 @@
   "lifestyle_centres_interet": {
     "sport": {
       "individuel": [
-        "Yoga",
         "Golf",
+        "Yoga",
         "Ski"
       ]
     },
@@ -39,7 +40,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Diplome",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

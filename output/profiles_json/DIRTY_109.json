@@ -1,0 +1,35 @@
+{
+  "client_id": "DIRTY_109",
+  "metadata": {
+    "date_conversation": "31/02/2026",
+    "duration": "???",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Homme",
+    "age": "46-55",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {
+    "europe": [
+      "Paris"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
+}

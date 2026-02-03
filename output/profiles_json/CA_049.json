@@ -8,7 +8,7 @@
   "identite": {
     "genre": "Homme",
     "age": "46-55",
-    "statut_relationnel": "Fidèle"
+    "statut_relationnel": "Régulier"
   },
   "localisation": {
     "europe": [
@@ -25,8 +25,7 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Rose_gold"
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
@@ -34,7 +33,7 @@
   },
   "projet_achat": {
     "motif": "Cadeau",
-    "budget": "25k+"
+    "budget": "<5k"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},
@@ -44,7 +43,5 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
-  }
+  "metadata_client": {}
 }

@@ -41,15 +41,14 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Rose_gold",
+      "Noir",
       "Navy",
-      "Noir"
+      "Cognac"
     ]
   },
   "projet_achat": {
     "motif": "Mariage",
-    "budget": "15-25k"
+    "budget": "25k+"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

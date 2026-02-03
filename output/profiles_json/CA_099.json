@@ -6,9 +6,9 @@
     "language": "Français"
   },
   "identite": {
-    "genre": "Femme",
+    "genre": "Homme",
     "age": "56+",
-    "statut_relationnel": "Fidèle"
+    "statut_relationnel": "Régulier"
   },
   "localisation": {},
   "mobilite_rythme_vie": {
@@ -35,7 +35,5 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
-  }
+  "metadata_client": {}
 }

@@ -1,0 +1,61 @@
+{
+  "client_id": "TEST_0048",
+  "metadata": {
+    "date_conversation": "2026-05-05",
+    "duration": "55 min",
+    "language": "ZH"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "46-55",
+    "statut_relationnel": "VIP"
+  },
+  "localisation": {
+    "amerique": [
+      "New_York"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Golf",
+        "Yoga"
+      ]
+    },
+    "art_culture": [
+      "Art",
+      "Musees"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Gris"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Montres"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien"
+  }
+}

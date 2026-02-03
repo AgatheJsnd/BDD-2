@@ -1,0 +1,39 @@
+{
+  "client_id": "DIRTY_063",
+  "metadata": {
+    "date_conversation": "00/00/0000",
+    "duration": "30 min",
+    "language": "en"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {
+    "moyen_orient_asie": [
+      "Dubai"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Beige"
+    ]
+  },
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "allergies": [
+      "fruits_coque"
+    ]
+  }
+}

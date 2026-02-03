@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Homme",
+    "age": "26-35",
     "statut_relationnel": "VIP"
   },
   "localisation": {
@@ -25,7 +26,7 @@
   },
   "projet_achat": {
     "motif": "Cadeau",
-    "budget": "25k+"
+    "budget": "10-15k"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

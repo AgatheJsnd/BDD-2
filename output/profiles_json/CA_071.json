@@ -21,9 +21,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
+      "Noir",
       "Navy",
-      "Noir"
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
@@ -42,6 +42,6 @@
     "canal_contact": "Email"
   },
   "metadata_client": {
-    "regime_alimentaire": "Végane"
+    "regime_alimentaire": "Pescetarien"
   }
 }

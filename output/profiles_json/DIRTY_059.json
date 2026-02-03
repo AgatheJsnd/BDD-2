@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_059",
+  "metadata": {
+    "date_conversation": "{name: \"mme durand marie\", age: la trentaine, \n    budget: \"unlimited budget\", city: zürich\",\n    diet: \"vegan sauf occasionnellement, allergy: \"aucune\",\n    color: bordeaux, sport\": \"équitation\"\n    ERROR: JSON PARSE FAILED LINE 3}",
+    "duration": "",
+    "language": "30 minutes"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

@@ -15,19 +15,15 @@
   "mobilite_rythme_vie": {
     "frequence_deplacement": "Mobile"
   },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Opera"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
-      "Navy"
+      "Navy",
+      "Bordeaux"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},
@@ -38,7 +34,5 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
-  }
+  "metadata_client": {}
 }

@@ -23,13 +23,13 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Blanc",
-      "Navy"
+      "Navy",
+      "Cognac"
     ]
   },
   "projet_achat": {
-    "budget": "15-25k"
+    "budget": "25k+"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

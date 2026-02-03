@@ -1,0 +1,46 @@
+{
+  "client_id": "DIRTY_126",
+  "metadata": {
+    "date_conversation": "???",
+    "duration": "half hour",
+    "language": "fr"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Occasionnel"
+  },
+  "localisation": {
+    "europe": [
+      "Paris"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Running"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Bordeaux"
+    ]
+  },
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

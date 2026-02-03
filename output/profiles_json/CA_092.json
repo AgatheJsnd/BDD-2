@@ -7,14 +7,15 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "18-25",
     "statut_relationnel": "VIP"
   },
   "localisation": {
-    "europe": [
-      "London"
-    ],
     "amerique": [
       "New_York"
+    ],
+    "europe": [
+      "London"
     ]
   },
   "mobilite_rythme_vie": {
@@ -22,8 +23,8 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Art",
-      "Musees"
+      "Musees",
+      "Art"
     ],
     "voyage": [
       "Culturel"
@@ -31,11 +32,11 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Bordeaux",
       "Cognac",
-      "Navy",
       "Noir",
-      "Rose_gold"
+      "Navy",
+      "Rose_gold",
+      "Bordeaux"
     ]
   },
   "projet_achat": {

@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_048",
+  "metadata": {
+    "date_conversation": "2026-01-15",
+    "duration": "Euh alors le client c'est Mrs. Björk Jónsdóttir voilà euh \n    donc il a genre euh ne souhaite pas dire enfin bon bref\n    et donc son budget c'est euh environ euh genre 5000 – 8863 €\n    il habite à ah mince comment ça s'appelle euh N/A\n    donc voilà quoi euh kosher et puis euh N/A\n    ah oui et il aime le rose-gold voilà c'est tout euh merci",
+    "language": "Français"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

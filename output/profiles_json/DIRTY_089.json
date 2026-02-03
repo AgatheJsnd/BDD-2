@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_089",
+  "metadata": {
+    "date_conversation": "invalid",
+    "duration": "From: sales@boutique.com\n    To: manager@boutique.com  \n    Subject: RE: FW: RE: Client Mrs. Αλεξάνδρα Παπαδόπουλος\n    \n    -----Original Message-----\n    Hi,\n    Pls see below client info:\n    - CONFIDENTIEL\n    - 5.000,00€  \n    - Francfort\n    - rosé gold leather pref\n    \n    Rgds,\n    \n    >>> Previous message truncated...\n    \n    Sent from my iPhone\n    --\n    This email is confidential blah blah disclaimer...",
+    "language": "Français"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

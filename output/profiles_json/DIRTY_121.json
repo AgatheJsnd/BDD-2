@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_121",
+  "metadata": {
+    "date_conversation": "{name: \"M. Müller-Löwenstein\", age: fifty-two, \n    budget: \"7000 euros\", city: N/A\",\n    diet: \"omnivore, allergy: \"allergies alimentaires diverses\",\n    color: blanc, sport\": \"ski\"\n    ERROR: JSON PARSE FAILED LINE 3}",
+    "duration": "2026-01-15",
+    "language": "environ 30"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

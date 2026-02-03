@@ -1,0 +1,38 @@
+{
+  "client_id": "DIRTY_067",
+  "metadata": {
+    "date_conversation": "",
+    "duration": "une demi-heure",
+    "language": "autre"
+  },
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Natation"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Beige"
+    ]
+  },
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

@@ -22,15 +22,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Blanc",
+      "Noir",
       "Bordeaux",
-      "Noir"
+      "Cognac"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "15-25k"
+    "motif": "Mariage",
+    "budget": "25k+"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

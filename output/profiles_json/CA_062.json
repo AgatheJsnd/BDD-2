@@ -8,8 +8,7 @@
   "identite": {
     "genre": "Femme",
     "age": "56+",
-    "statut_relationnel": "VIP",
-    "profession": "Profession_libérale"
+    "statut_relationnel": "VIP"
   },
   "localisation": {
     "europe": [
@@ -21,8 +20,7 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Art",
-      "Musees"
+      "Art"
     ],
     "voyage": [
       "Culturel"
@@ -30,15 +28,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Noir"
+      "Noir",
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Diplome",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},
@@ -51,7 +49,5 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
-  }
+  "metadata_client": {}
 }

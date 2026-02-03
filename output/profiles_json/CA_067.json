@@ -34,8 +34,8 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Bordeaux"
+      "Bordeaux",
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
@@ -55,7 +55,5 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
-  }
+  "metadata_client": {}
 }

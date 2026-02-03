@@ -7,12 +7,13 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "56+",
     "statut_relationnel": "Nouveau"
   },
   "localisation": {
     "europe": [
-      "Paris",
-      "Berlin"
+      "Berlin",
+      "Paris"
     ]
   },
   "mobilite_rythme_vie": {
@@ -22,7 +23,6 @@
   "style_personnel": {
     "couleurs_preferees": [
       "Gris",
-      "Rose_gold",
       "Beige"
     ]
   },

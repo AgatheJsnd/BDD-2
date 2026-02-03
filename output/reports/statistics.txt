@@ -9,10 +9,10 @@ Répartition par genre :
   - Homme: 5 (5.0%)
 
 Répartition par âge :
-  - 36-45: 15 (15.0%)
+  - 36-45: 20 (20.0%)
+  - 46-55: 18 (18.0%)
   - 56+: 14 (14.0%)
-  - 46-55: 12 (12.0%)
-  - 26-35: 3 (3.0%)
+  - 26-35: 5 (5.0%)
 
 Répartition par statut :
   - VIP: 47 (47.0%)
@@ -33,9 +33,9 @@ Top 5 couleurs :
   - Cognac: 43 clients
   - Navy: 35 clients
   - Bordeaux: 22 clients
-  - Rose_gold: 20 clients
+  - Rose_gold: 18 clients
 
 Régimes alimentaires :
-  - Végane: 34 clients
-  - Végétarien: 31 clients
-  - Pescetarien: 7 clients
+  - Végane: 32 clients
+  - Végétarien: 25 clients
+  - Pescetarien: 8 clients

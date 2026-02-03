@@ -1,0 +1,31 @@
+{
+  "client_id": "DIRTY_135",
+  "metadata": {
+    "date_conversation": "01-15-2026",
+    "duration": "30min",
+    "language": "MIX"
+  },
+  "identite": {
+    "age": "36-45",
+    "statut_relationnel": "Fidèle"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {
+    "motif": "Anniversaire",
+    "budget": "<5k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

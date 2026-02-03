@@ -1,0 +1,1010 @@
+ID,Date,Duration,Language,Length,Transcription
+DIRTY_001,01-15-2026,half hour,English,court,"Rendez-vous <script>alert('XSS')</script> avec Signora D'Angelo.
+    <b>Budget:</b> 12000 euros <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: ??? <br> Age: born 2001
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: beige. suit régime Keto. allergy nuts, latex, perfumes."
+DIRTY_002,1/15/26,,MIX,moyen,"Client Sr. José María Pérez-López Sr. José María Pérez-López (doublon??)
+    Age 27-year-old ou 27-year-old ans
+    Budget 25000€ / 25000€ euros
+    Ville Inconnu / Inconnu
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    halal. pas d'allergie connue. blanc. ski."
+DIRTY_003,31/02/2026,N/A,Anglais,LONG,"عميل مهم Mrs. Björk Jónsdóttir من St-Tropez.
+    العمر: 46 anni. الميزانية: 12000$.
+    يبحث عن حقيبة فاخرة blanc.
+    flexitarien. pas d'allergie connue. 
+    Sport: marathon. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_004,,0.5h,en,court,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client السيد أحمد
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - 46 años
+    - 3000€-6436€  
+    - HK
+    - rosé gold leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_005,,30 min,Français,long,"Client Mme Śląska Bądź rencontré boutique.
+    Ã¢ge: 43+ -- Caractères encodés: Ã©Ã¨Ãªà 
+    Budget: 15000$ â‚¬
+    Ville: new york aÃ©roport
+    RÃ©gime: flexitarien
+    Couleur: rose-gold
+    Sport: Tennis"
+DIRTY_006,15.01.26,court,EN,longe,"M. Mlle Çelik, nouveau client mais client fidèle depuis 2015.
+    58 anni dynamique et retraité depuis 20 ans.
+    Budget 20k euros limité mais très généreux illimité.
+    suit régime Keto strict mais mange de tout occasionnellement.
+    Habite MILAN mais n'a jamais visité cette ville.
+    Aime beige mais déteste absolument cette couleur.
+    aucune mais aucun problème avec ces allergènes."
+DIRTY_007,???,half hour,Italian,,"Client Client_7, around 31. Wants to buy un sac pour business trips. 
+    Budget unlimited budget. Habite riviera mais travels often to München et Milano.
+    Sport: YOGA. suit régime Keto. Cuir rose gold preferred. ???."
+DIRTY_008,,30m,IT,longe,"RDV mme durand marie le 31/02/2026 à 25:99
+    Client depuis 2099, quarantaine.
+    Anniversaire: hier/demain/bientôt
+    Budget £3000 à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    singapour. végane strict. intolérances: gluten lactose. noir."
+DIRTY_009,invalid,~30min,EN,,"Rendez-vous <script>alert('XSS')</script> avec M. DUPONT Jean-Pierre.
+    <b>Budget:</b> environ 3000€ <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: Singapoure <br> Age: 29-year-old
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: BORDEAUX. vegetarian events. ."
+DIRTY_010,15.01.26,~30min,anglais,longe,"Client . Age: . Budget: . Ville: .
+    Sport: ???. Régime: N/A. Allergie: null.
+    Couleur: undefined. Profession: NaN.
+    TODO: compléter fiche plus tard"
+DIRTY_011,31/02/2026,,en,long,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client m dubois
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - 66-year-old
+    - Budget: 5000€  
+    - Francfort
+    - noir leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_012,31/02/2026,très long,Italien,medium,"|Client|M. 李明 (Li Ming)|
+    |Age|62 Jahre alt|
+    |Budget|$10000|
+    |Ville|LONDON|
+    |Corrupted|data|table|error|format|"
+DIRTY_013,1/15/26,,autre,,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client M. François-Xavier
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - late twenties
+    - 20000EUR  
+    - milano
+    - rose gold leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_014,???,30-45 min,FR/EN,LONG,"RDV M. 李明 (Li Ming) le 31/02/2026 à 25:99
+    Client depuis 2099, born 1964.
+    Anniversaire: hier/demain/bientôt
+    Budget unlimited budget à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    Pars. kosher. . noir."
+DIRTY_015,"RDV Durand le 31/02/2026 à 25:99
+    Client depuis 2099, 50 ans.
+    Anniversaire: hier/demain/bientôt
+    Budget 10000 – 12127 € à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    Dubai. kosher. severe shellfish allergy CRITICAL. blanc.",2026.01.15,,DE,
+DIRTY_016,15 janvier 2026,,Spanish,moyen,"Client Mr. O'Brien-McIntyre, 37 años. Wants to buy un sac pour business trips. 
+    Budget 7000€. Habite Milan mais travels often to München et Milano.
+    Sport: équitation. vegetarian events. Cuir Noir preferred. ???."
+DIRTY_017,01-15-2026,N/A,Espagnol,???,"Euh alors le client c'est M. DUPONT Jean-Pierre voilà euh 
+    donc il a genre euh quarantaine enfin bon bref
+    et donc son budget c'est euh environ euh genre 5k euros
+    il habite à ah mince comment ça s'appelle euh zürich
+    donc voilà quoi euh pas de restrictions et puis euh none
+    ah oui et il aime le Cognac voilà c'est tout euh merci"
+DIRTY_018,2026-01-15,30 minutes,Italian,long,"Client . Age: . Budget: . Ville: .
+    Sport: ???. Régime: N/A. Allergie: null.
+    Couleur: undefined. Profession: NaN.
+    TODO: compléter fiche plus tard"
+DIRTY_019,invalid,30-45 min,deutsch,longe,"M. Mme Zoë Bäcker, nouveau client mais client fidèle depuis 2015.
+    soixantaine dynamique et retraité depuis 20 ans.
+    Budget 15000EUR limité mais très généreux illimité.
+    vegetarian events strict mais mange de tout occasionnellement.
+    Habite francfort mais n'a jamais visité cette ville.
+    Aime Cognac mais déteste absolument cette couleur.
+    allergies alimentaires diverses mais aucun problème avec ces allergènes."
+DIRTY_020,2026.01.15,environ 30,Italian,moyen,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client m dubois
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - 41 years old
+    - budget flexible  
+    - Frankfurt
+    - multicolore leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_021,"January 15, 2026","Euh alors le client c'est Mrs. Αλεξάνδρα Παπαδόπουλος voilà euh 
+    donc il a genre euh 74 Jahre alt enfin bon bref
+    et donc son budget c'est euh environ euh genre budget flexible
+    il habite à ah mince comment ça s'appelle euh milano
+    donc voilà quoi euh végétarien mais mange du poisson et puis euh allergique nickel + latex
+    ah oui et il aime le BLACK voilà c'est tout euh merci"
+DIRTY_022,31/02/2026,30 min,German,???,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client Sr. João Gonçalves
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - quarante-deux
+    - 30k  
+    - Tokyo
+    - BLACK leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_023,N/A,court,fr,SHORT,"{name: ""Client_23"", age: ~62, 
+    budget: ""25k"", city: Singapoure"",
+    diet: ""suit régime Keto, allergy: ""ATTENTION: allergie sévère fruits coque!!!"",
+    color: rose gold, sport"": ""kitesurf""
+    ERROR: JSON PARSE FAILED LINE 3}"
+DIRTY_024,00/00/0000,30min,German,medium,"Rendez-vous <script>alert('XSS')</script> avec M. Müller-Löwenstein.
+    <b>Budget:</b> 3000$ <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: NYC <br> Age: 52+
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: rose-gold. vegan sauf occasionnellement. allergique nickel + latex."
+DIRTY_025,01-15-2026,N/A,IT,LONG,"Euh alors le client c'est Mrs. Björk Jónsdóttir voilà euh 
+    donc il a genre euh late twenties enfin bon bref
+    et donc son budget c'est euh environ euh genre 30K€
+    il habite à ah mince comment ça s'appelle euh DUBAI
+    donc voilà quoi euh kosher et puis euh severe shellfish allergy CRITICAL
+    ah oui et il aime le navy voilà c'est tout euh merci"
+DIRTY_026,N/A,très long,FR,long,"CONVERSATION EXCEPTIONNELLE avec M. DUPONT Jean-Pierre, retraité actif extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. around 41 donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget 5000$ mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à francfort une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique voile de manière exceptionnelle. vegan sauf occasionnellement de façon exceptionnelle.
+    . Couleur préférée blanc une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_027,15/01/2026,,Allemand,longe,"عميل مهم Sr. José María Pérez-López من Paris.
+    العمر: 72ans. الميزانية: $10000.
+    يبحث عن حقيبة فاخرة BLACK.
+    pas de restrictions. allergies alimentaires diverses. 
+    Sport: N/A. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_028,2026.01.15,une demi-heure,Anglais,long,"|Client|MME LEGRAND|
+    |Age|early forties|
+    |Budget|12K€|
+    |Ville|tokio|
+    |Corrupted|data|table|error|format|"
+DIRTY_029,15 janvier 2026,0.5h,FR/EN,long,"|Client|Signora D'Angelo|
+    |Age|56 Jahre alt|
+    |Budget|5000 – 7379 €|
+    |Ville|St Tropez|
+    |Corrupted|data|table|error|format|"
+DIRTY_030,"January 15, 2026",30min,en,SHORT,"Client Mme Ñoño García, 27-year-old. Wants to buy un sac pour business trips. 
+    Budget around $10000. Habite tokio mais travels often to München et Milano.
+    Sport: Tennis. omnivore. Cuir navy preferred. ATTENTION: allergie sévère fruits coque!!!."
+DIRTY_031,2026-01-15,~30min,DE,moyen,"{name: ""Prof. Øystein Ødegård"", age: ~55, 
+    budget: ""20K€"", city: Dubaï"",
+    diet: ""sans gluten sans lactose, allergy: ""allergies alimentaires diverses"",
+    color: cognac, sport"": ""football""
+    ERROR: JSON PARSE FAILED LINE 3}"
+DIRTY_032,"January 15, 2026",30-45 min,Allemand,N/A,"|Client|Prof. Øystein Ødegård|
+    |Age|quarante-deux|
+    |Budget|pas de limite|
+    |Ville|london|
+    |Corrupted|data|table|error|format|"
+DIRTY_033,15/01/2026,30 min,EN,???,"🌟 CLIENTE VIP 🌟 mme durand marie 💼 médecin-chirurgien ⭐⭐⭐⭐⭐
+    Age: 63 ans | Budget: budget flexible 💰💰💰
+    🏠 newyork | ✈️ travels a lot
+    Loves: polo 🎾 | Art 🎨 | Music 🎵
+    Diet: omnivore 🥗 | allergies alimentaires diverses ⚠️
+    Color: Noir ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞"
+DIRTY_034,,30-45 min,Français,SHORT,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client Sr. João Gonçalves
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - 61-year-old
+    - entre 15000 et 18149  
+    - hong-kong
+    - BORDEAUX leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_035,2026.01.15,30 min,autre,medium,"عميل مهم Client_35 من Francfort.
+    العمر: born 1986. الميزانية: presupuesto 7000€.
+    يبحث عن حقيبة فاخرة beige.
+    suit régime Keto. N/A. 
+    Sport: équitation. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_036,1/15/26,30min,IT,short,Mr. O'Brien-McIntyre. Francfort. ok.
+DIRTY_037,2026.01.15,30 min,N/A,SHORT,"Client Sr. José María Pérez-López, twenty eight. Wants to buy un sac pour business trips. 
+    Budget selon modèle. Habite Cote d'Azur mais travels often to München et Milano.
+    Sport: pilates. pas de restrictions. Cuir multicolore preferred. ???."
+DIRTY_038,???,très long,plusieurs,court,"RDV M. 李明 (Li Ming) le 31/02/2026 à 25:99
+    Client depuis 2099, 58 anni.
+    Anniversaire: hier/demain/bientôt
+    Budget selon modèle à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    NYC. pescetarien. ATTENTION: allergie sévère fruits coque!!!. rose-gold."
+DIRTY_039,"Euh alors le client c'est Mrs. Αλεξάνδρα Παπαδόπουλος voilà euh 
+    donc il a genre euh 27-year-old enfin bon bref
+    et donc son budget c'est euh environ euh genre Budget: 25000€
+    il habite à ah mince comment ça s'appelle euh Paris
+    donc voilà quoi euh kosher et puis euh allergy nuts, latex, perfumes
+    ah oui et il aime le navy voilà c'est tout euh merci",2026-01-15,30m,deutsch,long
+DIRTY_040,2026-01-15,~30min,anglais,SHORT,"Client . Age: . Budget: . Ville: .
+    Sport: ???. Régime: N/A. Allergie: null.
+    Couleur: undefined. Profession: NaN.
+    TODO: compléter fiche plus tard"
+DIRTY_041,N/A,court,Français,court,"RDV M. DUPONT Jean-Pierre le 31/02/2026 à 25:99
+    Client depuis 2099, 73 años.
+    Anniversaire: hier/demain/bientôt
+    Budget 30000 euros à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    Paris. regime special. N/A. noir."
+DIRTY_042,"Client MME LEGRAND MME LEGRAND (doublon??)
+    Age 73ans ou 73ans ans
+    Budget from 7000 to 11786 / from 7000 to 11786 euros
+    Ville francfort / francfort
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    pas de restrictions. pas d'allergie connue. rose gold. .",15/01/2026,une demi-heure,en,short
+DIRTY_043,00/00/0000,"|Client|Mr. O'Brien-McIntyre|
+    |Age|agé de 52|
+    |Budget|entre 25000 et 27336|
+    |Ville|St-Tropez|
+    |Corrupted|data|table|error|format|"
+DIRTY_044,N/A,???,plusieurs,court,"Rendez-vous <script>alert('XSS')</script> avec m dubois.
+    <b>Budget:</b> unlimited budget <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville:  <br> Age: 57ans
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: beige. omnivore. intolérances: gluten lactose."
+DIRTY_045,1/15/26,30min,anglais,court,"🌟 CLIENTE VIP 🌟 MME LEGRAND 💼 influencer/entrepreneur/model ⭐⭐⭐⭐⭐
+    Age: 56ans | Budget: presupuesto 7000€ 💰💰💰
+    🏠 Milan | ✈️ travels a lot
+    Loves: équitation 🎾 | Art 🎨 | Music 🎵
+    Diet: halal 🥗 | allergie arachides ET noix ⚠️
+    Color: cognac ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞"
+DIRTY_046,00/00/0000,30min,Anglais,,"CONVERSATION EXCEPTIONNELLE avec Mr. O'Brien-McIntyre, ancien directeur maintenant consultant extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. 45+ donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget 7K€ mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à Hong Kong une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique YOGA de manière exceptionnelle. regime special de façon exceptionnelle.
+    allergique nickel + latex. Couleur préférée blanc une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_047,???,30min,en,N/A,"Client Dr. Émile François-Marie, agé de 39. Wants to buy un sac pour business trips. 
+    Budget unlimited budget. Habite Cote d'Azur mais travels often to München et Milano.
+    Sport: running. végétarien mais mange du poisson. Cuir rose-gold preferred. ."
+DIRTY_048,2026-01-15,"Euh alors le client c'est Mrs. Björk Jónsdóttir voilà euh 
+    donc il a genre euh ne souhaite pas dire enfin bon bref
+    et donc son budget c'est euh environ euh genre 5000 – 8863 €
+    il habite à ah mince comment ça s'appelle euh N/A
+    donc voilà quoi euh kosher et puis euh N/A
+    ah oui et il aime le rose-gold voilà c'est tout euh merci"
+DIRTY_049,00/00/0000,court,French,short,"Client . Age: . Budget: . Ville: .
+    Sport: ???. Régime: N/A. Allergie: null.
+    Couleur: undefined. Profession: NaN.
+    TODO: compléter fiche plus tard"
+DIRTY_050,"January 15, 2026","M. Signora D'Angelo, nouveau client mais client fidèle depuis 2015.
+    late twenties dynamique et retraité depuis 20 ans.
+    Budget 30000EUR limité mais très généreux illimité.
+    sans gluten sans lactose strict mais mange de tout occasionnellement.
+    Habite milano mais n'a jamais visité cette ville.
+    Aime Noir mais déteste absolument cette couleur.
+    ??? mais aucun problème avec ces allergènes."
+DIRTY_051,2026-01-15,"CONVERSATION EXCEPTIONNELLE avec Client_51, étudiant travaille aussi extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. la trentaine donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget selon modèle mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à Hongkong une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique N/A de manière exceptionnelle.  de façon exceptionnelle.
+    pas d'allergie connue. Couleur préférée rose-gold une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_052,15.01.26,N/A,,LONG,"M. M. DUPONT Jean-Pierre, nouveau client mais client fidèle depuis 2015.
+    late twenties dynamique et retraité depuis 20 ans.
+    Budget entre 12000 et 15779 limité mais très généreux illimité.
+    ??? strict mais mange de tout occasionnellement.
+    Habite  mais n'a jamais visité cette ville.
+    Aime beige mais déteste absolument cette couleur.
+    allergie soleil + produits chimiques mais aucun problème avec ces allergènes."
+DIRTY_053,"January 15, 2026",30min,ES,long,"CONVERSATION EXCEPTIONNELLE avec mme durand marie, femme au foyer et bénévole extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. soixantaine donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget ¥10000000 mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à Mailn une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique YOGA de manière exceptionnelle. halal de façon exceptionnelle.
+    allergies alimentaires diverses. Couleur préférée rose-gold une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_054,invalid,long,francais,longe,"Client M. 李明 (Li Ming) M. 李明 (Li Ming) (doublon??)
+    Age la trentaine ou la trentaine ans
+    Budget £7000 / £7000 euros
+    Ville new york / new york
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    vegetarian events. intolérances: gluten lactose. rose-gold. YOGA."
+DIRTY_055,invalid,30m,Italien,court,"Client MME LEGRAND MME LEGRAND (doublon??)
+    Age soixantaine ou soixantaine ans
+    Budget 5000$ / 5000$ euros
+    Ville Frankfurt / Frankfurt
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    ???. allergique nickel + latex. rose gold. marathon."
+DIRTY_056,01-15-2026,environ 30,deutsch,short,Mrs. Αλεξάνδρα Παπαδόπουλος. singapour. ok.
+DIRTY_057,2026.01.15,~30min,IT,longe,"M. Mme Zoë Bäcker, nouveau client mais client fidèle depuis 2015.
+    late twenties dynamique et retraité depuis 20 ans.
+    Budget 25000.000€ limité mais très généreux illimité.
+    halal strict mais mange de tout occasionnellement.
+    Habite NY mais n'a jamais visité cette ville.
+    Aime  mais déteste absolument cette couleur.
+    aucune mais aucun problème avec ces allergènes."
+DIRTY_058,N/A,court,español,LONG,"Rendez-vous <script>alert('XSS')</script> avec Mme Zoë Bäcker.
+    <b>Budget:</b> 12000.000€ <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: LONDON <br> Age: ne souhaite pas dire
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: rose gold. vegan sauf occasionnellement. pas d'allergie connue."
+DIRTY_059,"{name: ""mme durand marie"", age: la trentaine, 
+    budget: ""unlimited budget"", city: zürich"",
+    diet: ""vegan sauf occasionnellement, allergy: ""aucune"",
+    color: bordeaux, sport"": ""équitation""
+    ERROR: JSON PARSE FAILED LINE 3}",N/A,30 minutes,DE,moyen
+DIRTY_060,31/02/2026,"🌟 CLIENTE VIP 🌟 Mrs. Björk Jónsdóttir 💼 CEO, CFO, COO ⭐⭐⭐⭐⭐
+    Age: environ 29 | Budget: budget flexible 💰💰💰
+    🏠 PARIS | ✈️ travels a lot
+    Loves:  🎾 | Art 🎨 | Music 🎵
+    Diet: omnivore 🥗 | N/A ⚠️
+    Color: Noir ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞"
+DIRTY_061,31/02/2026,environ 30,multilingual,court,"Rendez-vous <script>alert('XSS')</script> avec Prof. Øystein Ødegård.
+    <b>Budget:</b> 3000.000€ <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: Paris <br> Age: born 1959
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: BORDEAUX. végétarien mais mange du poisson. allergies alimentaires diverses."
+DIRTY_062,"🌟 CLIENTE VIP 🌟 mme durand marie 💼 NC ⭐⭐⭐⭐⭐
+    Age: né en 1960 | Budget: 15000EUR 💰💰💰
+    🏠 dubai | ✈️ travels a lot
+    Loves: ??? 🎾 | Art 🎨 | Music 🎵
+    Diet: sans gluten sans lactose 🥗 | ⚠️ allergies multiples ⚠️
+    Color: BLACK ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞","January 15, 2026",une demi-heure,fr,moyen
+DIRTY_063,00/00/0000,30 min,en,LONG,"عميل مهم السيد أحمد من dubai.
+    العمر: cinquantaine. الميزانية: entre 30000 et 34714.
+    يبحث عن حقيبة فاخرة beige.
+    suit régime Keto. ATTENTION: allergie sévère fruits coque!!!. 
+    Sport: kitesurf. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_064,,court,FR,medium,"🌟 CLIENTE VIP 🌟 Frau Köhler 💼 ancien directeur maintenant consultant ⭐⭐⭐⭐⭐
+    Age: ~27 | Budget: $25000 💰💰💰
+    🏠 Saint-Tropez | ✈️ travels a lot
+    Loves: football 🎾 | Art 🎨 | Music 🎵
+    Diet: suit régime Keto 🥗 | ??? ⚠️
+    Color: ??? ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞"
+DIRTY_065,invalid,N/A,fr,N/A,"Client Mr. O'Brien-McIntyre, ne souhaite pas dire. Wants to buy un sac pour business trips. 
+    Budget from 7000 to 11895. Habite Milan mais travels often to München et Milano.
+    Sport: running. flexitarien. Cuir Noir preferred. N/A."
+DIRTY_066,"Client Sr. João Gonçalves Sr. João Gonçalves (doublon??)
+    Age 40 ans ou 40 ans ans
+    Budget budget di 5000€ / budget di 5000€ euros
+    Ville ??? / ???
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    pas de restrictions. none. rose-gold. .",01-15-2026,30min,Spanish,SHORT
+DIRTY_067,,une demi-heure,autre,medium,"{name: ""M. 李明 (Li Ming)"", age: mid-thirties, 
+    budget: ""budget flexible"", city: Hongkong"",
+    diet: ""halal, allergy: ""aucune"",
+    color: beige, sport"": ""natation""
+    ERROR: JSON PARSE FAILED LINE 3}"
+DIRTY_068,2026-01-15,très long,italiano,SHORT,"🌟 CLIENTE VIP 🌟 Mme Ñoño García 💼 médecin-chirurgien ⭐⭐⭐⭐⭐
+    Age: 30+ | Budget: 5000.000€ 💰💰💰
+    🏠 Hong Kong | ✈️ travels a lot
+    Loves: N/A 🎾 | Art 🎨 | Music 🎵
+    Diet: halal 🥗 | allergie soleil + produits chimiques ⚠️
+    Color: beige ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞"
+DIRTY_069,15/01/2026,half hour,English,SHORT,"CONVERSATION EXCEPTIONNELLE avec MME LEGRAND, étudiant travaille aussi extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. fifty-two donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget budget flexible mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à DUBAI une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique marathon de manière exceptionnelle. vegan sauf occasionnellement de façon exceptionnelle.
+    aucune. Couleur préférée navy une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_070,00/00/0000,???,italiano,LONG,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client Mrs. Björk Jónsdóttir
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - twenty eight
+    - presupuesto 15000€  
+    - 
+    - noir leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_071,???,30min,italiano,LONG,"Client M. DUPONT Jean-Pierre, la trentaine. Wants to buy un sac pour business trips. 
+    Budget 5000.000€. Habite NY mais travels often to München et Milano.
+    Sport: YOGA. vegan sauf occasionnellement. Cuir cognac preferred. allergique nickel + latex."
+DIRTY_072,15.01.26,~30min,multilingual,,Client_72. Francfort. ok.
+DIRTY_073,"Client السيد أحمد, around 46. Wants to buy un sac pour business trips. 
+    Budget from 5000 to 9927. Habite Singapore mais travels often to München et Milano.
+    Sport: Tennis. vegan sauf occasionnellement. Cuir cognac preferred. none.",,half hour,italiano,
+DIRTY_074,15/01/2026,30 minutes,Espagnol,longe,"RDV MME LEGRAND le 31/02/2026 à 25:99
+    Client depuis 2099, 75 años.
+    Anniversaire: hier/demain/bientôt
+    Budget 20000EUR à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    PARIS. halal. . bordeaux."
+DIRTY_075,01-15-2026,N/A,español,short,"RDV Prof. Øystein Ødegård le 31/02/2026 à 25:99
+    Client depuis 2099, 61-year-old.
+    Anniversaire: hier/demain/bientôt
+    Budget 12000$ à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    NY. végane strict. allergie soleil + produits chimiques. navy."
+DIRTY_076,1/15/26,half hour,DE,LONG,"🌟 CLIENTE VIP 🌟 Mrs. Björk Jónsdóttir 💼 médecin-chirurgien ⭐⭐⭐⭐⭐
+    Age: 39 años | Budget: from 15000 to 17896 💰💰💰
+    🏠 Zurich | ✈️ travels a lot
+    Loves: triathlon 🎾 | Art 🎨 | Music 🎵
+    Diet: vegan sauf occasionnellement 🥗 | allergique nickel + latex ⚠️
+    Color: rose gold ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞"
+DIRTY_077,,30 minutes,Italien,longe,"Rendez-vous <script>alert('XSS')</script> avec Mrs. Αλεξάνδρα Παπαδόπουλος.
+    <b>Budget:</b> 20000€-23921€ <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: Singapore <br> Age: 53 años
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: BORDEAUX. ???. allergique nickel + latex."
+DIRTY_078,2026.01.15,half hour,Espagnol,N/A,"RDV Durand le 31/02/2026 à 25:99
+    Client depuis 2099, born 1966.
+    Anniversaire: hier/demain/bientôt
+    Budget unlimited budget à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    Monaco. kosher. intolérances: gluten lactose. BORDEAUX."
+DIRTY_079,15.01.26,half hour,N/A,LONG,"🌟 CLIENTE VIP 🌟 M. DUPONT Jean-Pierre 💼 profession libérale ⭐⭐⭐⭐⭐
+    Age: 44 years old | Budget: 3000EUR 💰💰💰
+    🏠 NY | ✈️ travels a lot
+    Loves: YOGA 🎾 | Art 🎨 | Music 🎵
+    Diet: végétarien mais mange du poisson 🥗 | intolérances: gluten lactose ⚠️
+    Color: BLACK ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞"
+DIRTY_080,"🌟 CLIENTE VIP 🌟 Dr. Émile François-Marie 💼 ancien directeur maintenant consultant ⭐⭐⭐⭐⭐
+    Age: around 73 | Budget: 7000 euros 💰💰💰
+    🏠 鳥京 | ✈️ travels a lot
+    Loves: ??? 🎾 | Art 🎨 | Music 🎵
+    Diet: vegetarian events 🥗 | intolérances: gluten lactose ⚠️
+    Color: beige ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞",N/A,30 minutes,FR/EN,medium
+DIRTY_081,01-15-2026,30 min,francais,,"Rendez-vous <script>alert('XSS')</script> avec Sr. João Gonçalves.
+    <b>Budget:</b> from 10000 to 12145 <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: St Tropez <br> Age: soixantaine
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: navy. suit régime Keto. none."
+DIRTY_082,???,très long,multilingual,LONG,"CONVERSATION EXCEPTIONNELLE avec Mrs. Αλεξάνδρα Παπαδόπουλος, CEO, CFO, COO extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. early forties donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget 5,000.00$ mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à St-Tropez une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique marathon de manière exceptionnelle. suit régime Keto de façon exceptionnelle.
+    allergie soleil + produits chimiques. Couleur préférée rose-gold une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_083,1/15/26,30 minutes,Spanish,short,"|Client|Client_83|
+    |Age|around 41|
+    |Budget|15000$|
+    |Ville|TOKYO|
+    |Corrupted|data|table|error|format|"
+DIRTY_084,,30 min,Spanish,court,"عميل مهم M. François-Xavier من PARIS.
+    العمر: mid-thirties. الميزانية: environ 12000€.
+    يبحث عن حقيبة فاخرة rose gold.
+    vegan sauf occasionnellement. allergie soleil + produits chimiques. 
+    Sport: golf. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_085,31/02/2026,très long,???,medium,Frau Köhler. Milan. ok.
+DIRTY_086,2026-01-15,une demi-heure,DE,N/A,"Client . Age: . Budget: . Ville: .
+    Sport: ???. Régime: N/A. Allergie: null.
+    Couleur: undefined. Profession: NaN.
+    TODO: compléter fiche plus tard"
+DIRTY_087,2026-01-15,30 minutes,English,long,"Client Mr. O'Brien-McIntyre, late twenties. Wants to buy un sac pour business trips. 
+    Budget 25000EUR. Habite MILAN mais travels often to München et Milano.
+    Sport: voile. suit régime Keto. Cuir bordeaux preferred. severe shellfish allergy CRITICAL."
+DIRTY_088,2026.01.15,environ 30,,long,"RDV Mrs. Björk Jónsdóttir le 31/02/2026 à 25:99
+    Client depuis 2099, environ 73.
+    Anniversaire: hier/demain/bientôt
+    Budget 20k euros à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    Tokyo. ???. allergie arachides ET noix. navy."
+DIRTY_089,invalid,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client Mrs. Αλεξάνδρα Παπαδόπουλος
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - CONFIDENTIEL
+    - 5.000,00€  
+    - Francfort
+    - rosé gold leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_090,01-15-2026,0.5h,German,LONG,"Rendez-vous <script>alert('XSS')</script> avec Mlle Çelik.
+    <b>Budget:</b> 25000 – 28852 € <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: zürich <br> Age: mid-thirties
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: blanc. pas de restrictions. allergique nickel + latex."
+DIRTY_091,01-15-2026,half hour,Français,LONG,"Client M. 李明 (Li Ming) M. 李明 (Li Ming) (doublon??)
+    Age quarante-deux ou quarante-deux ans
+    Budget 7k / 7k euros
+    Ville TOKYO / TOKYO
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    ???. ⚠️ allergies multiples. rose-gold. ???."
+DIRTY_092,"Client M. 李明 (Li Ming), 50ans. Wants to buy un sac pour business trips. 
+    Budget environ 15000€. Habite Monte-Carlo mais travels often to München et Milano.
+    Sport: voile. vegan sauf occasionnellement. Cuir bordeaux preferred. intolérances: gluten lactose.","January 15, 2026",environ 30,Italian,???
+DIRTY_093,"Client Sr. José María Pérez-López, quarantaine. Wants to buy un sac pour business trips. 
+    Budget 20k. Habite Monaco mais travels often to München et Milano.
+    Sport: football. sans gluten sans lactose. Cuir BORDEAUX preferred. severe shellfish allergy CRITICAL.",,???,Spanish,
+DIRTY_094,2026-01-15,long,Italien,longe,"Rendez-vous <script>alert('XSS')</script> avec M. François-Xavier.
+    <b>Budget:</b> presupuesto 12000€ <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: francfort <br> Age: 49 ans
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: rose-gold. kosher. none."
+DIRTY_095,15 janvier 2026,???,Fr,N/A,"|Client|Sr. João Gonçalves|
+    |Age|62+|
+    |Budget|12000EUR|
+    |Ville|MILAN|
+    |Corrupted|data|table|error|format|"
+DIRTY_096,"عميل مهم Mrs. Björk Jónsdóttir من Saint-Tropez.
+    العمر: agé de 64. الميزانية: 10k euros.
+    يبحث عن حقيبة فاخرة rosé gold.
+    végane strict. ATTENTION: allergie sévère fruits coque!!!. 
+    Sport: natation. رياضي جدا.
+    Rappeler en français merci.",2026-01-15,30 minutes,francais,longe
+DIRTY_097,"Client Mr. O'Brien-McIntyre, around 34. Wants to buy un sac pour business trips. 
+    Budget $5000. Habite DUBAI mais travels often to München et Milano.
+    Sport: running. regime special. Cuir rose gold preferred. N/A.",2026-01-15,0.5h,FR/EN,SHORT
+DIRTY_098,2026-01-15,30 minutes,German,longe,Mme Thérèse André. new york. ok.
+DIRTY_099,???,half hour,IT,court,"Euh alors le client c'est Dr. Émile François-Marie voilà euh 
+    donc il a genre euh  enfin bon bref
+    et donc son budget c'est euh environ euh genre 12000€
+    il habite à ah mince comment ça s'appelle euh St Tropez
+    donc voilà quoi euh sans gluten sans lactose et puis euh allergie soleil + produits chimiques
+    ah oui et il aime le rosé gold voilà c'est tout euh merci"
+DIRTY_100,00/00/0000,half hour,multilingual,SHORT,"Client Mme Zoë Bäcker Mme Zoë Bäcker (doublon??)
+    Age né en 1970 ou né en 1970 ans
+    Budget 30000.000€ / 30000.000€ euros
+    Ville Milan / Milan
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    végétarien mais mange du poisson. allergique nickel + latex. BORDEAUX. triathlon."
+DIRTY_101,invalid,"|Client|m dubois|
+    |Age|cinquantaine|
+    |Budget|selon modèle|
+    |Ville|Frankfurt|
+    |Corrupted|data|table|error|format|"
+DIRTY_102,00/00/0000,30-45 min,FR/EN,SHORT,"Rendez-vous <script>alert('XSS')</script> avec Client_102.
+    <b>Budget:</b> 15K€ <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: paris <br> Age: fifty-two
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: multicolore. . ???."
+DIRTY_103,00/00/0000,30 minutes,francais,medium,"{name: ""mme durand marie"", age: 71-year-old, 
+    budget: ""from 30000 to 32044"", city: Londre"",
+    diet: ""omnivore, allergy: ""allergies alimentaires diverses"",
+    color: navy, sport"": ""running""
+    ERROR: JSON PARSE FAILED LINE 3}"
+DIRTY_104,invalid,environ 30,IT,SHORT,"{name: ""Mme Ñoño García"", age: la trentaine, 
+    budget: ""Budget: 20000€"", city: Cote d'Azur"",
+    diet: ""regime special, allergy: ""intolérances: gluten lactose"",
+    color: ???, sport"": ""triathlon""
+    ERROR: JSON PARSE FAILED LINE 3}"
+DIRTY_105,invalid,N/A,FR/EN,SHORT,"عميل مهم Sr. José María Pérez-López من zürich.
+    العمر: ~46. الميزانية: selon modèle.
+    يبحث عن حقيبة فاخرة ???.
+    . allergies alimentaires diverses. 
+    Sport: ???. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_106,15.01.26,N/A,EN,short,"عميل مهم M. François-Xavier من Tokyo.
+    العمر: mid-thirties. الميزانية: 7000,000€.
+    يبحث عن حقيبة فاخرة Noir.
+    végétarien mais mange du poisson. pas d'allergie connue. 
+    Sport: football. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_107,15/01/2026,30min,French,LONG,"Client . Age: . Budget: . Ville: .
+    Sport: ???. Régime: N/A. Allergie: null.
+    Couleur: undefined. Profession: NaN.
+    TODO: compléter fiche plus tard"
+DIRTY_108,01-15-2026,court,???,short,"CONVERSATION EXCEPTIONNELLE avec Client_108, médecin-chirurgien extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. ne souhaite pas dire donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget unlimited budget mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à Inconnu une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique polo de manière exceptionnelle. végétarien mais mange du poisson de façon exceptionnelle.
+    allergy nuts, latex, perfumes. Couleur préférée  une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_109,31/02/2026,???,,medium,"Rendez-vous <script>alert('XSS')</script> avec Durand.
+    <b>Budget:</b> unlimited budget <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: paris <br> Age: 47 an
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: ???. vegetarian events. aucune."
+DIRTY_110,01-15-2026,N/A,German,moyen,"CONVERSATION EXCEPTIONNELLE avec M. Müller-Löwenstein, artiste & designer extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. 71ans donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget $25000 mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à NY une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique polo de manière exceptionnelle. omnivore de façon exceptionnelle.
+    aucune. Couleur préférée ??? une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_111,31/02/2026,très long,EN,short,"{name: ""Frau Köhler"", age: fifty-two, 
+    budget: ""15000€"", city: Mailn"",
+    diet: ""végétarien mais mange du poisson, allergy: ""allergy nuts, latex, perfumes"",
+    color: Cognac, sport"": ""N/A""
+    ERROR: JSON PARSE FAILED LINE 3}"
+DIRTY_112,2026-01-15,30m,IT,court,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client Mr. O'Brien-McIntyre
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - trente-cinq
+    - 5000EUR  
+    - ZURICH
+    - multicolore leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_113,2026.01.15,30-45 min,Allemand,court,M. François-Xavier. Milan. ok.
+DIRTY_114,invalid,30 minutes,French,N/A,"Rendez-vous <script>alert('XSS')</script> avec MME LEGRAND.
+    <b>Budget:</b> 15000€ <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: ??? <br> Age: 58+
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: rose gold. végane strict. pas d'allergie connue."
+DIRTY_115,N/A,court,en,medium,"Rendez-vous <script>alert('XSS')</script> avec M. Müller-Löwenstein.
+    <b>Budget:</b> 30000 € <i>flexible</i>
+    <h1>IMPORTANT CLIENT</h1>
+    Ville: Francfort <br> Age: 45 ans
+    DROP TABLE clients; -- juste un test
+    <img src=""fake.jpg"" onerror=""alert('hack')"">
+    Couleur: multicolore. végane strict. N/A."
+DIRTY_116,2026.01.15,très long,Espagnol,longe,"Client Mrs. Αλεξάνδρα Παπαδόπουλος, mid-thirties. Wants to buy un sac pour business trips. 
+    Budget 20000. Habite Londre mais travels often to München et Milano.
+    Sport: marathon. vegetarian events. Cuir noir preferred. ???."
+DIRTY_117,15 janvier 2026,N/A,deutsch,longe,"CONVERSATION EXCEPTIONNELLE avec Mr. O'Brien-McIntyre, influencer/entrepreneur/model extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. soixantaine donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget 10000 euros mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à St Tropez une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique triathlon de manière exceptionnelle. regime special de façon exceptionnelle.
+    ATTENTION: allergie sévère fruits coque!!!. Couleur préférée  une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_118,1/15/26,30min,plusieurs,LONG,"RDV M. François-Xavier le 31/02/2026 à 25:99
+    Client depuis 2099, CONFIDENTIEL.
+    Anniversaire: hier/demain/bientôt
+    Budget selon modèle à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    . vegan sauf occasionnellement. pas d'allergie connue. cognac."
+DIRTY_119,invalid,long,FR/EN,N/A,"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client Mme Thérèse André
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - environ 70
+    - 3000  
+    - DUBAI
+    - rose gold leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer..."
+DIRTY_120,invalid,long,deutsch,short,"Client Mr. O'Brien-McIntyre rencontré boutique.
+    Ã¢ge: fifty-two -- Caractères encodés: Ã©Ã¨Ãªà 
+    Budget: around $12000 â‚¬
+    Ville: Cote d'Azur aÃ©roport
+    RÃ©gime: végétarien mais mange du poisson
+    Couleur: BORDEAUX
+    Sport: "
+DIRTY_121,"{name: ""M. Müller-Löwenstein"", age: fifty-two, 
+    budget: ""7000 euros"", city: N/A"",
+    diet: ""omnivore, allergy: ""allergies alimentaires diverses"",
+    color: blanc, sport"": ""ski""
+    ERROR: JSON PARSE FAILED LINE 3}",2026-01-15,environ 30,MIX,???
+DIRTY_122,,30-45 min,Spanish,short,"Client M. François-Xavier M. François-Xavier (doublon??)
+    Age la trentaine ou la trentaine ans
+    Budget à discuter / à discuter euros
+    Ville Londres / Londres
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    flexitarien. aucune. multicolore. golf."
+DIRTY_123,"عميل مهم mme durand marie من Inconnu.
+    العمر: fifty-two. الميزانية: Budget: 12000€.
+    يبحث عن حقيبة فاخرة navy.
+    halal. . 
+    Sport: running. رياضي جدا.
+    Rappeler en français merci.",invalid,30 minutes,IT,N/A
+DIRTY_124,invalid,"|Client|السيد أحمد|
+    |Age|63 years old|
+    |Budget|20000€|
+    |Ville|new york|
+    |Corrupted|data|table|error|format|"
+DIRTY_125,???,30-45 min,French,SHORT,"Client Frau Köhler, CONFIDENTIEL. Wants to buy un sac pour business trips. 
+    Budget $5000. Habite Dubai mais travels often to München et Milano.
+    Sport: Tennis. . Cuir navy preferred. pas d'allergie connue."
+DIRTY_126,???,half hour,fr,medium,"{name: ""Signora D'Angelo"", age: 41+, 
+    budget: ""7000,000€"", city: PARIS"",
+    diet: ""vegan sauf occasionnellement, allergy: ""???"",
+    color: BORDEAUX, sport"": ""marathon""
+    ERROR: JSON PARSE FAILED LINE 3}"
+DIRTY_127,"January 15, 2026",30 min,???,???,"Client . Age: . Budget: . Ville: .
+    Sport: ???. Régime: N/A. Allergie: null.
+    Couleur: undefined. Profession: NaN.
+    TODO: compléter fiche plus tard"
+DIRTY_128,31/02/2026,N/A,Spanish,court,"CONVERSATION EXCEPTIONNELLE avec M. DUPONT Jean-Pierre, multiple businesses extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. 28 an donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget pas de limite mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à Côte d'Azur une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique équitation de manière exceptionnelle.  de façon exceptionnelle.
+    none. Couleur préférée BLACK une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_129,31/02/2026,long,Italien,medium,"عميل مهم M. 李明 (Li Ming) من HK.
+    العمر: 66 ans. الميزانية: £30000.
+    يبحث عن حقيبة فاخرة BORDEAUX.
+    végane strict. allergie soleil + produits chimiques. 
+    Sport: . رياضي جدا.
+    Rappeler en français merci."
+DIRTY_130,2026.01.15,court,???,???,Signora D'Angelo. hong-kong. ok.
+DIRTY_131,invalid,30min,Spanish,LONG,"Client Mlle Çelik rencontré boutique.
+    Ã¢ge: 71 years old -- Caractères encodés: Ã©Ã¨Ãªà 
+    Budget: presupuesto 20000€ â‚¬
+    Ville: london aÃ©roport
+    RÃ©gime: 
+    Couleur: Cognac
+    Sport: marathon"
+DIRTY_132,,très long,autre,long,"|Client|Mme Ñoño García|
+    |Age|né en 2000|
+    |Budget|selon modèle|
+    |Ville|Frankfurt|
+    |Corrupted|data|table|error|format|"
+DIRTY_133,01-15-2026,30m,Fr,SHORT,"RDV m dubois le 31/02/2026 à 25:99
+    Client depuis 2099, trente-cinq.
+    Anniversaire: hier/demain/bientôt
+    Budget  à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    LONDON. flexitarien. aucune. rosé gold."
+DIRTY_134,15/01/2026,~30min,Allemand,medium,"|Client|Mme Śląska Bądź|
+    |Age|39 an|
+    |Budget|15K€|
+    |Ville|paris|
+    |Corrupted|data|table|error|format|"
+DIRTY_135,01-15-2026,30min,MIX,LONG,"RDV m dubois le 31/02/2026 à 25:99
+    Client depuis 2099, 41 Jahre alt.
+    Anniversaire: hier/demain/bientôt
+    Budget budget flexible à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    NYC. pas de restrictions. none. multicolore."
+DIRTY_136,invalid,long,English,long,"RDV M. 李明 (Li Ming) le 31/02/2026 à 25:99
+    Client depuis 2099, 66 años.
+    Anniversaire: hier/demain/bientôt
+    Budget 12000 – 16300 € à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    Cote d'Azur. vegan sauf occasionnellement. allergie soleil + produits chimiques. ???."
+DIRTY_137,1/15/26,"CONVERSATION EXCEPTIONNELLE avec Mme Zoë Bäcker, préfère ne pas dire extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. environ 45 donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget pas de limite mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à  une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique équitation de manière exceptionnelle. flexitarien de façon exceptionnelle.
+    N/A. Couleur préférée multicolore une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_138,15/01/2026,???,,court,"CONVERSATION EXCEPTIONNELLE avec Dr. Émile François-Marie, retraité actif extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. âgé de 51 ans donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget unlimited budget mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à ZURICH une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique Tennis de manière exceptionnelle. regime special de façon exceptionnelle.
+    aucune. Couleur préférée  une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_139,31/02/2026,30-45 min,autre,court,"CONVERSATION EXCEPTIONNELLE avec Frau Köhler, médecin-chirurgien extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. agé de 27 donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget 30000$ mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à PARIS une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique natation de manière exceptionnelle. vegan sauf occasionnellement de façon exceptionnelle.
+    allergies alimentaires diverses. Couleur préférée beige une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. "
+DIRTY_140,2026-01-15,~30min,IT,,"عميل مهم Mme Thérèse André من Frankfurt.
+    العمر: 51+. الميزانية: .
+    يبحث عن حقيبة فاخرة rose-gold.
+    végétarien mais mange du poisson. ATTENTION: allergie sévère fruits coque!!!. 
+    Sport: N/A. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_141,2026-01-15,environ 30,ES,short,السيد أحمد. N/A. ok.
+DIRTY_142,N/A,"🌟 CLIENTE VIP 🌟 Durand 💼 banquier+investisseur ⭐⭐⭐⭐⭐
+    Age: né en 1996 | Budget: entre 30000 et 34653 💰💰💰
+    🏠 N/A | ✈️ travels a lot
+    Loves: équitation 🎾 | Art 🎨 | Music 🎵
+    Diet: pescetarien 🥗 | severe shellfish allergy CRITICAL ⚠️
+    Color: navy ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞"
+DIRTY_143,15/01/2026,half hour,Fr,N/A,Prof. Øystein Ødegård. MILAN. ok.
+DIRTY_144,15.01.26,très long,Spanish,,"RDV Mrs. Björk Jónsdóttir le 31/02/2026 à 25:99
+    Client depuis 2099, soixantaine.
+    Anniversaire: hier/demain/bientôt
+    Budget budget flexible à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    Saint Tropez. sans gluten sans lactose. severe shellfish allergy CRITICAL. cognac."
+DIRTY_145,invalid,environ 30,,moyen,"Client MME LEGRAND, âgé de 57 ans. Wants to buy un sac pour business trips. 
+    Budget à discuter. Habite PARIS mais travels often to München et Milano.
+    Sport: football. vegetarian events. Cuir ??? preferred. ATTENTION: allergie sévère fruits coque!!!."
+DIRTY_146,15 janvier 2026,,English,,"عميل مهم Mr. O'Brien-McIntyre من N/A.
+    العمر: 52 anni. الميزانية: Budget: 5000€.
+    يبحث عن حقيبة فاخرة bordeaux.
+    pescetarien. allergie soleil + produits chimiques. 
+    Sport: équitation. رياضي جدا.
+    Rappeler en français merci."
+DIRTY_147,"January 15, 2026",0.5h,FR,,"Euh alors le client c'est Mme Ñoño García voilà euh 
+    donc il a genre euh cinquantaine enfin bon bref
+    et donc son budget c'est euh environ euh genre 20000EUR
+    il habite à ah mince comment ça s'appelle euh Monte-Carlo
+    donc voilà quoi euh pescetarien et puis euh allergie soleil + produits chimiques
+    ah oui et il aime le navy voilà c'est tout euh merci"
+DIRTY_148,15 janvier 2026,30min,plusieurs,,Sr. João Gonçalves. HK. ok.
+DIRTY_149,15 janvier 2026,très long,multilingual,court,"Client . Age: . Budget: . Ville: .
+    Sport: ???. Régime: N/A. Allergie: null.
+    Couleur: undefined. Profession: NaN.
+    TODO: compléter fiche plus tard"
+DIRTY_150,15.01.26,,Anglais,longe,"RDV M. DUPONT Jean-Pierre le 31/02/2026 à 25:99
+    Client depuis 2099, 34 Jahre alt.
+    Anniversaire: hier/demain/bientôt
+    Budget budget illimité à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    HK. pas de restrictions. allergies alimentaires diverses. multicolore."

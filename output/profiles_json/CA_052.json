@@ -19,20 +19,20 @@
       "Opera"
     ],
     "voyage": [
-      "Culturel",
-      "Luxe"
+      "Luxe",
+      "Culturel"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Rose_gold",
+      "Noir",
       "Bordeaux",
-      "Noir"
+      "Cognac"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Diplome",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

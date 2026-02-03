@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_124",
+  "metadata": {
+    "date_conversation": "invalid",
+    "duration": "|Client|السيد أحمد|\n    |Age|63 years old|\n    |Budget|20000€|\n    |Ville|new york|\n    |Corrupted|data|table|error|format|",
+    "language": "Français"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

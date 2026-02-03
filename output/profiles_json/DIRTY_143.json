@@ -1,0 +1,31 @@
+{
+  "client_id": "DIRTY_143",
+  "metadata": {
+    "date_conversation": "15/01/2026",
+    "duration": "half hour",
+    "language": "Fr"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

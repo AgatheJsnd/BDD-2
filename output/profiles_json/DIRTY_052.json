@@ -1,0 +1,33 @@
+{
+  "client_id": "DIRTY_052",
+  "metadata": {
+    "date_conversation": "15.01.26",
+    "duration": "",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "18-25",
+    "statut_relationnel": "Fidèle"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Beige"
+    ]
+  },
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

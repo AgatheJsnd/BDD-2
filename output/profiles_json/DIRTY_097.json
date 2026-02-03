@@ -1,0 +1,27 @@
+{
+  "client_id": "DIRTY_097",
+  "metadata": {
+    "date_conversation": "Client Mr. O'Brien-McIntyre, around 34. Wants to buy un sac pour business trips. \n    Budget $5000. Habite DUBAI mais travels often to München et Milano.\n    Sport: running. regime special. Cuir rose gold preferred. N/A.",
+    "duration": "2026-01-15",
+    "language": "0.5h"
+  },
+  "identite": {
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

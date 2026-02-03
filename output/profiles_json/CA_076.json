@@ -16,20 +16,19 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
-      "Art",
-      "Musees"
+      "Art"
     ],
     "voyage": [
-      "Culturel",
-      "Luxe"
+      "Luxe",
+      "Culturel"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
       "Gris",
-      "Cognac",
+      "Navy",
       "Beige",
-      "Navy"
+      "Cognac"
     ],
     "matieres_preferees": [
       "Cuir"
@@ -50,7 +49,6 @@
     "canal_contact": "Email"
   },
   "metadata_client": {
-    "regime_alimentaire": "Végétarien",
     "allergies": [
       "fruits_coque"
     ]

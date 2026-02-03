@@ -7,6 +7,7 @@
   },
   "identite": {
     "genre": "Femme",
+    "age": "46-55",
     "statut_relationnel": "Nouveau"
   },
   "localisation": {
@@ -24,17 +25,16 @@
       ]
     },
     "art_culture": [
+      "Musees",
       "Opera",
-      "Art",
-      "Musees"
+      "Art"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
-      "Rose_gold",
+      "Noir",
       "Navy",
-      "Noir"
+      "Cognac"
     ]
   },
   "projet_achat": {
