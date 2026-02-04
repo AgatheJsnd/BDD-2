@@ -1,0 +1,45 @@
+{
+  "client_id": "CA_115",
+  "metadata": {
+    "date_conversation": "2026-01-29",
+    "duration": "42 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau"
+  },
+  "localisation": {
+    "amerique": [
+      "New_York"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Yoga"
+      ]
+    },
+    "art_culture": [
+      "Opera",
+      "Art"
+    ]
+  },
+  "style_personnel": {},
+  "projet_achat": {
+    "motif": "Anniversaire",
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

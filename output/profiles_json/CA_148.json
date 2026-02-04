@@ -1,0 +1,47 @@
+{
+  "client_id": "CA_148",
+  "metadata": {
+    "date_conversation": "2026-02-21",
+    "duration": "36 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "46-55",
+    "statut_relationnel": "Fidèle",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Golf"
+      ]
+    },
+    "art_culture": [
+      "Opera"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir"
+    ]
+  },
+  "projet_achat": {
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien"
+  }
+}

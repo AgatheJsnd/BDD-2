@@ -8,7 +8,8 @@
   "identite": {
     "genre": "Femme",
     "age": "46-55",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "profession": "Profession_libérale"
   },
   "localisation": {},
   "mobilite_rythme_vie": {
@@ -21,9 +22,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
+      "Bordeaux",
       "Noir",
-      "Bordeaux"
+      "Navy"
     ],
     "matieres_preferees": [
       "Cuir"
@@ -33,7 +34,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Diplome",
+    "motif": "Anniversaire",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},
@@ -46,5 +47,7 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {}
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
 }

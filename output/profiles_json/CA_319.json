@@ -1,0 +1,48 @@
+{
+  "client_id": "CA_319",
+  "metadata": {
+    "date_conversation": "2026-06-20",
+    "duration": "37 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "profession": "Artiste"
+  },
+  "localisation": {
+    "moyen_orient_asie": [
+      "Hong_Kong"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Musees",
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

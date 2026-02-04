@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Fidèle",
     "profession": "Profession_libérale"
   },
@@ -27,14 +26,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
       "Noir",
+      "Cognac",
+      "Rose_gold",
       "Bordeaux",
-      "Cognac"
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

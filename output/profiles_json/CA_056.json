@@ -16,8 +16,8 @@
   "lifestyle_centres_interet": {
     "sport": {
       "individuel": [
-        "Golf",
-        "Fitness"
+        "Fitness",
+        "Golf"
       ]
     },
     "art_culture": [
@@ -26,7 +26,7 @@
   },
   "style_personnel": {},
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "15-25k"
   },
   "appetence_evenementielle": {},

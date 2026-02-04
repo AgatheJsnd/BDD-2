@@ -25,15 +25,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Gris",
-      "Navy",
       "Noir",
-      "Beige"
+      "Gris",
+      "Beige",
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "25k+"
+    "motif": "Anniversaire",
+    "budget": "15-25k"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},
@@ -45,5 +45,7 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {}
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
 }

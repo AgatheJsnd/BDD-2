@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "Fidèle"
   },
   "localisation": {},
@@ -23,11 +22,12 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
+      "Rose_gold",
       "Cognac"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},

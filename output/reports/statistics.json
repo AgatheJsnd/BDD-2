@@ -1,51 +1,53 @@
 {
-  "total_clients": 100,
+  "total_clients": 400,
   "par_genre": {
-    "Femme": 93,
-    "Homme": 5
+    "Femme": 375,
+    "Homme": 15
   },
   "par_age": {
-    "36-45": 20,
-    "56+": 14,
-    "46-55": 18,
-    "26-35": 5
+    "36-45": 89,
+    "56+": 18,
+    "46-55": 35,
+    "26-35": 19,
+    "18-25": 1
   },
   "par_statut": {
-    "VIP": 47,
-    "Nouveau": 8,
-    "Fidèle": 33,
-    "Occasionnel": 3,
-    "Régulier": 9
+    "VIP": 151,
+    "Nouveau": 44,
+    "Fidèle": 172,
+    "Occasionnel": 5,
+    "Régulier": 28
   },
   "par_budget": {
-    "<5k": 10,
-    "5-10k": 27,
-    "10-15k": 22,
-    "15-25k": 24,
-    "25k+": 17
+    "<5k": 13,
+    "5-10k": 154,
+    "10-15k": 73,
+    "15-25k": 105,
+    "25k+": 32
   },
   "sports_populaires": {
-    "Golf": 9,
-    "Tennis": 4,
-    "Yoga": 14,
-    "Running": 10,
-    "Ski": 1,
-    "Football": 2,
-    "Fitness": 9
+    "Golf": 18,
+    "Tennis": 8,
+    "Yoga": 61,
+    "Running": 41,
+    "Ski": 3,
+    "Football": 3,
+    "Fitness": 26,
+    "Natation": 5
   },
   "couleurs_populaires": {
-    "Noir": 45,
-    "Cognac": 43,
-    "Navy": 35,
-    "Bordeaux": 22,
-    "Rose_gold": 18,
-    "Beige": 18,
-    "Gris": 9,
-    "Blanc": 3
+    "Noir": 184,
+    "Cognac": 89,
+    "Navy": 133,
+    "Bordeaux": 39,
+    "Rose_gold": 64,
+    "Beige": 150,
+    "Gris": 91,
+    "Blanc": 18
   },
   "regimes_alimentaires": {
-    "Pescetarien": 8,
-    "Végétarien": 25,
-    "Végane": 32
+    "Pescetarien": 82,
+    "Végétarien": 128,
+    "Végane": 76
   }
 }

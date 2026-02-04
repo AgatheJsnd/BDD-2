@@ -16,6 +16,7 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
+      "Musees",
       "Art"
     ],
     "voyage": [
@@ -25,17 +26,17 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Gris",
-      "Navy",
       "Beige",
-      "Cognac"
+      "Gris",
+      "Cognac",
+      "Navy"
     ],
     "matieres_preferees": [
       "Cuir"
     ]
   },
   "projet_achat": {
-    "motif": "Mariage",
+    "motif": "Anniversaire",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},
@@ -49,6 +50,7 @@
     "canal_contact": "Email"
   },
   "metadata_client": {
+    "regime_alimentaire": "Végétarien",
     "allergies": [
       "fruits_coque"
     ]

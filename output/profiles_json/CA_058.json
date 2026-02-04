@@ -8,7 +8,8 @@
   "identite": {
     "genre": "Femme",
     "age": "46-55",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "profession": "Profession_libérale"
   },
   "localisation": {},
   "mobilite_rythme_vie": {
@@ -19,14 +20,14 @@
       "Art"
     ],
     "voyage": [
-      "Aventure",
-      "Luxe"
+      "Luxe",
+      "Aventure"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
       "Beige",
+      "Noir",
       "Cognac"
     ],
     "matieres_preferees": [
@@ -34,8 +35,8 @@
     ]
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "25k+"
+    "motif": "Anniversaire",
+    "budget": "15-25k"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},
@@ -47,5 +48,7 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {}
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
 }

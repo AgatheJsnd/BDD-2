@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "56+",
     "statut_relationnel": "Nouveau"
   },
   "localisation": {
@@ -22,12 +21,13 @@
   "lifestyle_centres_interet": {},
   "style_personnel": {
     "couleurs_preferees": [
+      "Rose_gold",
       "Gris",
       "Beige"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "10-15k"
   },
   "appetence_evenementielle": {},

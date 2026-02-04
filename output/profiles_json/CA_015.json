@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Nouveau"
   },
   "localisation": {
@@ -32,13 +31,14 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
+      "Rose_gold",
       "Noir",
-      "Navy",
-      "Cognac"
+      "Cognac",
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "10-15k"
   },
   "appetence_evenementielle": {},

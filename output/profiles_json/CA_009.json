@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "VIP",
     "profession": "Cadre"
   },
@@ -22,9 +21,9 @@
   "lifestyle_centres_interet": {
     "sport": {
       "individuel": [
+        "Ski",
         "Golf",
-        "Yoga",
-        "Ski"
+        "Yoga"
       ]
     },
     "art_culture": [

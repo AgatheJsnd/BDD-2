@@ -34,10 +34,10 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
-      "Noir",
       "Bordeaux",
-      "Cognac"
+      "Noir",
+      "Cognac",
+      "Navy"
     ]
   },
   "projet_achat": {

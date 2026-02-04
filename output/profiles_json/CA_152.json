@@ -1,0 +1,53 @@
+{
+  "client_id": "CA_152",
+  "metadata": {
+    "date_conversation": "2026-02-25",
+    "duration": "41 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "profession": "Cadre"
+  },
+  "localisation": {
+    "europe": [
+      "Berlin"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Yoga"
+      ]
+    },
+    "art_culture": [
+      "Musees",
+      "Art"
+    ],
+    "voyage": [
+      "Luxe",
+      "Culturel"
+    ]
+  },
+  "style_personnel": {},
+  "projet_achat": {
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

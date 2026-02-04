@@ -35,20 +35,21 @@
       "Opera"
     ],
     "voyage": [
-      "Aventure",
-      "Luxe"
+      "Luxe",
+      "Aventure"
     ]
   },
   "style_personnel": {
     "couleurs_preferees": [
+      "Rose_gold",
       "Noir",
-      "Navy",
-      "Cognac"
+      "Cognac",
+      "Navy"
     ]
   },
   "projet_achat": {
     "motif": "Mariage",
-    "budget": "25k+"
+    "budget": "15-25k"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},
