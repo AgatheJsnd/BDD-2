@@ -22,6 +22,7 @@ class TagEngine:
                 'language': LANGUAGE_MAPPING.get(conversation['language'], conversation['language']),
                 'profile_version': '2.0'
             },
+            'transcription': conversation['transcription'],
             'identite': self._build_identite(analysis),
             'localisation': self._build_localisation(analysis),
             'lifestyle_centres_interet': self._build_lifestyle(analysis),
