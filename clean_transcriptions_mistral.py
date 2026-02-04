@@ -198,17 +198,13 @@ class TranscriptionCleaner:
             column: Nom de la colonne à nettoyer
             
         Returns:
-            DataFrame avec colonne nettoyée
+            DataFrame avec colonne nettoyée (écrase l'originale)
         """
         if column not in df.columns:
             raise ValueError(f"La colonne '{column}' n'existe pas dans le DataFrame")
         
-        # Création d'une copie pour ne pas modifier l'original
+        # Création d'une copie pour ne pas modifier l'original (au début)
         df_clean = df.copy()
-        
-        # Nouvelle colonne pour les textes nettoyés
-        cleaned_column = f"{column}_cleaned"
-        df_clean[cleaned_column] = ""
         
         # Traitement avec barre de progression
         print(f"\n🧹 Nettoyage de {len(df)} transcriptions...")
@@ -227,9 +223,10 @@ class TranscriptionCleaner:
             cleaned_batch = asyncio.run(self.process_batch_async(batch))
             all_cleaned.extend(cleaned_batch)
         
-        # Remplir la colonne avec les résultats
+        # Remplir la colonne ORIGINALE avec les résultats (écrasement)
         for idx, cleaned_text in enumerate(all_cleaned):
-            df_clean.at[idx, cleaned_column] = cleaned_text if cleaned_text else all_texts[idx]
+            if cleaned_text:
+                df_clean.at[idx, column] = cleaned_text
         
         return df_clean
 
