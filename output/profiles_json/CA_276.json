@@ -3,53 +3,84 @@
   "metadata": {
     "date_conversation": "2026-05-22",
     "duration": "28 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Cadre_Manager": [],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    },
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Gris"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs",
-      "Montres"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Gris",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien",
-    "allergies": [
-      "gluten"
-    ]
   }
 }

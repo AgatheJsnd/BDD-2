@@ -3,48 +3,79 @@
   "metadata": {
     "date_conversation": "2026-02-24",
     "duration": "27 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "26-35",
     "statut_relationnel": "Fidèle",
-    "profession": "Entrepreneur"
+    "age": "26-35",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {}
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Navy"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Argent",
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "<5k"
+    "budget": "<5k",
+    "motif_role": {
+      "pour_soi": [
+        "Plaisir personnel"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

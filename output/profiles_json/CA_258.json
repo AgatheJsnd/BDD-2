@@ -3,47 +3,63 @@
   "metadata": {
     "date_conversation": "2026-05-09",
     "duration": "33 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
-    "profession": "Cadre"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Milan"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
       ]
-    },
-    "art_culture": [
-      "Art"
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "budget": "10-15k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
-  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

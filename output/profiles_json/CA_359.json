@@ -3,43 +3,52 @@
   "metadata": {
     "date_conversation": "2026-07-18",
     "duration": "36 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "Fidèle",
-    "profession": "Artiste"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Gris",
-      "Beige"
-    ],
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Gris"
+      ],
+      "metalliques": [
+        "Or",
+        "Argent"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

@@ -3,53 +3,82 @@
   "metadata": {
     "date_conversation": "2026-04-14",
     "duration": "31 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
-    "profession": "Artiste"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Musees",
-      "Art"
-    ],
-    "voyage": [
-      "Culturel"
-    ]
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Cognac",
-      "Bordeaux",
-      "Beige"
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Bordeaux",
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "motif_role": {
+      "pour_soi": [
+        "Plaisir personnel"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
     ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs",
-      "Montres"
+    "valeurs": [
+      "Exclusivité",
+      "Qualité & savoir-faire"
     ]
   },
-  "projet_achat": {},
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
-  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

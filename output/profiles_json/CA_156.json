@@ -3,42 +3,75 @@
   "metadata": {
     "date_conversation": "2026-02-27",
     "duration": "29 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Homme",
-    "age": "36-45",
     "statut_relationnel": "Nouveau",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
   },
   "style_personnel": {
-    "pieces_favorites": [
-      "Sacs",
-      "Montres"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

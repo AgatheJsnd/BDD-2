@@ -3,53 +3,68 @@
   "metadata": {
     "date_conversation": "2026-04-29",
     "duration": "34 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "Fidèle",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Milan"
     ],
     "amerique": [
-      "New_York"
+      "New York"
     ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
   },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga",
-        "Fitness"
-      ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
     }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "allergies": [
-      "nickel"
-    ]
   }
 }

@@ -3,56 +3,79 @@
   "metadata": {
     "date_conversation": "2026-07-07",
     "duration": "30 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "VIP",
     "age": "36-45",
-    "statut_relationnel": "VIP"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Running"
-      ]
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
     },
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {}
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Cognac",
-      "Blanc",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs",
-      "Montres"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Blanc"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir",
+        "Lin"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {},
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien",
-    "allergies": [
-      "fruits_coque"
-    ]
   }
 }

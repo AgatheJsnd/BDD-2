@@ -3,46 +3,74 @@
   "metadata": {
     "date_conversation": "2026-05-15",
     "duration": "32 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Nouveau",
     "age": "36-45",
-    "statut_relationnel": "Nouveau"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Finance_Investissement": [
+        "Banquier"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {}
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Navy"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs",
-      "Montres"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Argent",
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir",
+        "Lin"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

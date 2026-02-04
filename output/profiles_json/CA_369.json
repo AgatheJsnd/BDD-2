@@ -3,48 +3,78 @@
   "metadata": {
     "date_conversation": "2026-07-25",
     "duration": "39 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Cadre"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
-      ]
-    },
-    "art_culture": [
-      "Musees",
-      "Art"
-    ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
   },
   "style_personnel": {
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "10-15k"
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    },
+    "marques_preferees": {
+      "Louis Vuitton": []
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

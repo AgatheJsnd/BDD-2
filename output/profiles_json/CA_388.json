@@ -3,44 +3,71 @@
   "metadata": {
     "date_conversation": "2026-08-08",
     "duration": "32 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Fidèle",
-    "profession": "Cadre"
-  },
-  "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "sport": {
-      "individuel": [
-        "Tennis"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
       ]
     }
   },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "raquette": [
+          "Tennis"
+        ]
+      }
+    }
+  },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Gris",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "10-15k"
+    "budget": "10–15k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

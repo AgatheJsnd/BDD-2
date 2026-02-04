@@ -3,38 +3,47 @@
   "metadata": {
     "date_conversation": "2026-03-31",
     "duration": "42 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Fidèle"
+    "statut_relationnel": "Fidèle",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Gris",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "15-25k"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

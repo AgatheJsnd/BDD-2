@@ -3,47 +3,76 @@
   "metadata": {
     "date_conversation": "2026-03-18",
     "duration": "46 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Gris",
-      "Rose_gold"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Gris",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Rouge",
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "25k+"
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

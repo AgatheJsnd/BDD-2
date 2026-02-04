@@ -3,52 +3,85 @@
   "metadata": {
     "date_conversation": "2026-02-11",
     "duration": "39 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Artiste"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe",
-      "Culturel"
-    ]
+    "musique": {}
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Navy",
-      "Gris",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Gris",
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "15-25k"
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

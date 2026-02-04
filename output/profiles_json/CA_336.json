@@ -3,56 +3,95 @@
   "metadata": {
     "date_conversation": "2026-07-03",
     "duration": "37 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Fidèle",
-    "profession": "Profession_libérale"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Sport": [
+        "Athlète"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Ski"
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Ski"
+        ]
+      }
+    },
+    "musique": {
+      "classique_elegant": [
+        "Classique"
       ]
     },
-    "art_culture": [
-      "Art"
-    ]
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Navy"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs",
-      "Montres"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir",
+        "Lin"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage"
+    "motif_role": {
+      "offrir": [
+        "Mariage",
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien",
-    "allergies": [
-      "latex"
-    ]
   }
 }

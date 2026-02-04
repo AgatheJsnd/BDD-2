@@ -3,55 +3,92 @@
   "metadata": {
     "date_conversation": "2026-06-02",
     "duration": "29 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "Fidèle",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Cadre_Manager": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Running"
-      ]
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
     },
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs",
-      "Montres"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "pour_soi": [
+        "Plaisir personnel"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien",
-    "allergies": [
-      "latex"
-    ]
   }
 }

@@ -3,64 +3,86 @@
   "metadata": {
     "date_conversation": "2026-04-01",
     "duration": "43 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "London"
     ],
     "amerique": [
-      "New_York"
+      "New York"
     ],
     "moyen_orient_asie": [
       "Singapore",
-      "Hong_Kong"
+      "Hong Kong"
     ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
   },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe"
-    ]
+    "voyage": {
+      "experience": [
+        "Détente",
+        "Luxe"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Navy",
-      "Rose_gold",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Marine",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "15-25k"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

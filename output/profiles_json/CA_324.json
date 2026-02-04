@@ -3,46 +3,66 @@
   "metadata": {
     "date_conversation": "2026-06-25",
     "duration": "38 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Fidèle"
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
-      ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
     },
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe"
-    ]
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
   },
   "style_personnel": {
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "15-25k"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

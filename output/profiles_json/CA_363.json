@@ -3,40 +3,71 @@
   "metadata": {
     "date_conversation": "2026-07-22",
     "duration": "33 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "Fidèle",
-    "profession": "Profession_libérale"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    },
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
       ]
     },
-    "art_culture": [
-      "Art"
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Exclusivité"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "budget": "5-10k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

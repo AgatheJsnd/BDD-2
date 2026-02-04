@@ -3,60 +3,91 @@
   "metadata": {
     "date_conversation": "2026-06-24",
     "duration": "47 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Cadre_Manager": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "London"
     ],
     "amerique": [
-      "New_York"
+      "New York"
     ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
   },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Opera",
-      "Musees",
-      "Art"
-    ],
-    "voyage": [
-      "Luxe",
-      "Culturel"
-    ]
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    },
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Cognac",
-      "Rose_gold",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "25k+"
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

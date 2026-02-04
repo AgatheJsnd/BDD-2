@@ -3,48 +3,92 @@
   "metadata": {
     "date_conversation": "2026-06-16",
     "duration": "30 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "VIP",
     "age": "56+",
-    "statut_relationnel": "VIP"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Ski"
+        ]
+      }
+    },
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Cognac",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "tons_froids": [
+        "Vert"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire"
+    "motif_role": {
+      "offrir": [
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

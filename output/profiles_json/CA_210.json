@@ -3,44 +3,64 @@
   "metadata": {
     "date_conversation": "2026-04-07",
     "duration": "42 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Nouveau"
+    "statut_relationnel": "Nouveau",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Opera"
-    ]
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Gris",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "15-25k"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

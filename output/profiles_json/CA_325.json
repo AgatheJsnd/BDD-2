@@ -3,52 +3,72 @@
   "metadata": {
     "date_conversation": "2026-06-25",
     "duration": "40 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Nouveau"
+    "statut_relationnel": "Nouveau",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
-      "London",
-      "Paris"
+      "Paris",
+      "London"
     ],
     "amerique": [
-      "New_York"
+      "New York"
     ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
   },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga",
-        "Running"
-      ]
-    },
-    "art_culture": [
-      "Opera",
-      "Art"
-    ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ],
+        "endurance": [
+          "Running"
+        ]
+      }
+    }
   },
   "style_personnel": {
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

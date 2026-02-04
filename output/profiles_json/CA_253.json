@@ -3,42 +3,66 @@
   "metadata": {
     "date_conversation": "2026-05-06",
     "duration": "34 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "Fidèle",
-    "profession": "Profession_libérale"
-  },
-  "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "sport": {
-      "individuel": [
-        "Yoga"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
       ]
     }
   },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    },
+    "musique": {}
+  },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Beige"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_froids": [
+        "Bleu"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "marques_preferees": {
+      "Louis Vuitton": []
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

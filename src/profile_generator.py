@@ -410,9 +410,9 @@ class ProfileGenerator:
         }
 
     def get_stats_sql(self) -> Dict:
-        colors = self._count_tags("style_personnel", subcategory="couleurs_preferees")
+        colors = self._count_tags("style_personnel", subcategory_like="couleurs_preferees/%")
         sports = self._count_tags("lifestyle_centres_interet", subcategory_like="sport/%")
-        regimes = self._count_tags("metadata_client", subcategory="regime_alimentaire")
+        regimes = self._count_tags("preferences_contraintes", subcategory="regime")
         return {
             'couleurs_populaires': colors,
             'sports_populaires': sports,
@@ -681,22 +681,30 @@ class ProfileGenerator:
             if budget:
                 stats['par_budget'][budget] = stats['par_budget'].get(budget, 0) + 1
             
-            # Sports
-            sports = profile.get('lifestyle_centres_interet', {}).get('sport', {})
-            for sport_type, sport_list in sports.items():
-                if isinstance(sport_list, list):
-                    for sport in sport_list:
-                        stats['sports_populaires'][sport] = stats['sports_populaires'].get(sport, 0) + 1
+            # Sports (Nested)
+            def extract_list_from_nested(d):
+                items = []
+                if isinstance(d, list): return d
+                if isinstance(d, dict):
+                    for v in d.values():
+                        items.extend(extract_list_from_nested(v))
+                return items
+
+            sports = extract_list_from_nested(profile.get('lifestyle_centres_interet', {}).get('sport', {}))
+            for sport in sports:
+                stats['sports_populaires'][sport] = stats['sports_populaires'].get(sport, 0) + 1
             
-            # Couleurs
-            couleurs = profile.get('style_personnel', {}).get('couleurs_preferees', [])
+            # Couleurs (Nested)
+            couleurs = extract_list_from_nested(profile.get('style_personnel', {}).get('couleurs_preferees', {}))
             for couleur in couleurs:
                 stats['couleurs_populaires'][couleur] = stats['couleurs_populaires'].get(couleur, 0) + 1
             
             # Régimes
-            regime = profile.get('metadata_client', {}).get('regime_alimentaire')
-            if regime:
-                stats['regimes_alimentaires'][regime] = stats['regimes_alimentaires'].get(regime, 0) + 1
+            regimes = profile.get('preferences_contraintes', {}).get('regime', [])
+            if isinstance(regimes, list):
+                for regime in regimes:
+                    if regime != "Aucun":
+                        stats['regimes_alimentaires'][regime] = stats['regimes_alimentaires'].get(regime, 0) + 1
         
         return stats
     

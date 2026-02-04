@@ -3,38 +3,56 @@
   "metadata": {
     "date_conversation": "2026-07-02",
     "duration": "31 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Nouveau"
+    "statut_relationnel": "Nouveau",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "moyen_orient_asie": [
       "Tokyo"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    }
+  },
+  "style_personnel": {
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "budget": "5-10k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

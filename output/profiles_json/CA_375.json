@@ -3,48 +3,54 @@
   "metadata": {
     "date_conversation": "2026-07-30",
     "duration": "41 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "London"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Blanc",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Noir"
+      ],
+      "tons_froids": [
+        "Vert"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "15-25k"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

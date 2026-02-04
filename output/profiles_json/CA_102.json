@@ -3,40 +3,62 @@
   "metadata": {
     "date_conversation": "2026-01-21",
     "duration": "42 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
+    "voyage": {
+      "experience": [
+        "Aventure"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
     ],
-    "voyage": [
-      "Aventure"
+    "valeurs": [
+      "Exclusivité"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "10-15k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
-  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

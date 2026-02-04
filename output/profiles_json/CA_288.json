@@ -3,52 +3,69 @@
   "metadata": {
     "date_conversation": "2026-06-01",
     "duration": "32 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness",
-        "Golf"
-      ]
-    },
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe"
-    ]
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "10-15k"
+    "budget": "10–15k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

@@ -3,43 +3,63 @@
   "metadata": {
     "date_conversation": "2026-02-26",
     "duration": "32 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "Fidèle",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness"
+      "collectif": [],
+      "individuel": {}
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
       ]
     },
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe"
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "budget": "15-25k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

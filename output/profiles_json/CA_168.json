@@ -3,40 +3,51 @@
   "metadata": {
     "date_conversation": "2026-03-07",
     "duration": "34 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "Fidèle",
     "age": "46-55",
-    "statut_relationnel": "Fidèle"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

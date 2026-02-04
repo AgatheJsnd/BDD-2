@@ -3,54 +3,64 @@
   "metadata": {
     "date_conversation": "2026-06-23",
     "duration": "44 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Régulier"
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness"
-      ]
+      "collectif": [],
+      "individuel": {}
     },
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe",
-      "Aventure"
-    ]
+    "voyage": {
+      "experience": [
+        "Aventure",
+        "Luxe"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Gris",
-      "Beige"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Montres"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "10-15k"
+    "budget": "10–15k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

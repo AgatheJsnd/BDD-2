@@ -3,44 +3,58 @@
   "metadata": {
     "date_conversation": "2026-04-11",
     "duration": "32 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Homme",
-    "age": "36-45",
     "statut_relationnel": "Fidèle",
-    "profession": "Artiste"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
-  "localisation": {
-    "europe": [
-      "Berlin"
-    ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
-  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

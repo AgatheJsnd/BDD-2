@@ -3,41 +3,69 @@
   "metadata": {
     "date_conversation": "2026-02-13",
     "duration": "44 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness",
-        "Running"
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
       ]
     },
-    "art_culture": [
-      "Art"
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    },
+    "marques_preferees": {
+      "Louis Vuitton": []
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "10-15k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
-  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

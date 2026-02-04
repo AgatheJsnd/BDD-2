@@ -3,45 +3,66 @@
   "metadata": {
     "date_conversation": "2026-02-21",
     "duration": "36 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Fidèle",
-    "profession": "Entrepreneur"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Golf"
-      ]
-    },
-    "art_culture": [
-      "Opera"
-    ]
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

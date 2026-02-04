@@ -2,14 +2,15 @@
   "total_clients": 400,
   "par_genre": {
     "Femme": 375,
-    "Homme": 15
+    "Homme": 15,
+    "Autre": 8
   },
   "par_age": {
-    "36-45": 89,
-    "56+": 18,
-    "46-55": 35,
-    "26-35": 19,
-    "18-25": 1
+    "36-45": 122,
+    "56+": 20,
+    "46-55": 58,
+    "26-35": 31,
+    "18-25": 10
   },
   "par_statut": {
     "VIP": 151,
@@ -20,34 +21,43 @@
   },
   "par_budget": {
     "<5k": 13,
-    "5-10k": 154,
-    "10-15k": 73,
-    "15-25k": 105,
-    "25k+": 32
+    "5-10k": 27,
+    "10-15k": 22,
+    "15-25k": 27,
+    "25k+": 32,
+    "10–15k": 51,
+    "5–10k": 127,
+    "15–25k": 78
   },
   "sports_populaires": {
     "Golf": 18,
     "Tennis": 8,
-    "Yoga": 61,
-    "Running": 41,
-    "Ski": 3,
-    "Football": 3,
-    "Fitness": 26,
+    "Yoga": 62,
+    "Running": 39,
+    "Ski": 8,
+    "Football": 2,
+    "Fitness": 9,
     "Natation": 5
   },
   "couleurs_populaires": {
     "Noir": 184,
-    "Cognac": 89,
-    "Navy": 133,
+    "Cognac": 126,
+    "Navy": 35,
     "Bordeaux": 39,
-    "Rose_gold": 64,
-    "Beige": 150,
-    "Gris": 91,
-    "Blanc": 18
+    "Rose_gold": 20,
+    "Beige": 164,
+    "Gris": 46,
+    "Blanc": 12,
+    "Marine": 95,
+    "Or": 296,
+    "Rouge": 121,
+    "Vert": 15,
+    "Argent": 8,
+    "Bleu": 1
   },
   "regimes_alimentaires": {
-    "Pescetarien": 82,
-    "Végétarien": 128,
-    "Végane": 76
+    "Vegetarien": 97,
+    "Vegane": 42,
+    "Pescetarien": 45
   }
 }

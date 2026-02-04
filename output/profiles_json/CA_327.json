@@ -3,39 +3,76 @@
   "metadata": {
     "date_conversation": "2026-06-26",
     "duration": "35 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "Nouveau",
-    "profession": "Artiste"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "metalliques": [
+        "Or"
       ]
     },
-    "art_culture": [
-      "Art"
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ],
+    "valeurs": [
+      "Éthique / durable"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "<5k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }
