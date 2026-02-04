@@ -1,9 +1,5 @@
-pandas
-openpyxl
-tqdm
-matplotlib==3.8.4
-numpy==1.26.4
-streamlit
-plotly
-mistralai
-python-dotenv
+streamlit>=1.30.0
+mistralai>=0.1.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+python-dotenv>=1.0.0
