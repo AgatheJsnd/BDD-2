@@ -1,0 +1,46 @@
+{
+  "client_id": "CA_380",
+  "metadata": {
+    "date_conversation": "2026-08-04",
+    "duration": "42 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Opera",
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Navy",
+      "Beige"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Mariage",
+    "budget": "15-25k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

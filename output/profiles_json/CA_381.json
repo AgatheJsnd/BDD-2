@@ -1,0 +1,64 @@
+{
+  "client_id": "CA_381",
+  "metadata": {
+    "date_conversation": "2026-08-04",
+    "duration": "31 min",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "26-35",
+    "statut_relationnel": "Fidèle",
+    "profession": "Artiste"
+  },
+  "localisation": {
+    "europe": [
+      "Paris"
+    ],
+    "moyen_orient_asie": [
+      "Tokyo"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Yoga"
+      ]
+    },
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Beige"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Sacs",
+      "Montres"
+    ]
+  },
+  "projet_achat": {
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien",
+    "allergies": [
+      "fruits_coque"
+    ]
+  }
+}

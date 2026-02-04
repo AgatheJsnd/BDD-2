@@ -1,0 +1,40 @@
+{
+  "client_id": "CA_349",
+  "metadata": {
+    "date_conversation": "2026-07-11",
+    "duration": "33 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "client_id": "CA_337",
+  "metadata": {
+    "date_conversation": "2026-07-03",
+    "duration": "45 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Fitness",
+        "Running"
+      ]
+    },
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {},
+  "projet_achat": {
+    "motif": "Anniversaire",
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

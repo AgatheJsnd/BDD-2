@@ -1,0 +1,40 @@
+{
+  "client_id": "CA_335",
+  "metadata": {
+    "date_conversation": "2026-07-02",
+    "duration": "31 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau"
+  },
+  "localisation": {
+    "moyen_orient_asie": [
+      "Tokyo"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {},
+  "projet_achat": {
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

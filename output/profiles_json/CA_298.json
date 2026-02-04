@@ -1,0 +1,48 @@
+{
+  "client_id": "CA_298",
+  "metadata": {
+    "date_conversation": "2026-06-06",
+    "duration": "33 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "36-45",
+    "statut_relationnel": "Fidèle",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {
+    "amerique": [
+      "New_York"
+    ],
+    "moyen_orient_asie": [
+      "Tokyo"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Bordeaux"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
+}

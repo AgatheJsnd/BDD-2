@@ -1,0 +1,43 @@
+{
+  "client_id": "CA_215",
+  "metadata": {
+    "date_conversation": "2026-04-09",
+    "duration": "40 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Gris",
+      "Rose_gold",
+      "Beige"
+    ],
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

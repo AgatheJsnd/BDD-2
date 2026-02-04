@@ -1,0 +1,53 @@
+{
+  "client_id": "CA_109",
+  "metadata": {
+    "date_conversation": "2026-01-27",
+    "duration": "32 min",
+    "language": "Espagnol"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier"
+  },
+  "localisation": {
+    "moyen_orient_asie": [
+      "Dubai"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Yoga"
+      ]
+    },
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Navy"
+    ],
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végane"
+  }
+}

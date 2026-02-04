@@ -1,0 +1,62 @@
+{
+  "client_id": "CA_322",
+  "metadata": {
+    "date_conversation": "2026-06-24",
+    "duration": "47 min",
+    "language": "Anglais"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "profession": "Entrepreneur"
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ],
+    "amerique": [
+      "New_York"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Opera",
+      "Musees",
+      "Art"
+    ],
+    "voyage": [
+      "Luxe",
+      "Culturel"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Cognac",
+      "Rose_gold",
+      "Beige"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "25k+"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Pescetarien"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "client_id": "CA_153",
+  "metadata": {
+    "date_conversation": "2026-02-25",
+    "duration": "35 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "46-55",
+    "statut_relationnel": "VIP",
+    "profession": "Artiste"
+  },
+  "localisation": {
+    "europe": [
+      "Berlin"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Musees",
+      "Art"
+    ]
+  },
+  "style_personnel": {},
+  "projet_achat": {
+    "budget": "10-15k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {
+    "influence": "Réseau_affluent"
+  },
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "allergies": [
+      "nickel"
+    ]
+  }
+}

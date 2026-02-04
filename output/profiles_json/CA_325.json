@@ -1,0 +1,54 @@
+{
+  "client_id": "CA_325",
+  "metadata": {
+    "date_conversation": "2026-06-25",
+    "duration": "40 min",
+    "language": "Allemand"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau"
+  },
+  "localisation": {
+    "europe": [
+      "London",
+      "Paris"
+    ],
+    "amerique": [
+      "New_York"
+    ]
+  },
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Yoga",
+        "Running"
+      ]
+    },
+    "art_culture": [
+      "Opera",
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "pieces_favorites": [
+      "Sacs"
+    ]
+  },
+  "projet_achat": {
+    "motif": "Cadeau",
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {}
+}

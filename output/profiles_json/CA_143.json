@@ -1,0 +1,46 @@
+{
+  "client_id": "CA_143",
+  "metadata": {
+    "date_conversation": "2026-02-18",
+    "duration": "33 min",
+    "language": "Italien"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "46-55",
+    "statut_relationnel": "Fidèle",
+    "profession": "Profession_libérale"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "individuel": [
+        "Yoga"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Navy",
+      "Gris",
+      "Beige"
+    ]
+  },
+  "projet_achat": {
+    "budget": "5-10k"
+  },
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
+}

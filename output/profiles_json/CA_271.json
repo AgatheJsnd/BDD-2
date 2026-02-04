@@ -1,0 +1,47 @@
+{
+  "client_id": "CA_271",
+  "metadata": {
+    "date_conversation": "2026-05-19",
+    "duration": "30 min",
+    "language": "Français"
+  },
+  "identite": {
+    "genre": "Femme",
+    "age": "26-35",
+    "statut_relationnel": "Fidèle"
+  },
+  "localisation": {},
+  "mobilite_rythme_vie": {
+    "frequence_deplacement": "Mobile"
+  },
+  "lifestyle_centres_interet": {
+    "art_culture": [
+      "Art"
+    ]
+  },
+  "style_personnel": {
+    "couleurs_preferees": [
+      "Noir",
+      "Gris"
+    ],
+    "matieres_preferees": [
+      "Cuir"
+    ],
+    "pieces_favorites": [
+      "Sacs",
+      "Montres"
+    ]
+  },
+  "projet_achat": {},
+  "appetence_evenementielle": {},
+  "relation_produit_innovation": {},
+  "reseau_influence": {},
+  "suivi": {
+    "action": "Rappeler",
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  },
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
+}
