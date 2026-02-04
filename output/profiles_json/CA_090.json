@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
     "profession": "Entrepreneur"
   },
@@ -34,8 +33,8 @@
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "25k+"
+    "motif": "Mariage",
+    "budget": "15-25k"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

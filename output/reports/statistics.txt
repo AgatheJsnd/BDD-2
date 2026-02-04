@@ -2,40 +2,42 @@
 RAPPORT STATISTIQUES - PROFILS CLIENTS LVMH
 ============================================================
 
-Total clients : 100
+Total clients : 405
 
 Répartition par genre :
-  - Femme: 93 (93.0%)
-  - Homme: 5 (5.0%)
+  - Femme: 379 (93.6%)
+  - Homme: 16 (4.0%)
+  - Autre: 8 (2.0%)
 
 Répartition par âge :
-  - 36-45: 20 (20.0%)
-  - 46-55: 18 (18.0%)
-  - 56+: 14 (14.0%)
-  - 26-35: 5 (5.0%)
+  - 36-45: 123 (30.4%)
+  - 46-55: 58 (14.3%)
+  - 26-35: 33 (8.1%)
+  - 56+: 20 (4.9%)
+  - 18-25: 10 (2.5%)
 
 Répartition par statut :
-  - VIP: 47 (47.0%)
-  - Fidèle: 33 (33.0%)
-  - Régulier: 9 (9.0%)
-  - Nouveau: 8 (8.0%)
-  - Occasionnel: 3 (3.0%)
+  - Fidèle: 173 (42.7%)
+  - VIP: 153 (37.8%)
+  - Nouveau: 45 (11.1%)
+  - Régulier: 29 (7.2%)
+  - Occasionnel: 5 (1.2%)
 
 Top 5 sports :
-  - Yoga: 14 clients
-  - Running: 10 clients
-  - Golf: 9 clients
+  - Yoga: 62 clients
+  - Running: 39 clients
+  - Golf: 18 clients
   - Fitness: 9 clients
-  - Tennis: 4 clients
+  - Tennis: 8 clients
 
 Top 5 couleurs :
-  - Noir: 45 clients
-  - Cognac: 43 clients
-  - Navy: 35 clients
-  - Bordeaux: 22 clients
-  - Rose_gold: 18 clients
+  - Or: 300 clients
+  - Noir: 185 clients
+  - Beige: 165 clients
+  - Cognac: 126 clients
+  - Rouge: 123 clients
 
 Régimes alimentaires :
-  - Végane: 32 clients
-  - Végétarien: 25 clients
-  - Pescetarien: 8 clients
+  - Vegetarien: 97 clients
+  - Pescetarien: 45 clients
+  - Vegane: 42 clients

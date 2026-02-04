@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Fidèle",
     "profession": "Entrepreneur"
   },
@@ -34,14 +33,14 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Noir",
       "Beige",
+      "Noir",
       "Cognac"
     ]
   },
   "projet_achat": {
     "motif": "Mariage",
-    "budget": "25k+"
+    "budget": "15-25k"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

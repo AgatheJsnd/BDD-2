@@ -188,6 +188,12 @@ def load_kpis_stats():
     return pg.get_kpis_sql(), pg.get_stats_sql()
 
 @st.cache_data
+def load_tag_trends():
+    """Charge les tendances des tags (mots-clés)."""
+    pg = ProfileGenerator()
+    return pg.get_top_tags(limit=40)
+
+@st.cache_data
 def load_conversations():
     """Charge les conversations (optionnel)."""
     try:
@@ -848,6 +854,29 @@ def main():
             if query:
                 criteria = parse_segment_query(query)
                 st.info(f"Critères identifiés: {criteria}")
+            
+            st.markdown("---")
+            st.subheader("🌐 Cartographie des Mots-Clés")
+            st.write("Visualisation des thématiques et préférences les plus fréquentes détectées dans les conversations.")
+            
+            tag_data = load_tag_trends()
+            if tag_data:
+                df_tags = pd.DataFrame(tag_data)
+                # Supprimer les tags trop génériques ou techniques si nécessaire
+                # df_tags = df_tags[~df_tags['tag'].isin(['N/A', 'FR', 'EN'])] 
+                
+                fig_tags = px.treemap(
+                    df_tags, 
+                    path=[px.Constant("Tous les Mots-Clés"), 'tag'], 
+                    values='count',
+                    color='count',
+                    color_continuous_scale='Brwnyl', # Échelle de couleurs ambre/marron pour LVMH
+                    title="Intensité des thématiques clients"
+                )
+                fig_tags.update_layout(margin=dict(t=30, l=10, r=10, b=10))
+                st.plotly_chart(fig_tags, use_container_width=True)
+            else:
+                st.warning("Aucune donnée de mots-clés disponible. Lancez main.py pour les générer.")
 
     # ===== TAB 4: ACTIONS =====
     if "Actions" in tabs:

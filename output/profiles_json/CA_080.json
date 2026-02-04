@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "26-35",
     "statut_relationnel": "VIP"
   },
   "localisation": {},
@@ -25,15 +24,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
-      "Noir",
       "Bordeaux",
-      "Cognac"
+      "Noir",
+      "Cognac",
+      "Navy"
     ]
   },
   "projet_achat": {
     "motif": "Cadeau",
-    "budget": "10-15k"
+    "budget": "25k+"
   },
   "appetence_evenementielle": {},
   "relation_produit_innovation": {},

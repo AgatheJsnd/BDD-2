@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Régulier",
     "profession": "Profession_libérale"
   },
@@ -30,9 +29,9 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Navy",
       "Noir",
-      "Beige"
+      "Beige",
+      "Navy"
     ]
   },
   "projet_achat": {

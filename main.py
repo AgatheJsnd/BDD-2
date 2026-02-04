@@ -16,7 +16,9 @@ def main():
 
     # 1. Initialisation des modules
     print("Initialisation des modules...")
-    csv_processor = CSVProcessor("LVMH_Realistic_Merged_CA001-100.csv")
+    # csv_processor = CSVProcessor("LVMH_Realistic_Merged_CA001-100.csv") # OLD
+    # Utilisation du fichier nettoyé
+    csv_processor = CSVProcessor("LVMH_sample_multilang_FULL_cleaned.csv")
     text_analyzer = TextAnalyzer()
     tag_engine = TagEngine()
     profile_generator = ProfileGenerator()

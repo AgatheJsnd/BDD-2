@@ -26,13 +26,13 @@
   "style_personnel": {
     "couleurs_preferees": [
       "Rose_gold",
-      "Noir",
       "Bordeaux",
+      "Noir",
       "Cognac"
     ]
   },
   "projet_achat": {
-    "motif": "Diplome",
+    "motif": "Mariage",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

@@ -1,0 +1,689 @@
+﻿client_id;metadata_date_conversation;metadata_duration;metadata_language;identite_genre;identite_age;identite_statut_relationnel;identite_profession;localisation_europe;mobilite_rythme_vie_frequence_deplacement;lifestyle_centres_interet_sport_individuel;lifestyle_centres_interet_art_culture;style_personnel_couleurs_preferees;style_personnel_matieres_preferees;style_personnel_pieces_favorites;projet_achat_motif;projet_achat_budget;reseau_influence_influence;suivi_action;suivi_echeance;suivi_canal_contact;metadata_client_regime_alimentaire;metadata_client_allergies;lifestyle_centres_interet_voyage;localisation_moyen_orient_asie;localisation_amerique;lifestyle_centres_interet_sport_collectif;metadata_profile_version;identite_langue_parlee;identite_profession_secteur_tech_digital;lifestyle_centres_interet_sport_individuel_endurance;lifestyle_centres_interet_voyage_experience;style_personnel_couleurs_preferees_neutres_intemporelles;style_personnel_couleurs_preferees_metalliques;style_personnel_matieres_preferees_naturelles;style_personnel_matieres_preferees_alternatives;style_personnel_pieces_favorites_sacs;projet_achat_motif_role_offrir;preferences_contraintes_regime;preferences_contraintes_valeurs;identite_profession_secteur_entrepreneur_dirigeant;identite_profession_secteur_cadre_manager;identite_profession_secteur_mode_luxe;style_personnel_couleurs_preferees_tons_chauds;style_personnel_pieces_favorites_chaussures;style_personnel_pieces_favorites_accessoires;identite_profession_secteur_profession_liberale;identite_profession_secteur_art_creation;lifestyle_centres_interet_sport_individuel_bien_etre;lifestyle_centres_interet_sport_individuel_outdoor;style_personnel_couleurs_preferees_tons_froids;identite_profession_secteur_medias_communication;identite_profession_secteur_finance_investissement;lifestyle_centres_interet_musique_electronique;lifestyle_centres_interet_musique_classique_elegant;identite_profession_secteur_autres;projet_achat_motif_role_pour_soi;projet_achat_marques_preferees_louis_vuitton;identite_profession_secteur_sport;lifestyle_centres_interet_sport_individuel_raquette;lifestyle_centres_interet_musique_moderne_populaire
+CA_001;2026-01-08;35 min;Français;Femme;36-45;VIP;Profession_libérale;Paris;Mobile;Golf;Art;Noir, Cognac;Cuir;Montres, Portefeuille, Sacs;Anniversaire;<5k;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_002;2026-01-08;25 min;Anglais;Femme;36-45;Nouveau;;London;Mobile;Tennis;;Noir, Navy;Cuir;Sacs;Anniversaire;5-10k;;Rappeler;M+1;Email;Pescetarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_003;2026-01-09;45 min;Italien;Femme;56+;VIP;;;Mobile;Yoga;Art;Bordeaux, Cognac;Cuir;;Diplome;10-15k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_004;2026-01-09;20 min;Français;Femme;56+;Fidèle;Cadre;;Mobile;;Art;Noir;Cuir;Portefeuille;Anniversaire;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_005;2026-01-10;55 min;Anglais;Femme;46-55;VIP;Profession_libérale;;Mobile;Golf;Musees, Art;Rose_gold, Beige, Cognac;Cuir;Sacs;Diplome;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;;Aventure;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_006;2026-01-10;30 min;Espagnol;Homme;;VIP;;Madrid;Mobile;;;;;Sacs;Anniversaire;25k+;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_007;2026-01-13;40 min;Allemand;Femme;46-55;Occasionnel;Entrepreneur;Berlin, Milan;Mobile;;Opera, Art;Navy, Cognac;Cuir;;Anniversaire;5-10k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_008;2026-01-13;25 min;Français;Femme;36-45;VIP;Entrepreneur;Paris;Mobile;Running;Art;;;;Anniversaire;10-15k;Réseau_affluent;Rappeler;M+1;Email;;gluten;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_009;2026-01-14;50 min;Anglais;Femme;;VIP;Cadre;London;Mobile;Ski, Golf, Yoga;Art;;Cuir;Sacs;Diplome;25k+;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_010;2026-01-14;35 min;Français;Femme;46-55;VIP;Profession_libérale;;Mobile;;Art;Bordeaux, Noir, Navy;Cuir;Sacs;Anniversaire;5-10k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_011;2026-01-15;30 min;Italien;Femme;26-35;Fidèle;Entrepreneur;;Mobile;;Art;;Cuir;;;15-25k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_012;2026-01-15;45 min;Espagnol;Femme;36-45;Nouveau;;Madrid;Mobile;;Art;Navy, Cognac;;Sacs;Anniversaire;10-15k;;Rappeler;M+1;Email;Végétarien;;Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_013;2026-01-16;20 min;Français;Femme;56+;Fidèle;;;Mobile;;Art;Noir;Cuir;;Cadeau;;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_014;2026-01-16;55 min;Anglais;Femme;;VIP;Entrepreneur;;Mobile;;Art;;Cuir;Sacs;Cadeau;25k+;Réseau_affluent;Rappeler;M+1;Email;Végane;;Luxe;Dubai;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_015;2026-01-17;30 min;Allemand;Femme;;Nouveau;;Berlin;Mobile;Golf;Musees, Opera, Art;Rose_gold, Noir, Cognac, Navy;;;Mariage;10-15k;;Rappeler;M+1;Email;;nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_016;2026-01-17;25 min;Français;Femme;36-45;Fidèle;;Berlin;Mobile;Running;Art;Noir, Navy;Cuir;Montres, Sacs;;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_017;2026-01-20;40 min;Italien;Femme;56+;VIP;Entrepreneur;Milan;Mobile;;Opera, Art;Beige, Noir, Cognac;;;Cadeau;15-25k;Réseau_affluent;Rappeler;M+1;Email;;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_018;2026-01-20;35 min;Anglais;Femme;;VIP;;;Mobile;Tennis, Running;Art;Bordeaux;Cuir;Sacs;Anniversaire;10-15k;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_019;2026-01-21;50 min;Français;Femme;46-55;VIP;Entrepreneur;;Mobile;;Art;Gris, Cognac, Bordeaux, Beige, Navy;Cuir;;Anniversaire;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;fruits_coque;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_020;2026-01-21;30 min;Espagnol;Femme;36-45;VIP;Entrepreneur;;Mobile;Yoga;Art;;;Sacs;;10-15k;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_021;2026-01-22;25 min;Français;Femme;56+;Occasionnel;Profession_libérale;;Mobile;;Opera;Bordeaux, Navy;;;Anniversaire;5-10k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_022;2026-01-22;40 min;Anglais;Femme;;VIP;Artiste;London;Mobile;;Art;;;;Cadeau;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_023;2026-01-23;30 min;Allemand;Femme;;Régulier;;;Mobile;Yoga;Opera;Noir, Gris, Beige;;;Anniversaire;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_024;2026-01-23;50 min;Italien;Femme;36-45;VIP;Entrepreneur;Milan;Mobile;Tennis;Opera;Rose_gold, Noir, Cognac, Navy;;;Mariage;15-25k;Réseau_affluent;Rappeler;M+1;Email;;;Luxe, Aventure;;New_York;Football;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_025;2026-01-24;20 min;Français;Femme;36-45;Fidèle;;;Mobile;Running;;Noir;;Sacs;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_026;2026-01-24;45 min;Espagnol;Femme;;Fidèle;Entrepreneur;Madrid;Mobile;Golf;Art;Beige, Noir, Cognac;;;Mariage;15-25k;;Rappeler;M+1;Email;Pescetarien;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_027;2026-01-27;35 min;Anglais;Femme;;VIP;Entrepreneur;London;Mobile;Golf;Art;Rose_gold;;;Diplome;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;;Luxe;Hong_Kong;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_028;2026-01-27;30 min;Français;Femme;26-35;VIP;Cadre;;Mobile;Yoga;Art;;;;Cadeau;10-15k;Réseau_affluent;Rappeler;M+1;Email;Pescetarien;latex;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_029;2026-01-28;40 min;Allemand;Femme;36-45;VIP;Entrepreneur;Berlin;Mobile;;Art;;Cuir;Sacs;Mariage;25k+;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_030;2026-01-28;50 min;Italien;;56+;VIP;;;Mobile;;Art;Noir, Gris, Cognac, Bordeaux, Beige;;;Anniversaire;25k+;Réseau_affluent;Rappeler;M+1;Email;Végétarien;nickel;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_031;2026-01-29;25 min;Français;Femme;36-45;Fidèle;Cadre;;Mobile;;;Noir;Cuir;;Anniversaire;<5k;;Rappeler;M+1;Email;;;Aventure;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_032;2026-01-29;45 min;Anglais;Femme;;VIP;Profession_libérale;;Mobile;Fitness, Yoga;Art;Rose_gold;Cuir;;Cadeau;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;Culturel;Singapore;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_033;2026-01-30;30 min;Espagnol;Homme;26-35;Fidèle;;;Mobile;;Art;;;;Cadeau;10-15k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_034;2026-01-30;35 min;Allemand;Femme;;Fidèle;;;Mobile;;Opera, Art;Noir, Cognac, Navy;;;Mariage;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_035;2026-01-31;40 min;Italien;Femme;46-55;Fidèle;Entrepreneur;Milan;Mobile;;;;;;Anniversaire;15-25k;;Rappeler;M+1;Email;Végane;nickel;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_036;2026-01-31;25 min;Français;Femme;56+;Nouveau;Entrepreneur;;Mobile;;Art;;;Montres;Anniversaire;5-10k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_037;2026-02-03;50 min;Anglais;Femme;;VIP;Profession_libérale;London;Mobile;Fitness, Running;Art;Bordeaux, Noir, Cognac, Navy;;;Anniversaire;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_038;2026-02-03;30 min;Espagnol;Femme;36-45;Fidèle;;;Mobile;;Art;Navy, Cognac;;;Mariage;5-10k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_039;2026-02-04;45 min;Allemand;Femme;;VIP;Entrepreneur;Berlin;Mobile;;Opera, Art;Rose_gold, Noir, Navy;;Sacs;Mariage;15-25k;Réseau_affluent;Rappeler;M+1;Email;;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_040;2026-02-04;35 min;Français;Femme;46-55;VIP;Profession_libérale;;Mobile;;Art;Bordeaux, Noir, Cognac, Blanc;;;Anniversaire;15-25k;Réseau_affluent;Rappeler;M+1;Email;Pescetarien;nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_041;2026-02-05;20 min;Français;Femme;36-45;Régulier;Cadre;;Mobile;Yoga;;Noir;Cuir;;Cadeau;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_042;2026-02-05;35 min;Anglais;Femme;;Fidèle;Cadre;;Mobile;;Opera;Rose_gold, Bordeaux;;;;5-10k;;Rappeler;M+1;Email;Pescetarien;;Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_043;2026-02-06;40 min;Italien;Femme;36-45;VIP;;;Mobile;Yoga;;;;;;5-10k;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_044;2026-02-06;25 min;Espagnol;Femme;46-55;Fidèle;;;Mobile;;Art;Navy, Cognac;;;Cadeau;5-10k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_045;2026-02-07;45 min;Allemand;Femme;;Nouveau;;Berlin, Paris;Mobile;;;Rose_gold, Gris, Beige;;;Mariage;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_046;2026-02-07;30 min;Français;Femme;26-35;VIP;Entrepreneur;;Mobile;Yoga;Art;;;;Mariage;25k+;Réseau_affluent;Rappeler;M+1;Email;;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_047;2026-02-10;35 min;Anglais;Femme;;VIP;Entrepreneur;;Mobile;;Art;;;;Cadeau;25k+;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_048;2026-02-10;40 min;Italien;Femme;56+;VIP;;Milan;Mobile;Running;Musees, Art;Noir, Cognac;Cuir;;Diplome;5-10k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_049;2026-02-11;25 min;Français;Homme;46-55;Fidèle;;London;Mobile;;Art;Rose_gold, Cognac;Cuir;;Anniversaire;;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_050;2026-02-11;50 min;Espagnol;Femme;;VIP;Entrepreneur;;Mobile;;;Beige, Cognac;;;Mariage;15-25k;Réseau_affluent;Rappeler;M+1;Email;Pescetarien;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_051;2026-02-12;30 min;Allemand;Femme;36-45;Régulier;;;Mobile;;Art;Noir, Navy;;;Cadeau;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_052;2026-02-12;45 min;Anglais;Femme;;VIP;Profession_libérale;;Mobile;;Opera;Rose_gold, Bordeaux, Noir, Cognac;;;Mariage;25k+;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;Luxe, Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_053;2026-02-13;20 min;Français;Femme;36-45;Nouveau;Profession_libérale;;Mobile;Golf;Art;;Cuir;;Cadeau;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_054;2026-02-13;40 min;Italien;Femme;46-55;Régulier;Cadre;;Mobile;;;;;;Mariage;25k+;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_055;2026-02-14;35 min;Espagnol;Femme;;Fidèle;Cadre;;Mobile;;;Noir, Cognac, Navy;;;Cadeau;10-15k;;Rappeler;M+1;Email;Végane;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_056;2026-02-14;50 min;Anglais;Femme;;VIP;;;Mobile;Fitness, Golf;Art;;;;Anniversaire;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_057;2026-02-17;30 min;Allemand;Femme;46-55;Régulier;Profession_libérale;;Mobile;Fitness;Art;Navy, Bordeaux;;;Cadeau;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_058;2026-02-17;45 min;Français;Femme;46-55;VIP;Profession_libérale;;Mobile;;Art;Beige, Noir, Cognac;Cuir;;Anniversaire;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;Luxe, Aventure;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_059;2026-02-18;25 min;Italien;Femme;36-45;Fidèle;Profession_libérale;;Mobile;;;Noir;Cuir;;Mariage;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_060;2026-02-18;40 min;Espagnol;Femme;46-55;Fidèle;Entrepreneur;;Mobile;;Art;Beige, Cognac;;;Anniversaire;10-15k;;Rappeler;M+1;Email;;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_061;2026-02-19;30 min;Anglais;Femme;;VIP;Entrepreneur;;Mobile;;Art;;;;;10-15k;Réseau_affluent;Rappeler;M+1;Email;Végane;;Luxe;Dubai;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_062;2026-02-19;35 min;Français;Femme;56+;VIP;Profession_libérale;Paris;Mobile;;Musees, Art;Noir, Cognac;Cuir;;Anniversaire;5-10k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_063;2026-02-20;45 min;Italien;Femme;46-55;Régulier;;;Mobile;;;Blanc, Cognac, Navy;;;;15-25k;;Rappeler;M+1;Email;;;;;;Football;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_064;2026-02-20;25 min;Espagnol;Homme;26-35;Fidèle;;;Mobile;;;;;;;25k+;;Rappeler;M+1;Email;Végane;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_065;2026-02-21;40 min;Allemand;Femme;;Fidèle;;Berlin;Mobile;Yoga;Art;Noir, Gris, Beige;;;Cadeau;5-10k;;Rappeler;M+1;Email;;latex;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_066;2026-02-21;50 min;Anglais;Femme;;VIP;;;Mobile;Yoga;Musees, Art;Rose_gold, Noir, Beige, Navy;;;;25k+;Réseau_affluent;Rappeler;M+1;Email;Pescetarien;;Luxe, Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_067;2026-02-24;30 min;Français;Femme;56+;VIP;Cadre;Paris;Mobile;Golf;Art;Bordeaux, Cognac;Cuir;;Cadeau;10-15k;Réseau_affluent;Rappeler;M+1;Email;;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_068;2026-02-24;35 min;Italien;Femme;36-45;Fidèle;;Milan;Mobile;;Art;Rose_gold, Noir, Cognac;;;Mariage;5-10k;;Rappeler;M+1;Email;;nickel;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_069;2026-02-25;25 min;Espagnol;Femme;46-55;Fidèle;;;Mobile;;;Navy, Cognac;;;Mariage;5-10k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_070;2026-02-25;45 min;Allemand;Femme;;VIP;;Berlin;Mobile;Running;;Noir, Gris, Rose_gold, Beige, Navy;;Chaussures, Sacs;Mariage;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_071;2026-02-26;30 min;Français;Femme;46-55;Occasionnel;;;Mobile;;Art;Noir, Cognac, Navy;Cuir;;Cadeau;10-15k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_072;2026-02-26;40 min;Anglais;Femme;;Fidèle;;;Mobile;Fitness;Art;Bordeaux, Noir, Navy;;;;10-15k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_073;2026-02-27;50 min;Italien;;56+;VIP;Entrepreneur;Milan;Mobile;;;Noir, Cognac, Navy;;;;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_074;2026-02-27;25 min;Espagnol;Homme;26-35;VIP;;;Mobile;Fitness;;;;;Anniversaire;10-15k;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_075;2026-03-02;35 min;Allemand;Femme;46-55;Régulier;;;Mobile;;Art;Beige, Cognac;;;Anniversaire;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_076;2026-03-02;45 min;Français;Femme;56+;VIP;;;Mobile;;Musees, Art;Beige, Gris, Cognac, Navy;Cuir;;Anniversaire;25k+;Réseau_affluent;Rappeler;M+1;Email;Végétarien;fruits_coque;Luxe, Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_077;2026-03-03;30 min;Anglais;Femme;;VIP;;London;Mobile;Tennis;Art;;;;;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_078;2026-03-03;40 min;Italien;Femme;56+;Fidèle;Artiste;;Mobile;;Art;Bordeaux, Cognac;Cuir;;Mariage;10-15k;;Rappeler;M+1;Email;;;Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_079;2026-03-04;25 min;Espagnol;Femme;;Fidèle;;;Mobile;Yoga;;Rose_gold, Cognac;;;Mariage;5-10k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_080;2026-03-04;50 min;Anglais;Femme;;VIP;;;Mobile;;Art;Bordeaux, Noir, Cognac, Navy;;;Cadeau;25k+;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;Luxe, Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_081;2026-03-05;30 min;Français;Femme;36-45;Fidèle;Profession_libérale;;Mobile;Yoga;;Beige, Cognac;Cuir;;;5-10k;;Rappeler;M+1;Email;;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_082;2026-03-05;35 min;Anglais;Femme;;Fidèle;;London;Mobile;Fitness, Yoga;;;;;Anniversaire;5-10k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_083;2026-03-06;45 min;Allemand;Femme;;Régulier;Profession_libérale;;Mobile;Fitness;Art;Noir, Beige, Navy;;;Mariage;15-25k;;Rappeler;M+1;Email;;;Aventure;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_084;2026-03-06;25 min;Italien;Femme;36-45;Fidèle;Profession_libérale;;Mobile;Running;;Noir, Cognac;Cuir;;Anniversaire;5-10k;;Rappeler;M+1;Email;Végétarien;;;;New_York;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_085;2026-03-09;40 min;Espagnol;Femme;56+;VIP;;Madrid;Mobile;;Art;Gris, Navy;;;Mariage;25k+;Réseau_affluent;Rappeler;M+1;Email;Pescetarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_086;2026-03-09;50 min;Anglais;Femme;;VIP;;;Mobile;;Musees, Opera, Art;Noir, Cognac, Rose_gold, Bordeaux, Navy;;;Anniversaire;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_087;2026-03-10;30 min;Français;Femme;36-45;VIP;;;Mobile;;;Blanc;Cuir;;Cadeau;10-15k;Réseau_affluent;Rappeler;M+1;Email;;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_088;2026-03-10;35 min;Allemand;Femme;46-55;Régulier;;;Mobile;;Opera, Art;;;;Cadeau;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_089;2026-03-11;40 min;Italien;Femme;46-55;Fidèle;Cadre;;Mobile;;;Bordeaux, Cognac, Navy;;;Mariage;10-15k;;Rappeler;M+1;Email;Végétarien;nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_090;2026-03-11;45 min;Espagnol;Femme;;VIP;Entrepreneur;;Mobile;Running;Art;Noir;;;Mariage;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végane;;Luxe;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_091;2026-03-12;25 min;Français;Femme;36-45;Nouveau;;;Mobile;;;Noir;Cuir;;Mariage;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_092;2026-03-12;50 min;Anglais;Femme;;VIP;;London;Mobile;;Musees, Art;Noir, Cognac, Rose_gold, Bordeaux, Navy;;;Mariage;25k+;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;Culturel;;New_York;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_093;2026-03-13;30 min;Allemand;Femme;46-55;Nouveau;;;Mobile;;;;;;Mariage;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_094;2026-03-13;35 min;Italien;Femme;46-55;Fidèle;Profession_libérale;Milan;Mobile;;;Rose_gold, Noir, Cognac;Cuir;;Diplome;5-10k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_095;2026-03-16;45 min;Français;Femme;46-55;VIP;;;Mobile;;Art;Noir, Gris, Beige, Navy;;;Anniversaire;15-25k;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;;Tokyo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_096;2026-03-16;30 min;Espagnol;Femme;36-45;Fidèle;;;Mobile;;;Cognac;;;Anniversaire;5-10k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_097;2026-03-17;40 min;Anglais;Femme;;Fidèle;Profession_libérale;;Mobile;Fitness, Running;Opera, Art;Bordeaux, Noir, Navy;;;;10-15k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_098;2026-03-17;50 min;Allemand;Femme;;Fidèle;Profession_libérale;Berlin;Mobile;;Opera, Art;Noir, Cognac, Rose_gold, Bordeaux, Navy;;;Mariage;15-25k;;Rappeler;M+1;Email;;nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_099;2026-03-18;25 min;Français;Homme;56+;Régulier;;;Mobile;;;Bordeaux;Cuir;;Cadeau;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_100;2026-03-18;55 min;Anglais;Femme;;VIP;Cadre;;Mobile;;Musees, Art;Bordeaux, Noir, Navy;;;Mariage;25k+;Réseau_affluent;Rappeler;M+1;Email;Végétarien;;Culturel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+CA_101;2026-01-21;28 min;Français;Femme;36-45;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Natation;Culturel;Marine, Noir;Or;Cuir;Matières vegan;Sac à main;Anniversaire;Vegetarien;;;;;;;;;;;;;;;;;;;;;;
+CA_102;2026-01-21;42 min;Anglais;Femme;;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure;;Or;;Matières vegan;;Cadeau;Vegane;Exclusivité;;;;;;;;;;;;;;;;;;;;;
+CA_103;2026-01-22;33 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;Cadeau;Vegetarien;;;;Styliste;Cognac;;;;;;;;;;;;;;;;;
+CA_104;2026-01-22;25 min;Italien;Homme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;Tokyo, Singapore;;;2.0;Français;Ingénieur;;;;Or;Lin;;;Cadeau;Aucun;Exclusivité;;;Styliste;;Baskets / Sneakers;;;;;;;;;;;;;;;;
+CA_105;2026-01-23;48 min;Allemand;Femme;;Fidèle;;Berlin;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_106;2026-01-23;30 min;Français;Femme;26-35;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;;Or;Lin;Matières vegan;;;Vegane;Qualité & savoir-faire, Éthique / durable;;;Styliste;Rouge;;Montres;;;;;;;;;;;;;;;
+CA_107;2026-01-24;35 min;Anglais;Femme;;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;;;Or;;;Sac à main;;Pescetarien;;;;;Rouge;;;Architecte;Artiste;;;;;;;;;;;;;
+CA_108;2026-01-24;40 min;Italien;Femme;46-55;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;Cuir;;;;Vegetarien;Exclusivité;;;;Cognac;;;;;;;;;;;;;;;;;
+CA_109;2026-01-27;32 min;Espagnol;Femme;36-45;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Dubai;;;2.0;Français;Ingénieur;;;Marine;Or;;Matières vegan;;Cadeau;Vegane;;;;Styliste;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_110;2026-01-27;45 min;Allemand;Femme;26-35;Nouveau;;Berlin;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;;;Lin;Matières vegan;;;Vegane;;;;Styliste;;;;;;Yoga;;;;;;;;;;;;
+CA_111;2026-01-27;28 min;Français;Femme;56+;VIP;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Beige;Or;Cuir;;Sac à main;Anniversaire;Vegetarien;;;;;Cognac;;;Architecte;;;Ski;Vert;;;;;;;;;;
+CA_112;2026-01-28;50 min;Anglais;Femme;;VIP;;Paris, London;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;;Or;;;Sac à main;Cadeau;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_113;2026-01-28;35 min;Italien;Femme;46-55;Fidèle;;Milan;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Marine, Blanc, Noir;Or;;;;;Aucun;Exclusivité;;;Styliste;;;;Architecte;;;;;Marketing;;;;;;;;;
+CA_114;2026-01-29;38 min;Espagnol;Femme;46-55;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;;;Cadeau;Aucun;;;;Styliste;Cognac, Rouge;;;;;;;;;;;;;;;;;
+CA_115;2026-01-29;42 min;Allemand;Femme;;Nouveau;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;;;Or;;;;;Aucun;;;;;;;;;;Yoga;;;;;;;;;;;;
+CA_116;2026-01-30;30 min;Français;Femme;36-45;Fidèle;;;;;;;;;;<5k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;;Rouge, Cognac;;Montres;;;;;;Marketing;;;;;;;;;
+CA_117;2026-01-30;48 min;Anglais;Femme;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;;Or;;;;Cadeau;Vegetarien;Exclusivité;;;;;;;Architecte;;;;;;;;;;;;;;
+CA_118;2026-01-31;33 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Lin;;;Cadeau;Aucun;Exclusivité;;;Styliste;Cognac;;;;;;;;;;;;;;;;;
+CA_119;2026-01-31;36 min;Espagnol;Femme;46-55;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;Hong Kong;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;;;Vegane;;;;;Rouge;;;;Artiste;;;;;;;;;;;;;
+CA_120;2026-02-03;40 min;Allemand;Femme;;Régulier;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;Banquier;;;;;;;;
+CA_121;2026-02-03;26 min;Français;Femme;26-35;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir, Marine;Argent, Or;Cuir;Matières vegan;Sac à main;Cadeau, Mariage;Vegane;Éthique / durable;;;Styliste;Rouge;;Montres;Avocat;Artiste;Yoga;;;;;;;;;;;;
+CA_122;2026-02-04;44 min;Anglais;Femme;;VIP;;London;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;Luxe;Beige;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;Cognac, Rouge;;;;;;;;;Banquier;Electro;;;;;;;
+CA_123;2026-02-04;31 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;Lin;;;;Vegetarien;;;;;;;;Architecte;;;;;;;;;;;;;;
+CA_124;2026-02-05;37 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;;Or;;Matières vegan;;;Vegane;;;;;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_125;2026-02-05;29 min;Allemand;Femme;;Nouveau;;Paris, London;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;Running;;;Or;;;;;Aucun;Exclusivité;;;Styliste;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_126;2026-02-06;46 min;Français;Femme;56+;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel, Luxe;Beige, Noir;Or;Cuir;Matières vegan;;Diplome, Mariage, Cadeau, Anniversaire;Pescetarien;Qualité & savoir-faire;;;Styliste;Rouge, Cognac;;Montres;Avocat, Médecin, Architecte;;;;;;;;Classique;;;;;;
+CA_127;2026-02-06;34 min;Anglais;Femme;;Nouveau;;;;;;;;;;<5k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;Matières vegan;;Cadeau;Aucun;Éthique / durable;;;;;;Montres;;Artiste;Yoga;;;;;;;;;;;;
+CA_128;2026-02-07;41 min;Italien;Femme;46-55;Occasionnel;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;Bordeaux;;;Avocat;;;;;;;;;;;;;;
+CA_129;2026-02-07;28 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;Matières vegan;;;Vegane;Éthique / durable;;;Styliste;Rouge;;;;;;;Vert;;;;;;;;;;
+CA_130;2026-02-10;43 min;Allemand;Femme;;Nouveau;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Marine, Noir;Or;Lin;;;;Aucun;Exclusivité;;;;;;;;;;;;;;;;;;;;;
+CA_131;2026-02-10;35 min;Français;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;;;;Vegane;Exclusivité, Éthique / durable;;;Styliste;Rouge;;Montres;;Artiste;;;;;;;;;Plaisir personnel;;;;
+CA_132;2026-02-11;39 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Gris, Noir, Marine;Or;Cuir;;;Cadeau, Anniversaire;Pescetarien;Exclusivité;;;Styliste;Rouge;;Montres;Architecte;Artiste;;;;;Banquier;;;;;;;;
+CA_133;2026-02-11;32 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;Lin;;;;Vegetarien;Exclusivité;;;;Bordeaux, Cognac;;;;Artiste;Yoga;;;;;;;;;;;;
+CA_134;2026-02-12;47 min;Espagnol;Femme;56+;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;Cadeau;Aucun;;;;;Cognac;;;;;;;;;;;;;;;;;
+CA_135;2026-02-12;30 min;Allemand;Femme;;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Tokyo;;;2.0;Français;Ingénieur;;;;;;Matières vegan;;;Vegane;;;;Styliste;;;;;;;;;;;Electro;;;;;;;
+CA_136;2026-02-13;36 min;Français;Femme;46-55;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Marine, Noir;Or;Cuir, Lin;;Sac à main;Mariage, Anniversaire;Pescetarien;Qualité & savoir-faire;;;;Rouge;;Montres;Médecin;;;Ski;;;;;Classique;;;;Athlète;;
+CA_137;2026-02-13;44 min;Anglais;Femme;;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;;Or;;;;Cadeau, Anniversaire;Aucun;;;;;;;Montres;;;;;;Marketing;;;;;;;;;
+CA_138;2026-02-14;31 min;Italien;Femme;46-55;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;;;;Cadeau;Aucun;;;;Styliste;;;;;Artiste;;;;;;;;;;;;;
+CA_139;2026-02-14;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;Matières vegan;;;Vegane;Éthique / durable;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_140;2026-02-17;42 min;Allemand;Femme;18-25;Fidèle;;Berlin;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_141;2026-02-17;29 min;Français;Femme;36-45;VIP;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Beige, Blanc;Or;Cuir, Lin;;Sac à main;;Pescetarien;Qualité & savoir-faire;;;Styliste;Rouge, Cognac;;Montres;;;;;;;;;;;;;;;
+CA_142;2026-02-18;45 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;Beige, Noir;Or;Cuir;;;Cadeau;Pescetarien;;;;;Rouge, Cognac;;;;;;;;;Banquier;;;;;;;;
+CA_143;2026-02-18;33 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Vegetarien;Exclusivité;;;;;;;Avocat, Médecin;;Yoga;;;;;;;;;;;;
+CA_144;2026-02-19;37 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;;;Vegane;;;;Styliste;Rouge;;;;Artiste;;;;;;;;;;;;;
+CA_145;2026-02-19;40 min;Allemand;Femme;;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Marine, Noir;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_146;2026-02-20;34 min;Français;Femme;36-45;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Natation;Détente, Luxe;;Or;;;;Cadeau, Plaisir;Vegetarien;;;;Styliste;Rouge;;Montres;;Artiste;;;;;;;;;;;;;
+CA_147;2026-02-20;48 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Beige;Or;Cuir;Matières vegan;;Cadeau;Vegetarien;Exclusivité, Éthique / durable;;;;Cognac, Rouge;;Montres;Avocat;;;;;;;;;;;;;;
+CA_148;2026-02-21;36 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;;;;;Aucun;Exclusivité;;;;Cognac;;;Architecte;;;Golf;;;;;;;;;;;
+CA_149;2026-02-21;32 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;;;;Vegetarien;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_150;2026-02-24;46 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_151;2026-02-24;27 min;Français;Femme;26-35;Fidèle;;;;;;;;;;<5k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir, Marine;Argent, Or;Cuir;;Sac à main;;Vegetarien;Exclusivité;;;;Rouge;;;Avocat;;;;;;Banquier;;;;Plaisir personnel;;;;
+CA_152;2026-02-25;41 min;Anglais;Femme;;VIP;;Berlin;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;;Or;Lin;Matières vegan;;;Vegane;;;;;;;Montres;;Artiste;Yoga;;;Marketing;;;;;;;;;
+CA_153;2026-02-25;35 min;Italien;Femme;46-55;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;;Or;Lin;;;;Aucun;;;;;;;;;Artiste;;;;;;;;;;;;;
+CA_154;2026-02-26;32 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;;;Vegane;;;;Styliste;Rouge;;;;;;;;;Banquier;;;;;;;;
+CA_155;2026-02-26;38 min;Allemand;Femme;;Régulier;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Aucun;;;;;Bordeaux;;;;;Yoga;;;;;;;;;;;;
+CA_156;2026-02-27;29 min;Français;Homme;36-45;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;;Or;;;Sac à main;Cadeau, Mariage;Vegetarien;Qualité & savoir-faire;;;Styliste;Rouge;;Montres;;;;;;;;;;;;;;;
+CA_157;2026-02-27;44 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel, Détente, Luxe;Beige, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;Cognac;;Montres;Avocat, Médecin, Architecte;;;;;;;;;;;;;;
+CA_158;2026-02-28;30 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;Sac à main;;Aucun;Exclusivité;;;;;;;;;;;;;;;;;;;;Tennis;
+CA_159;2026-02-28;36 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Gris;Argent, Or;;;;;Vegetarien;;;;;Rouge;;;;Artiste;;;;;;;;;;;;;
+CA_160;2026-03-03;42 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_161;2026-03-03;28 min;Français;Femme;36-45;VIP;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;;Or;Cuir;;Sac à main;;Pescetarien;;;;;Bordeaux, Cognac, Rouge;;Montres;;;;;;;;;;;;;;;
+CA_162;2026-03-04;46 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;Cuir;;;Cadeau, Anniversaire;Vegetarien;Exclusivité;;;;Cognac, Rouge;;;Avocat, Architecte;;;;;;;Electro;;;;;;;
+CA_163;2026-03-04;33 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;;Or;Lin;Matières vegan;;;Vegane;Exclusivité;;;;;;;Médecin;;Yoga;;;;;;;;;;;;
+CA_164;2026-03-05;37 min;Espagnol;Femme;46-55;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine;Or;;;;Cadeau;Vegetarien;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_165;2026-03-05;40 min;Allemand;Femme;;Nouveau;;Paris, London;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;Running;;;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;Rouge;;;;;;;;;;;;;;;;;
+CA_166;2026-03-06;31 min;Français;Femme;26-35;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Beige;Or;Cuir;;Sac à main;;Vegetarien;Qualité & savoir-faire;;;;Cognac;;Montres;Architecte;;;;;;;;Classique;;Plaisir personnel;;;;
+CA_167;2026-03-06;45 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;Beige, Noir, Blanc;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;Rouge, Cognac;;Montres;;;;;;Marketing;Banquier;;;;;;;;
+CA_168;2026-03-07;34 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Vegetarien;;;;;Cognac;;;;;;;;;;;;;;;;;
+CA_169;2026-03-07;39 min;Espagnol;Femme;36-45;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;Sac à main;Cadeau;Vegane;;;;;Rouge;;;;Artiste;Yoga;;;;;;;;;;;;
+CA_170;2026-03-10;43 min;Allemand;Femme;;Régulier;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_171;2026-03-10;29 min;Français;Femme;36-45;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Détente;Gris, Noir;Or;Cuir;Matières vegan;Sac à main;;Vegane;Éthique / durable;;;Styliste;;;Montres;Architecte;;;;;;;;;;;;;;
+CA_172;2026-03-11;47 min;Anglais;Femme;18-25;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Cuir;Matières vegan;;Cadeau;Pescetarien;Exclusivité, Éthique / durable;;;;Cognac;;Montres;Médecin;;;;;;Banquier;;;;;;;;
+CA_173;2026-03-11;32 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;;Cognac;;;;;Yoga;;;;;;;;;;;;
+CA_174;2026-03-12;36 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine;Or;;;;;Aucun;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_175;2026-03-12;41 min;Allemand;Femme;;VIP;;London;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Aucun;;;;;;;;;;;;Vert;;;;;;;;;;
+CA_176;2026-03-13;30 min;Français;Femme;36-45;VIP;;Milan;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Tokyo;New York;;2.0;Français;Ingénieur;;;Noir;Or;Cuir;;Sac à main;;Pescetarien;;;;Styliste;Cognac;;Montres;;Artiste;;;;;;;;;;;;;
+CA_177;2026-03-13;44 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige, Gris, Noir;Or;;;;Cadeau;Aucun;;;;Styliste;;Baskets / Sneakers;Montres;;;;;;;Banquier;;;;;;;;
+CA_178;2026-03-14;33 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;Lin;;;;Aucun;Exclusivité;;;;Cognac;;;Médecin;;;Golf;;;;;;;;;;;
+CA_179;2026-03-14;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Gris, Marine;Or;;;;;Vegetarien;;;;Styliste;Rouge;;;;;;;;;;;;;;;;;
+CA_180;2026-03-17;42 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_181;2026-03-17;31 min;Français;Femme;26-35;Fidèle;;Paris;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Tokyo;;;2.0;Français;Ingénieur;;;Beige;Or;Cuir, Lin;;Sac à main;;Pescetarien;Qualité & savoir-faire;;;;Rouge;;Montres;;Artiste;Yoga;;;;;;;;;;;;
+CA_182;2026-03-18;46 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Noir;Or;Cuir;;;Cadeau;Pescetarien;;;;Styliste;Rouge, Cognac;;Montres;;;;;;Marketing;Banquier;;;;;;;;
+CA_183;2026-03-18;34 min;Italien;Femme;;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Tokyo;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Vegetarien;;;;;;;;Médecin;;;;;;;;;;;;;;
+CA_184;2026-03-19;37 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Dubai;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;;Rouge, Cognac;;;;;;;Vert;;;;;;;;;;
+CA_185;2026-03-19;40 min;Allemand;Femme;;Nouveau;;Berlin;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;;Beige;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_186;2026-03-20;29 min;Français;Autre;26-35;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel, Détente;Gris, Noir;Or;Cuir;Matières vegan;Sac à main;;Vegetarien;;;;Styliste;;;Montres;;;;Ski;;Marketing;;Electro;;;;;;;
+CA_187;2026-03-20;45 min;Anglais;Femme;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;;;Montres;;;;;;;Banquier;;;;;;;;
+CA_188;2026-03-21;32 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;;;;;;;;;Marketing;;;;;;;;Tennis;
+CA_189;2026-03-21;36 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;;;;Vegetarien;;;;;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_190;2026-03-24;43 min;Allemand;Femme;18-25;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Noir;Or;;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_191;2026-03-24;28 min;Français;Femme;36-45;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Détente;Beige;Or;;Matières vegan;Sac à main;;Vegane;Exclusivité, Éthique / durable;;;Styliste;;;Montres;;;;;;;;;;;;;;;
+CA_192;2026-03-25;47 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;Beige;Or;Cuir, Lin;;;Cadeau;Pescetarien;Exclusivité;;;;Cognac, Rouge;;Montres;Avocat, Médecin;;;;;Marketing;Banquier;;;;;;;;
+CA_193;2026-03-25;33 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_194;2026-03-26;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;Lin;;Sac à main;;Aucun;;;;;Bordeaux, Cognac, Rouge;;;;;;;;;;;;;;;;;
+CA_195;2026-03-26;41 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Aucun;;;;;;;;;;Yoga;;;;;;;;;;;;
+CA_196;2026-03-27;30 min;Français;Femme;36-45;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Luxe;;Or;Cuir;;Sac à main;;Pescetarien;Exclusivité;;;Styliste;Bordeaux, Cognac, Rouge;;Montres;;;;;;;;;;;;;;;
+CA_197;2026-03-27;45 min;Anglais;Autre;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Noir;Or;Cuir;;;Cadeau;Vegetarien;Exclusivité;;;;Cognac;;Montres;Médecin;;;;;;Banquier;;;;;;;;
+CA_198;2026-03-28;34 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Aucun;Exclusivité;;;;Cognac;;;;;;Golf;;Marketing;;;;;;;;;
+CA_199;2026-03-28;37 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;Lin;;;;Vegetarien;;;;Styliste;Rouge;;;;;;;;Marketing;;;;;;;;;
+CA_200;2026-03-31;42 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_201;2026-03-31;31 min;Français;Femme;36-45;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;Marine, Noir;Or;Cuir;;Sac à main;;Vegetarien;Qualité & savoir-faire;;;Styliste;;;Montres;Architecte;;;;;;;;;;Plaisir personnel;;;;
+CA_202;2026-04-01;43 min;Anglais;Femme;;VIP;;London;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;Singapore, Hong Kong;New York;;2.0;Français;Ingénieur;;Détente, Luxe;Beige, Marine, Noir;Or;Cuir;;Sac à main;;Pescetarien;Exclusivité;;;;;;Montres;;;;;;;Banquier;;;;;;;;
+CA_203;2026-04-01;35 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;Exclusivité;;;;Cognac;;;Architecte;;;;;;;;;;;;;;
+CA_204;2026-04-02;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine;Or;;;;;Aucun;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_205;2026-04-02;40 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;Electro;;;;;;;Pop
+CA_206;2026-04-03;29 min;Français;Autre;26-35;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Culturel;Gris, Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;Styliste;Rouge;;Montres;;;;;;;;;;;;;;;
+CA_207;2026-04-03;44 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Cuir;;;Diplome, Cadeau;Vegetarien;Exclusivité;;;;Rouge, Cognac;;Montres;Médecin;;;;;;;;;;;;;;
+CA_208;2026-04-04;33 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Aucun;Exclusivité;;;;Cognac;;;Avocat;;;;;;;;;;;;;;
+CA_209;2026-04-04;36 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;;;;;;;;;;;;;;;;;;;
+CA_210;2026-04-07;42 min;Allemand;Femme;;Nouveau;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Lin;Matières vegan;;;Vegane;;;;Styliste;;;;;;;;;;;Electro;;;;;;;
+CA_211;2026-04-07;30 min;Français;Femme;36-45;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;Matières vegan;Sac à main;;Vegane;Éthique / durable;;;;;;;Avocat;;;;;;;;;;;;;;
+CA_212;2026-04-08;46 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;Gris, Noir;Or;Cuir;;;Cadeau;Aucun;;;;Styliste;Rouge;;Montres;;;;;;;Banquier;Electro;;;;;;;
+CA_213;2026-04-08;34 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Vegetarien;;;;;;;;Médecin;;Yoga;;;;;;;;;;;;
+CA_214;2026-04-09;37 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Marine;Or;;;;;Aucun;;;;Styliste;Rouge;;;;;;;;;;;;;;;;;
+CA_215;2026-04-09;40 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_216;2026-04-10;28 min;Français;Femme;26-35;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;;;;Montres;;;;;;;;;;;Plaisir personnel;;;;
+CA_217;2026-04-10;45 min;Anglais;Autre;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Marine, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;;;Montres;Médecin;;;;;;;;;;;;;;
+CA_218;2026-04-11;32 min;Italien;Homme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Lin;;;;Vegetarien;Exclusivité;;;;;;;;Artiste;;;;;;;;;;;;;
+CA_219;2026-04-11;38 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Gris, Noir, Marine;Or;;;;;Aucun;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_220;2026-04-14;43 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;;;;;Aucun;;;;;;;;;;;;;;Banquier;;;;;;;;
+CA_221;2026-04-14;31 min;Français;Femme;36-45;VIP;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Beige;Or;Cuir;;Sac à main;;Vegetarien;Exclusivité, Qualité & savoir-faire;;;;Bordeaux, Cognac;;Montres;;Artiste;;;;;;;;;Plaisir personnel;;;;
+CA_222;2026-04-15;47 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir, Marine;Or;Cuir;;;Cadeau;Pescetarien;;;;Styliste;Rouge, Cognac;;Montres;Avocat, Médecin;;;;;Marketing;Banquier;;;;;;;;
+CA_223;2026-04-15;35 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Aucun;;;;;Cognac;;;;;Yoga;;;;;;;;;;;;
+CA_224;2026-04-16;39 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;;;;Vegetarien;Éthique / durable;;;Styliste;;;;;;;;Vert;;;;;;;;;;
+CA_225;2026-04-16;41 min;Allemand;Femme;;Régulier;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;Dubai;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Aucun;;;;;;;;;;Yoga;;;;;;;;;;;;
+CA_226;2026-04-17;33 min;Français;Femme;36-45;Nouveau;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;;Rouge, Cognac;;Montres;;;;;;;;;;;;;;;
+CA_227;2026-04-17;46 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;;;Montres;Médecin;;;;;;;Electro;;;;;Athlète;;
+CA_228;2026-04-18;34 min;Italien;Homme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Lin;;;;Aucun;Exclusivité;;;;Cognac;;;;;;;;;;;;;;;;;
+CA_229;2026-04-18;37 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Marine;Or;Lin;;;;Vegetarien;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_230;2026-04-21;42 min;Allemand;Femme;;Régulier;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_231;2026-04-21;30 min;Français;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Culturel;Beige, Noir, Marine;Argent, Or;Cuir, Lin;Matières vegan;Sac à main;;Vegetarien;Éthique / durable;;;Styliste;Rouge;;Montres;;;;;;Marketing;;;;;;;;;
+CA_232;2026-04-22;44 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;Beige, Noir, Marine;Or;Cuir;;;Cadeau, Anniversaire;Pescetarien;;;;;Rouge, Cognac;;Montres;;;;;;Marketing;Banquier;;;;;;;;
+CA_233;2026-04-22;36 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Dubai;;;2.0;Français;Ingénieur;;;Beige, Marine, Blanc;Or;;;;;Aucun;Exclusivité;;;;;;;Architecte;;;;;;;;;;;;;;
+CA_234;2026-04-23;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Marine;Or;;;;;Aucun;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_235;2026-04-23;40 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Aucun;;;;;Cognac;;;;;;;;;;;;;;;;;
+CA_236;2026-04-24;32 min;Français;Femme;36-45;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;Styliste;;;Montres;;;;;;;;;;;;;;;
+CA_237;2026-04-24;45 min;Anglais;Femme;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;;;Montres;;;;;;;Banquier;;;;;;;;
+CA_238;2026-04-25;35 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Vegetarien;;;;;Bordeaux;;;;Artiste;;;;;;;;;;;;;
+CA_239;2026-04-25;37 min;Espagnol;Femme;36-45;Fidèle;;London;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Marine;Or;;;;;Vegetarien;;;;Styliste;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_240;2026-04-28;43 min;Allemand;Femme;18-25;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;Banquier;;;;;;;;
+CA_241;2026-04-28;31 min;Français;Femme;36-45;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Marine, Noir;Or;Cuir;Matières vegan;Sac à main;;Vegetarien;;;;;Rouge;;Montres;;;;;;Marketing;;;;;;;;;
+CA_242;2026-04-29;46 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;Beige, Gris, Noir;Or;Cuir;;;Cadeau;Aucun;;;;Styliste;Rouge;;Montres;;;;;;Marketing;Banquier;Electro;;;;;;;
+CA_243;2026-04-29;34 min;Italien;Femme;36-45;Fidèle;;Milan;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Aucun;;;;;;;;;;Yoga;;;;Banquier;;;;;;;;
+CA_244;2026-04-30;38 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Marine;Or;;;;;Aucun;;;;;Rouge;;;;;;Golf;;;;;;;;;;;
+CA_245;2026-04-30;41 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Aucun;;;;;Bordeaux;;;;;;;;;;;;;;;;;
+CA_246;2026-05-01;29 min;Français;Homme;26-35;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Culturel;Gris, Noir, Blanc;Or;Cuir;;Sac à main;;Vegetarien;;;;Styliste;Rouge;;Montres;;;;;;;;Electro;;;;;;;
+CA_247;2026-05-01;44 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Noir;Or;Cuir;;;Cadeau;Vegetarien;Exclusivité;;;Styliste;Cognac;;Montres;;;;;;;;;;;;;;;
+CA_248;2026-05-02;33 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;;;;;Aucun;Exclusivité;;;;Cognac;;;;;;;;;;;;;;;Athlète;;
+CA_249;2026-05-02;37 min;Espagnol;Femme;36-45;Fidèle;;London;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_250;2026-05-05;42 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;Tokyo;;;2.0;Français;;;Détente;Beige, Marine, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_251;2026-05-05;30 min;Français;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Natation;;Gris, Blanc;Or;Cuir;Matières vegan;Sac à main;;Vegane;;;;Styliste;;;Montres;;;;;Vert;;;Electro;;;;;;;
+CA_252;2026-05-06;43 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Noir, Marine;Or;Cuir;;;Cadeau;Aucun;;;;Styliste;Rouge;;Montres;;;;;;Marketing;Banquier;Electro;;;;;;;
+CA_253;2026-05-06;34 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;;;;;Médecin;;Yoga;;Bleu;;;;;;;;;;
+CA_254;2026-05-07;36 min;Espagnol;Femme;46-55;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;Lin;;;Cadeau;Vegetarien;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_255;2026-05-07;39 min;Allemand;Femme;;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Aucun;;;;;;;;;;;;Vert;;;;;;;;;;
+CA_256;2026-05-08;31 min;Français;Femme;36-45;Nouveau;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Noir;Or;Cuir, Lin;;Sac à main;;Vegetarien;;;;;Rouge, Cognac;;Montres;;;;;;;;;;;;;;;
+CA_257;2026-05-08;45 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Marine, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;;;;;;;;;;Banquier;;;;;;;;
+CA_258;2026-05-09;33 min;Italien;Femme;36-45;VIP;;Milan;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;;;;Aucun;;;;Styliste;;;;;Artiste;Yoga;;;;;;;;;;;;
+CA_259;2026-05-09;37 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige, Marine;Or;;Matières vegan;;;Vegane;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_260;2026-05-12;42 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_261;2026-05-12;29 min;Français;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;Matières vegan;Sac à main;;Vegane;Éthique / durable;;;;Rouge;;;;;Yoga;;;;;;;;Plaisir personnel;;;;
+CA_262;2026-05-13;44 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Gris, Noir, Marine;Or;Cuir;;;Cadeau;Vegetarien;Exclusivité;;;;Cognac;;Montres;Avocat;;;;;;;;;;;;;;
+CA_263;2026-05-13;35 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Noir;Or;;;;;Aucun;Exclusivité;;;;Rouge;;;;;;;;;;;;;;;Athlète;;
+CA_264;2026-05-14;38 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;;;;Vegetarien;;;;;Cognac, Rouge;;;;;;;;;;;;;;;;;
+CA_265;2026-05-14;40 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;Lin;;;;Aucun;;;;;Cognac;;;;;;;;;;;;;;;;;
+CA_266;2026-05-15;32 min;Français;Autre;36-45;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Noir, Marine;Argent, Or;Cuir, Lin;Matières vegan;Sac à main;;Vegetarien;Qualité & savoir-faire;;;;Rouge;;Montres;;;;;;;Banquier;;;;;;;;
+CA_267;2026-05-15;46 min;Anglais;Homme;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir, Marine;Or;Cuir;;;Cadeau;Vegetarien;Exclusivité;;;;Rouge;;Montres;Médecin;;;;;;;;;;;;;;
+CA_268;2026-05-16;34 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_269;2026-05-16;36 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige, Marine;Or;;;;;Vegetarien;;;;;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_270;2026-05-19;43 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_271;2026-05-19;30 min;Français;Femme;26-35;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Gris, Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;Styliste;;;Montres;;;;Ski;;Marketing;;Electro;;;;;;;
+CA_272;2026-05-20;45 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;Beige, Noir, Marine;Or;Cuir;;;Diplome, Cadeau, Anniversaire;Pescetarien;;;;Styliste;Rouge, Cognac;;;;;;;;Marketing;Banquier;;;;;;;;
+CA_273;2026-05-20;33 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Lin;;;;Aucun;;;;;;;;Avocat;;;;;;;;;;;;;;
+CA_274;2026-05-21;37 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;;;;Vegetarien;;;;;Bordeaux, Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_275;2026-05-21;40 min;Allemand;Femme;;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Aucun;;;;;;;;;;Yoga;;;;;;;;;;;;
+CA_276;2026-05-22;28 min;Français;Femme;36-45;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Gris, Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;Styliste;Rouge;;Montres;;;Yoga;;;;;;;;;;;;
+CA_277;2026-05-22;46 min;Anglais;Autre;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Marine, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;;;;Médecin;;;;;;;;;;;;;;
+CA_278;2026-05-23;34 min;Italien;Femme;36-45;VIP;;Milan;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;Cachemire, Soie;;;;Aucun;Exclusivité, Qualité & savoir-faire;;;;;;;;;;Golf;;;;;;;;;;;
+CA_279;2026-05-23;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Vegetarien;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_280;2026-05-26;42 min;Allemand;Femme;18-25;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;Electro;;;;;;;
+CA_281;2026-05-26;31 min;Français;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel, Luxe;;Or;Cuir, Lin;;Sac à main;;Vegetarien;;;;Styliste;;;Montres;;Artiste;;;;;;;;;;;;;
+CA_282;2026-05-27;44 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Gris, Noir, Marine;Or;Cuir;;;Cadeau;Vegetarien;Exclusivité;;;;Rouge, Cognac;;;;;;;;;;;;;;;;;
+CA_283;2026-05-27;35 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Vegetarien;;;;;Rouge;;;Avocat;;;;;;;;;;;;;;
+CA_284;2026-05-28;36 min;Espagnol;Femme;;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_285;2026-05-28;39 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Aucun;;;;;;;;;;;;Vert;;;;;;;;;;
+CA_286;2026-05-29;33 min;Français;Autre;36-45;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;;Cognac;;Montres;Architecte;;;;Vert;;;;;;;;;;
+CA_287;2026-05-29;45 min;Anglais;Femme;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;Cuir, Lin;;;Cadeau;Vegetarien;Exclusivité;;;;;;Montres;;;;;;;;;;;;;;;
+CA_288;2026-06-01;32 min;Italien;Femme;36-45;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;;;;;;;Golf;;;;;;;;;;;
+CA_289;2026-06-01;37 min;Espagnol;Femme;36-45;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;;Cadeau;Vegane;;;;;Rouge;;;;Artiste;Yoga;;;;;;;;;;;;
+CA_290;2026-06-02;43 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_291;2026-06-02;29 min;Français;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Culturel;Beige, Noir;Or;Cuir;;Sac à main;;Vegetarien;Éthique / durable;;;Styliste;;;Montres;;;;;;;Banquier;;;;Plaisir personnel;;;;
+CA_292;2026-06-03;46 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;Beige, Noir, Marine;Or;Cuir;;;Cadeau;Pescetarien;;;;;Rouge, Cognac;;Montres;Avocat;;;;;Marketing;Banquier;;;;;;;;
+CA_293;2026-06-03;34 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;;;;;;Yoga;;;Marketing;;;;;;;;;
+CA_294;2026-06-04;38 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Marine;Or;Lin;;;;Aucun;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_295;2026-06-04;41 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_296;2026-06-05;30 min;Français;Autre;36-45;Nouveau;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;Cuir;Matières vegan;Sac à main;;Vegetarien;Éthique / durable;;;;Rouge;;Montres;Architecte;;;;Vert;;;;;;;;;;
+CA_297;2026-06-05;44 min;Anglais;Femme;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;;;Montres;Médecin;;;;;;;;;;;;;;
+CA_298;2026-06-06;33 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;Tokyo;New York;;2.0;Français;Ingénieur;;;;Or;Cuir;;;;Vegetarien;Exclusivité;;;;Bordeaux;;;;;;;Vert;;;;;;;;;;
+CA_299;2026-06-06;36 min;Espagnol;Femme;;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;;Cognac, Rouge;;;;;;;;;;;;;;;Athlète;;
+CA_300;2026-06-09;42 min;Allemand;Femme;18-25;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige, Marine, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_301;2026-06-09;31 min;Français;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Natation;Culturel;Marine, Noir;Or;Cuir;Matières vegan;Sac à main;Cadeau, Anniversaire;Vegetarien;;;;;;;;;;;;;;;;;;;;;;
+CA_302;2026-06-10;44 min;Anglais;Femme;;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure;;Or;;Matières vegan;;Cadeau;Vegane;Exclusivité;;;;;;;;;;;;;;;;;;;;;
+CA_303;2026-06-10;33 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;Cadeau;Vegetarien;;;;Styliste;Cognac, Rouge;;;;;;;;;;;;;;;;;
+CA_304;2026-06-11;26 min;Italien;Homme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;Tokyo, Singapore;;;2.0;Français;Ingénieur;;;;Or;Lin;;;Cadeau;Aucun;Exclusivité;;;Styliste;;Baskets / Sneakers;;;;;;;;;;;;;;;;
+CA_305;2026-06-11;47 min;Allemand;Femme;;Fidèle;;Berlin;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_306;2026-06-12;29 min;Français;Femme;26-35;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;;Or;Lin;Matières vegan;;;Vegane;Qualité & savoir-faire, Éthique / durable;;;Styliste;Rouge;;Montres;;;;;;;;;;;;;;;
+CA_307;2026-06-12;36 min;Anglais;Femme;;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;;;Or;;;Sac à main;;Pescetarien;;;;;Rouge;;;Architecte;Artiste;;;;;;;;;;;;;
+CA_308;2026-06-13;41 min;Italien;Femme;46-55;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;Cuir;;;;Vegetarien;Exclusivité;;;;Cognac;;;;;;;;;;;;;;;;;
+CA_309;2026-06-13;34 min;Espagnol;Femme;36-45;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Dubai;;;2.0;Français;Ingénieur;;;Marine;Or;;Matières vegan;;Cadeau;Vegane;;;;Styliste;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_310;2026-06-16;43 min;Allemand;Femme;26-35;Nouveau;;Berlin;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;;;Lin;Matières vegan;;;Vegane;;;;Styliste;;;;;;Yoga;;;;;;;;;;;;
+CA_311;2026-06-16;30 min;Français;Femme;56+;VIP;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Beige;Or;Cuir;Matières vegan;Sac à main;Anniversaire;Vegetarien;Éthique / durable;;;;Cognac;;;Architecte;;;Ski;Vert;;;;;;;;;;
+CA_312;2026-06-17;51 min;Anglais;Femme;;VIP;;Paris, London;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;;Or;;;Sac à main;Cadeau;Aucun;;;;;;;Montres;;;;;;Marketing;;;;;;;;;
+CA_313;2026-06-17;36 min;Italien;Femme;46-55;Fidèle;;Milan;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Marine, Blanc, Noir;Or;;;;;Aucun;Exclusivité;;;Styliste;;;;Architecte;;;;;Marketing;;;;;;;;;
+CA_314;2026-06-18;39 min;Espagnol;Femme;46-55;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;;;Cadeau;Aucun;;;;Styliste;Cognac, Rouge;;;;;;;;;;;;;;;;;
+CA_315;2026-06-18;43 min;Allemand;Femme;;Nouveau;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;;;Or;;;;;Aucun;;;;;;;;;;Yoga;;;;;;;;;;;;
+CA_316;2026-06-19;31 min;Français;Femme;36-45;Fidèle;;;;;;;;;;<5k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;Cuir;;Sac à main;;Vegetarien;;;;;Cognac;;Montres;;;;;;Marketing;;;;;;;;;
+CA_317;2026-06-19;49 min;Anglais;Femme;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;;Or;;;;Cadeau;Vegetarien;Exclusivité;;;;;;Montres;Architecte;;;;;;;;;;;;;;
+CA_318;2026-06-20;34 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Lin;;;Cadeau;Vegetarien;Exclusivité;;;Styliste;Rouge, Cognac;;;;;;;;;;;;;;;;;
+CA_319;2026-06-20;37 min;Espagnol;Femme;46-55;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;Hong Kong;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;;;Vegane;;;;;Rouge;;;;Artiste;;;;;;;;;;;;;
+CA_320;2026-06-23;44 min;Allemand;Femme;;Régulier;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;Banquier;;;;;;;;
+CA_321;2026-06-23;29 min;Français;Femme;26-35;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir, Marine;Argent, Or;Cuir;Matières vegan;Sac à main;Cadeau, Mariage;Vegane;Éthique / durable;;;Styliste;Rouge;;Montres;Avocat;Artiste;Yoga;;;;;;;;;;;;
+CA_322;2026-06-24;47 min;Anglais;Femme;;VIP;;London;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;Luxe;Beige;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;Cognac, Rouge;;Montres;;;;;;;Banquier;Electro;;;;;;;
+CA_323;2026-06-24;32 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;Lin;;;;Vegetarien;;;;;;;;Architecte;;;;;;;;;;;;;;
+CA_324;2026-06-25;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;;Or;;Matières vegan;;;Vegane;;;;;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_325;2026-06-25;40 min;Allemand;Femme;;Nouveau;;Paris, London;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;Running;;;Or;;;;;Aucun;Exclusivité;;;Styliste;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_326;2026-06-26;47 min;Français;Femme;56+;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel, Luxe;Beige, Noir;Or;Cuir;Matières vegan;;Diplome, Mariage, Cadeau, Anniversaire;Pescetarien;Qualité & savoir-faire;;;Styliste;Rouge, Cognac;;Montres;Avocat, Médecin, Architecte;;;;;;;;Classique;;;;;;
+CA_327;2026-06-26;35 min;Anglais;Femme;;Nouveau;;;;;;;;;;<5k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;Matières vegan;;Cadeau;Aucun;Éthique / durable;;;;;;Montres;;Artiste;Yoga;;;;;;;;;;;;
+CA_328;2026-06-27;42 min;Italien;Femme;46-55;Occasionnel;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;Bordeaux;;;Avocat;;;;;;;;;;;;;;
+CA_329;2026-06-27;33 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;Matières vegan;;;Vegane;Éthique / durable;;;Styliste;Rouge;;;;;;;Vert;;;;;;;;;;
+CA_330;2026-06-30;44 min;Allemand;Femme;;Nouveau;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Marine, Noir;Or;Lin;;;;Aucun;Exclusivité;;;;;;;;;;;;;;;;;;;;;
+CA_331;2026-06-30;30 min;Français;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;;;;Vegane;Exclusivité, Éthique / durable;;;Styliste;Rouge;;Montres;;Artiste;;;;;;;;;Plaisir personnel;;;;
+CA_332;2026-07-01;40 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Gris, Noir, Marine;Or;Cuir;;;Cadeau, Anniversaire;Pescetarien;Exclusivité;;;Styliste;Rouge;;Montres;Architecte;Artiste;;;;;Banquier;;;;;;;;
+CA_333;2026-07-01;33 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;Lin;;;;Vegetarien;Exclusivité;;;;Bordeaux, Cognac;;;;Artiste;Yoga;;;;;;;;;;;;
+CA_334;2026-07-02;48 min;Espagnol;Femme;56+;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;Cadeau;Aucun;;;;;Cognac, Rouge;;;;;;;;;;;;;;;;;
+CA_335;2026-07-02;31 min;Allemand;Femme;;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Tokyo;;;2.0;Français;Ingénieur;;;;;;Matières vegan;;;Vegane;;;;Styliste;;;;;;;;;;;Electro;;;;;;;
+CA_336;2026-07-03;37 min;Français;Femme;46-55;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Marine, Noir;Or;Cuir, Lin;;Sac à main;Mariage, Anniversaire;Pescetarien;Qualité & savoir-faire;;;;;;Montres;Médecin;;;Ski;;;;;Classique;;;;Athlète;;
+CA_337;2026-07-03;45 min;Anglais;Femme;;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;;Or;;;;Cadeau, Anniversaire;Aucun;;;;;;;Montres;;;;;;Marketing;;;;;;;;;
+CA_338;2026-07-04;34 min;Italien;Femme;18-25;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;;;;Cadeau;Aucun;;;;Styliste;;;;;Artiste;;;;;;;;;;;;;
+CA_339;2026-07-04;39 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige;Or;;Matières vegan;;;Vegane;Éthique / durable;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_340;2026-07-07;43 min;Allemand;Femme;18-25;Fidèle;;Berlin;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_341;2026-07-07;30 min;Français;Femme;36-45;VIP;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Beige, Blanc;Or;Cuir, Lin;;Sac à main;;Pescetarien;Qualité & savoir-faire;;;Styliste;Cognac;;Montres;;;;;;;;;;;;;;;
+CA_342;2026-07-08;46 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;Beige, Noir;Or;Cuir;;;Cadeau;Pescetarien;;;;;Rouge, Cognac;;Montres;;;;;;;Banquier;;;;;;;;
+CA_343;2026-07-08;34 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Vegetarien;Exclusivité;;;;;;;Avocat, Médecin;;Yoga;;;;;;;;;;;;
+CA_344;2026-07-09;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;;;Vegane;;;;Styliste;Rouge;;;;Artiste;;;;;;;;;;;;;
+CA_345;2026-07-09;41 min;Allemand;Femme;;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Marine, Noir;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_346;2026-07-10;33 min;Français;Femme;36-45;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Natation;Détente, Luxe;;Or;;;;Cadeau, Plaisir;Vegetarien;;;;Styliste;Rouge;;Montres;;Artiste;;;;;;;;;;;;;
+CA_347;2026-07-10;49 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Beige;Or;Cuir;Matières vegan;;Cadeau;Vegetarien;Exclusivité, Éthique / durable;;;;Cognac, Rouge;;Montres;Avocat;;;;;;;;;;;;;;
+CA_348;2026-07-11;35 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Noir;Or;;;;;Aucun;Exclusivité;;;;Cognac;;;Architecte;;;Golf;;;;;;;;;;;
+CA_349;2026-07-11;33 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;;;;Vegetarien;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_350;2026-07-14;47 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_351;2026-07-14;32 min;Français;Femme;26-35;Fidèle;;;;;;;;;;<5k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or, Argent;Cuir;;Sac à main;;Vegetarien;Exclusivité;;;;;;;Avocat;;;;;;Banquier;;;;Plaisir personnel;;;;
+CA_352;2026-07-15;43 min;Anglais;Femme;;VIP;;Berlin;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;;Or;Lin;Matières vegan;;;Vegane;;;;;;;Montres;;Artiste;Yoga;;;Marketing;;;;;;;;;
+CA_353;2026-07-15;35 min;Italien;Femme;46-55;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;;Or;Lin;;;;Aucun;;;;;;;;;Artiste;;;;;;;;;;;;;
+CA_354;2026-07-16;32 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;;;Vegane;;;;Styliste;Rouge;;;;;;;;;Banquier;;;;;;;;
+CA_355;2026-07-16;38 min;Allemand;Femme;;Régulier;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Aucun;;;;;Bordeaux;;;;;Yoga;;;;;;;;;;;;
+CA_356;2026-07-17;29 min;Français;Homme;36-45;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;;Or;;;Sac à main;Cadeau, Mariage;Vegetarien;Qualité & savoir-faire;;;Styliste;;;Montres;;;;;;;;;;;;;;;
+CA_357;2026-07-17;44 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel, Détente, Luxe;Beige, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;Cognac;;Montres;Avocat, Médecin, Architecte;;;;;;;;;;;;;;
+CA_358;2026-07-18;30 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;Sac à main;;Aucun;Exclusivité;;;;;;;;;;;;;;;;;;;;Tennis;
+CA_359;2026-07-18;36 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Gris;Or, Argent;;;;;Vegetarien;;;;;;;;;Artiste;;;;;;;;;;;;;
+CA_360;2026-07-21;42 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_361;2026-07-21;28 min;Français;Femme;36-45;VIP;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;;Or;Cuir;;Sac à main;;Pescetarien;;;;;Bordeaux, Cognac, Rouge;;Montres;;;;;;;;;;;;;;;
+CA_362;2026-07-22;46 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;Cuir;;;Cadeau, Anniversaire;Vegetarien;Exclusivité;;;;Cognac, Rouge;;;Avocat, Architecte;;;;;;;Electro;;;;;;;
+CA_363;2026-07-22;33 min;Italien;Femme;;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;;Or;Lin;Matières vegan;;;Vegane;Exclusivité;;;;;;;Médecin;;Yoga;;;;;;;;;;;;
+CA_364;2026-07-23;37 min;Espagnol;Femme;46-55;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine;Or;;;;Cadeau;Vegetarien;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_365;2026-07-23;40 min;Allemand;Femme;;Nouveau;;Paris, London;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;Running;;;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;Rouge;;;;;;;;;;;;;;;;;
+CA_366;2026-07-24;31 min;Français;Femme;26-35;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel;Beige;Or;Cuir;;Sac à main;;Vegetarien;Qualité & savoir-faire;;;;Cognac;;Montres;Architecte;;;;;;;;Classique;;Plaisir personnel;;;;
+CA_367;2026-07-24;45 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Aventure, Luxe;Beige, Noir, Blanc;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;Rouge, Cognac;;Montres;;;;;;Marketing;Banquier;;;;;;;;
+CA_368;2026-07-25;34 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Vegetarien;;;;;Cognac;;;;;;;;;;;;;;;;;
+CA_369;2026-07-25;39 min;Espagnol;Femme;36-45;VIP;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;Matières vegan;Sac à main;Cadeau;Vegane;;;;;Rouge;;;;Artiste;Yoga;;;;;;;;;;;;
+CA_370;2026-07-28;43 min;Allemand;Femme;;Régulier;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+CA_371;2026-07-28;29 min;Français;Femme;36-45;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Détente;Gris, Noir;Or;Cuir;Matières vegan;Sac à main;;Vegane;Éthique / durable;;;Styliste;Rouge;;Montres;Architecte;;;;;;;;;;;;;;
+CA_372;2026-07-29;47 min;Anglais;Femme;18-25;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;Cuir;Matières vegan;;Cadeau;Pescetarien;Exclusivité, Éthique / durable;;;;Cognac;;Montres;Médecin;;;;;;Banquier;;;;;;;;
+CA_373;2026-07-29;32 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;;Cognac;;;;;Yoga;;;;;;;;;;;;
+CA_374;2026-07-30;36 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine;Or;;;;;Aucun;;;;;Rouge;;;;;;;;;;;;;;;;;
+CA_375;2026-07-30;41 min;Allemand;Femme;;VIP;;London;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Noir;Or;;;;;Aucun;;;;;;;;;;;;Vert;;;;;;;;;;
+CA_376;2026-07-31;30 min;Français;Femme;36-45;VIP;;Milan;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Tokyo;New York;;2.0;Français;Ingénieur;;;Noir;Or;Cuir;;Sac à main;;Pescetarien;;;;Styliste;Rouge, Cognac;;Montres;;Artiste;;;;;;;;;;;;;
+CA_377;2026-07-31;44 min;Anglais;Femme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Détente;Beige, Gris, Noir;Or;;;;Cadeau;Aucun;;;;Styliste;;Baskets / Sneakers;Montres;;;;;;;Banquier;;;;;;;;
+CA_378;2026-08-01;33 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;Lin;;;;Aucun;Exclusivité;;;;Cognac;;;Médecin;;;Golf;;;;;;;;;;;
+CA_379;2026-08-01;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;;Gris, Marine;Or;;;;;Vegetarien;;;;Styliste;Rouge;;;;;;;;;;;;;;;;;
+CA_380;2026-08-04;42 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_381;2026-08-04;31 min;Français;Femme;26-35;Fidèle;;Paris;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Tokyo;;;2.0;Français;Ingénieur;;;Beige;Or;Cuir, Lin;;Sac à main;;Pescetarien;Qualité & savoir-faire;;;;;;Montres;;Artiste;Yoga;;;;;;;;;;;;
+CA_382;2026-08-05;46 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Noir;Or;Cuir;;;Cadeau;Pescetarien;;;;Styliste;Rouge, Cognac;;Montres;;;;;;Marketing;Banquier;;;;;;;;
+CA_383;2026-08-05;34 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Tokyo;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Vegetarien;;;;;;;;Médecin;;;;;;;;;;;;;;
+CA_384;2026-08-06;37 min;Espagnol;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;Dubai;;;2.0;Français;Ingénieur;;;Beige;Or;;;;;Vegetarien;;;;;Rouge, Cognac;;;;;;;Vert;;;;;;;;;;
+CA_385;2026-08-06;40 min;Allemand;Femme;;Nouveau;;Berlin;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;New York;;2.0;Français;Ingénieur;;;Beige;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_386;2026-08-07;29 min;Français;Homme;26-35;Nouveau;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Culturel, Détente;Gris, Noir;Or;Cuir;Matières vegan;Sac à main;;Vegetarien;;;;Styliste;;;Montres;;;;Ski;;Marketing;;Electro;;;;;;;
+CA_387;2026-08-07;45 min;Anglais;Femme;26-35;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine, Noir;Or;Cuir;;;Cadeau;Pescetarien;Exclusivité;;;;;;Montres;;;;;;;Banquier;;;;;;;;
+CA_388;2026-08-08;32 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;Lin;;;;Aucun;Exclusivité;;;Styliste;;;;;;;;;Marketing;;;;;;;;Tennis;
+CA_389;2026-08-08;36 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;;;;;Vegetarien;;;;;Rouge;;;;;Yoga;;;;;;;;;;;;
+CA_390;2026-08-11;43 min;Allemand;Femme;18-25;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Noir;Or;;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_391;2026-08-11;28 min;Français;Femme;36-45;Fidèle;;;;;;;;;;;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Détente;Beige;Or;;Matières vegan;Sac à main;;Vegane;Exclusivité, Éthique / durable;;;Styliste;Rouge;;Montres;;;;;;;;;;;;;;;
+CA_392;2026-08-12;47 min;Anglais;Femme;;VIP;;;;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;Luxe;Beige;Or;Cuir, Lin;;;Cadeau;Pescetarien;Exclusivité;;;;Cognac, Rouge;;;Avocat, Médecin;;;;;Marketing;Banquier;;;;;;;;
+CA_393;2026-08-12;33 min;Italien;Femme;46-55;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;Lin;;;;Aucun;;;;;;;;;;;;;;;;;;;;;;
+CA_394;2026-08-13;38 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;Lin;;Sac à main;;Aucun;;;;;Bordeaux, Cognac, Rouge;;;;;;;;;;;;;;;;;
+CA_395;2026-08-13;41 min;Allemand;Femme;;Régulier;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Beige, Marine;Or;;;;;Aucun;;;;;;;;;;Yoga;;;;;;;;;;;;
+CA_396;2026-08-14;30 min;Français;Femme;36-45;VIP;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;Running;Luxe;;Or;Cuir;;Sac à main;;Pescetarien;Exclusivité;;;Styliste;Bordeaux, Cognac;;Montres;;;;;;;;;;;;;;;
+CA_397;2026-08-14;45 min;Anglais;Homme;;VIP;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Gris, Noir;Or;Cuir;;;Cadeau;Vegetarien;Exclusivité;;;;Cognac;;Montres;Médecin;;;;;;Banquier;;;;;;;;
+CA_398;2026-08-15;34 min;Italien;Femme;36-45;Fidèle;;;;;;;;;;5–10k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;Marine, Noir;Or;;;;;Aucun;Exclusivité;;;;Cognac;;;;;;Golf;;Marketing;;;;;;;;;
+CA_399;2026-08-15;37 min;Espagnol;Femme;36-45;Fidèle;;;;;;;;;;10–15k;;Rappeler;M+1;Email;;;;;;;2.0;Français;Ingénieur;;;;Or;Lin;;;;Vegetarien;;;;Styliste;Rouge;;;;;;;;Marketing;;;;;;;;;
+CA_400;2026-08-18;42 min;Allemand;Femme;;Fidèle;;;;;;;;;;15–25k;;Rappeler;M+1;Email;;;;;;;2.0;Français;;;;Beige, Noir;Or;;;;;Aucun;;;;Styliste;;;;;;;;;;;;;;;;;;
+DIRTY_001;01-15-2026;half hour;English;Femme;;Régulier;;;Mobile;;;Beige;;;;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_002;1/15/26;;MIX;Homme;26-35;Régulier;;;Mobile;Ski;;Blanc;;;;25k+;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_003;31/02/2026;;Anglais;Femme;46-55;Régulier;;;Mobile;Running;;Blanc;;;;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_004;;0.5h;en;;46-55;Régulier;Cadre;;Mobile;;;;Cuir;;;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_005;;30 min;Français;Femme;;Nouveau;;;Mobile;Tennis;;;;;;15-25k;;Rappeler;M+1;Email;;;;;New_York;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_006;15.01.26;court;Anglais;Femme;56+;Fidèle;;Milan;Mobile;;;Beige;;;;15-25k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_007;???;half hour;Italian;;26-35;Régulier;Entrepreneur;Milan;Mobile;Yoga;;Rose_gold;Cuir;Sacs;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_008;;30m;Italien;Femme;;Fidèle;;;Mobile;;;Noir;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;Singapore;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_009;invalid;~30min;Anglais;Homme;;Régulier;;;Mobile;;;Bordeaux;;;;<5k;;Rappeler;M+1;Email;Végétarien;;;Singapore;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_010;15.01.26;~30min;anglais;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_011;31/02/2026;;en;;;Régulier;Cadre;;Mobile;;;Noir;Cuir;;;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_012;31/02/2026;très long;Italien;Homme;56+;Régulier;;London;Mobile;;;;;;;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_013;1/15/26;;autre;Homme;;Régulier;Cadre;Milan;Mobile;;;Rose_gold;Cuir;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_014;???;30-45 min;FR/EN;Homme;;Fidèle;;;Mobile;;;Noir;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_015;"RDV Durand le 31/02/2026 à 25:99
+    Client depuis 2099, 50 ans.
+    Anniversaire: hier/demain/bientôt
+    Budget 10000 – 12127 € à confirmer 30/13/2025
+    Rappeler: la semaine prochaine ou le mois dernier
+    Dubai. kosher. severe shellfish allergy CRITICAL. blanc.";2026.01.15;Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_016;15 janvier 2026;;Spanish;Homme;36-45;Régulier;Entrepreneur;Milan;Mobile;;;Noir;Cuir;Sacs;;5-10k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_017;01-15-2026;;Espagnol;Femme;;Régulier;;;Mobile;;;Cognac;Cuir;;;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_018;2026-01-15;30 minutes;Italian;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_019;invalid;30-45 min;deutsch;Femme;18-25;Fidèle;;;Mobile;;;Cognac;;;;15-25k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_020;2026.01.15;environ 30;Italian;;36-45;Régulier;Cadre;;Mobile;;;;Cuir;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_021;January 15, 2026;"Euh alors le client c'est Mrs. Αλεξάνδρα Παπαδόπουλος voilà euh 
+    donc il a genre euh 74 Jahre alt enfin bon bref
+    et donc son budget c'est euh environ euh genre budget flexible
+    il habite à ah mince comment ça s'appelle euh milano
+    donc voilà quoi euh végétarien mais mange du poisson et puis euh allergique nickel + latex
+    ah oui et il aime le BLACK voilà c'est tout euh merci";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_022;31/02/2026;30 min;German;Homme;;Régulier;Cadre;;Mobile;;;Noir;Cuir;;;25k+;;Rappeler;M+1;Email;;;;Tokyo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_023;;court;fr;;;Régulier;;;Mobile;;;Rose_gold;;;;25k+;;Rappeler;M+1;Email;;fruits_coque;;Singapore;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_024;00/00/0000;30min;German;Femme;;Occasionnel;;;Mobile;;;;;;;<5k;;Rappeler;M+1;Email;Végane;latex, nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_025;01-15-2026;;Italien;Femme;;Régulier;;;Mobile;;;Navy;Cuir;;;25k+;;Rappeler;M+1;Email;;;;Dubai;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_026;;très long;Français;Femme;36-45;VIP;;;Mobile;;Art;Blanc;;;;5-10k;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_027;15/01/2026;;Allemand;Homme;56+;Régulier;;Paris;Mobile;;;Noir;;;;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_028;2026.01.15;une demi-heure;Anglais;Femme;;Régulier;;;Mobile;;;;;;;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_029;15 janvier 2026;0.5h;FR/EN;Femme;56+;Régulier;;;Mobile;;;;;;;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_030;January 15, 2026;30min;en;Femme;;Régulier;Entrepreneur;Milan;Mobile;Tennis;;Navy;Cuir;Sacs;;10-15k;;Rappeler;M+1;Email;;fruits_coque;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_031;2026-01-15;~30min;Allemand;;;Régulier;;;Mobile;;;Cognac;;;;15-25k;;Rappeler;M+1;Email;;lactose, gluten;;;;Football;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_032;January 15, 2026;30-45 min;Allemand;;;Régulier;;London;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_033;15/01/2026;30 min;Anglais;Femme;56+;VIP;Profession_libérale;;Mobile;;Art;Noir;;;Anniversaire;;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_034;;30-45 min;Français;Homme;;Régulier;Cadre;;Mobile;;;Bordeaux;Cuir;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_035;2026.01.15;30 min;autre;;;Régulier;;;Mobile;;;Beige;;;;5-10k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_036;1/15/26;30min;Italien;Homme;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_037;2026.01.15;30 min;Français;Homme;;Régulier;Entrepreneur;Milan;Mobile;Yoga;;;Cuir;Sacs;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_038;???;très long;plusieurs;Homme;56+;Fidèle;;;Mobile;;;;;;Anniversaire;<5k;;Rappeler;M+1;Email;Pescetarien;fruits_coque;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_039;"Euh alors le client c'est Mrs. Αλεξάνδρα Παπαδόπουλος voilà euh 
+    donc il a genre euh 27-year-old enfin bon bref
+    et donc son budget c'est euh environ euh genre Budget: 25000€
+    il habite à ah mince comment ça s'appelle euh Paris
+    donc voilà quoi euh kosher et puis euh allergy nuts, latex, perfumes
+    ah oui et il aime le navy voilà c'est tout euh merci";2026-01-15;30m;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_040;2026-01-15;~30min;anglais;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_041;;court;Français;Homme;56+;Fidèle;;Paris;Mobile;;;Noir;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_042;"Client MME LEGRAND MME LEGRAND (doublon??)
+    Age 73ans ou 73ans ans
+    Budget from 7000 to 11786 / from 7000 to 11786 euros
+    Ville francfort / francfort
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    pas de restrictions. pas d'allergie connue. rose gold. .";15/01/2026;une demi-heure;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_043;00/00/0000;"|Client|Mr. O'Brien-McIntyre|
+    |Age|agé de 52|
+    |Budget|entre 25000 et 27336|
+    |Ville|St-Tropez|
+    |Corrupted|data|table|error|format|";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_044;;???;plusieurs;Homme;56+;Régulier;;;Mobile;;;Beige;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_045;1/15/26;30min;anglais;Femme;56+;VIP;Entrepreneur;Milan;Mobile;;Art;Cognac;;;Anniversaire;5-10k;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_046;00/00/0000;30min;Anglais;Femme;;VIP;Cadre;;Mobile;Yoga;Art;Blanc;;;;5-10k;Réseau_affluent;Rappeler;M+1;Email;;latex, nickel;;Hong_Kong;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_047;???;30min;en;Homme;;Régulier;Entrepreneur;Milan;Mobile;Running;;;Cuir;Sacs;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_048;2026-01-15;"Euh alors le client c'est Mrs. Björk Jónsdóttir voilà euh 
+    donc il a genre euh ne souhaite pas dire enfin bon bref
+    et donc son budget c'est euh environ euh genre 5000 – 8863 €
+    il habite à ah mince comment ça s'appelle euh N/A
+    donc voilà quoi euh kosher et puis euh N/A
+    ah oui et il aime le rose-gold voilà c'est tout euh merci";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_049;00/00/0000;court;French;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_050;January 15, 2026;"M. Signora D'Angelo, nouveau client mais client fidèle depuis 2015.
+    late twenties dynamique et retraité depuis 20 ans.
+    Budget 30000EUR limité mais très généreux illimité.
+    sans gluten sans lactose strict mais mange de tout occasionnellement.
+    Habite milano mais n'a jamais visité cette ville.
+    Aime Noir mais déteste absolument cette couleur.
+    ??? mais aucun problème avec ces allergènes.";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_051;2026-01-15;"CONVERSATION EXCEPTIONNELLE avec Client_51, étudiant travaille aussi extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. la trentaine donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget selon modèle mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à Hongkong une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique N/A de manière exceptionnelle.  de façon exceptionnelle.
+    pas d'allergie connue. Couleur préférée rose-gold une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. ";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_052;15.01.26;;Français;Femme;18-25;Fidèle;;;Mobile;;;Beige;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_053;January 15, 2026;30min;Espagnol;Femme;;VIP;;;Mobile;Yoga;Art;;;;;;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_054;invalid;long;francais;Homme;;Nouveau;;;Mobile;Yoga;;;;;;5-10k;;Rappeler;M+1;Email;Végétarien;;;;New_York;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_055;invalid;30m;Italien;Femme;;Régulier;;;Mobile;Running;;Rose_gold;;;;5-10k;;Rappeler;M+1;Email;;latex, nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_056;01-15-2026;environ 30;deutsch;Femme;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;Singapore;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_057;2026.01.15;~30min;Italien;Femme;18-25;Fidèle;;;Mobile;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_058;;court;español;Femme;;Occasionnel;;London;Mobile;;;Rose_gold;;;;25k+;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_059;"{name: ""mme durand marie"", age: la trentaine, 
+    budget: ""unlimited budget"", city: zürich"",
+    diet: ""vegan sauf occasionnellement, allergy: ""aucune"",
+    color: bordeaux, sport"": ""équitation""
+    ERROR: JSON PARSE FAILED LINE 3}";;30 minutes;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_060;31/02/2026;"🌟 CLIENTE VIP 🌟 Mrs. Björk Jónsdóttir 💼 CEO, CFO, COO ⭐⭐⭐⭐⭐
+    Age: environ 29 | Budget: budget flexible 💰💰💰
+    🏠 PARIS | ✈️ travels a lot
+    Loves:  🎾 | Art 🎨 | Music 🎵
+    Diet: omnivore 🥗 | N/A ⚠️
+    Color: Noir ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_061;31/02/2026;environ 30;multilingual;Homme;;Régulier;;Paris;Mobile;;;Bordeaux;;;;25k+;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_062;"🌟 CLIENTE VIP 🌟 mme durand marie 💼 NC ⭐⭐⭐⭐⭐
+    Age: né en 1960 | Budget: 15000EUR 💰💰💰
+    🏠 dubai | ✈️ travels a lot
+    Loves: ??? 🎾 | Art 🎨 | Music 🎵
+    Diet: sans gluten sans lactose 🥗 | ⚠️ allergies multiples ⚠️
+    Color: BLACK ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞";January 15, 2026;une demi-heure;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_063;00/00/0000;30 min;en;;;Régulier;;;Mobile;;;Beige;;;;;;Rappeler;M+1;Email;;fruits_coque;;Dubai;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_064;;court;Français;Femme;;VIP;Cadre;;Mobile;;Art;;;;Anniversaire;25k+;Réseau_affluent;Rappeler;M+1;Email;;;;;;Football;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_065;invalid;;fr;Homme;;Régulier;Entrepreneur;Milan;Mobile;Running;;Noir;Cuir;Sacs;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_066;"Client Sr. João Gonçalves Sr. João Gonçalves (doublon??)
+    Age 40 ans ou 40 ans ans
+    Budget budget di 5000€ / budget di 5000€ euros
+    Ville ??? / ???
+    ATTENTION: POSSIBLE DUPLICATE: POSSIBLE DUPLICATE:
+    pas de restrictions. none. rose-gold. .";01-15-2026;30min;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_067;;une demi-heure;autre;Homme;;Régulier;;;Mobile;Natation;;Beige;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_068;2026-01-15;très long;italiano;Femme;;VIP;Profession_libérale;;Mobile;;Art;Beige;;;Anniversaire;25k+;Réseau_affluent;Rappeler;M+1;Email;;;;Hong_Kong;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_069;15/01/2026;half hour;English;Femme;;VIP;;;Mobile;Running;Art;Navy;;;;;Réseau_affluent;Rappeler;M+1;Email;Végane;;;Dubai;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_070;00/00/0000;???;italiano;Femme;;Régulier;Cadre;;Mobile;;;Noir;Cuir;;;15-25k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_071;???;30min;italiano;Femme;;Occasionnel;Entrepreneur;Milan;Mobile;Yoga;;Cognac;Cuir;Sacs;;25k+;;Rappeler;M+1;Email;Végane;latex, nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_072;15.01.26;~30min;multilingual;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_073;"Client السيد أحمد, around 46. Wants to buy un sac pour business trips. 
+    Budget from 5000 to 9927. Habite Singapore mais travels often to München et Milano.
+    Sport: Tennis. vegan sauf occasionnellement. Cuir cognac preferred. none.";;half hour;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_074;15/01/2026;30 minutes;Espagnol;Femme;56+;Fidèle;;Paris;Mobile;;;Bordeaux;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_075;01-15-2026;;español;;;Fidèle;;;Mobile;;;Navy;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_076;1/15/26;half hour;Allemand;Femme;36-45;VIP;Profession_libérale;;Mobile;;Art;Rose_gold;;;Anniversaire;;Réseau_affluent;Rappeler;M+1;Email;Végane;latex, nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_077;;30 minutes;Italien;Femme;46-55;Régulier;;;Mobile;;;Bordeaux;;;;15-25k;;Rappeler;M+1;Email;;latex, nickel;;Singapore;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_078;2026.01.15;half hour;Espagnol;;;Fidèle;;;Mobile;;;Bordeaux;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_079;15.01.26;half hour;Français;Femme;36-45;VIP;;;Mobile;Yoga;Art;Noir;;;Anniversaire;;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_080;"🌟 CLIENTE VIP 🌟 Dr. Émile François-Marie 💼 ancien directeur maintenant consultant ⭐⭐⭐⭐⭐
+    Age: around 73 | Budget: 7000 euros 💰💰💰
+    🏠 鳥京 | ✈️ travels a lot
+    Loves: ??? 🎾 | Art 🎨 | Music 🎵
+    Diet: vegetarian events 🥗 | intolérances: gluten lactose ⚠️
+    Color: beige ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞";;30 minutes;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_081;01-15-2026;30 min;francais;Homme;;Régulier;;;Mobile;;;Navy;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_082;???;très long;multilingual;Femme;;VIP;Cadre;;Mobile;Running;Art;;;;;;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_083;1/15/26;30 minutes;Spanish;;36-45;Régulier;;;Mobile;;;;;;;15-25k;;Rappeler;M+1;Email;;;;Tokyo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_084;;30 min;Spanish;Femme;;Occasionnel;;Paris;Mobile;Golf;;Rose_gold;;;;10-15k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_085;31/02/2026;très long;???;Femme;;Régulier;;Milan;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_086;2026-01-15;une demi-heure;Allemand;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_087;2026-01-15;30 minutes;English;Homme;;Régulier;Entrepreneur;Milan;Mobile;;;Bordeaux;Cuir;Sacs;;25k+;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_088;2026.01.15;environ 30;Français;Femme;56+;Fidèle;;;Mobile;;;Navy;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;Tokyo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_089;invalid;"From: sales@boutique.com
+    To: manager@boutique.com  
+    Subject: RE: FW: RE: Client Mrs. Αλεξάνδρα Παπαδόπουλος
+    
+    -----Original Message-----
+    Hi,
+    Pls see below client info:
+    - CONFIDENTIEL
+    - 5.000,00€  
+    - Francfort
+    - rosé gold leather pref
+    
+    Rgds,
+    
+    >>> Previous message truncated...
+    
+    Sent from my iPhone
+    --
+    This email is confidential blah blah disclaimer...";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_090;01-15-2026;0.5h;German;Homme;;Régulier;;;Mobile;;;Blanc;;;;25k+;;Rappeler;M+1;Email;;latex, nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_091;01-15-2026;half hour;Français;Homme;;Régulier;;;Mobile;;;;;;;5-10k;;Rappeler;M+1;Email;;;;Tokyo;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_092;"Client M. 李明 (Li Ming), 50ans. Wants to buy un sac pour business trips. 
+    Budget environ 15000€. Habite Monte-Carlo mais travels often to München et Milano.
+    Sport: voile. vegan sauf occasionnellement. Cuir bordeaux preferred. intolérances: gluten lactose.";January 15, 2026;environ 30;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_093;"Client Sr. José María Pérez-López, quarantaine. Wants to buy un sac pour business trips. 
+    Budget 20k. Habite Monaco mais travels often to München et Milano.
+    Sport: football. sans gluten sans lactose. Cuir BORDEAUX preferred. severe shellfish allergy CRITICAL.";;???;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_094;2026-01-15;long;Italien;Homme;46-55;Régulier;;;Mobile;;;;;;;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_095;15 janvier 2026;???;Fr;Homme;;Régulier;;Milan;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_096;"عميل مهم Mrs. Björk Jónsdóttir من Saint-Tropez.
+    العمر: agé de 64. الميزانية: 10k euros.
+    يبحث عن حقيبة فاخرة rosé gold.
+    végane strict. ATTENTION: allergie sévère fruits coque!!!. 
+    Sport: natation. رياضي جدا.
+    Rappeler en français merci.";2026-01-15;30 minutes;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_097;"Client Mr. O'Brien-McIntyre, around 34. Wants to buy un sac pour business trips. 
+    Budget $5000. Habite DUBAI mais travels often to München et Milano.
+    Sport: running. regime special. Cuir rose gold preferred. N/A.";2026-01-15;0.5h;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_098;2026-01-15;30 minutes;German;Femme;;Nouveau;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;New_York;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_099;???;half hour;Italien;Femme;;Régulier;;;Mobile;;;;Cuir;;;10-15k;;Rappeler;M+1;Email;;lactose, gluten;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_100;00/00/0000;half hour;multilingual;Femme;;Régulier;;Milan;Mobile;;;Bordeaux;;;;25k+;;Rappeler;M+1;Email;;latex, nickel;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_101;invalid;"|Client|m dubois|
+    |Age|cinquantaine|
+    |Budget|selon modèle|
+    |Ville|Frankfurt|
+    |Corrupted|data|table|error|format|";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_102;00/00/0000;30-45 min;FR/EN;Homme;;Régulier;;Paris;Mobile;;;;;;;15-25k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_103;00/00/0000;30 minutes;francais;Femme;;Régulier;;;Mobile;Running;;Navy;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_104;invalid;environ 30;Italien;Femme;;Régulier;;;Mobile;;;;;;;15-25k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_105;invalid;;FR/EN;Homme;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_106;15.01.26;;Anglais;Homme;;Régulier;;;Mobile;;;Noir;;;;25k+;;Rappeler;M+1;Email;;;;Tokyo;;Football;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_107;15/01/2026;30min;French;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_108;01-15-2026;court;???;Femme;;VIP;Profession_libérale;;Mobile;;Art;;;;;;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_109;31/02/2026;???;Français;Homme;46-55;Régulier;;Paris;Mobile;;;;;;;;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_110;01-15-2026;;German;Femme;56+;VIP;Artiste;;Mobile;;Art;;;;;25k+;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_111;31/02/2026;très long;Anglais;Femme;;Régulier;;;Mobile;;;Cognac;;;;15-25k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_112;2026-01-15;30m;Italien;Homme;;Régulier;Cadre;;Mobile;;;;Cuir;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_113;2026.01.15;30-45 min;Allemand;Homme;;Régulier;;Milan;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_114;invalid;30 minutes;French;Femme;;Régulier;;;Mobile;;;Rose_gold;;;;15-25k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_115;;court;en;Homme;36-45;Régulier;;;Mobile;;;;;;;25k+;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_116;2026.01.15;très long;Espagnol;Femme;;Régulier;Entrepreneur;Milan;Mobile;Running;;Noir;Cuir;Sacs;;15-25k;;Rappeler;M+1;Email;Végétarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_117;15 janvier 2026;;deutsch;Femme;;VIP;Entrepreneur;;Mobile;;Art;;;;;10-15k;Réseau_affluent;Rappeler;M+1;Email;;fruits_coque;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_118;1/15/26;30min;plusieurs;Femme;;Fidèle;;;Mobile;;;Cognac;;;Anniversaire;<5k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_119;invalid;long;FR/EN;Femme;56+;Régulier;Cadre;;Mobile;;;Rose_gold;Cuir;;;<5k;;Rappeler;M+1;Email;;;;Dubai;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_120;invalid;long;deutsch;Homme;;Régulier;;;Mobile;;;Bordeaux;;;;10-15k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_121;"{name: ""M. Müller-Löwenstein"", age: fifty-two, 
+    budget: ""7000 euros"", city: N/A"",
+    diet: ""omnivore, allergy: ""allergies alimentaires diverses"",
+    color: blanc, sport"": ""ski""
+    ERROR: JSON PARSE FAILED LINE 3}";2026-01-15;environ 30;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_122;;30-45 min;Spanish;Homme;;Régulier;;London;Mobile;Golf;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_123;"عميل مهم mme durand marie من Inconnu.
+    العمر: fifty-two. الميزانية: Budget: 12000€.
+    يبحث عن حقيبة فاخرة navy.
+    halal. . 
+    Sport: running. رياضي جدا.
+    Rappeler en français merci.";invalid;30 minutes;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_124;invalid;"|Client|السيد أحمد|
+    |Age|63 years old|
+    |Budget|20000€|
+    |Ville|new york|
+    |Corrupted|data|table|error|format|";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_125;???;30-45 min;French;Femme;;Régulier;Entrepreneur;Milan;Mobile;Tennis;;Navy;Cuir;Sacs;;5-10k;;Rappeler;M+1;Email;;;;Dubai;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_126;???;half hour;fr;Femme;;Occasionnel;;Paris;Mobile;Running;;Bordeaux;;;;25k+;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_127;January 15, 2026;30 min;???;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_128;31/02/2026;;Spanish;Femme;26-35;VIP;Entrepreneur;;Mobile;;Art;Noir;;;;;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_129;31/02/2026;long;Italien;Homme;56+;Régulier;;;Mobile;;;Bordeaux;;;;25k+;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_130;2026.01.15;court;???;Femme;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_131;invalid;30min;Spanish;;56+;Régulier;;London;Mobile;Running;;Cognac;;;;15-25k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_132;;très long;autre;Femme;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_133;01-15-2026;30m;Fr;;;Fidèle;;London;Mobile;;;;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_134;15/01/2026;~30min;Allemand;Femme;36-45;Régulier;;Paris;Mobile;;;;;;;15-25k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_135;01-15-2026;30min;MIX;;36-45;Fidèle;;;Mobile;;;;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_136;invalid;long;English;Femme;56+;Fidèle;;;Mobile;;;;;;Anniversaire;<5k;;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_137;1/15/26;"CONVERSATION EXCEPTIONNELLE avec Mme Zoë Bäcker, préfère ne pas dire extraordinaire, 
+    vraiment un client exceptionnel et extraordinaire qui mérite une attention 
+    exceptionnelle et extraordinaire. environ 45 donc dans la tranche d'âge 
+    des clients exceptionnels et extraordinaires. Budget pas de limite mais 
+    pourrait être plus élevé car client exceptionnel et extraordinaire. 
+    Réside à  une ville exceptionnelle où vivent des gens exceptionnels.
+    Pratique équitation de manière exceptionnelle. flexitarien de façon exceptionnelle.
+    N/A. Couleur préférée multicolore une couleur exceptionnelle.
+    Client à rappeler car exceptionnel et extraordinaire pour proposition 
+    exceptionnelle collection exceptionnelle prochaine saison exceptionnelle.
+    Potentiel lifetime value exceptionnel et extraordinaire vraiment incroyable.
+    Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. Exceptionnel extraordinaire. ";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_138;15/01/2026;???;Français;Femme;46-55;VIP;;;Mobile;Tennis;Art;;;;;;Réseau_affluent;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_139;31/02/2026;30-45 min;autre;Femme;;VIP;Profession_libérale;Paris;Mobile;Natation;Art;Beige;;;;25k+;Réseau_affluent;Rappeler;M+1;Email;Végane;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_140;2026-01-15;~30min;Italien;Femme;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;fruits_coque;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_141;2026-01-15;environ 30;Espagnol;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_142;;"🌟 CLIENTE VIP 🌟 Durand 💼 banquier+investisseur ⭐⭐⭐⭐⭐
+    Age: né en 1996 | Budget: entre 30000 et 34653 💰💰💰
+    🏠 N/A | ✈️ travels a lot
+    Loves: équitation 🎾 | Art 🎨 | Music 🎵
+    Diet: pescetarien 🥗 | severe shellfish allergy CRITICAL ⚠️
+    Color: navy ❤️ | Wife birthday 🎂 coming up!
+    Call back ASAP! 📞📞📞";Français;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_143;15/01/2026;half hour;Fr;;;Régulier;;Milan;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_144;15.01.26;très long;Spanish;Femme;;Fidèle;;;Mobile;;;Cognac;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_145;invalid;environ 30;Français;Femme;56+;Régulier;Entrepreneur;Milan, Paris;Mobile;;;;Cuir;Sacs;;;;Rappeler;M+1;Email;Végétarien;fruits_coque;;;;Football;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_146;15 janvier 2026;;English;Homme;46-55;Régulier;;;Mobile;;;Bordeaux;;;;5-10k;;Rappeler;M+1;Email;Pescetarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_147;January 15, 2026;0.5h;Français;Femme;;Régulier;;;Mobile;;;Navy;Cuir;;;;;Rappeler;M+1;Email;Pescetarien;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_148;15 janvier 2026;30min;plusieurs;Homme;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_149;15 janvier 2026;très long;multilingual;;;Régulier;;;Mobile;;;;;;;;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+DIRTY_150;15.01.26;;Anglais;Homme;26-35;Fidèle;;;Mobile;;;;;;Anniversaire;<5k;;Rappeler;M+1;Email;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

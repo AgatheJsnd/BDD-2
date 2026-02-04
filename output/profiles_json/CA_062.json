@@ -8,7 +8,8 @@
   "identite": {
     "genre": "Femme",
     "age": "56+",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "profession": "Profession_libérale"
   },
   "localisation": {
     "europe": [
@@ -20,6 +21,7 @@
   },
   "lifestyle_centres_interet": {
     "art_culture": [
+      "Musees",
       "Art"
     ],
     "voyage": [
@@ -36,7 +38,7 @@
     ]
   },
   "projet_achat": {
-    "motif": "Diplome",
+    "motif": "Anniversaire",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},
@@ -49,5 +51,7 @@
     "echeance": "M+1",
     "canal_contact": "Email"
   },
-  "metadata_client": {}
+  "metadata_client": {
+    "regime_alimentaire": "Végétarien"
+  }
 }

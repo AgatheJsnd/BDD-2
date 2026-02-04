@@ -7,15 +7,14 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "18-25",
     "statut_relationnel": "VIP"
   },
   "localisation": {
-    "amerique": [
-      "New_York"
-    ],
     "europe": [
       "London"
+    ],
+    "amerique": [
+      "New_York"
     ]
   },
   "mobilite_rythme_vie": {
@@ -32,15 +31,15 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Cognac",
       "Noir",
-      "Navy",
+      "Cognac",
       "Rose_gold",
-      "Bordeaux"
+      "Bordeaux",
+      "Navy"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Mariage",
     "budget": "25k+"
   },
   "appetence_evenementielle": {},

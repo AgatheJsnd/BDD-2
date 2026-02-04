@@ -38,13 +38,13 @@
       "Cuir"
     ],
     "pieces_favorites": [
-      "Sacs",
       "Montres",
-      "Portefeuille"
+      "Portefeuille",
+      "Sacs"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "<5k"
   },
   "appetence_evenementielle": {},

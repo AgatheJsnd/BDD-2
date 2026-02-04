@@ -7,7 +7,6 @@
   },
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "Régulier"
   },
   "localisation": {},
@@ -26,13 +25,13 @@
   },
   "style_personnel": {
     "couleurs_preferees": [
-      "Gris",
       "Noir",
+      "Gris",
       "Beige"
     ]
   },
   "projet_achat": {
-    "motif": "Cadeau",
+    "motif": "Anniversaire",
     "budget": "5-10k"
   },
   "appetence_evenementielle": {},
