@@ -1,33 +1,33 @@
 {
-  "total_clients": 400,
+  "total_clients": 405,
   "par_genre": {
-    "Femme": 375,
-    "Homme": 15,
+    "Femme": 379,
+    "Homme": 16,
     "Autre": 8
   },
   "par_age": {
-    "36-45": 122,
+    "26-35": 33,
+    "36-45": 123,
     "56+": 20,
     "46-55": 58,
-    "26-35": 31,
     "18-25": 10
   },
   "par_statut": {
-    "VIP": 151,
-    "Nouveau": 44,
-    "Fidèle": 172,
-    "Occasionnel": 5,
-    "Régulier": 28
+    "VIP": 153,
+    "Régulier": 29,
+    "Nouveau": 45,
+    "Fidèle": 173,
+    "Occasionnel": 5
   },
   "par_budget": {
-    "<5k": 13,
+    "<5k": 15,
+    "15–25k": 79,
+    "5–10k": 129,
     "5-10k": 27,
     "10-15k": 22,
     "15-25k": 27,
     "25k+": 32,
-    "10–15k": 51,
-    "5–10k": 127,
-    "15–25k": 78
+    "10–15k": 51
   },
   "sports_populaires": {
     "Golf": 18,
@@ -40,17 +40,17 @@
     "Natation": 5
   },
   "couleurs_populaires": {
-    "Noir": 184,
+    "Beige": 165,
+    "Noir": 185,
+    "Or": 300,
+    "Rouge": 123,
     "Cognac": 126,
     "Navy": 35,
     "Bordeaux": 39,
     "Rose_gold": 20,
-    "Beige": 164,
     "Gris": 46,
     "Blanc": 12,
     "Marine": 95,
-    "Or": 296,
-    "Rouge": 121,
     "Vert": 15,
     "Argent": 8,
     "Bleu": 1

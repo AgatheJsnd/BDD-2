@@ -1,0 +1,62 @@
+{
+  "client_id": 404,
+  "metadata": {
+    "date_conversation": "2026-02-04",
+    "duration": "00:01:18",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "amerique": [
+      "Los Angeles"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}
