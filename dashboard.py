@@ -697,8 +697,10 @@ def main():
         ("Data & Ops", mode_admin)
     ]
     active_tabs_names = [t[0] for t in tabs_def if t[1]]
+    
+    # Création des onglets
     tabs_list = st.tabs(active_tabs_names)
-    tabs = {name: tab for name, tab in zip(active_tabs_names, tabs_list)}
+    tabs = dict(zip(active_tabs_names, tabs_list))
     
     # ===== TAB 1: VUE D'ENSEMBLE =====
     if "Vue d'ensemble" in tabs:
@@ -780,13 +782,21 @@ def main():
                     image = get_product_image(p)
                     if image:
                         st.image(image, width=160)
+                    
+                    # Sécurisation des couleurs pour éviter KeyError slice
+                    pref_style = p.get('style_personnel', {})
+                    if not isinstance(pref_style, dict): pref_style = {}
+                    raw_colors = pref_style.get('couleurs_preferees', [])
+                    colors_list = get_safe_flat_list(raw_colors, 3)
+                    colors_str = ', '.join(colors_list) if colors_list else 'N/A'
+
                     st.markdown(f"""
-                    <div class=\"info-card\">
+                    <div class="info-card">
                         <h4>{p.get('client_id', 'Client')}</h4>
                         <div><b>Statut:</b> {p.get('identite', {}).get('statut_relationnel', 'N/A')} | <b>Budget:</b> {p.get('projet_achat', {}).get('budget', 'N/A')}</div>
-                        <div><b>Couleurs:</b> {', '.join(get_safe_flat_list(p.get('style_personnel', {}).get('couleurs_preferees', []), 3)) or 'N/A'}</div>
+                        <div><b>Couleurs:</b> {colors_str}</div>
                         <div><b>A dire aujourd'hui:</b> {ice}</div>
-                        <div><b>Next Best Action:</b> {action} <span style=\"color:#666\">({reason})</span></div>
+                        <div><b>Next Best Action:</b> {action} <span style="color:#666">({reason})</span></div>
                     </div>
                     """, unsafe_allow_html=True)
                 st.caption(f"Page {page}/{total_pages} - {total_filtered} clients au total")
@@ -794,13 +804,21 @@ def main():
                 client_data = []
                 for p in profiles_page:
                     email, phone = get_contact_info(p.get('client_id', ''), show_simulated)
+                    
+                    # Sécurisation des couleurs pour le tableau
+                    pref_style = p.get('style_personnel', {})
+                    if not isinstance(pref_style, dict): pref_style = {}
+                    raw_colors = pref_style.get('couleurs_preferees', [])
+                    colors_list = get_safe_flat_list(raw_colors, 2)
+                    colors_str = ', '.join(colors_list) if colors_list else 'N/A'
+
                     client_data.append({
                         'ID': p.get('client_id', 'N/A'),
                         'Genre': p.get('identite', {}).get('genre', 'N/A'),
                         'Age': p.get('identite', {}).get('age', 'N/A'),
                         'Statut': p.get('identite', {}).get('statut_relationnel', 'N/A'),
                         'Budget': p.get('projet_achat', {}).get('budget', 'N/A'),
-                        'Couleurs': ', '.join(get_safe_flat_list(p.get('style_personnel', {}).get('couleurs_preferees', []), 2)),
+                        'Couleurs': colors_str,
                         'Profession': p.get('identite', {}).get('profession', 'N/A'),
                         'Email': email,
                         'Tel': phone
@@ -828,8 +846,13 @@ def main():
                         st.write(f"- Statut: {profile.get('identite', {}).get('statut_relationnel', 'N/A')}")
                     with col2:
                         st.write("**Préférences**")
-                        colors = get_safe_flat_list(profile.get('style_personnel', {}).get('couleurs_preferees', []))
-                        st.write(f"- Couleurs: {', '.join(colors) if colors else 'N/A'}")
+                        # Sécurisation des couleurs pour le détail
+                        pref_style = profile.get('style_personnel', {})
+                        if not isinstance(pref_style, dict): pref_style = {}
+                        raw_colors = pref_style.get('couleurs_preferees', [])
+                        colors_list = get_safe_flat_list(raw_colors)
+                        colors_str = ', '.join(colors_list) if colors_list else 'N/A'
+                        st.write(f"- Couleurs: {colors_str}")
                     with col3:
                         st.write("**Projet**")
                         st.write(f"- Budget: {profile.get('projet_achat', {}).get('budget', 'N/A')}")
@@ -930,11 +953,14 @@ def main():
     if "Equipe & Tendances" in tabs:
         with tabs["Equipe & Tendances"]:
             st.subheader("Performance Equipe")
-            team = build_team_metrics_from_counts(kpis['total'], kpis['vip_count'], kpis['high_value'])
-            if show_simulated:
-                 st.dataframe(pd.DataFrame(team).T)
-            else:
-                st.info("Donnees masquées.")
+            try:
+                team = build_team_metrics_from_counts(kpis['total'], kpis['vip_count'], kpis['high_value'])
+                if show_simulated:
+                     st.dataframe(pd.DataFrame(team).T)
+                else:
+                    st.info("Donnees masquées.")
+            except Exception as e:
+                st.error(f"Erreur d'affichage de l'équipe : {e}")
 
     # ===== TAB 7: DATA & OPS =====
     if "Data & Ops" in tabs:
