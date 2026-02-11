@@ -1,0 +1,44 @@
+{
+  "client_id": "SIM_008",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "54min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Note: Li cherche un cadeau. Budget 1000. Aime le rose poudré.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

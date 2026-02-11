@@ -1,0 +1,46 @@
+{
+  "client_id": "SIM_012",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "13min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Client Li Silva rencontré à Milan. Cherche robe de soirée. Budget environ flexible.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "pieces_favorites": {}
+  },
+  "projet_achat": {
+    "marques_preferees": {
+      "Louis Vuitton": []
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

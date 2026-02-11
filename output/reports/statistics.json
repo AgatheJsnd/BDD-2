@@ -1,9 +1,9 @@
 {
-  "total_clients": 405,
+  "total_clients": 455,
   "par_genre": {
     "Femme": 379,
-    "Homme": 16,
-    "Autre": 8
+    "Homme": 18,
+    "Autre": 56
   },
   "par_age": {
     "26-35": 33,
@@ -13,9 +13,9 @@
     "18-25": 10
   },
   "par_statut": {
-    "VIP": 153,
-    "Régulier": 29,
-    "Nouveau": 45,
+    "VIP": 167,
+    "Régulier": 61,
+    "Nouveau": 49,
     "Fidèle": 173,
     "Occasionnel": 5
   },
@@ -40,10 +40,10 @@
     "Natation": 5
   },
   "couleurs_populaires": {
-    "Beige": 165,
-    "Noir": 185,
-    "Or": 300,
-    "Rouge": 123,
+    "Beige": 169,
+    "Noir": 186,
+    "Or": 309,
+    "Rouge": 125,
     "Cognac": 126,
     "Navy": 35,
     "Bordeaux": 39,
@@ -52,8 +52,8 @@
     "Blanc": 12,
     "Marine": 95,
     "Vert": 15,
-    "Argent": 8,
-    "Bleu": 1
+    "Argent": 12,
+    "Bleu": 2
   },
   "regimes_alimentaires": {
     "Vegetarien": 97,

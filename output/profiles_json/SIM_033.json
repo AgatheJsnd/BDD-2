@@ -1,0 +1,42 @@
+{
+  "client_id": "SIM_033",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "14min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Client Wei Müller rencontré à London. Cherche robe de soirée. Budget environ 10000.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "pieces_favorites": {}
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

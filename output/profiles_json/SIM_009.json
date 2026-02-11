@@ -1,0 +1,45 @@
+{
+  "client_id": "SIM_009",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "54min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Conversation avec Garcia, client VIP. Intéressé par costume sur mesure en argent.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Argent"
+      ]
+    },
+    "pieces_favorites": {}
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

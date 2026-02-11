@@ -1,4 +1,4 @@
-# LVMH Client Analytics Dashboard
+# LVMH Client Analytics
 
 Dashboard interactif pour l'analyse des profils clients LVMH, propulsé par Streamlit et Mistral AI.
 
@@ -28,9 +28,9 @@ MISTRAL_API_KEY=votre_cle_api_ici
 
 ## Lancement Local
 
-Pour lancer le dashboard :
+Pour lancer l'application :
 ```bash
-streamlit run dashboard.py
+streamlit run app.py
 ```
 Accédez ensuite à `http://localhost:8501`.
 
@@ -62,7 +62,7 @@ docker run -p 8501:8501 --env-file .env lvmh-dashboard
 ```
 
 ## Structure du Projet
-- `dashboard.py` : Point d'entrée de l'application.
+- `app.py` : Point d'entrée de l'application.
 - `src/` : Modules de traitement (CSV, Profils, IA).
 - `data/` : Base de données SQLite.
 - `output/` : Profils JSON générés.

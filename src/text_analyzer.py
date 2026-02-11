@@ -9,6 +9,9 @@ class TextAnalyzer:
     """Classe pour analyser le texte des transcriptions et extraire les informations"""
 
     def __init__(self):
+        # Patterns pour nettoyage
+        self.html_pattern = re.compile(r'<[^>]+>')
+        
         # Patterns pour extraction
         self.age_pattern = r'(\d+)\s*ans?'
         self.budget_pattern = r'(\d+)[kK€]'
@@ -234,10 +237,24 @@ class TextAnalyzer:
 
         return list(set(found_cities))
 
+    def clean_text(self, text: str) -> str:
+        """Nettoie le texte (suppression HTML, espaces superflus)"""
+        if not isinstance(text, str):
+            return ""
+        # Supprimer tags HTML
+        text = self.html_pattern.sub(' ', text)
+        # Normaliser espaces
+        text = ' '.join(text.split())
+        return text
+
     def analyze_full_text(self, text: str) -> Dict:
         """Analyse complète du texte"""
         if not isinstance(text, str):
             text = str(text) if text is not None else ""
+        
+        # Nettoyage préalable pour l'analyse (même si on garde l'original ailleurs, l'analyse se fait sur le propre)
+        # Note: Pour la sécurité, il faudrait aussi nettoyer ce qu'on stocke en DB.
+        text = self.clean_text(text)
         
         return {
             'age': self.extract_age(text),

@@ -1,0 +1,47 @@
+{
+  "client_id": "SIM_023",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "34min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Rdv boutique Shanghai avec Jean. Projet achat: sneakers Run Away.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "pieces_favorites": {
+      "chaussures": [
+        "Baskets / Sneakers"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

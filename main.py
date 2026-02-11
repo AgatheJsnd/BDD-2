@@ -14,11 +14,19 @@ def main():
     print("=" * 70)
     print()
 
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Systeme d'automatisation - Profils Clients LVMH")
+    parser.add_argument("--input", default="LVMH_sample_multilang_FULL_cleaned.csv", help="Chemin du fichier CSV d'entrée")
+    args = parser.parse_args()
+
     # 1. Initialisation des modules
     print("Initialisation des modules...")
-    # csv_processor = CSVProcessor("LVMH_Realistic_Merged_CA001-100.csv") # OLD
-    # Utilisation du fichier nettoyé
-    csv_processor = CSVProcessor("LVMH_sample_multilang_FULL_cleaned.csv")
+    # Utilisation du fichier passé en argument ou par défaut
+    input_file = args.input
+    print(f"Fichier d'entrée : {input_file}")
+    
+    csv_processor = CSVProcessor(input_file)
     text_analyzer = TextAnalyzer()
     tag_engine = TagEngine()
     profile_generator = ProfileGenerator()
@@ -33,6 +41,10 @@ def main():
     # 3. Traitement de chaque conversation
     print("Analyse et generation des profils...")
     for conversation in tqdm(conversations, desc="Traitement"):
+        # Nettoyage de sécurité (XSS / HTML) avant tout traitement
+        if "transcription" in conversation:
+            conversation["transcription"] = text_analyzer.clean_text(conversation["transcription"])
+
         # Analyser le texte
         analysis = text_analyzer.analyze_full_text(conversation["transcription"])
 

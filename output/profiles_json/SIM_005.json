@@ -1,0 +1,42 @@
+{
+  "client_id": "SIM_005",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "25min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Conversation avec Tanaka, client VIP. Intéressé par sneakers Run Away en rose poudré.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "pieces_favorites": {
+      "chaussures": [
+        "Baskets / Sneakers"
+      ]
+    }
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

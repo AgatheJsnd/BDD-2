@@ -1,0 +1,680 @@
+{
+  "summary": {
+    "total_clients": 20,
+    "successful": 20,
+    "errors": 0,
+    "avg_completeness": 85.0
+  },
+  "results": [
+    {
+      "client_id": "TEST_001",
+      "completeness": 81.81818181818183,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis avocat à Paris, j'ai 35 ans. Je cherche un cadeau pour ma femme pour notre anniversaire de mariage. Elle adore le style chic et les couleurs beige et cognac. Mon budget est autour de 8000 euros. C'est pour dans deux semaines donc c'est assez urgent.",
+        "age": "26-35",
+        "profession": [
+          "Profession_libérale"
+        ],
+        "ville": "europe",
+        "famille": [
+          "Marié(e)"
+        ],
+        "budget": "5-10k",
+        "urgence_score": 5,
+        "motif_achat": [
+          "Achat_personnel",
+          "Anniversaire",
+          "Mariage",
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Cognac",
+          "Beige"
+        ],
+        "matieres": [],
+        "style": [
+          "Chic"
+        ],
+        "centres_interet": []
+      }
+    },
+    {
+      "client_id": "TEST_002",
+      "completeness": 72.72727272727273,
+      "tags": {
+        "cleaned_text": "Salut, je suis entrepreneur dans la tech, j'ai 28 ans et je vis à New York. Je veux m'offrir quelque chose pour moi, j'aime le style casual et sportswear. Je fais beaucoup de golf et de fitness. Budget flexible, environ 12000 dollars. Pas pressé, je regarde juste.",
+        "age": "26-35",
+        "profession": [
+          "Entrepreneur"
+        ],
+        "ville": "amerique",
+        "famille": [],
+        "budget": "25k+",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Achat_personnel",
+          "Cadeau"
+        ],
+        "couleurs": [],
+        "matieres": [],
+        "style": [
+          "Casual",
+          "Sportswear"
+        ],
+        "centres_interet": [
+          "Golf",
+          "Fitness"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_003",
+      "completeness": 100.0,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis médecin à Lyon, 42 ans, mariée avec deux enfants. Je cherche un sac en cuir noir pour le travail, style business chic. Budget maximum 5000 euros. J'aime aussi le tennis et je voyage beaucoup pour des conférences.",
+        "age": "36-45",
+        "profession": [
+          "Profession_libérale",
+          "Entrepreneur"
+        ],
+        "ville": "europe",
+        "famille": [
+          "Marié(e)",
+          "Avec_enfants"
+        ],
+        "budget": "5-10k",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Achat_personnel",
+          "Voyage",
+          "Mariage"
+        ],
+        "couleurs": [
+          "Noir"
+        ],
+        "matieres": [
+          "Cuir"
+        ],
+        "style": [
+          "Business",
+          "Chic"
+        ],
+        "centres_interet": [
+          "Tennis",
+          "Voyage"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_004",
+      "completeness": 81.81818181818183,
+      "tags": {
+        "cleaned_text": "Hello, I'm a designer in Milan, 31 years old. Looking for a gift for my boyfriend's birthday next month. He loves art, museums, and gastronomie. Budget around 6500 euros. He prefers navy blue and grey colors, cashmere materials.",
+        "age": "26-35",
+        "profession": [
+          "Artiste"
+        ],
+        "ville": "europe",
+        "famille": [
+          "Couple"
+        ],
+        "budget": "5-10k",
+        "urgence_score": 1,
+        "motif_achat": [
+          "Anniversaire",
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Gris",
+          "Bleu_marine"
+        ],
+        "matieres": [
+          "Cachemire"
+        ],
+        "style": [],
+        "centres_interet": [
+          "Gastronomie",
+          "Art_Culture"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_005",
+      "completeness": 72.72727272727273,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis retraité, 62 ans, j'habite à Monaco. Je fais du ski chaque hiver et du golf l'été. Je cherche une pièce unique en haute couture pour un gala. Budget illimité. J'aime les matières nobles comme la soie et le cuir. C'est pour dans 3 mois.",
+        "age": "56+",
+        "profession": [],
+        "ville": "europe",
+        "famille": [],
+        "budget": "25k+",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Achat_personnel"
+        ],
+        "couleurs": [],
+        "matieres": [
+          "Cuir",
+          "Soie"
+        ],
+        "style": [
+          "Haute_couture"
+        ],
+        "centres_interet": [
+          "Golf",
+          "Ski"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_006",
+      "completeness": 72.72727272727273,
+      "tags": {
+        "cleaned_text": "Salut, je suis étudiante à la Sorbonne, 22 ans. C'est pour mon diplôme, mes parents veulent m'offrir un cadeau. Budget environ 3500 euros. J'aime le style casual, les couleurs rose gold et blanc. Je fais du yoga et j'adore voyager.",
+        "age": "18-25",
+        "profession": [
+          "Étudiant"
+        ],
+        "ville": null,
+        "famille": [],
+        "budget": "<5k",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Voyage",
+          "Diplôme",
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Rose_gold",
+          "Blanc"
+        ],
+        "matieres": [],
+        "style": [
+          "Casual"
+        ],
+        "centres_interet": [
+          "Yoga",
+          "Voyage"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_007",
+      "completeness": 100.0,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis chef d'entreprise à Dubai, 45 ans, célibataire. Je cherche plusieurs pièces pour renouveler ma garde-robe business. Budget 20000 euros. J'aime le noir, le gris anthracite, les matières vegan. Je fais du running et du fitness tous les jours.",
+        "age": "36-45",
+        "profession": [
+          "Entrepreneur"
+        ],
+        "ville": "moyen_orient_asie",
+        "famille": [
+          "Célibataire"
+        ],
+        "budget": "15-25k",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Achat_personnel"
+        ],
+        "couleurs": [
+          "Gris",
+          "Noir"
+        ],
+        "matieres": [
+          "Matières_vegan"
+        ],
+        "style": [
+          "Business"
+        ],
+        "centres_interet": [
+          "Fitness",
+          "Gastronomie",
+          "Running"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_008",
+      "completeness": 81.81818181818183,
+      "tags": {
+        "cleaned_text": "Hello, I'm an architect in Tokyo, 38 years old, married. Looking for anniversary gift for my wife. She loves bordeaux and cognac colors, silk and cashmere. Budget 15000 euros. She's into art culture, opera, and gastronomie. Need it for next week, quite urgent.",
+        "age": "36-45",
+        "profession": [],
+        "ville": "moyen_orient_asie",
+        "famille": [
+          "Marié(e)"
+        ],
+        "budget": "15-25k",
+        "urgence_score": 5,
+        "motif_achat": [
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Bordeaux",
+          "Cognac"
+        ],
+        "matieres": [
+          "Soie",
+          "Cachemire"
+        ],
+        "style": [],
+        "centres_interet": [
+          "Gastronomie",
+          "Art_Culture"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_009",
+      "completeness": 81.81818181818183,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis acteur à Los Angeles, 29 ans. Je veux quelque chose d'unique pour les Oscars. Style haute couture, couleurs noir et or rose. Budget 25000 dollars minimum. J'aime le football et les voyages. C'est très urgent, la cérémonie est demain!",
+        "age": "26-35",
+        "profession": [
+          "Artiste"
+        ],
+        "ville": "amerique",
+        "famille": [],
+        "budget": "25k+",
+        "urgence_score": 5,
+        "motif_achat": [
+          "Voyage",
+          "Mariage"
+        ],
+        "couleurs": [
+          "Noir",
+          "Rose_gold"
+        ],
+        "matieres": [],
+        "style": [
+          "Haute_couture"
+        ],
+        "centres_interet": [
+          "Voyage",
+          "Football"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_010",
+      "completeness": 90.9090909090909,
+      "tags": {
+        "cleaned_text": "Salut, je suis consultante à Genève, 33 ans, en couple. Je cherche un cadeau pour ma copine qui aime le style chic casual. Elle fait du tennis et du ski. Budget 7000 francs suisses. Couleurs préférées: beige, blanc, gris. Pas urgent, c'est pour dans 2 mois.",
+        "age": "26-35",
+        "profession": [
+          "Profession_libérale"
+        ],
+        "ville": "europe",
+        "famille": [
+          "Couple"
+        ],
+        "budget": "5-10k",
+        "urgence_score": 5,
+        "motif_achat": [
+          "Achat_personnel",
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Gris",
+          "Cognac",
+          "Blanc",
+          "Beige"
+        ],
+        "matieres": [],
+        "style": [
+          "Casual",
+          "Chic"
+        ],
+        "centres_interet": [
+          "Tennis",
+          "Ski"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_011",
+      "completeness": 100.0,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis directeur marketing à Berlin, 47 ans, marié avec trois enfants. Je cherche quelque chose pour moi, style business élégant. J'aime le cuir cognac et les matières nobles. Budget 10000 euros. Je fais du golf et j'adore la gastronomie et le vin.",
+        "age": "46-55",
+        "profession": [
+          "Cadre",
+          "Entrepreneur"
+        ],
+        "ville": "europe",
+        "famille": [
+          "Marié(e)",
+          "Avec_enfants"
+        ],
+        "budget": "10-15k",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Achat_personnel"
+        ],
+        "couleurs": [
+          "Bordeaux",
+          "Cognac"
+        ],
+        "matieres": [
+          "Cuir"
+        ],
+        "style": [
+          "Business",
+          "Chic"
+        ],
+        "centres_interet": [
+          "Golf",
+          "Gastronomie"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_012",
+      "completeness": 63.63636363636363,
+      "tags": {
+        "cleaned_text": "Hello, I'm a musician in London, 26 years old. Looking for stage outfits, very modern and bold style. Love black, red, and rose gold. Budget around 9000 pounds. I'm into art, culture, and yoga. Need them ASAP for tour starting next month.",
+        "age": "26-35",
+        "profession": [
+          "Étudiant"
+        ],
+        "ville": "europe",
+        "famille": [],
+        "budget": "5-10k",
+        "urgence_score": 5,
+        "motif_achat": [],
+        "couleurs": [
+          "Noir",
+          "Rose_gold",
+          "Rouge"
+        ],
+        "matieres": [],
+        "style": [],
+        "centres_interet": [
+          "Yoga",
+          "Art_Culture"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_013",
+      "completeness": 81.81818181818183,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis notaire à Bordeaux, 51 ans, marié. C'est pour les 50 ans de ma femme, un cadeau spécial. Elle aime le style chic raffiné, les couleurs bordeaux et noir. Matières: cuir et cachemire. Budget 18000 euros. Elle fait du yoga et adore les musées.",
+        "age": "46-55",
+        "profession": [
+          "Profession_libérale"
+        ],
+        "ville": null,
+        "famille": [
+          "Marié(e)"
+        ],
+        "budget": "15-25k",
+        "urgence_score": 1,
+        "motif_achat": [
+          "Anniversaire",
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Bordeaux",
+          "Noir"
+        ],
+        "matieres": [
+          "Cuir",
+          "Cachemire"
+        ],
+        "style": [
+          "Chic"
+        ],
+        "centres_interet": [
+          "Yoga",
+          "Art_Culture"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_014",
+      "completeness": 90.9090909090909,
+      "tags": {
+        "cleaned_text": "Salut, je suis dans une start-up à San Francisco, 24 ans, célibataire. Je veux me faire plaisir après ma levée de fonds. Style sportswear casual, couleurs navy et gris. Budget 5500 dollars. Je fais du running, du crossfit et j'aime voyager.",
+        "age": "18-25",
+        "profession": [
+          "Entrepreneur"
+        ],
+        "ville": "amerique",
+        "famille": [
+          "Célibataire"
+        ],
+        "budget": "5-10k",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Achat_personnel",
+          "Voyage"
+        ],
+        "couleurs": [
+          "Gris",
+          "Bleu_marine"
+        ],
+        "matieres": [],
+        "style": [
+          "Casual",
+          "Sportswear"
+        ],
+        "centres_interet": [
+          "Fitness",
+          "Running",
+          "Voyage",
+          "Art_Culture"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_015",
+      "completeness": 90.9090909090909,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis cadre dans la finance à Hong Kong, 40 ans, marié avec enfants. Je cherche un cadeau professionnel pour un client VIP. Style business luxe, noir et cognac. Cuir premium. Budget 12000 euros. C'est assez urgent, réunion la semaine prochaine.",
+        "age": "36-45",
+        "profession": [
+          "Cadre",
+          "Entrepreneur"
+        ],
+        "ville": "moyen_orient_asie",
+        "famille": [
+          "Marié(e)",
+          "Avec_enfants"
+        ],
+        "budget": "10-15k",
+        "urgence_score": 5,
+        "motif_achat": [
+          "Achat_personnel",
+          "Anniversaire",
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Noir",
+          "Cognac"
+        ],
+        "matieres": [
+          "Cuir"
+        ],
+        "style": [
+          "Business"
+        ],
+        "centres_interet": []
+      }
+    },
+    {
+      "client_id": "TEST_016",
+      "completeness": 90.9090909090909,
+      "tags": {
+        "cleaned_text": "Hello, I'm a fashion designer in Barcelona, 34 years old. Personal purchase for myself. Love haute couture style, beige, cream, and silk materials. Budget 8500 euros. I'm into art galleries, opera, and gastronomie. Taking my time, just exploring options.",
+        "age": "26-35",
+        "profession": [
+          "Artiste"
+        ],
+        "ville": "europe",
+        "famille": [
+          "Avec_enfants"
+        ],
+        "budget": "5-10k",
+        "urgence_score": 1,
+        "motif_achat": [
+          "Achat_personnel"
+        ],
+        "couleurs": [
+          "Beige"
+        ],
+        "matieres": [
+          "Soie"
+        ],
+        "style": [
+          "Haute_couture"
+        ],
+        "centres_interet": [
+          "Gastronomie",
+          "Art_Culture"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_017",
+      "completeness": 100.0,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis entrepreneur à Marrakech, 43 ans, marié. Je cherche des pièces pour mon voyage d'affaires à Paris. Style business chic, couleurs noir et bleu marine. Matières: laine et coton. Budget 6000 euros. Je fais du golf et j'aime le vin.",
+        "age": "36-45",
+        "profession": [
+          "Entrepreneur"
+        ],
+        "ville": "europe",
+        "famille": [
+          "Marié(e)"
+        ],
+        "budget": "5-10k",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Achat_personnel",
+          "Voyage",
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Bordeaux",
+          "Noir",
+          "Bleu_marine"
+        ],
+        "matieres": [
+          "Laine",
+          "Coton"
+        ],
+        "style": [
+          "Business",
+          "Chic"
+        ],
+        "centres_interet": [
+          "Golf",
+          "Gastronomie",
+          "Voyage"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_018",
+      "completeness": 63.63636363636363,
+      "tags": {
+        "cleaned_text": "Salut, je suis influenceuse à Miami, 27 ans. Je veux des pièces pour mes shootings. Style très chic et moderne, couleurs rose gold, blanc, beige. Budget 11000 dollars. Je fais du yoga, du fitness et j'adore voyager. Besoin rapide pour shooting dans 10 jours.",
+        "age": "26-35",
+        "profession": [],
+        "ville": "amerique",
+        "famille": [],
+        "budget": "10-15k",
+        "urgence_score": 1,
+        "motif_achat": [
+          "Voyage"
+        ],
+        "couleurs": [
+          "Rose_gold",
+          "Blanc",
+          "Beige"
+        ],
+        "matieres": [],
+        "style": [
+          "Chic"
+        ],
+        "centres_interet": [
+          "Fitness",
+          "Yoga",
+          "Voyage"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_019",
+      "completeness": 100.0,
+      "tags": {
+        "cleaned_text": "Bonjour, je suis professeur d'université à Amsterdam, 55 ans, en couple. C'est pour ma retraite anticipée, je veux me faire plaisir. Style casual élégant, gris et cognac. Cuir et cachemire. Budget 9500 euros. J'aime les musées, le théâtre et le ski.",
+        "age": "46-55",
+        "profession": [
+          "Étudiant"
+        ],
+        "ville": "europe",
+        "famille": [
+          "Couple"
+        ],
+        "budget": "5-10k",
+        "urgence_score": 3,
+        "motif_achat": [
+          "Achat_personnel",
+          "Cadeau"
+        ],
+        "couleurs": [
+          "Gris",
+          "Cognac"
+        ],
+        "matieres": [
+          "Cuir",
+          "Cachemire"
+        ],
+        "style": [
+          "Casual",
+          "Chic",
+          "Business"
+        ],
+        "centres_interet": [
+          "Ski",
+          "Art_Culture"
+        ]
+      }
+    },
+    {
+      "client_id": "TEST_020",
+      "completeness": 81.81818181818183,
+      "tags": {
+        "cleaned_text": "Hello, I'm a CEO in Singapore, 48 years old, married with children. Looking for exclusive pieces for galas and business events. Haute couture style, black and bordeaux. Premium leather and silk. Budget unlimited, over 30000 euros. Very urgent, event this weekend!",
+        "age": "46-55",
+        "profession": [
+          "Entrepreneur"
+        ],
+        "ville": "moyen_orient_asie",
+        "famille": [
+          "Marié(e)",
+          "Avec_enfants"
+        ],
+        "budget": "25k+",
+        "urgence_score": 5,
+        "motif_achat": [],
+        "couleurs": [
+          "Bordeaux",
+          "Noir"
+        ],
+        "matieres": [
+          "Cuir",
+          "Soie"
+        ],
+        "style": [
+          "Haute_couture",
+          "Business"
+        ],
+        "centres_interet": []
+      }
+    }
+  ],
+  "errors": []
+}

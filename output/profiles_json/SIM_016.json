@@ -1,0 +1,38 @@
+{
+  "client_id": "SIM_016",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "30min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Conversation avec Müller, client VIP. IntÃªressÃª par robe de soirÃªe en rose poudrÃª.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "pieces_favorites": {}
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

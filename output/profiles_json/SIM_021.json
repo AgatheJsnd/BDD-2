@@ -1,0 +1,46 @@
+{
+  "client_id": "SIM_021",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "22min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Client Wei Ivanov rencontrâ‚¬ à New York. Cherche parfum Sauvage. Budget environ flexible.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Nouveau",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {
+    "amerique": [
+      "New York"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}
