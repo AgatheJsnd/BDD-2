@@ -67,28 +67,47 @@ class VoiceTranscriber:
             }
         
         try:
-            # Préparer les options de transcription
-            options = {
-                "model": "nova-2",  # Modèle le plus récent et précis
-                "language": language,
-                "punctuate": True,  # Ponctuation automatique
-                "smart_format": True,  # Formatage intelligent (dates, nombres, etc.)
-                "diarize": False,  # Pas de séparation des locuteurs
-            }
+            # Pour la version 5.3.2 du SDK, nous passons les options 
+            # directement comme arguments nommés à la méthode transcribe_file
+            # et les données (bytes) directement dans l'argument 'request'
             
-            # Créer la source audio
-            payload = {
-                "buffer": audio_bytes,
-            }
-            
-            # Appel API Deepgram
-            response = self.deepgram_client.listen.rest.v("1").transcribe_file(
-                payload, options
+            # Appel API Deepgram (v5 structure interne spécifique)
+            response = self.deepgram_client.listen.v1.media.transcribe_file(
+                request=audio_bytes,  # Passer les bytes directement, pas un dict
+                model="nova-2",
+                language=language,
+                smart_format=True,
+                punctuate=True
             )
             
-            # Extraire le texte transcrit
-            transcript = response["results"]["channels"][0]["alternatives"][0]["transcript"]
-            confidence = response["results"]["channels"][0]["alternatives"][0]["confidence"]
+            # Extraction du texte (Gestion robuste de la réponse)
+            # D'après le code source, la réponse a un attribut 'results' ...
+            if hasattr(response, 'results'):
+                res_obj = response
+            elif isinstance(response, dict) and "results" in response:
+                res_obj = response
+            else:
+                # Tentative via to_dict si disponible
+                res_dict = response.to_dict() if hasattr(response, 'to_dict') else response
+                res_obj = res_dict
+
+            # Accès aux données
+            try:
+                # Si c'est un objet (Pydantic/Dataclass), on accède par attribut ou index
+                if isinstance(res_obj, dict):
+                    alt = res_obj["results"]["channels"][0]["alternatives"][0]
+                    transcript = alt["transcript"]
+                    confidence = alt["confidence"]
+                else:
+                    alt = res_obj.results.channels[0].alternatives[0]
+                    transcript = alt.transcript
+                    confidence = alt.confidence
+            except:
+                # Fallback ultime via conversion dict
+                res_dict = response.to_dict() if hasattr(response, 'to_dict') else dict(response)
+                alt = res_dict["results"]["channels"][0]["alternatives"][0]
+                transcript = alt["transcript"]
+                confidence = alt["confidence"]
             
             return {
                 "success": True,
@@ -224,29 +243,93 @@ TEXTE NETTOYÉ :"""
         }
 
 
+import json
+
+def _get_data_file_path():
+    """Retourne le chemin vers le fichier de données"""
+    data_dir = os.path.join(os.getcwd(), "data")
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+    return os.path.join(data_dir, "transcriptions.json")
+
+def _load_transcriptions_from_file() -> list:
+    """Charge les transcriptions depuis le fichier JSON"""
+    file_path = _get_data_file_path()
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Erreur chargement transcriptions: {e}")
+            return []
+    return []
+
+def _save_transcription_to_file(transcription_data: Dict):
+    """Sauvegarde une transcription dans le fichier JSON"""
+    transcriptions = _load_transcriptions_from_file()
+    transcriptions.append(transcription_data)
+    
+    file_path = _get_data_file_path()
+    try:
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(transcriptions, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"Erreur sauvegarde transcription: {e}")
+
 def save_transcription_to_session(transcription_data: Dict, client_id: str = None):
     """
-    Sauvegarde une transcription dans la session Streamlit
+    Sauvegarde une transcription dans la session Streamlit ET dans le fichier
     
     Args:
         transcription_data: Résultat de process_voice_recording()
         client_id: ID du client (optionnel)
     """
     if "voice_transcriptions" not in st.session_state:
-        st.session_state["voice_transcriptions"] = []
+        st.session_state["voice_transcriptions"] = _load_transcriptions_from_file()
     
     # Ajouter métadonnées
     transcription_data["client_id"] = client_id or f"VOICE_{len(st.session_state['voice_transcriptions']) + 1}"
     transcription_data["saved_at"] = datetime.now().isoformat()
     
+    # Sauvegarder en mémoire
     st.session_state["voice_transcriptions"].append(transcription_data)
+    
+    # Sauvegarder sur disque (PERSISTENCE)
+    _save_transcription_to_file(transcription_data)
 
+def delete_transcription_from_file(index: int):
+    """Supprime une transcription du fichier par son index"""
+    transcriptions = _load_transcriptions_from_file()
+    if 0 <= index < len(transcriptions):
+        transcriptions.pop(index)
+        
+        file_path = _get_data_file_path()
+        try:
+            with open(file_path, "w", encoding="utf-8") as f:
+                json.dump(transcriptions, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"Erreur suppression transcription: {e}")
+
+def clear_all_transcriptions_file():
+    """Efface tout l'historique du fichier"""
+    file_path = _get_data_file_path()
+    try:
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump([], f)
+    except Exception as e:
+        print(f"Erreur nettoyage transcriptions: {e}")
 
 def get_transcriptions_history() -> list:
     """
     Récupère l'historique des transcriptions vocales
+    Charge depuis le fichier si la session est vide
     
     Returns:
         list: Liste des transcriptions
     """
+    # Toujours recharger du fichier pour être sûr d'avoir la dernière version
+    # Sauf si on veut optimiser, mais ici la cohérence est prioritaire
+    loaded_data = _load_transcriptions_from_file()
+    st.session_state["voice_transcriptions"] = loaded_data
+        
     return st.session_state.get("voice_transcriptions", [])

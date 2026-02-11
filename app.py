@@ -260,7 +260,7 @@ def create_custom_chart(data, chart_type, x_label, y_label="Count"):
 def show_vendeur_interface():
     """Interface pour les vendeurs avec enregistrement vocal"""
     from audio_recorder_streamlit import audio_recorder
-    from src.voice_transcriber import VoiceTranscriber, save_transcription_to_session, get_transcriptions_history
+    from src.voice_transcriber import VoiceTranscriber, save_transcription_to_session, get_transcriptions_history, delete_transcription_from_file, clear_all_transcriptions_file
     from src.tag_extractor import extract_all_tags
     
     # Bouton de déconnexion dans la sidebar
@@ -478,6 +478,7 @@ def show_vendeur_interface():
                 st.success(f"**{len(transcriptions)} enregistrement(s) sauvegardé(s)**")
             with col_del_all:
                 if st.button("🗑️ Tout effacer", type="primary", use_container_width=True):
+                     clear_all_transcriptions_file()
                      if "voice_transcriptions" in st.session_state:
                          del st.session_state["voice_transcriptions"]
                      st.rerun()
@@ -514,9 +515,11 @@ def show_vendeur_interface():
                     
                     with col_h4:
                         if st.button("🗑️", key=f"del_{original_idx}", help="Supprimer cet enregistrement"):
-                            # Suppression sécurisée par index
-                            transcriptions.pop(original_idx)
-                            st.session_state["voice_transcriptions"] = transcriptions
+                            # Suppression sécurisée par index persistante
+                            delete_transcription_from_file(original_idx)
+                            # Rechargement de la page pour mettre à jour l'affichage
+                            if "voice_transcriptions" in st.session_state:
+                                del st.session_state["voice_transcriptions"]
                             st.rerun()
                     
                     # Détails (expandable)
