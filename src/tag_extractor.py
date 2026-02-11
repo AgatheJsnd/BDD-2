@@ -70,12 +70,12 @@ COLORS_MAPPING = {
 
 # Matières
 MATERIALS_MAPPING = {
-    "Cuir": ["cuir", "leather", "veau", "agneau", "vachette"],
-    "Cachemire": ["cachemire", "cashmere"],
-    "Soie": ["soie", "silk", "satin"],
-    "Laine": ["laine", "wool", "mérinos"],
-    "Coton": ["coton", "cotton"],
-    "Matières_vegan": ["vegan", "végane", "synthétique", "faux cuir", "simili"]
+    "Cuir": ["cuir", "leather", "veau", "agneau", "vachette", "peau", "daim", "suede", "nubuck"],
+    "Cachemire": ["cachemire", "cashmere", "mohair", "angora"],
+    "Soie": ["soie", "silk", "satin", "velours", "velvet"],
+    "Laine": ["laine", "wool", "mérinos", "tweed", "flanelle"],
+    "Coton": ["coton", "cotton", "lin", "linen", "denim", "toile"],
+    "Matières_vegan": ["vegan", "végane", "synthétique", "faux cuir", "simili", "polyester", "nylon", "recyclé"]
 }
 
 # Sports & Lifestyle
@@ -94,11 +94,11 @@ LIFESTYLE_MAPPING = {
 
 # Style Personnel
 STYLE_MAPPING = {
-    "Casual": ["casual", "décontracté", "cool", "quotidien", "simple", "détente"],
-    "Chic": ["chic", "élégant", "soirée", "habillé", "raffiné", "classe"],
-    "Business": ["business", "travail", "bureau", "pro", "réunion", "corporate"],
-    "Sportswear": ["sportswear", "sport", "athleisure", "sneakers", "baskets"],
-    "Haute_couture": ["haute couture", "défilé", "pièce unique", "sur mesure", "exception"]
+    "Casual": ["casual", "décontracté", "cool", "quotidien", "simple", "détente", "relaxed", "comfortable", "everyday", "laid-back"],
+    "Chic": ["chic", "élégant", "soirée", "habillé", "raffiné", "classe", "elegant", "sophisticated", "stylish", "fashionable", "trendy"],
+    "Business": ["business", "travail", "bureau", "pro", "réunion", "corporate", "professional", "formal", "office", "work"],
+    "Sportswear": ["sportswear", "sport", "athleisure", "sneakers", "baskets", "athletic", "active", "gym", "training"],
+    "Haute_couture": ["haute couture", "défilé", "pièce unique", "sur mesure", "exception", "luxury", "exclusive", "bespoke", "custom", "designer"]
 }
 
 # Motif d'Achat
@@ -113,19 +113,19 @@ MOTIF_MAPPING = {
 
 # Situation Familiale
 FAMILLE_MAPPING = {
-    "Marié(e)": ["marié", "mariée", "mon mari", "ma femme", "époux", "épouse", "married", "husband", "wife"],
-    "Couple": ["couple", "copain", "copine", "conjoint", "partenaire", "partner", "boyfriend", "girlfriend"],
-    "Avec_enfants": ["enfant", "enfants", "fils", "fille", "bébé", "maman", "papa", "famille", "children", "kids", "son", "daughter"],
-    "Célibataire": ["célibataire", "seul", "solo", "single"]
+    "Marié(e)": ["marié", "mariée", "mon mari", "ma femme", "époux", "épouse", "married", "husband", "wife", "spouse", "wedding ring", "alliance"],
+    "Couple": ["couple", "copain", "copine", "conjoint", "partenaire", "partner", "boyfriend", "girlfriend", "fiancé", "fiancée", "relationship", "together"],
+    "Avec_enfants": ["enfant", "enfants", "fils", "fille", "bébé", "maman", "papa", "famille", "children", "kids", "son", "daughter", "parent", "father", "mother", "dad", "mom"],
+    "Célibataire": ["célibataire", "seul", "solo", "single", "alone", "independent"]
 }
 
 # Profession
 PROFESSIONS_MAPPING = {
-    "Entrepreneur": ["entrepreneur", "chef d'entreprise", "fondateur", "ceo", "business", "start-up"],
-    "Cadre": ["cadre", "directeur", "manager", "responsable", "exécutif"],
-    "Profession_libérale": ["avocat", "médecin", "architecte", "notaire", "consultant"],
-    "Artiste": ["artiste", "designer", "créateur", "musicien", "acteur", "peintre"],
-    "Étudiant": ["étudiant", "école", "université", "stage", "stagiaire"]
+    "Entrepreneur": ["entrepreneur", "chef d'entreprise", "fondateur", "ceo", "business", "start-up", "startup", "founder", "owner", "patron"],
+    "Cadre": ["cadre", "directeur", "manager", "responsable", "exécutif", "director", "executive", "vp", "vice president", "head of"],
+    "Profession_libérale": ["avocat", "médecin", "architecte", "notaire", "consultant", "lawyer", "doctor", "physician", "dentist", "pharmacien"],
+    "Artiste": ["artiste", "designer", "créateur", "musicien", "acteur", "peintre", "artist", "photographer", "influencer", "créatif"],
+    "Étudiant": ["étudiant", "école", "université", "stage", "stagiaire", "student", "intern", "graduate", "phd"]
 }
 
 # ============================================================================

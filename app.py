@@ -18,6 +18,21 @@ from dotenv import load_dotenv
 from src.tag_extractor import extract_all_tags
 from src.ai_analyzer import analyze_batch
 
+# Import advanced extractor (taxonomie complète LVMH)
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+try:
+    from src.mappings.identity import GENRE_MAPPING, LANGUE_MAPPING, STATUT_MAPPING, PROFESSIONS_ADVANCED
+    from src.mappings.location import CITIES_ADVANCED
+    from src.mappings.lifestyle import SPORT_MAPPING, MUSIQUE_MAPPING, ANIMAUX_MAPPING, VOYAGE_MAPPING, ART_CULTURE_MAPPING, GASTRONOMIE_MAPPING
+    from src.mappings.style import PIECES_MAPPING, COULEURS_ADVANCED, MATIERES_ADVANCED, SENSIBILITE_MODE, TAILLES_MAPPING
+    from src.mappings.purchase import MOTIF_ADVANCED, TIMING_MAPPING, MARQUES_LVMH, FREQUENCE_ACHAT
+    from src.mappings.preferences import REGIME_MAPPING, ALLERGIES_MAPPING, VALEURS_MAPPING
+    from src.mappings.tracking import ACTIONS_MAPPING, ECHEANCES_MAPPING, CANAUX_MAPPING
+    ADVANCED_MODE = True
+except ImportError:
+    ADVANCED_MODE = False
+
 # Charger variables d'environnement
 load_dotenv()
 
@@ -74,6 +89,124 @@ def sanitize_display_text(text: str) -> str:
     return text
 
 
+def scan_text_advanced(text: str, mapping: dict) -> list:
+    """Scanner avancé pour les mappings de la taxonomie complète."""
+    if not text:
+        return []
+    text_lower = text.lower()
+    found = []
+    for category, keywords in mapping.items():
+        for kw in keywords:
+            if kw.lower() in text_lower:
+                found.append(category)
+                break
+    return list(set(found))
+
+
+def scan_nested_cities(text: str, cities_mapping: dict) -> dict:
+    """Scanner pour les villes avec structure imbriquée."""
+    if not text:
+        return {}
+    text_lower = text.lower()
+    results = {}
+    for region, cities in cities_mapping.items():
+        found = []
+        for city, keywords in cities.items():
+            for kw in keywords:
+                if kw.lower() in text_lower:
+                    found.append(city)
+                    break
+        if found:
+            results[region] = found
+    return results
+
+
+def extract_advanced_tags(text: str, base_tags: dict) -> dict:
+    """Enrichit les tags de base avec la taxonomie avancée."""
+    if not ADVANCED_MODE:
+        return base_tags
+    
+    cleaned = base_tags.get("cleaned_text", text)
+    
+    # Identité
+    genre = scan_text_advanced(cleaned, GENRE_MAPPING)
+    langue = scan_text_advanced(cleaned, LANGUE_MAPPING)
+    statut = scan_text_advanced(cleaned, STATUT_MAPPING)
+    profession_adv = scan_text_advanced(cleaned, PROFESSIONS_ADVANCED)
+    
+    # Localisation enrichie
+    localisation = scan_nested_cities(cleaned, CITIES_ADVANCED)
+    
+    # Lifestyle
+    sport = scan_text_advanced(cleaned, SPORT_MAPPING)
+    musique = scan_text_advanced(cleaned, MUSIQUE_MAPPING)
+    animaux = scan_text_advanced(cleaned, ANIMAUX_MAPPING)
+    voyage = scan_text_advanced(cleaned, VOYAGE_MAPPING)
+    art_culture = scan_text_advanced(cleaned, ART_CULTURE_MAPPING)
+    gastronomie = scan_text_advanced(cleaned, GASTRONOMIE_MAPPING)
+    
+    # Style avancé
+    pieces = scan_text_advanced(cleaned, PIECES_MAPPING)
+    couleurs_adv = scan_text_advanced(cleaned, COULEURS_ADVANCED)
+    matieres_adv = scan_text_advanced(cleaned, MATIERES_ADVANCED)
+    sensibilite = scan_text_advanced(cleaned, SENSIBILITE_MODE)
+    tailles = scan_text_advanced(cleaned, TAILLES_MAPPING)
+    
+    # Achat avancé
+    motif_adv = scan_text_advanced(cleaned, MOTIF_ADVANCED)
+    timing = scan_text_advanced(cleaned, TIMING_MAPPING)
+    marques = scan_text_advanced(cleaned, MARQUES_LVMH)
+    frequence = scan_text_advanced(cleaned, FREQUENCE_ACHAT)
+    
+    # Préférences
+    regime = scan_text_advanced(cleaned, REGIME_MAPPING)
+    allergies = scan_text_advanced(cleaned, ALLERGIES_MAPPING)
+    valeurs = scan_text_advanced(cleaned, VALEURS_MAPPING)
+    
+    # Suivi CRM
+    actions = scan_text_advanced(cleaned, ACTIONS_MAPPING)
+    echeances = scan_text_advanced(cleaned, ECHEANCES_MAPPING)
+    canaux = scan_text_advanced(cleaned, CANAUX_MAPPING)
+    
+    # Enrichir les tags de base
+    base_tags["genre"] = genre[0] if genre else None
+    base_tags["langue"] = langue
+    base_tags["statut_client"] = statut[0] if statut else None
+    base_tags["profession"] = profession_adv if profession_adv else base_tags.get("profession", [])
+    base_tags["localisation_detail"] = localisation
+    base_tags["sport"] = sport
+    base_tags["musique"] = musique
+    base_tags["animaux"] = animaux[0] if animaux else None
+    base_tags["voyage"] = voyage
+    base_tags["art_culture"] = art_culture
+    base_tags["gastronomie"] = gastronomie
+    base_tags["pieces_favorites"] = pieces
+    base_tags["couleurs"] = couleurs_adv if couleurs_adv else base_tags.get("couleurs", [])
+    base_tags["matieres"] = matieres_adv if matieres_adv else base_tags.get("matieres", [])
+    base_tags["sensibilite_mode"] = sensibilite[0] if sensibilite else None
+    base_tags["tailles"] = tailles
+    base_tags["motif_achat"] = motif_adv if motif_adv else base_tags.get("motif_achat", [])
+    base_tags["timing"] = timing[0] if timing else None
+    base_tags["marques_preferees"] = marques
+    base_tags["frequence_achat"] = frequence[0] if frequence else None
+    base_tags["regime"] = regime
+    base_tags["allergies"] = allergies
+    base_tags["valeurs"] = valeurs
+    base_tags["actions_crm"] = actions
+    base_tags["echeances"] = echeances
+    base_tags["canaux_contact"] = canaux
+    
+    # Fusionner centres_interet avec les nouveaux
+    centres = base_tags.get("centres_interet", [])
+    centres.extend(sport)
+    centres.extend(musique)
+    centres.extend(art_culture)
+    centres.extend(gastronomie)
+    base_tags["centres_interet"] = list(set(centres))
+    
+    return base_tags
+
+
 def detect_date_column(df: pd.DataFrame):
     """Détecte une colonne de date exploitable dans le CSV."""
     candidates = [
@@ -108,20 +241,41 @@ def build_export_dataframe(results):
         tags = r.get("tags_extracted", {})
         insights = r.get("insights_marketing", {})
         analysis = r.get("analyse_intelligente", {})
-        rows.append({
+        row = {
             "client_id": r.get("client_id"),
             "source_date": r.get("source_date"),
             "segment_client": r.get("segment_client"),
             "ice_breaker": r.get("ice_breaker"),
             "resume_complet": r.get("resume_complet"),
             "urgency_score_final": r.get("urgency_score_final"),
+            # Identité
+            "genre": tags.get("genre"),
+            "langue": _list_to_text(tags.get("langue", [])),
+            "statut_client": tags.get("statut_client"),
+            # Démographie
             "budget": tags.get("budget"),
             "ville": tags.get("ville"),
             "age": tags.get("age"),
+            # Style & Préférences
             "motif_achat": _list_to_text(tags.get("motif_achat", [])),
             "style": _list_to_text(tags.get("style", [])),
             "famille": _list_to_text(tags.get("famille", [])),
             "centres_interet": _list_to_text(tags.get("centres_interet", [])),
+            # Nouvelles catégories avancées
+            "profession": _list_to_text(tags.get("profession", [])),
+            "sport": _list_to_text(tags.get("sport", [])),
+            "musique": _list_to_text(tags.get("musique", [])),
+            "pieces_favorites": _list_to_text(tags.get("pieces_favorites", [])),
+            "couleurs": _list_to_text(tags.get("couleurs", [])),
+            "matieres": _list_to_text(tags.get("matieres", [])),
+            "marques_preferees": _list_to_text(tags.get("marques_preferees", [])),
+            "timing": tags.get("timing"),
+            "frequence_achat": tags.get("frequence_achat"),
+            "sensibilite_mode": tags.get("sensibilite_mode"),
+            "regime": _list_to_text(tags.get("regime", [])),
+            "valeurs": _list_to_text(tags.get("valeurs", [])),
+            "canaux_contact": _list_to_text(tags.get("canaux_contact", [])),
+            # IA
             "opportunites_vente": _list_to_text(insights.get("opportunites_vente", [])),
             "produits_recommandes": _list_to_text(insights.get("produits_recommandes", [])),
             "actions_suggerees": _list_to_text(insights.get("actions_suggerees", [])),
@@ -130,7 +284,8 @@ def build_export_dataframe(results):
             "objections_freins": _list_to_text(r.get("objections_freins", [])),
             "transcription_originale": r.get("transcription_originale"),
             "cleaned_text": r.get("cleaned_text")
-        })
+        }
+        rows.append(row)
     return pd.DataFrame(rows)
 
 def get_available_fields(results):
@@ -139,38 +294,64 @@ def get_available_fields(results):
         return {}
     
     fields = {
+        "Identité": [],
         "Démographiques": [],
+        "Lifestyle": [],
+        "Style": [],
         "Achat": [],
         "Préférences": [],
+        "CRM": [],
         "IA Insights": []
     }
     
-    # Sample first result to get structure
-    sample = results[0]
-    tags = sample.get("tags_extracted", {})
+    # Collecte sur TOUS les résultats (pas juste le premier)
+    all_tag_keys = set()
+    for r in results:
+        tags = r.get("tags_extracted", {})
+        for k, v in tags.items():
+            if v and k != "cleaned_text":
+                if isinstance(v, list) and len(v) > 0:
+                    all_tag_keys.add(k)
+                elif isinstance(v, (str, int, float)) and v:
+                    all_tag_keys.add(k)
+                elif isinstance(v, dict) and len(v) > 0:
+                    all_tag_keys.add(k)
+    
+    # Identity
+    for f in ["genre", "langue", "statut_client"]:
+        if f in all_tag_keys: fields["Identité"].append(f)
     
     # Demographics
-    if tags.get("age"): fields["Démographiques"].append("age")
-    if tags.get("ville"): fields["Démographiques"].append("ville")
-    if tags.get("profession"): fields["Démographiques"].append("profession")
-    if tags.get("famille"): fields["Démographiques"].append("famille")
+    for f in ["age", "ville", "profession", "famille"]:
+        if f in all_tag_keys: fields["Démographiques"].append(f)
+    
+    # Lifestyle
+    for f in ["sport", "musique", "animaux", "voyage", "art_culture", "gastronomie", "centres_interet"]:
+        if f in all_tag_keys: fields["Lifestyle"].append(f)
+    
+    # Style
+    for f in ["pieces_favorites", "couleurs", "matieres", "sensibilite_mode", "tailles", "style"]:
+        if f in all_tag_keys: fields["Style"].append(f)
     
     # Purchase
-    if tags.get("budget"): fields["Achat"].append("budget")
-    if tags.get("urgence_score"): fields["Achat"].append("urgence_score")
-    if tags.get("motif_achat"): fields["Achat"].append("motif_achat")
+    for f in ["budget", "urgence_score", "motif_achat", "timing", "marques_preferees", "frequence_achat"]:
+        if f in all_tag_keys: fields["Achat"].append(f)
     
     # Preferences
-    if tags.get("couleurs"): fields["Préférences"].append("couleurs")
-    if tags.get("matieres"): fields["Préférences"].append("matieres")
-    if tags.get("style"): fields["Préférences"].append("style")
-    if tags.get("centres_interet"): fields["Préférences"].append("centres_interet")
+    for f in ["regime", "allergies", "valeurs"]:
+        if f in all_tag_keys: fields["Préférences"].append(f)
+    
+    # CRM
+    for f in ["actions_crm", "echeances", "canaux_contact"]:
+        if f in all_tag_keys: fields["CRM"].append(f)
     
     # AI Insights (if available)
+    sample = results[0]
     if sample.get("segment_client"): fields["IA Insights"].append("segment_client")
     if sample.get("urgency_score_final"): fields["IA Insights"].append("urgency_score_final")
     
-    return fields
+    # Remove empty categories
+    return {k: v for k, v in fields.items() if v}
 
 
 def prepare_chart_data(results, x_field, y_field=None, chart_type="bar", filters=None):
@@ -189,13 +370,21 @@ def prepare_chart_data(results, x_field, y_field=None, chart_type="bar", filters
         tags = r.get("tags_extracted", {})
         
         # Get x value
-        if x_field in ["age", "ville", "budget", "profession", "famille"]:
-            x_val = tags.get(x_field)
-        elif x_field in ["urgence_score"]:
+        # Scalar fields
+        scalar_fields = ["age", "ville", "budget", "profession", "famille", "genre", 
+                         "statut_client", "animaux", "sensibilite_mode", "timing", 
+                         "frequence_achat", "urgence_score"]
+        list_fields = ["motif_achat", "couleurs", "matieres", "style", "centres_interet",
+                       "sport", "musique", "voyage", "art_culture", "gastronomie",
+                       "pieces_favorites", "marques_preferees", "langue",
+                       "regime", "allergies", "valeurs", "actions_crm", 
+                       "echeances", "canaux_contact", "tailles"]
+        
+        if x_field in scalar_fields:
             x_val = tags.get(x_field)
         elif x_field in ["segment_client", "urgency_score_final"]:
             x_val = r.get(x_field)
-        elif x_field in ["motif_achat", "couleurs", "matieres", "style", "centres_interet"]:
+        elif x_field in list_fields:
             x_val = tags.get(x_field, [])
             if isinstance(x_val, list) and x_val:
                 x_val = x_val[0]  # Take first item for simplicity
@@ -369,8 +558,12 @@ def main():
                             source_date = parse_date_value(row.get(date_col)) if date_col else pd.NaT
                             safe_text = sanitize_display_text(raw_text)
                             
-                            # Extraction 100% Python
+                            # Extraction 100% Python (base)
                             tags = extract_all_tags(raw_text)
+                            
+                            # Enrichissement avec taxonomie avancée (30 catégories)
+                            if ADVANCED_MODE:
+                                tags = extract_advanced_tags(raw_text, tags)
                             
                             # Structure de résultat préliminaire (sans IA)
                             scan_results.append({
@@ -390,7 +583,8 @@ def main():
                             progress_bar.progress((idx + 1) / max_clients)
                         
                         progress_bar.empty()
-                        st.success(f"✅ {max_clients} clients scannés en < 1 seconde !")
+                        mode_label = "Taxonomie Complète (30 catégories)" if ADVANCED_MODE else "Tags de Base"
+                        st.success(f"✅ {max_clients} clients scannés ! Mode: {mode_label}")
                         
                         # Sauvegarde Session
                         st.session_state["results"] = scan_results
@@ -479,21 +673,36 @@ def main():
             
             results = st.session_state["results"]
             
-            # Vue tabulaire enrichie
+            # Vue tabulaire enrichie (30 catégories)
             tags_data = []
             for r in results:
                 t = r.get("tags_extracted", {})
-                tags_data.append({
+                row = {
                     "ID": r["client_id"],
-                    "Ville": t.get("ville"),
-                    "Âge": t.get("age"),
-                    "Budget": t.get("budget"),
-                    "Urgence": f"{t.get('urgence_score')}/5",
+                    "Genre": t.get("genre", ""),
+                    "Âge": t.get("age", ""),
+                    "Ville": t.get("ville", ""),
+                    "Budget": t.get("budget", ""),
+                    "Urgence": f"{t.get('urgence_score', 1)}/5",
                     "Motif": ", ".join(t.get("motif_achat", [])),
                     "Style": ", ".join(t.get("style", [])),
                     "Famille": ", ".join(t.get("famille", [])),
-                    "Centres d'intérêt": ", ".join(t.get("centres_interet", []))
-                })
+                    "Profession": ", ".join(t.get("profession", [])),
+                }
+                # Ajouter champs avancés si disponibles
+                if ADVANCED_MODE:
+                    row.update({
+                        "Langue": ", ".join(t.get("langue", [])),
+                        "Marques": ", ".join(t.get("marques_preferees", [])),
+                        "Pièces": ", ".join(t.get("pieces_favorites", [])),
+                        "Sport": ", ".join(t.get("sport", [])),
+                        "Musique": ", ".join(t.get("musique", [])),
+                        "Couleurs": ", ".join(t.get("couleurs", [])),
+                        "Matières": ", ".join(t.get("matieres", [])),
+                        "Timing": t.get("timing", ""),
+                        "Canaux": ", ".join(t.get("canaux_contact", [])),
+                    })
+                tags_data.append(row)
             
             st.dataframe(pd.DataFrame(tags_data), use_container_width=True)
 
@@ -586,7 +795,7 @@ def main():
                 
                 st.markdown("---")
                 
-                # Graphiques principaux
+                # Graphiques principaux - Ligne 1
                 c1, c2 = st.columns(2)
                 
                 with c1:
@@ -601,7 +810,6 @@ def main():
                     st.plotly_chart(fig, use_container_width=True)
                     
                 with c2:
-                    # Segments : Vient de l'IA. Si pas IA, on affiche une répartition par ville ou autre tag Python
                     if ai_done:
                         st.subheader("Segments Clients (IA)")
                         segments = {}
@@ -610,7 +818,7 @@ def main():
                             segments[s] = segments.get(s, 0) + 1
                         fig = px.pie(names=list(segments.keys()), values=list(segments.values()), hole=0.4)
                     else:
-                        st.subheader("Répartition Villes (Python)")
+                        st.subheader("Répartition Villes")
                         cities = {}
                         for r in filtered_results:
                             c = r.get("tags_extracted", {}).get("ville") or "Non détectée"
@@ -619,8 +827,73 @@ def main():
                         
                     st.plotly_chart(fig, use_container_width=True)
 
+                # Graphiques avancés - Ligne 2 (nouvelles catégories)
+                if ADVANCED_MODE:
+                    st.markdown("---")
+                    st.subheader("📊 Analyses Avancées (Taxonomie Complète)")
+                    
+                    c3, c4 = st.columns(2)
+                    
+                    with c3:
+                        st.markdown("**👤 Répartition Genre**")
+                        genre_counts = {}
+                        for r in filtered_results:
+                            g = r.get("tags_extracted", {}).get("genre") or "Non détecté"
+                            genre_counts[g] = genre_counts.get(g, 0) + 1
+                        if genre_counts:
+                            fig = px.pie(names=list(genre_counts.keys()), values=list(genre_counts.values()), hole=0.4,
+                                        color_discrete_sequence=['#FF6B6B', '#4ECDC4', '#95E1D3'])
+                            st.plotly_chart(fig, use_container_width=True)
+                    
+                    with c4:
+                        st.markdown("**🏷️ Marques LVMH Préférées**")
+                        marques_counts = {}
+                        for r in filtered_results:
+                            for m in r.get("tags_extracted", {}).get("marques_preferees", []):
+                                marques_counts[m] = marques_counts.get(m, 0) + 1
+                        if marques_counts:
+                            sorted_m = sorted(marques_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+                            fig = px.bar(x=[m[0] for m in sorted_m], y=[m[1] for m in sorted_m],
+                                        labels={'x': 'Marque', 'y': 'Mentions'},
+                                        color_discrete_sequence=['#C9A96E'])
+                            st.plotly_chart(fig, use_container_width=True)
+                        else:
+                            st.info("Aucune marque LVMH détectée.")
+                    
+                    c5, c6 = st.columns(2)
+                    
+                    with c5:
+                        st.markdown("**🎾 Sports / Activités**")
+                        sport_counts = {}
+                        for r in filtered_results:
+                            for s in r.get("tags_extracted", {}).get("sport", []):
+                                sport_counts[s] = sport_counts.get(s, 0) + 1
+                        if sport_counts:
+                            sorted_s = sorted(sport_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+                            fig = px.bar(x=[s[0] for s in sorted_s], y=[s[1] for s in sorted_s],
+                                        labels={'x': 'Sport', 'y': 'Clients'},
+                                        color_discrete_sequence=['#2ECC71'])
+                            st.plotly_chart(fig, use_container_width=True)
+                        else:
+                            st.info("Aucun sport détecté.")
+                    
+                    with c6:
+                        st.markdown("**👜 Pièces Favorites**")
+                        pieces_counts = {}
+                        for r in filtered_results:
+                            for p in r.get("tags_extracted", {}).get("pieces_favorites", []):
+                                pieces_counts[p] = pieces_counts.get(p, 0) + 1
+                        if pieces_counts:
+                            sorted_p = sorted(pieces_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+                            fig = px.bar(x=[p[0] for p in sorted_p], y=[p[1] for p in sorted_p],
+                                        labels={'x': 'Pièce', 'y': 'Mentions'},
+                                        color_discrete_sequence=['#9B59B6'])
+                            st.plotly_chart(fig, use_container_width=True)
+                        else:
+                            st.info("Aucune pièce détectée.")
+
                 st.markdown("---")
-                st.subheader("Analyse Temporelle")
+                st.subheader("📈 Analyse Temporelle")
                 date_series = pd.to_datetime(
                     [r.get("source_date") for r in filtered_results],
                     errors="coerce"

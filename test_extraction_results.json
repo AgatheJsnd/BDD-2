@@ -3,7 +3,7 @@
     "total_clients": 20,
     "successful": 20,
     "errors": 0,
-    "avg_completeness": 85.0
+    "avg_completeness": 85.9090909090909
   },
   "results": [
     {
@@ -22,10 +22,10 @@
         "budget": "5-10k",
         "urgence_score": 5,
         "motif_achat": [
-          "Achat_personnel",
-          "Anniversaire",
+          "Cadeau",
           "Mariage",
-          "Cadeau"
+          "Anniversaire",
+          "Achat_personnel"
         ],
         "couleurs": [
           "Cognac",
@@ -52,8 +52,8 @@
         "budget": "25k+",
         "urgence_score": 3,
         "motif_achat": [
-          "Achat_personnel",
-          "Cadeau"
+          "Cadeau",
+          "Achat_personnel"
         ],
         "couleurs": [],
         "matieres": [],
@@ -62,8 +62,8 @@
           "Sportswear"
         ],
         "centres_interet": [
-          "Golf",
-          "Fitness"
+          "Fitness",
+          "Golf"
         ]
       }
     },
@@ -79,15 +79,15 @@
         ],
         "ville": "europe",
         "famille": [
-          "Marié(e)",
-          "Avec_enfants"
+          "Avec_enfants",
+          "Marié(e)"
         ],
         "budget": "5-10k",
         "urgence_score": 3,
         "motif_achat": [
+          "Mariage",
           "Achat_personnel",
-          "Voyage",
-          "Mariage"
+          "Voyage"
         ],
         "couleurs": [
           "Noir"
@@ -96,8 +96,8 @@
           "Cuir"
         ],
         "style": [
-          "Business",
-          "Chic"
+          "Chic",
+          "Business"
         ],
         "centres_interet": [
           "Tennis",
@@ -107,7 +107,7 @@
     },
     {
       "client_id": "TEST_004",
-      "completeness": 81.81818181818183,
+      "completeness": 90.9090909090909,
       "tags": {
         "cleaned_text": "Hello, I'm a designer in Milan, 31 years old. Looking for a gift for my boyfriend's birthday next month. He loves art, museums, and gastronomie. Budget around 6500 euros. He prefers navy blue and grey colors, cashmere materials.",
         "age": "26-35",
@@ -121,8 +121,8 @@
         "budget": "5-10k",
         "urgence_score": 1,
         "motif_achat": [
-          "Anniversaire",
-          "Cadeau"
+          "Cadeau",
+          "Anniversaire"
         ],
         "couleurs": [
           "Gris",
@@ -131,10 +131,12 @@
         "matieres": [
           "Cachemire"
         ],
-        "style": [],
+        "style": [
+          "Haute_couture"
+        ],
         "centres_interet": [
-          "Gastronomie",
-          "Art_Culture"
+          "Art_Culture",
+          "Gastronomie"
         ]
       }
     },
@@ -168,7 +170,7 @@
     },
     {
       "client_id": "TEST_006",
-      "completeness": 72.72727272727273,
+      "completeness": 81.81818181818183,
       "tags": {
         "cleaned_text": "Salut, je suis étudiante à la Sorbonne, 22 ans. C'est pour mon diplôme, mes parents veulent m'offrir un cadeau. Budget environ 3500 euros. J'aime le style casual, les couleurs rose gold et blanc. Je fais du yoga et j'adore voyager.",
         "age": "18-25",
@@ -176,13 +178,15 @@
           "Étudiant"
         ],
         "ville": null,
-        "famille": [],
+        "famille": [
+          "Avec_enfants"
+        ],
         "budget": "<5k",
         "urgence_score": 3,
         "motif_achat": [
-          "Voyage",
+          "Cadeau",
           "Diplôme",
-          "Cadeau"
+          "Voyage"
         ],
         "couleurs": [
           "Rose_gold",
@@ -227,9 +231,9 @@
           "Business"
         ],
         "centres_interet": [
+          "Running",
           "Fitness",
-          "Gastronomie",
-          "Running"
+          "Gastronomie"
         ]
       }
     },
@@ -250,17 +254,17 @@
           "Cadeau"
         ],
         "couleurs": [
-          "Bordeaux",
-          "Cognac"
+          "Cognac",
+          "Bordeaux"
         ],
         "matieres": [
-          "Soie",
-          "Cachemire"
+          "Cachemire",
+          "Soie"
         ],
         "style": [],
         "centres_interet": [
-          "Gastronomie",
-          "Art_Culture"
+          "Art_Culture",
+          "Gastronomie"
         ]
       }
     },
@@ -278,20 +282,20 @@
         "budget": "25k+",
         "urgence_score": 5,
         "motif_achat": [
-          "Voyage",
-          "Mariage"
+          "Mariage",
+          "Voyage"
         ],
         "couleurs": [
-          "Noir",
-          "Rose_gold"
+          "Rose_gold",
+          "Noir"
         ],
         "matieres": [],
         "style": [
           "Haute_couture"
         ],
         "centres_interet": [
-          "Voyage",
-          "Football"
+          "Football",
+          "Voyage"
         ]
       }
     },
@@ -311,19 +315,19 @@
         "budget": "5-10k",
         "urgence_score": 5,
         "motif_achat": [
-          "Achat_personnel",
-          "Cadeau"
+          "Cadeau",
+          "Achat_personnel"
         ],
         "couleurs": [
-          "Gris",
           "Cognac",
-          "Blanc",
-          "Beige"
+          "Beige",
+          "Gris",
+          "Blanc"
         ],
         "matieres": [],
         "style": [
-          "Casual",
-          "Chic"
+          "Chic",
+          "Casual"
         ],
         "centres_interet": [
           "Tennis",
@@ -343,8 +347,8 @@
         ],
         "ville": "europe",
         "famille": [
-          "Marié(e)",
-          "Avec_enfants"
+          "Avec_enfants",
+          "Marié(e)"
         ],
         "budget": "10-15k",
         "urgence_score": 3,
@@ -352,15 +356,16 @@
           "Achat_personnel"
         ],
         "couleurs": [
-          "Bordeaux",
-          "Cognac"
+          "Cognac",
+          "Bordeaux"
         ],
         "matieres": [
-          "Cuir"
+          "Cuir",
+          "Coton"
         ],
         "style": [
-          "Business",
-          "Chic"
+          "Chic",
+          "Business"
         ],
         "centres_interet": [
           "Golf",
@@ -383,9 +388,9 @@
         "urgence_score": 5,
         "motif_achat": [],
         "couleurs": [
-          "Noir",
           "Rose_gold",
-          "Rouge"
+          "Rouge",
+          "Noir"
         ],
         "matieres": [],
         "style": [],
@@ -411,16 +416,16 @@
         "budget": "15-25k",
         "urgence_score": 1,
         "motif_achat": [
-          "Anniversaire",
-          "Cadeau"
+          "Cadeau",
+          "Anniversaire"
         ],
         "couleurs": [
           "Bordeaux",
           "Noir"
         ],
         "matieres": [
-          "Cuir",
-          "Cachemire"
+          "Cachemire",
+          "Cuir"
         ],
         "style": [
           "Chic"
@@ -460,10 +465,10 @@
           "Sportswear"
         ],
         "centres_interet": [
-          "Fitness",
           "Running",
-          "Voyage",
-          "Art_Culture"
+          "Fitness",
+          "Art_Culture",
+          "Voyage"
         ]
       }
     },
@@ -479,19 +484,19 @@
         ],
         "ville": "moyen_orient_asie",
         "famille": [
-          "Marié(e)",
-          "Avec_enfants"
+          "Avec_enfants",
+          "Marié(e)"
         ],
         "budget": "10-15k",
         "urgence_score": 5,
         "motif_achat": [
-          "Achat_personnel",
+          "Cadeau",
           "Anniversaire",
-          "Cadeau"
+          "Achat_personnel"
         ],
         "couleurs": [
-          "Noir",
-          "Cognac"
+          "Cognac",
+          "Noir"
         ],
         "matieres": [
           "Cuir"
@@ -530,8 +535,8 @@
           "Haute_couture"
         ],
         "centres_interet": [
-          "Gastronomie",
-          "Art_Culture"
+          "Art_Culture",
+          "Gastronomie"
         ]
       }
     },
@@ -551,26 +556,26 @@
         "budget": "5-10k",
         "urgence_score": 3,
         "motif_achat": [
+          "Cadeau",
           "Achat_personnel",
-          "Voyage",
-          "Cadeau"
+          "Voyage"
         ],
         "couleurs": [
           "Bordeaux",
-          "Noir",
-          "Bleu_marine"
+          "Bleu_marine",
+          "Noir"
         ],
         "matieres": [
           "Laine",
           "Coton"
         ],
         "style": [
-          "Business",
-          "Chic"
+          "Chic",
+          "Business"
         ],
         "centres_interet": [
-          "Golf",
           "Gastronomie",
+          "Golf",
           "Voyage"
         ]
       }
@@ -590,9 +595,9 @@
           "Voyage"
         ],
         "couleurs": [
+          "Beige",
           "Rose_gold",
-          "Blanc",
-          "Beige"
+          "Blanc"
         ],
         "matieres": [],
         "style": [
@@ -621,25 +626,25 @@
         "budget": "5-10k",
         "urgence_score": 3,
         "motif_achat": [
-          "Achat_personnel",
-          "Cadeau"
+          "Cadeau",
+          "Achat_personnel"
         ],
         "couleurs": [
-          "Gris",
-          "Cognac"
+          "Cognac",
+          "Gris"
         ],
         "matieres": [
-          "Cuir",
-          "Cachemire"
+          "Cachemire",
+          "Cuir"
         ],
         "style": [
-          "Casual",
           "Chic",
-          "Business"
+          "Business",
+          "Casual"
         ],
         "centres_interet": [
-          "Ski",
-          "Art_Culture"
+          "Art_Culture",
+          "Ski"
         ]
       }
     },
@@ -654,8 +659,8 @@
         ],
         "ville": "moyen_orient_asie",
         "famille": [
-          "Marié(e)",
-          "Avec_enfants"
+          "Avec_enfants",
+          "Marié(e)"
         ],
         "budget": "25k+",
         "urgence_score": 5,
@@ -669,8 +674,8 @@
           "Soie"
         ],
         "style": [
-          "Haute_couture",
-          "Business"
+          "Business",
+          "Haute_couture"
         ],
         "centres_interet": []
       }
