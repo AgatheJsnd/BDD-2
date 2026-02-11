@@ -340,6 +340,14 @@ def main():
         print(f"\n💾 Sauvegarde dans {OUTPUT_FILE}...")
         save_data(df_cleaned, OUTPUT_FILE)
         
+        # 6bis. Suppression du fichier d'entrée
+        print(f"\n🗑️ Suppression du fichier d'entrée {INPUT_FILE}...")
+        try:
+            os.remove(INPUT_FILE)
+            print("✅ Fichier d'entrée supprimé avec succès.")
+        except Exception as e:
+            print(f"⚠️ Impossible de supprimer le fichier d'entrée : {e}")
+        
         # 7. Statistiques
         cleaner.print_stats()
         
