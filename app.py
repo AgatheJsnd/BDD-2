@@ -293,174 +293,115 @@ def show_vendeur_interface():
     # TAB 1: NOUVEL ENREGISTREMENT
     # ============================================================================
     with tab1:
-        st.header("🎤 Enregistrement Vocal")
-        
-        # Vérifier les clés API
+        # Vérification discrète des clés (bloquant seulement si erreur critique)
         deepgram_key = os.getenv("DEEPGRAM_API_KEY")
         mistral_key = os.getenv("MISTRAL_API_KEY")
-        
-        col_status1, col_status2 = st.columns(2)
-        with col_status1:
-            if deepgram_key:
-                st.success("✅ Deepgram configuré")
-            else:
-                st.error("❌ Deepgram API manquante")
-        
-        with col_status2:
-            if mistral_key:
-                st.success("✅ Mistral AI configuré")
-            else:
-                st.warning("⚠️ Mistral AI manquante (nettoyage désactivé)")
-        
+
         if not deepgram_key:
-            st.error("""
-            **Configuration requise :**
-            
-            Pour utiliser la transcription vocale, ajoutez votre clé Deepgram dans le fichier `.env` :
-            ```
-            DEEPGRAM_API_KEY=votre_clé_ici
-            ```
-            
-            Obtenez une clé GRATUITE ($200 de crédits) sur : https://console.deepgram.com/
-            """)
+            st.error("❌ Configuration requise : Ajoutez votre DEEPGRAM_API_KEY dans le fichier .env")
+            st.info("Obtenez une clé GRATUITE ($200) sur : https://console.deepgram.com/")
             st.stop()
-        
-        st.markdown("---")
-        
-        # Formulaire client
-        with st.form("client_info_form"):
-            st.subheader("📝 Informations Client")
-            col1, col2 = st.columns(2)
             
-            with col1:
-                client_id = st.text_input("ID Client (optionnel)", placeholder="Ex: CLIENT_001")
-            
-            with col2:
-                client_name = st.text_input("Nom du client (optionnel)", placeholder="Ex: Marie Dupont")
-            
-            submitted = st.form_submit_button("💾 Enregistrer les infos", use_container_width=True)
-            
-            if submitted:
-                if client_id or client_name:
-                    st.session_state["current_client_id"] = client_id or client_name
-                    st.success(f"✅ Client enregistré : {st.session_state['current_client_id']}")
+        if not mistral_key:
+             st.warning("⚠️ Note : Mistral AI n'est pas configuré. Le nettoyage du texte sera désactivé.")
+
+        # Le flux linéaire commence ici directement
+
         
-        st.markdown("---")
+        # Design épuré : "Step by Step"
         
-        # Zone d'enregistrement
-        st.subheader("🎙️ Enregistrer la conversation")
-        st.info("👇 Cliquez sur le micro pour démarrer l'enregistrement, puis cliquez à nouveau pour arrêter.")
+        # --- ÉTAPE 1 : ENREGISTREMENT ---
+        st.markdown("### 1️⃣ Enregistrement de l'interaction")
+        st.info("Cliquez sur le micro ci-dessous et décrivez l'échange avec le client.")
         
-        # Audio recorder
-        audio_bytes = audio_recorder(
-            text="Cliquez pour enregistrer",
-            recording_color="#e74c3c",
-            neutral_color="#3498db",
-            icon_name="microphone",
-            icon_size="3x",
-        )
+        # Centrer le recorder
+        col_rec1, col_rec2, col_rec3 = st.columns([1, 2, 1])
+        with col_rec2:
+            audio_bytes = audio_recorder(
+                text="",
+                recording_color="#e8b15d",
+                neutral_color="#303030",
+                icon_size="3x",
+            )
         
+        # --- ÉTAPE 2 : TRANSCRIPTION & ANALYSE ---
         if audio_bytes:
-            st.success("✅ Enregistrement capturé !")
+            st.markdown("---")
+            st.markdown("### 2️⃣ Résultat de l'analyse")
             
-            # Lecture audio
-            st.audio(audio_bytes, format="audio/wav")
+            # Transcription (Si pas déjà fait ou si changement)
+            # Note: dans Streamlit, process_voice_recording est appelé à chaque rerun si on ne cache pas
+            # Ici on laisse refaire pour simplifier, ou on pourrait utiliser st.cache_data
             
-            # Options de traitement
-            col_opt1, col_opt2 = st.columns(2)
+            with st.spinner("🤖 L'IA transcrit et analyse votre voix..."):
+                transcriber = VoiceTranscriber()
+                result = transcriber.process_voice_recording(
+                    audio_bytes=audio_bytes,
+                    language=language,
+                    clean=auto_clean
+                )
             
-            with col_opt1:
-                auto_clean = st.checkbox("🧹 Nettoyage automatique (IA)", value=True, help="Supprime les 'euh', répétitions, etc.")
-            
-            with col_opt2:
-                language = st.selectbox("🌍 Langue", ["fr", "en", "es", "it", "de"], index=0)
-            
-            # Bouton de transcription
-            if st.button("🚀 Transcrire et Analyser", type="primary", use_container_width=True):
-                with st.spinner("🎯 Transcription en cours..."):
-                    # Initialiser le transcripteur
-                    transcriber = VoiceTranscriber()
+            if result["success"]:
+                # Container pour structurer la vue
+                with st.container(border=True):
+                    # Texte nettoyé (le plus important)
+                    st.subheader("💬 Ce que j'ai compris :")
+                    st.write(result["cleaned_text"])
                     
-                    # Traitement complet
-                    result = transcriber.process_voice_recording(
-                        audio_bytes=audio_bytes,
-                        language=language,
-                        clean=auto_clean
-                    )
+                    # Tags (en petit)
+                    with st.expander("Voir les tags détectés (Style, Budget, etc.)"):
+                        st.json(result["tags"])
+
+                # --- ÉTAPE 3 : IDENTIFICATION OBLIGATOIRE ---
+                st.markdown("---")
+                st.markdown("### 3️⃣ Finalisation (Obligatoire)")
+                
+                with st.container(border=True):
+                    st.warning("⚠️ Pour sauvegarder cette interaction dans la base de données Analysts, vous DOIVEZ saisir l'ID Client.")
                     
-                    if result["success"]:
-                        # Affichage des résultats
-                        confidence = result.get("confidence", 0.0)
-                        st.success(f"✅ Transcription terminée ! (Confiance: {confidence*100:.1f}%)")
-                        
-                        # Texte brut
-                        with st.expander("📝 Transcription brute", expanded=False):
-                            st.text_area("Texte original", result["transcription"], height=150, disabled=True)
-                            if confidence > 0:
-                                st.caption(f"🎯 Score de confiance : {confidence*100:.1f}%")
-                        
-                        # Texte nettoyé
-                        st.subheader("✨ Texte nettoyé")
-                        cleaned_text = st.text_area(
-                            "Vous pouvez modifier le texte si nécessaire",
-                            result["cleaned_text"],
-                            height=200,
-                            key="cleaned_text_edit"
+                    col_form1, col_form2 = st.columns([1, 1])
+                    
+                    with col_form1:
+                        client_id_input = st.text_input(
+                            "🆔 Identifiant Client", 
+                            placeholder="Ex: CA-1024",
+                            key="input_client_id_final"
                         )
-                        
-                        # Extraction des tags
-                        st.markdown("---")
-                        st.subheader("🏷️ Tags détectés automatiquement")
-                        
-                        with st.spinner("Analyse des tags..."):
-                            tags = extract_all_tags(cleaned_text)
-                        
-                        # Affichage des tags
-                        col_tag1, col_tag2, col_tag3 = st.columns(3)
-                        
-                        with col_tag1:
-                            st.markdown("**📍 Informations**")
-                            if tags.get("ville"):
-                                st.write(f"🏙️ Ville: {tags['ville']}")
-                            if tags.get("age"):
-                                st.write(f"👤 Âge: {tags['age']}")
-                            if tags.get("budget"):
-                                st.write(f"💰 Budget: {tags['budget']}")
-                        
-                        with col_tag2:
-                            st.markdown("**🎯 Préférences**")
-                            if tags.get("style"):
-                                st.write(f"✨ Style: {', '.join(tags['style'][:3])}")
-                            if tags.get("couleurs"):
-                                st.write(f"🎨 Couleurs: {', '.join(tags['couleurs'][:3])}")
-                            if tags.get("matieres"):
-                                st.write(f"🧵 Matières: {', '.join(tags['matieres'][:3])}")
-                        
-                        with col_tag3:
-                            st.markdown("**📊 Analyse**")
-                            st.write(f"⚡ Urgence: {tags.get('urgence_score', 1)}/5")
-                            if tags.get("motif_achat"):
-                                st.write(f"🎁 Motif: {', '.join(tags['motif_achat'][:2])}")
-                        
-                        # Sauvegarder
-                        st.markdown("---")
-                        if st.button("💾 Sauvegarder cette transcription", type="primary", use_container_width=True):
-                            client_id = st.session_state.get("current_client_id", None)
-                            
-                            # Enrichir les données
-                            result["tags"] = tags
-                            result["client_name"] = client_name if 'client_name' in locals() else None
-                            
-                            save_transcription_to_session(result, client_id)
-                            st.success("✅ Transcription sauvegardée !")
-                            st.balloons()
-                            
-                        # Bouton pour abandonner
-                        if st.button("🗑️ Supprimer / Abandonner", type="secondary", use_container_width=True):
-                            st.rerun()
                     
+                    with col_form2:
+                        st.write("") # Spacer
+                        st.write("")
+                        
+                        # Bouton de sauvegarde
+                        save_btn = st.button(
+                            "💾 ENREGISTRER DANS LA BASE (CSV)", 
+                            type="primary", 
+                            use_container_width=True,
+                            disabled=not client_id_input # Désactivé si pas d'ID
+                        )
+                
+                # Action de sauvegarde
+                if save_btn:
+                    if client_id_input:
+                        # Sauvegarde
+                        result["tags"] = result.get("tags", {})
+                        result["client_name"] = client_id_input
+                        
+                        save_transcription_to_session(result, client_id=client_id_input)
+                        
+                        st.success(f"✅ Interaction sauvegardée avec succès pour **{client_id_input}** !")
+                        st.info("📂 Les données sont maintenant accessibles aux analystes dans `data/interactions_vendeur.csv`")
+                        st.balloons()
                     else:
-                        st.error(f"❌ {result['error']}")
+                        st.error("❌ L'identifiant client est manquant.")
+
+                # Bouton Annuler (en bas, discret)
+                st.markdown("")
+                if st.button("🗑️ Annuler et recommencer", type="secondary"):
+                    st.rerun()
+
+            else:
+                st.error(f"❌ Erreur lors de la transcription : {result['error']}")
     
     # ============================================================================
     # TAB 2: HISTORIQUE

@@ -244,9 +244,10 @@ TEXTE NETTOYÉ :"""
 
 
 import json
+import csv
 
 def _get_data_file_path():
-    """Retourne le chemin vers le fichier de données"""
+    """Retourne le chemin vers le fichier de données JSON"""
     data_dir = os.path.join(os.getcwd(), "data")
     if not os.path.exists(data_dir):
         os.makedirs(data_dir)
@@ -276,9 +277,38 @@ def _save_transcription_to_file(transcription_data: Dict):
     except Exception as e:
         print(f"Erreur sauvegarde transcription: {e}")
 
+def _save_to_csv(transcription_data: Dict):
+    """Sauvegarde la transcription dans un fichier CSV principal"""
+    csv_path = os.path.join(os.getcwd(), "data", "interactions_vendeur.csv")
+    file_exists = os.path.exists(csv_path)
+    
+    # Aplatir les données pour le CSV
+    tags = transcription_data.get("tags", {})
+    row = {
+        "date": transcription_data.get("saved_at", datetime.now().isoformat()),
+        "client_id": transcription_data.get("client_id", "Inconnu"),
+        "transcription": transcription_data.get("text", ""),
+        "texte_nettoye": transcription_data.get("cleaned_text", ""),
+        "confiance": transcription_data.get("confidence", 0),
+        "urgence": tags.get("urgence_score", 1),
+        "ville": tags.get("ville", ""),
+        "budget": tags.get("budget", ""),
+        "styles": ", ".join(tags.get("style", [])),
+        "motifs": ", ".join(tags.get("motif_achat", []))
+    }
+    
+    try:
+        with open(csv_path, mode='a', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=row.keys(), delimiter=';')
+            if not file_exists:
+                writer.writeheader()
+            writer.writerow(row)
+    except Exception as e:
+        print(f"Erreur sauvegarde CSV: {e}")
+
 def save_transcription_to_session(transcription_data: Dict, client_id: str = None):
     """
-    Sauvegarde une transcription dans la session Streamlit ET dans le fichier
+    Sauvegarde une transcription dans la session Streamlit, le fichier JSON ET le CSV
     
     Args:
         transcription_data: Résultat de process_voice_recording()
@@ -294,8 +324,11 @@ def save_transcription_to_session(transcription_data: Dict, client_id: str = Non
     # Sauvegarder en mémoire
     st.session_state["voice_transcriptions"].append(transcription_data)
     
-    # Sauvegarder sur disque (PERSISTENCE)
+    # Sauvegarder sur disque (JSON pour l'historique app)
     _save_transcription_to_file(transcription_data)
+    
+    # Sauvegarder sur disque (CSV pour la base de données)
+    _save_to_csv(transcription_data)
 
 def delete_transcription_from_file(index: int):
     """Supprime une transcription du fichier par son index"""
