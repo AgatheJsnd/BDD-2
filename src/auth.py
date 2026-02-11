@@ -19,12 +19,17 @@ def load_users() -> dict:
         dict: Dictionnaire des utilisateurs
     """
     if not USERS_FILE.exists():
-        # Créer le fichier avec l'utilisateur par défaut
+        # Créer le fichier avec les utilisateurs par défaut
         default_users = {
             "analyste": {
                 "password": hashlib.sha256("analyste123".encode()).hexdigest(),
                 "role": "analyste",
                 "name": "Data Analyste"
+            },
+            "vendeur": {
+                "password": hashlib.sha256("vendeur123".encode()).hexdigest(),
+                "role": "vendeur",
+                "name": "Vendeur"
             }
         }
         
@@ -73,12 +78,21 @@ def get_role_permissions(role: str) -> dict:
     Retourne les permissions selon le rôle
     
     Args:
-        role: Role de l'utilisateur (analyste)
+        role: Role de l'utilisateur (vendeur, analyste)
     
     Returns:
         dict: Permissions de l'utilisateur
     """
     permissions = {
+        "vendeur": {
+            "view_clients": True,
+            "view_recommendations": True,
+            "export_client_list": True,
+            "view_analytics": False,
+            "manage_data": False,
+            "advanced_exports": False,
+            "studio_builder": False
+        },
         "analyste": {
             "view_clients": True,
             "view_recommendations": True,
@@ -90,7 +104,7 @@ def get_role_permissions(role: str) -> dict:
         }
     }
     
-    return permissions.get(role, permissions["analyste"])
+    return permissions.get(role, permissions["vendeur"])
 
 
 def add_user(username: str, password: str, role: str, name: str) -> bool:

@@ -254,6 +254,43 @@ def create_custom_chart(data, chart_type, x_label, y_label="Count"):
 
 
 # ============================================================================
+# INTERFACES PAR RÔLE
+# ============================================================================
+
+def show_vendeur_interface():
+    """Interface pour les vendeurs (vide pour l'instant)"""
+    # Bouton de déconnexion dans la sidebar
+    with st.sidebar:
+        st.markdown("---")
+        user = st.session_state.get("user", {})
+        st.markdown(f"**👤 {user.get('name', 'Utilisateur')}**")
+        st.caption(f"Rôle : {user.get('role', 'N/A').upper()}")
+        
+        if st.button("🚪 Déconnexion", use_container_width=True):
+            # Clear session
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.rerun()
+    
+    # Header
+    st.title("👔 Espace Vendeur")
+    st.markdown("**Interface en cours de développement**")
+    
+    # Message temporaire
+    st.info("""
+    🚧 **Espace en construction**
+    
+    Cette interface sera bientôt disponible avec :
+    - 🎤 Enregistrement vocal
+    - 📋 Gestion des clients
+    - 🎯 Recommandations personnalisées
+    - 📊 Statistiques de performance
+    
+    Pour l'instant, veuillez utiliser le compte analyste pour accéder à toutes les fonctionnalités.
+    """)
+
+
+# ============================================================================
 # INTERFACE PRINCIPALE
 # ============================================================================
 
@@ -326,7 +363,11 @@ def main():
                 
                 if help_btn:
                     st.info("""
-                    **Compte Data Analyste :**
+                    **Comptes Disponibles :**
+                    
+                    👔 **Vendeur**
+                    - Utilisateur : `vendeur`
+                    - Mot de passe : `vendeur123`
                     
                     📊 **Analyste**
                     - Utilisateur : `analyste`
@@ -342,10 +383,20 @@ def main():
     # APPLICATION PRINCIPALE (après authentification)
     # ============================================================================
     
+    # Routage par rôle
+    user = st.session_state.get("user", {})
+    user_role = user.get("role", "")
+    
+    if user_role == "vendeur":
+        # Rediriger vers l'espace vendeur
+        show_vendeur_interface()
+        return  # Arrêter l'exécution ici pour ne pas afficher l'interface analyste
+    
+    # Si analyste ou autre, continuer avec l'interface complète
+    
     # Bouton de déconnexion dans la sidebar
     with st.sidebar:
         st.markdown("---")
-        user = st.session_state.get("user", {})
         st.markdown(f"**👤 {user.get('name', 'Utilisateur')}**")
         st.caption(f"Rôle : {user.get('role', 'N/A').upper()}")
         
