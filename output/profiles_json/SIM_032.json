@@ -1,0 +1,36 @@
+{
+  "client_id": "SIM_032",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "25min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Oui.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {},
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

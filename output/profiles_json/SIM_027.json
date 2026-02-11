@@ -1,0 +1,46 @@
+{
+  "client_id": "SIM_027",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "34min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Rdv boutique Tokyo avec Jean. Projet achat: parfum Sauvage.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {
+    "moyen_orient_asie": [
+      "Tokyo"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

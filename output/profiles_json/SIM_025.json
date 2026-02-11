@@ -1,0 +1,42 @@
+{
+  "client_id": "SIM_025",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "51min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Client John Smith rencontré à Milan. Cherche costume sur mesure. Budget environ 20000.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "pieces_favorites": {}
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

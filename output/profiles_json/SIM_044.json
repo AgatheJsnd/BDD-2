@@ -1,0 +1,50 @@
+{
+  "client_id": "SIM_044",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "24min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Note: Anna cherche un cadeau. Budget 5000. Aime le or.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

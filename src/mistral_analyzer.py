@@ -52,6 +52,7 @@ Réponds en JSON avec exactement cette structure:
     "tags_suggeres": ["5-10 tags pertinents pour ce client"],
     "recommandations_commerciales": ["3-5 actions recommandées pour ce client"],
     "score_potentiel": 1-100,
+    "ice_breaker": "Phrase d'accroche conversationnelle (1 phrase) pour un Client Advisor",
     "notes_importantes": "Toute info importante à retenir"
 }}
 

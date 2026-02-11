@@ -54,7 +54,8 @@ def analyze_batch(client: Mistral, batch_data: List[Dict]) -> List[Dict]:
         '         "strategie_avancee": ["Stratégie 1"]\n'
         "      },\n"
         '      "segment_client": "Un segment parmi: VIP_Travel_Business, VIP_Lifestyle_Luxe, Luxury_Outdoor, Young_Professional, Established_Elite, Occasionnel",\n'
-        '      "objections_freins": ["Frein éventuel"]\n'
+        '      "objections_freins": ["Frein éventuel"],\n'
+        '      "ice_breaker": "Phrase d\'accroche conversationnelle courte (1 phrase) pour briser la glace"\n'
         "    },\n"
         "    ...\n"
         "  ]\n"

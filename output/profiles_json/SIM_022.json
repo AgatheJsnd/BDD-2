@@ -1,0 +1,54 @@
+{
+  "client_id": "SIM_022",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "55min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Rdv boutique New York avec Hans. Projet achat: sneakers Run Away.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "Nouveau",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
+  },
+  "localisation": {
+    "amerique": [
+      "New York"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "chaussures": [
+        "Baskets / Sneakers"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

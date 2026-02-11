@@ -18,19 +18,27 @@ def clean_text_turbo(text: str) -> str:
     - HTML tags
     - Hésitations (euh, bah, hum)
     - Espaces multiples
-    - Caractères spéciaux bizarres
+    - Caractères de contrôle dangereux
+    
+    PRÉSERVE:
+    - Chiffres (pour âge et budget)
+    - Majuscules (pour villes et noms propres)
+    - Symboles monétaires (€, $)
     """
     if not isinstance(text, str): return ""
     
-    # 1. Supprimer HTML
-    text = re.sub(r'<[^>]+>', '', text)
+    # 1. Supprimer HTML / balises (protection XSS côté extraction)
+    text = re.sub(r'(?is)<script.*?>.*?</script>', ' ', text)
+    text = re.sub(r'<[^>]+>', ' ', text)
+    # Supprimer uniquement les caractères de contrôle dangereux (pas les chiffres/lettres)
+    text = re.sub(r'[\x00-\x08\x0b-\x0c\x0e-\x1f\x7f]', ' ', text)
     
     # 2. Supprimer hésitations courantes (case insensitive)
     hesitations = [r'\beuh\b', r'\bhum+?\b', r'\bben\b', r'\bbah\b', r'\bgenre\b', r'\bdu coup\b']
     for h in hesitations:
         text = re.sub(h, '', text, flags=re.IGNORECASE)
         
-    # 3. Nettoyer espaces et sauts de ligne
+    # 3. Nettoyer espaces et sauts de ligne (mais garder le reste)
     text = re.sub(r'\s+', ' ', text).strip()
     
     return text
@@ -41,10 +49,10 @@ def clean_text_turbo(text: str) -> str:
 
 # Localisation
 CITIES = {
-    "europe": ["Paris", "Berlin", "Milan", "Madrid", "London", "Lyon", "Barcelona", "Rome", "Amsterdam", "Bruxelles", "Munich", "Genève", "Zurich"],
-    "amerique": ["New_York", "Los_Angeles", "Miami", "Toronto", "Montreal", "Chicago", "San_Francisco", "Boston"],
-    "moyen_orient_asie": ["Dubai", "Tokyo", "Hong_Kong", "Singapore", "Shanghai", "Doha", "Abu_Dhabi", "Seoul", "Beijing"],
-    "afrique": ["Maroc", "Tunisie", "Algérie", "Égypte", "Afrique_du_Sud", "Nigeria", "Kenya", "Casablanca", "Marrakech"]
+    "europe": ["Paris", "Berlin", "Milan", "Madrid", "London", "Lyon", "Barcelona", "Rome", "Amsterdam", "Bruxelles", "Munich", "Genève", "Zurich", "Monaco"],
+    "amerique": ["New York", "Los Angeles", "Miami", "Toronto", "Montreal", "Chicago", "San Francisco", "Boston"],
+    "moyen_orient_asie": ["Dubai", "Tokyo", "Hong Kong", "Singapore", "Shanghai", "Doha", "Abu Dhabi", "Seoul", "Beijing"],
+    "afrique": ["Maroc", "Tunisie", "Algérie", "Égypte", "Afrique du Sud", "Nigeria", "Kenya", "Casablanca", "Marrakech"]
 }
 
 # Couleurs
@@ -105,10 +113,10 @@ MOTIF_MAPPING = {
 
 # Situation Familiale
 FAMILLE_MAPPING = {
-    "Marié(e)": ["marié", "mariée", "mon mari", "ma femme", "époux", "épouse"],
-    "Couple": ["couple", "copain", "copine", "conjoint", "partenaire"],
-    "Avec_enfants": ["enfant", "enfants", "fils", "fille", "bébé", "maman", "papa", "famille"],
-    "Célibataire": ["célibataire", "seul", "solo"]
+    "Marié(e)": ["marié", "mariée", "mon mari", "ma femme", "époux", "épouse", "married", "husband", "wife"],
+    "Couple": ["couple", "copain", "copine", "conjoint", "partenaire", "partner", "boyfriend", "girlfriend"],
+    "Avec_enfants": ["enfant", "enfants", "fils", "fille", "bébé", "maman", "papa", "famille", "children", "kids", "son", "daughter"],
+    "Célibataire": ["célibataire", "seul", "solo", "single"]
 }
 
 # Profession
@@ -136,7 +144,8 @@ def scan_text_for_keywords(text: str, mapping: Dict[str, List[str]]) -> List[str
         # Vérification "word boundary" pour éviter les faux positifs (ex: "tour" dans "tourisme")
         for kw in keywords:
             # Recherche simple (plus rapide que regex pour chaque mot)
-            if kw in text_lower:
+            # Convertir le keyword en minuscules pour la comparaison
+            if kw.lower() in text_lower:
                 found.append(category)
                 break # On a trouvé cette catégorie, on passe à la suivante
                 
@@ -150,6 +159,7 @@ def extract_age_turbo(text: str) -> Optional[str]:
     # Regex précises
     patterns = [
         r'\b(\d{2})\s*(?:ans|year|yo|jahre)\b',
+        r'\b(\d{2})\s*years?\s*old\b',
         r'\bné[e]?\s*(?:en)?\s*(19\d{2}|20\d{2})\b', # Année naissance
         r'\bage\s*[:]?\s*(\d{2})\b'
     ]
@@ -188,7 +198,7 @@ def extract_budget_turbo(text: str) -> Optional[str]:
 
     # 2. Extraction numérique
     # Cherche 5000€, 5k, 5000 euros...
-    matches = re.findall(r'(\d+[.,]?\d*)\s*(?:k|m|€|\$|euros?)', text_lower)
+    matches = re.findall(r'(\d+[.,]?\d*)\s*(?:k|m|€|\$|euros?|dollars?|francs?)', text_lower)
     
     amount = 0
     if matches:

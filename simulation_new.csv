@@ -1,0 +1,51 @@
+ID,Date,Duration,Language,Length,Transcription
+SIM_001,2026-02-06,6min,FR,medium,"Conversation avec Rossi, client VIP. IntÃ©ressÃ© par sac Capucines en beige."
+SIM_002,2026-02-06,7min,IT,long,
+SIM_003,2026-02-06,18min,EN,short,Note: John cherche un cadeau. Budget flexible. Aime le or.
+SIM_004,2026-02-06,50min,IT,medium,"Conversation avec Dubois, client VIP. Intéressé par montre Tambour en rose poudré."
+SIM_005,2026-02-06,25min,EN,long,"Conversation avec Tanaka, client VIP. Intéressé par sneakers Run Away en rose poudré."
+SIM_006,2026-02-06,35min,EN,long,Rdv boutique New York avec Wei. Projet achat: costume sur mesure.
+SIM_007,2026-02-06,60min,FR,short,"Conversation avec Müller, client VIP. Intéressé par robe de soirée en beige."
+SIM_008,2026-02-06,54min,FR,medium,Note: Li cherche un cadeau. Budget 1000. Aime le rose poudré.
+SIM_009,2026-02-06,54min,EN,short,"Conversation avec Garcia, client VIP. Intéressé par costume sur mesure en argent."
+SIM_010,2026-02-06,13min,EN,medium,Client Anna Müller rencontré à Dubai. Cherche sneakers Run Away. Budget environ 50000.
+SIM_011,2026-02-06,53min,EN,long,Client Jean Silva rencontré à London. Cherche sneakers Run Away. Budget environ 20000. <script>alert('XSS')</script>
+SIM_012,2026-02-06,13min,IT,medium,Client Li Silva rencontré à Milan. Cherche robe de soirée. Budget environ flexible.
+SIM_013,2026-02-06,23min,IT,short,Rdv boutique Paris avec John. Projet achat: montre Tambour.
+SIM_014,2026-02-06,38min,EN,long,Rdv boutique Dubai avec Marie. Projet achat: sac Capucines.
+SIM_015,2026-02-06,46min,EN,short,Client Marie Ivanov rencontré à Paris. Cherche costume sur mesure. Budget environ 50000.
+SIM_016,2026-02-06,30min,FR,long,"Conversation avec Müller, client VIP. IntÃªressÃª par robe de soirÃªe en rose poudrÃª."
+SIM_017,2026-02-06,22min,FR,short,Rdv boutique Milan avec John. Projet achat: parfum Sauvage.
+SIM_018,2026-02-06,24min,IT,short,Rdv boutique New York avec Jean. Projet achat: robe de soirée.
+SIM_019,2026-02-06,35min,FR,short,Oui.
+SIM_020,2026-02-06,43min,IT,medium,"Conversation avec Müller, client VIP. Intéressé par sneakers Run Away en argent. <script>alert('XSS')</script>"
+SIM_021,2026-02-06,22min,EN,medium,Client Wei Ivanov rencontrâ‚¬ à New York. Cherche parfum Sauvage. Budget environ flexible.
+SIM_022,2026-02-06,55min,EN,medium,Rdv boutique New York avec Hans. Projet achat: sneakers Run Away.
+SIM_023,2026-02-06,34min,IT,long,Rdv boutique Shanghai avec Jean. Projet achat: sneakers Run Away.
+SIM_024,2026-02-06,60min,EN,long,"Conversation avec Dubois, client VIP. Intéressé par robe de soirée en or."
+SIM_025,2026-02-06,51min,FR,medium,Client John Smith rencontré à Milan. Cherche costume sur mesure. Budget environ 20000.
+SIM_026,2026-02-06,26min,FR,short,Note: Hans cherche un cadeau. Budget 10000. Aime le beige.
+SIM_027,2026-02-06,34min,IT,short,Rdv boutique Tokyo avec Jean. Projet achat: parfum Sauvage.
+SIM_028,2026-02-06,16min,FR,short,Rdv boutique London avec Jean. Projet achat: sac Capucines.
+SIM_029,2026-02-06,21min,FR,short,"Conversation avec Ivanov, client VIP. Intéressé par sac Capucines en rose poudré. <b>Bold</b>"
+SIM_030,2026-02-06,14min,FR,short,Note: Li cherche un cadeau. Budget 5000. Aime le rouge.
+SIM_031,2026-02-06,16min,EN,medium,Client John Rossi rencontré à Dubai. Cherche sneakers Run Away. Budget environ 10000.
+SIM_032,2026-02-06,25min,IT,long,Oui.
+SIM_033,2026-02-06,14min,EN,short,Client Wei Müller rencontré à London. Cherche robe de soirée. Budget environ 10000.
+SIM_034,2026-02-06,28min,EN,long,"Conversation avec Müller, client VIP. Intéressé par costume sur mesure en rouge."
+SIM_035,2026-02-06,14min,EN,short,"Conversation avec Rossi, client VIP. Intéressé par costume sur mesure en noir."
+SIM_036,2026-02-06,59min,IT,medium,Note: Hans cherche un cadeau. Budget 1000. Aime le or.
+SIM_037,2026-02-06,14min,FR,short,"Conversation avec Silva, client VIP. Intéressé par costume sur mesure en bleu."
+SIM_038,2026-02-06,11min,IT,long,"Conversation avec Müller, client VIP. Intéressé par costume sur mesure en beige."
+SIM_039,2026-02-06,8min,EN,short,Rdv boutique Milan avec John. Projet achat: costume sur mesure.
+SIM_040,2026-02-06,25min,EN,short,Client Wei Martin rencontré à Shanghai. Cherche sac Capucines. Budget environ 20000.
+SIM_041,2026-02-06,24min,EN,long,Client Hans Silva rencontré à Milan. Cherche sneakers Run Away. Budget environ 10000.
+SIM_042,2026-02-06,55min,IT,short,Rdv boutique Dubai avec John. Projet achat: robe de soirée.
+SIM_043,2026-02-06,32min,EN,medium,Client Li Rossi rencontré à London. Cherche montre Tambour. Budget environ 50000.
+SIM_044,2026-02-06,24min,IT,medium,Note: Anna cherche un cadeau. Budget 5000. Aime le or.
+SIM_045,2026-02-06,57min,IT,short,Rdv boutique Tokyo avec Anna. Projet achat: sneakers Run Away.
+SIM_046,2026-02-06,59min,FR,long,Rdv boutique Dubai avec Giulia. Projet achat: sac Capucines.
+SIM_047,2026-02-06,37min,FR,long,Note: John cherche un cadeau. Budget 1000. Aime le argent.
+SIM_048,2026-02-06,17min,FR,medium,"Conversation avec Ivanov, client VIP. Intéressé par sac Capucines en or."
+SIM_049,2026-02-06,11min,FR,medium,Note: John cherche un cadeau. Budget 5000. Aime le argent.
+SIM_050,2026-02-06,39min,EN,short,
