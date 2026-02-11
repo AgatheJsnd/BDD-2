@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 # Import modules custom
 from src.tag_extractor import extract_all_tags
 from src.ai_analyzer import analyze_batch
+from src.auth import authenticate
 
 # Charger variables d'environnement
 load_dotenv()
@@ -257,6 +258,103 @@ def create_custom_chart(data, chart_type, x_label, y_label="Count"):
 # ============================================================================
 
 def main():
+    # ============================================================================
+    # AUTHENTIFICATION
+    # ============================================================================
+    
+    # Initialiser l'état d'authentification
+    if "authenticated" not in st.session_state:
+        st.session_state["authenticated"] = False
+    
+    # Si non authentifié, afficher la page de connexion
+    if not st.session_state["authenticated"]:
+        # Style de la page de connexion
+        st.markdown("""
+            <style>
+            .login-container {
+                max-width: 500px;
+                margin: 100px auto;
+                padding: 40px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            }
+            .login-title {
+                color: white;
+                text-align: center;
+                font-size: 2.5em;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            .login-subtitle {
+                color: rgba(255,255,255,0.9);
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            </style>
+        """, unsafe_allow_html=True)
+        
+        col1, col2, col3 = st.columns([1, 2, 1])
+        
+        with col2:
+            st.markdown('<div class="login-container">', unsafe_allow_html=True)
+            st.markdown('<h1 class="login-title">🎯 LVMH</h1>', unsafe_allow_html=True)
+            st.markdown('<p class="login-subtitle">Client Analytics Platform</p>', unsafe_allow_html=True)
+            
+            with st.form("login_form"):
+                username = st.text_input("👤 Nom d'utilisateur", placeholder="analyste")
+                password = st.text_input("🔒 Mot de passe", type="password", placeholder="••••••••")
+                
+                col_btn1, col_btn2 = st.columns(2)
+                with col_btn1:
+                    submit = st.form_submit_button("🚀 Connexion", use_container_width=True)
+                with col_btn2:
+                    help_btn = st.form_submit_button("❓ Aide", use_container_width=True)
+                
+                if submit:
+                    if username and password:
+                        user_info = authenticate(username, password)
+                        if user_info:
+                            st.session_state["authenticated"] = True
+                            st.session_state["user"] = user_info
+                            st.success(f"✅ Bienvenue {user_info['name']} !")
+                            st.rerun()
+                        else:
+                            st.error("❌ Identifiants incorrects")
+                    else:
+                        st.warning("⚠️ Veuillez remplir tous les champs")
+                
+                if help_btn:
+                    st.info("""
+                    **Compte Data Analyste :**
+                    
+                    📊 **Analyste**
+                    - Utilisateur : `analyste`
+                    - Mot de passe : `analyste123`
+                    """)
+            
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Arrêter l'exécution ici si non authentifié
+        st.stop()
+    
+    # ============================================================================
+    # APPLICATION PRINCIPALE (après authentification)
+    # ============================================================================
+    
+    # Bouton de déconnexion dans la sidebar
+    with st.sidebar:
+        st.markdown("---")
+        user = st.session_state.get("user", {})
+        st.markdown(f"**👤 {user.get('name', 'Utilisateur')}**")
+        st.caption(f"Rôle : {user.get('role', 'N/A').upper()}")
+        
+        if st.button("🚪 Déconnexion", use_container_width=True):
+            # Clear session
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.rerun()
+    
     # Header
     st.title("🎯 LVMH Client Analytics")
     st.markdown("**Architecture Hybride:** Python (tags) + IA (insights) + Dashboard Looker")
