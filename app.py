@@ -454,6 +454,10 @@ def show_vendeur_interface():
                             save_transcription_to_session(result, client_id)
                             st.success("✅ Transcription sauvegardée !")
                             st.balloons()
+                            
+                        # Bouton pour abandonner
+                        if st.button("🗑️ Supprimer / Abandonner", type="secondary", use_container_width=True):
+                            st.rerun()
                     
                     else:
                         st.error(f"❌ {result['error']}")
@@ -469,15 +473,31 @@ def show_vendeur_interface():
         if not transcriptions:
             st.info("Aucun enregistrement pour le moment. Commencez par créer votre premier enregistrement dans l'onglet 'Nouvel Enregistrement'.")
         else:
-            st.success(f"**{len(transcriptions)} enregistrement(s) sauvegardé(s)**")
+            col_titre, col_del_all = st.columns([3, 1])
+            with col_titre:
+                st.success(f"**{len(transcriptions)} enregistrement(s) sauvegardé(s)**")
+            with col_del_all:
+                if st.button("🗑️ Tout effacer", type="primary", use_container_width=True):
+                     if "voice_transcriptions" in st.session_state:
+                         del st.session_state["voice_transcriptions"]
+                     st.rerun()
+
             
             # Affichage en cartes
-            for i, trans in enumerate(reversed(transcriptions)):
+            # On utilise indices inversés pour la suppression correcte (le dernier est le premier affiché)
+            # Mais attention, si on supprime par index, il faut utiliser l'index original.
+            # Reversed retourne un itérateur.
+            
+            # On crée une liste inversée avec les index originaux : [(index, item)]
+            items_with_index = list(enumerate(transcriptions))
+            reversed_items = list(reversed(items_with_index))
+            
+            for original_idx, trans in reversed_items:
                 with st.container(border=True):
-                    col_h1, col_h2, col_h3 = st.columns([2, 1, 1])
+                    col_h1, col_h2, col_h3, col_h4 = st.columns([2, 1, 0.5, 0.5])
                     
                     with col_h1:
-                        client_id = trans.get("client_id", f"Enregistrement {i+1}")
+                        client_id = trans.get("client_id", f"Enregistrement")
                         st.markdown(f"**🎤 {client_id}**")
                         timestamp = trans.get("timestamp", "")
                         if timestamp:
@@ -489,11 +509,18 @@ def show_vendeur_interface():
                             st.metric("Urgence", f"{urgence}/5")
                     
                     with col_h3:
-                        if st.button("👁️ Voir", key=f"view_{i}"):
-                            st.session_state[f"show_detail_{i}"] = not st.session_state.get(f"show_detail_{i}", False)
+                        if st.button("👁️", key=f"view_{original_idx}", help="Voir les détails"):
+                            st.session_state[f"show_detail_{original_idx}"] = not st.session_state.get(f"show_detail_{original_idx}", False)
+                    
+                    with col_h4:
+                        if st.button("🗑️", key=f"del_{original_idx}", help="Supprimer cet enregistrement"):
+                            # Suppression sécurisée par index
+                            transcriptions.pop(original_idx)
+                            st.session_state["voice_transcriptions"] = transcriptions
+                            st.rerun()
                     
                     # Détails (expandable)
-                    if st.session_state.get(f"show_detail_{i}", False):
+                    if st.session_state.get(f"show_detail_{original_idx}", False):
                         st.markdown("---")
                         st.markdown("**💬 Transcription nettoyée :**")
                         st.write(trans.get("cleaned_text", "N/A"))
