@@ -18,6 +18,14 @@ from dotenv import load_dotenv
 from src.tag_extractor import extract_all_tags
 from src.ai_analyzer import analyze_batch
 from src.auth import authenticate
+from src.database import init_database, save_scan_results, save_ai_results, get_all_clients, get_client_history, get_all_transcriptions, get_database_stats, search_transcriptions, get_all_clients_with_data
+
+# Import activation engine
+try:
+    from src.activations.engine import ActivationEngine
+    ACTIVATIONS_AVAILABLE = True
+except ImportError:
+    ACTIVATIONS_AVAILABLE = False
 
 # Import advanced extractor (taxonomie complète LVMH)
 import sys
@@ -865,6 +873,9 @@ def main():
             for key in list(st.session_state.keys()):
                 del st.session_state[key]
             st.rerun()
+
+    # Initialiser la BDD au démarrage
+    init_database()
     
     # Header
     st.title("🎯 LVMH Client Analytics")
@@ -901,7 +912,7 @@ def main():
         st.metric("Vitesse", "~1.5s", "x2")
     
     # Tabs principales style "Google Studio"
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["📂 Données & Tags", "📊 Vue Globale (Google Studio)", "🧠 Analyse Intelligente", "📥 Exports", "🎨 Studio Builder"])
+    tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["📂 Données & Tags", "📊 Vue Globale (Google Studio)", "🧠 Analyse Intelligente", "📥 Exports", "🎨 Studio Builder", "🗄️ Base de Données", "🚀 Activations CRM"])
     
     # ============================================================================
     # TAB 1: DONNÉES & TAGS
@@ -1010,6 +1021,14 @@ def main():
                         st.session_state["results"] = scan_results
                         st.session_state["scan_done"] = True
                         st.session_state["ai_done"] = False # Reset AI status
+                        
+                        # Sauvegarde automatique en BDD
+                        try:
+                            db_stats = save_scan_results(scan_results, source_file=uploaded_file_name)
+                            st.toast(f"💾 {db_stats['inserted']} clients sauvegardés en BDD", icon="💾")
+                        except Exception as e:
+                            st.warning(f"⚠️ Erreur sauvegarde BDD: {e}")
+                        
                         st.rerun()
 
                 with col_act2:
@@ -1081,6 +1100,14 @@ def main():
                         
                         st.session_state["results"] = enriched_results
                         st.session_state["ai_done"] = True
+                        
+                        # Sauvegarde résultats IA en BDD
+                        try:
+                            save_ai_results(enriched_results)
+                            st.toast("💾 Analyses IA sauvegardées en BDD", icon="🧠")
+                        except Exception as e:
+                            st.warning(f"⚠️ Erreur sauvegarde IA: {e}")
+                        
                         st.rerun()
                         
             except Exception as e:
@@ -1164,40 +1191,10 @@ def main():
             if not filtered_results:
                 st.warning("Aucun client ne correspond aux filtres actuels.")
             else:
-                view_mode = st.radio(
-                    "Affichage",
-                    ["Tableaux & Graphiques", "Clienteling (cartes)"],
-                    horizontal=True
-                )
 
-                if view_mode == "Clienteling (cartes)":
-                    st.subheader("Clienteling Mode")
-                    cols = st.columns(2)
-                    for i, r in enumerate(filtered_results):
-                        with cols[i % 2]:
-                            with st.container(border=True):
-                                client_name = r.get("client_id", "Client")
-                                segment = r.get("segment_client", "Scan Python")
-                                budget = r.get("tags_extracted", {}).get("budget") or "N/A"
-                                ice = sanitize_display_text(r.get("ice_breaker") or "")
-                                ice_display = ice if ice else "—"
-                                st.markdown(f"**{client_name}**")
-                                st.caption(f"Statut: {segment}")
-                                st.success(f"Ice-Breaker: {ice_display}")
-                                st.write(f"Budget: {budget}")
-                                st.write(f"Urgence: {r.get('urgency_score_final', 1)}/5")
-
-                                cta1, cta2, cta3 = st.columns(3)
-                                if cta1.button("WhatsApp", key=f"wa_{client_name}_{i}"):
-                                    st.toast("Action WhatsApp (placeholder)", icon="📲")
-                                if cta2.button("Email", key=f"em_{client_name}_{i}"):
-                                    st.toast("Action Email (placeholder)", icon="✉️")
-                                if cta3.button("Noter", key=f"note_{client_name}_{i}"):
-                                    st.toast("Action Noter (placeholder)", icon="📝")
-                else:
-                    # KPIs style Google Analytics
-                    col1, col2, col3, col4 = st.columns(4)
-                    col1.metric("Clients Analysés", len(filtered_results))
+                # KPIs style Google Analytics
+                col1, col2, col3, col4 = st.columns(4)
+                col1.metric("Clients Analysés", len(filtered_results))
                 
                 # Urgence (vient de Python donc toujours dispo)
                 avg_urgency = sum(r.get("urgency_score_final", 1) for r in filtered_results)/len(filtered_results) if filtered_results else 0
@@ -1621,6 +1618,262 @@ def main():
                     - Combinez plusieurs graphiques en exportant les données CSV
                     """)
 
+    # ============================================================================
+    # TAB 6: BASE DE DONNÉES
+    # ============================================================================
+    with tab6:
+        st.header("🗄️ Base de Données Clients")
+        st.markdown("Historique persistant de toutes les transcriptions et analyses.")
+        
+        # Stats globales
+        try:
+            db_stats = get_database_stats()
+            
+            m1, m2, m3, m4 = st.columns(4)
+            m1.metric("👥 Clients", db_stats.get("clients", 0))
+            m2.metric("📝 Transcriptions", db_stats.get("transcriptions", 0))
+            m3.metric("🏷️ Tags extraits", db_stats.get("tags_extraits", 0))
+            m4.metric("🧠 Analyses IA", db_stats.get("ai_analyses", 0))
+            
+            if db_stats.get("date_min") and db_stats.get("date_max"):
+                st.caption(f"📅 Période couverte : {db_stats['date_min']} → {db_stats['date_max']}")
+            
+            # Segments
+            segments = db_stats.get("segments", {})
+            if segments:
+                st.markdown("**Répartition par segment :**")
+                seg_cols = st.columns(len(segments))
+                for i, (seg, count) in enumerate(segments.items()):
+                    seg_cols[i].metric(seg or "Non défini", count)
+        except Exception as e:
+            st.warning(f"BDD vide ou erreur : {e}")
+        
+        st.markdown("---")
+        
+        # Sous-tabs
+        db_tab1, db_tab2, db_tab3 = st.tabs(["📋 Tous les Clients", "🔍 Recherche", "📊 Historique Client"])
+        
+        with db_tab1:
+            st.subheader("Liste Complète des Clients")
+            try:
+                all_clients = get_all_clients()
+                if all_clients:
+                    df_clients = pd.DataFrame(all_clients)
+                    # Colonnes à afficher
+                    display_cols = [c for c in ["id", "genre", "segment", "ville", "age_range", 
+                                                "canal_prefere", "nb_transcriptions", "derniere_date"] 
+                                   if c in df_clients.columns]
+                    st.dataframe(df_clients[display_cols], use_container_width=True)
+                    
+                    # Export
+                    csv = df_clients.to_csv(index=False).encode("utf-8")
+                    st.download_button("📥 Exporter CSV Clients", data=csv, 
+                                      file_name=f"clients_bdd_{datetime.now().strftime('%Y%m%d')}.csv", 
+                                      mime="text/csv")
+                else:
+                    st.info("Aucun client en base. Lancez un SCAN TURBO pour peupler la BDD.")
+            except Exception as e:
+                st.error(f"Erreur lecture BDD: {e}")
+        
+        with db_tab2:
+            st.subheader("🔍 Recherche dans les Transcriptions")
+            search_query = st.text_input("Rechercher un mot-clé", placeholder="Ex: Louis Vuitton, voyage, mariage...")
+            
+            if search_query:
+                try:
+                    results_search = search_transcriptions(search_query)
+                    if results_search:
+                        st.success(f"{len(results_search)} résultat(s) trouvé(s)")
+                        for r in results_search:
+                            with st.expander(f"🔹 {r['client_id']} — {r.get('source_date', 'N/A')}"):
+                                st.markdown(f"**Segment:** {r.get('segment', 'N/A')} | **Ville:** {r.get('ville', 'N/A')} | **Genre:** {r.get('genre', 'N/A')}")
+                                st.text_area("Transcription", r.get("texte_original", ""), height=100, disabled=True, key=f"search_{r['id']}")
+                    else:
+                        st.warning("Aucun résultat.")
+                except Exception as e:
+                    st.error(f"Erreur recherche: {e}")
+        
+        with db_tab3:
+            st.subheader("📊 Historique d'un Client")
+            try:
+                all_clients = get_all_clients()
+                if all_clients:
+                    client_ids = [c["id"] for c in all_clients]
+                    selected_client = st.selectbox("Sélectionner un client", client_ids)
+                    
+                    if selected_client:
+                        history = get_client_history(selected_client)
+                        if history:
+                            client_info = history["client"]
+                            
+                            # Fiche client
+                            st.markdown("### 👤 Fiche Client")
+                            info_cols = st.columns(4)
+                            info_cols[0].metric("Genre", client_info.get("genre") or "N/A")
+                            info_cols[1].metric("Segment", client_info.get("segment") or "N/A")
+                            info_cols[2].metric("Ville", client_info.get("ville") or "N/A")
+                            info_cols[3].metric("Âge", client_info.get("age_range") or "N/A")
+                            
+                            # Transcriptions
+                            st.markdown(f"### 📝 Transcriptions ({len(history['transcriptions'])})")
+                            for t in history["transcriptions"]:
+                                with st.expander(f"📅 {t.get('source_date', 'N/A')} — {t.get('source_file', 'Upload')}"):
+                                    st.text_area("Texte", t.get("texte_original", ""), height=120, disabled=True, key=f"hist_{t['id']}")
+                            
+                            # Tags
+                            if history["tags"]:
+                                st.markdown("### 🏷️ Tags Extraits")
+                                latest_tags = history["tags"][0].get("tags", {})
+                                # Afficher les tags non vides
+                                tag_display = {}
+                                for k, v in latest_tags.items():
+                                    if v and k != "cleaned_text":
+                                        if isinstance(v, list) and v:
+                                            tag_display[k] = ", ".join(str(x) for x in v)
+                                        elif isinstance(v, str) and v:
+                                            tag_display[k] = v
+                                        elif isinstance(v, (int, float)):
+                                            tag_display[k] = str(v)
+                                if tag_display:
+                                    df_tags = pd.DataFrame(list(tag_display.items()), columns=["Catégorie", "Valeur"])
+                                    st.dataframe(df_tags, use_container_width=True)
+                            
+                            # Analyses IA
+                            if history["analyses"]:
+                                st.markdown("### 🧠 Analyses IA")
+                                for a in history["analyses"]:
+                                    with st.expander(f"📅 {a.get('analyzed_at', 'N/A')} — Segment: {a.get('segment_client', 'N/A')}"):
+                                        st.markdown(f"**Résumé:** {a.get('resume_complet', 'N/A')}")
+                                        st.markdown(f"**Ice Breaker:** {a.get('ice_breaker', 'N/A')}")
+                                        st.markdown(f"**Urgence:** {a.get('urgency_score_final', 'N/A')}/5")
+                else:
+                    st.info("Aucun client en base.")
+            except Exception as e:
+                st.error(f"Erreur: {e}")
+
+    # ============================================================================
+    # TAB 7: ACTIVATIONS CRM
+    # ============================================================================
+    with tab7:
+        st.header("🚀 Activations CRM")
+        st.markdown("Actions commerciales automatisées basées sur les tags et transcriptions.")
+        
+        if not ACTIVATIONS_AVAILABLE:
+            st.error("❌ Module d'activations non disponible. Vérifiez les fichiers dans src/activations/")
+        if not ACTIVATIONS_AVAILABLE:
+            st.error("❌ Module d'activations non disponible. Vérifiez les fichiers dans src/activations/")
+        else:
+            # Source de données : Session ou BDD
+            results = st.session_state.get("results")
+            
+            col_gen1, col_gen2 = st.columns(2)
+            
+            with col_gen1:
+                # Option 1: Depuis le Scan
+                if results:
+                    if st.button("⚡ GÉNÉRER (Depuis le Scan en cours)", type="primary", use_container_width=True):
+                        with st.spinner("🔄 Analyse des profils du scan..."):
+                            engine = ActivationEngine(results)
+                            activations = engine.run_all_activations()
+                            st.session_state["activations"] = activations
+                            st.session_state["activation_stats"] = engine.stats
+                            st.session_state["activation_engine"] = engine
+                            st.success(f"✅ {len(activations)} activations générées !")
+                            st.rerun()
+                else:
+                    st.info("💡 Aucune donnée de scan en cours.")
+            
+            with col_gen2:
+                # Option 2: Depuis la BDD
+                if st.button("🗄️ GÉNÉRER (Depuis la Base de Données)", use_container_width=True):
+                    with st.spinner("🔄 Chargement des clients et génération..."):
+                        db_results = get_all_clients_with_data()
+                        if not db_results:
+                            st.warning("La base de données est vide.")
+                        else:
+                            engine = ActivationEngine(db_results)
+                            activations = engine.run_all_activations()
+                            st.session_state["activations"] = activations
+                            st.session_state["activation_stats"] = engine.stats
+                            st.session_state["activation_engine"] = engine
+                            st.success(f"✅ {len(activations)} activations générées depuis la BDD !")
+                            st.rerun()
+            
+            # Affichage si activations générées
+            if "activations" in st.session_state and st.session_state["activations"]:
+                activations = st.session_state["activations"]
+                stats = st.session_state.get("activation_stats", {})
+                
+                # SÉPARATEUR DE CRM (6 Types)
+                st.markdown("### 🎯 Choisissez votre Campagne")
+                
+                crm_tabs = st.tabs([
+                    "🎂 Gifting & Dates", 
+                    "✈️ Lifestyle & Voyage", 
+                    "👜 Next Best Product", 
+                    "📦 Rupture Stock", 
+                    "🔧 Care & Entretien", 
+                    "🏠 Cross-Maison"
+                ])
+                
+                crm_types = [
+                    ("gifting_dates", "Gifting"),
+                    ("lifestyle_voyage", "Lifestyle"),
+                    ("next_best_product", "Produit"),
+                    ("rupture_stock", "Rupture"),
+                    ("care_entretien", "Care"),
+                    ("cross_maison", "Maison")
+                ]
+                
+                # Boucle pour générer chaque onglet CRM
+                for idx, (type_key, type_label) in enumerate(crm_types):
+                    with crm_tabs[idx]:
+                        st.subheader(f"Campagne : {type_label}")
+                        
+                        # Filtrer les activations de ce type
+                        type_acts = [a for a in activations if a.get("activation_type") == type_key]
+                        
+                        if not type_acts:
+                            st.info(f"Aucune activation détectée pour {type_label}.")
+                        else:
+                            # Trier par Priorité (HAUTE > MOYENNE > BASSE)
+                            prio_order = {"HAUTE": 0, "MOYENNE": 1, "BASSE": 2}
+                            type_acts.sort(key=lambda x: prio_order.get(x.get("priority", "MOYENNE"), 3))
+                            
+                            st.markdown(f"**{len(type_acts)} clients à activer** (dont {sum(1 for a in type_acts if a.get('priority')=='HAUTE')} Prioritaires)")
+                            
+                            # Formulaire de sélection multiple
+                            with st.form(key=f"form_{type_key}"):
+                                # "Tout sélectionner" n'est pas natif simple, on met des checkbox par défaut à False
+                                selected_clients = []
+                                
+                                for i, act in enumerate(type_acts):
+                                    prio = act.get('priority', 'MOYENNE')
+                                    icon = "🔴" if prio == "HAUTE" else "🟠" if prio == "MOYENNE" else "🟢"
+                                    
+                                    col_check, col_details = st.columns([0.1, 0.9])
+                                    with col_check:
+                                        # Clé unique avec index
+                                        if st.checkbox("", key=f"chk_{act['client_id']}_{type_key}_{i}", value=(prio=="HAUTE")):
+                                            selected_clients.append(act)
+                                    
+                                    with col_details:
+                                        with st.expander(f"{icon} {act['client_id']} — {act.get('pillar')} (Trigger: {act.get('trigger_date')})"):
+                                            st.info(f"💬 {act.get('message_vendeur')}")
+                                            st.caption(f"Contexte : {json.dumps(act.get('context', {}), ensure_ascii=False)}")
+                                
+                                submitted = st.form_submit_button(f"🚀 AUTOMATISER L'ENVOI ({type_label})")
+                                
+                                if submitted:
+                                    if not selected_clients:
+                                        st.warning("Veuillez sélectionner au moins un client.")
+                                    else:
+                                        st.success(f"✅ Envoi simulé pour {len(selected_clients)} clients !")
+                                        st.markdown("### Récapitulatif d'envoi")
+                                        for s in selected_clients:
+                                            st.markdown(f"- **{s['client_id']}** : Envoyé via {s.get('canal_prefere', 'Email')}")
+                                        
+                                        # (Placeholder pour intégration API réelle ici)
 
 
 if __name__ == "__main__":
