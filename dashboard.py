@@ -182,6 +182,23 @@ st.markdown("""
 COLORS = ['#8B4513', '#A0522D', '#D2691E', '#CD853F', '#DEB887']
 
 @st.cache_data
+def get_safe_flat_list(data, limit=None):
+    """Extrait une liste plate à partir de données potentiellement malformées (dict/str/list)."""
+    items = []
+    if isinstance(data, list):
+        items = data
+    elif isinstance(data, dict):
+        for v in data.values():
+            if isinstance(v, list): items.extend(v)
+            elif isinstance(v, str): items.append(v)
+    elif isinstance(data, str):
+        items = [data]
+    
+    if limit:
+        return items[:limit]
+    return items
+
+@st.cache_data
 def load_kpis_stats():
     """Charge KPIs et stats via SQL (scalable)."""
     pg = ProfileGenerator()
@@ -767,7 +784,7 @@ def main():
                     <div class=\"info-card\">
                         <h4>{p.get('client_id', 'Client')}</h4>
                         <div><b>Statut:</b> {p.get('identite', {}).get('statut_relationnel', 'N/A')} | <b>Budget:</b> {p.get('projet_achat', {}).get('budget', 'N/A')}</div>
-                        <div><b>Couleurs:</b> {', '.join(p.get('style_personnel', {}).get('couleurs_preferees', [])[:3]) or 'N/A'}</div>
+                        <div><b>Couleurs:</b> {', '.join(get_safe_flat_list(p.get('style_personnel', {}).get('couleurs_preferees', []), 3)) or 'N/A'}</div>
                         <div><b>A dire aujourd'hui:</b> {ice}</div>
                         <div><b>Next Best Action:</b> {action} <span style=\"color:#666\">({reason})</span></div>
                     </div>
@@ -783,7 +800,7 @@ def main():
                         'Age': p.get('identite', {}).get('age', 'N/A'),
                         'Statut': p.get('identite', {}).get('statut_relationnel', 'N/A'),
                         'Budget': p.get('projet_achat', {}).get('budget', 'N/A'),
-                        'Couleurs': ', '.join(p.get('style_personnel', {}).get('couleurs_preferees', [])[:2]),
+                        'Couleurs': ', '.join(get_safe_flat_list(p.get('style_personnel', {}).get('couleurs_preferees', []), 2)),
                         'Profession': p.get('identite', {}).get('profession', 'N/A'),
                         'Email': email,
                         'Tel': phone
@@ -811,7 +828,7 @@ def main():
                         st.write(f"- Statut: {profile.get('identite', {}).get('statut_relationnel', 'N/A')}")
                     with col2:
                         st.write("**Préférences**")
-                        colors = profile.get('style_personnel', {}).get('couleurs_preferees', [])
+                        colors = get_safe_flat_list(profile.get('style_personnel', {}).get('couleurs_preferees', []))
                         st.write(f"- Couleurs: {', '.join(colors) if colors else 'N/A'}")
                     with col3:
                         st.write("**Projet**")
