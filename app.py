@@ -258,13 +258,23 @@ def create_custom_chart(data, chart_type, x_label, y_label="Count"):
 # ============================================================================
 
 def show_vendeur_interface():
-    """Interface pour les vendeurs (vide pour l'instant)"""
+    """Interface pour les vendeurs avec enregistrement vocal"""
+    from audio_recorder_streamlit import audio_recorder
+    from src.voice_transcriber import VoiceTranscriber, save_transcription_to_session, get_transcriptions_history
+    from src.tag_extractor import extract_all_tags
+    
     # Bouton de déconnexion dans la sidebar
     with st.sidebar:
         st.markdown("---")
         user = st.session_state.get("user", {})
         st.markdown(f"**👤 {user.get('name', 'Utilisateur')}**")
         st.caption(f"Rôle : {user.get('role', 'N/A').upper()}")
+        
+        # Statistiques rapides
+        st.markdown("---")
+        st.subheader("📊 Mes Stats")
+        transcriptions = get_transcriptions_history()
+        st.metric("Enregistrements", len(transcriptions))
         
         if st.button("🚪 Déconnexion", use_container_width=True):
             # Clear session
@@ -274,20 +284,310 @@ def show_vendeur_interface():
     
     # Header
     st.title("👔 Espace Vendeur")
-    st.markdown("**Interface en cours de développement**")
+    st.markdown("**Enregistrez vos conversations clients en un clic**")
     
-    # Message temporaire
-    st.info("""
-    🚧 **Espace en construction**
+    # Tabs
+    tab1, tab2, tab3 = st.tabs(["🎤 Nouvel Enregistrement", "📋 Historique", "⚙️ Configuration"])
     
-    Cette interface sera bientôt disponible avec :
-    - 🎤 Enregistrement vocal
-    - 📋 Gestion des clients
-    - 🎯 Recommandations personnalisées
-    - 📊 Statistiques de performance
+    # ============================================================================
+    # TAB 1: NOUVEL ENREGISTREMENT
+    # ============================================================================
+    with tab1:
+        st.header("🎤 Enregistrement Vocal")
+        
+        # Vérifier les clés API
+        deepgram_key = os.getenv("DEEPGRAM_API_KEY")
+        mistral_key = os.getenv("MISTRAL_API_KEY")
+        
+        col_status1, col_status2 = st.columns(2)
+        with col_status1:
+            if deepgram_key:
+                st.success("✅ Deepgram configuré")
+            else:
+                st.error("❌ Deepgram API manquante")
+        
+        with col_status2:
+            if mistral_key:
+                st.success("✅ Mistral AI configuré")
+            else:
+                st.warning("⚠️ Mistral AI manquante (nettoyage désactivé)")
+        
+        if not deepgram_key:
+            st.error("""
+            **Configuration requise :**
+            
+            Pour utiliser la transcription vocale, ajoutez votre clé Deepgram dans le fichier `.env` :
+            ```
+            DEEPGRAM_API_KEY=votre_clé_ici
+            ```
+            
+            Obtenez une clé GRATUITE ($200 de crédits) sur : https://console.deepgram.com/
+            """)
+            st.stop()
+        
+        st.markdown("---")
+        
+        # Formulaire client
+        with st.form("client_info_form"):
+            st.subheader("📝 Informations Client")
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                client_id = st.text_input("ID Client (optionnel)", placeholder="Ex: CLIENT_001")
+            
+            with col2:
+                client_name = st.text_input("Nom du client (optionnel)", placeholder="Ex: Marie Dupont")
+            
+            submitted = st.form_submit_button("💾 Enregistrer les infos", use_container_width=True)
+            
+            if submitted:
+                if client_id or client_name:
+                    st.session_state["current_client_id"] = client_id or client_name
+                    st.success(f"✅ Client enregistré : {st.session_state['current_client_id']}")
+        
+        st.markdown("---")
+        
+        # Zone d'enregistrement
+        st.subheader("🎙️ Enregistrer la conversation")
+        st.info("👇 Cliquez sur le micro pour démarrer l'enregistrement, puis cliquez à nouveau pour arrêter.")
+        
+        # Audio recorder
+        audio_bytes = audio_recorder(
+            text="Cliquez pour enregistrer",
+            recording_color="#e74c3c",
+            neutral_color="#3498db",
+            icon_name="microphone",
+            icon_size="3x",
+        )
+        
+        if audio_bytes:
+            st.success("✅ Enregistrement capturé !")
+            
+            # Lecture audio
+            st.audio(audio_bytes, format="audio/wav")
+            
+            # Options de traitement
+            col_opt1, col_opt2 = st.columns(2)
+            
+            with col_opt1:
+                auto_clean = st.checkbox("🧹 Nettoyage automatique (IA)", value=True, help="Supprime les 'euh', répétitions, etc.")
+            
+            with col_opt2:
+                language = st.selectbox("🌍 Langue", ["fr", "en", "es", "it", "de"], index=0)
+            
+            # Bouton de transcription
+            if st.button("🚀 Transcrire et Analyser", type="primary", use_container_width=True):
+                with st.spinner("🎯 Transcription en cours..."):
+                    # Initialiser le transcripteur
+                    transcriber = VoiceTranscriber()
+                    
+                    # Traitement complet
+                    result = transcriber.process_voice_recording(
+                        audio_bytes=audio_bytes,
+                        language=language,
+                        clean=auto_clean
+                    )
+                    
+                    if result["success"]:
+                        # Affichage des résultats
+                        confidence = result.get("confidence", 0.0)
+                        st.success(f"✅ Transcription terminée ! (Confiance: {confidence*100:.1f}%)")
+                        
+                        # Texte brut
+                        with st.expander("📝 Transcription brute", expanded=False):
+                            st.text_area("Texte original", result["transcription"], height=150, disabled=True)
+                            if confidence > 0:
+                                st.caption(f"🎯 Score de confiance : {confidence*100:.1f}%")
+                        
+                        # Texte nettoyé
+                        st.subheader("✨ Texte nettoyé")
+                        cleaned_text = st.text_area(
+                            "Vous pouvez modifier le texte si nécessaire",
+                            result["cleaned_text"],
+                            height=200,
+                            key="cleaned_text_edit"
+                        )
+                        
+                        # Extraction des tags
+                        st.markdown("---")
+                        st.subheader("🏷️ Tags détectés automatiquement")
+                        
+                        with st.spinner("Analyse des tags..."):
+                            tags = extract_all_tags(cleaned_text)
+                        
+                        # Affichage des tags
+                        col_tag1, col_tag2, col_tag3 = st.columns(3)
+                        
+                        with col_tag1:
+                            st.markdown("**📍 Informations**")
+                            if tags.get("ville"):
+                                st.write(f"🏙️ Ville: {tags['ville']}")
+                            if tags.get("age"):
+                                st.write(f"👤 Âge: {tags['age']}")
+                            if tags.get("budget"):
+                                st.write(f"💰 Budget: {tags['budget']}")
+                        
+                        with col_tag2:
+                            st.markdown("**🎯 Préférences**")
+                            if tags.get("style"):
+                                st.write(f"✨ Style: {', '.join(tags['style'][:3])}")
+                            if tags.get("couleurs"):
+                                st.write(f"🎨 Couleurs: {', '.join(tags['couleurs'][:3])}")
+                            if tags.get("matieres"):
+                                st.write(f"🧵 Matières: {', '.join(tags['matieres'][:3])}")
+                        
+                        with col_tag3:
+                            st.markdown("**📊 Analyse**")
+                            st.write(f"⚡ Urgence: {tags.get('urgence_score', 1)}/5")
+                            if tags.get("motif_achat"):
+                                st.write(f"🎁 Motif: {', '.join(tags['motif_achat'][:2])}")
+                        
+                        # Sauvegarder
+                        st.markdown("---")
+                        if st.button("💾 Sauvegarder cette transcription", type="primary", use_container_width=True):
+                            client_id = st.session_state.get("current_client_id", None)
+                            
+                            # Enrichir les données
+                            result["tags"] = tags
+                            result["client_name"] = client_name if 'client_name' in locals() else None
+                            
+                            save_transcription_to_session(result, client_id)
+                            st.success("✅ Transcription sauvegardée !")
+                            st.balloons()
+                    
+                    else:
+                        st.error(f"❌ {result['error']}")
     
-    Pour l'instant, veuillez utiliser le compte analyste pour accéder à toutes les fonctionnalités.
-    """)
+    # ============================================================================
+    # TAB 2: HISTORIQUE
+    # ============================================================================
+    with tab2:
+        st.header("📋 Historique des Enregistrements")
+        
+        transcriptions = get_transcriptions_history()
+        
+        if not transcriptions:
+            st.info("Aucun enregistrement pour le moment. Commencez par créer votre premier enregistrement dans l'onglet 'Nouvel Enregistrement'.")
+        else:
+            st.success(f"**{len(transcriptions)} enregistrement(s) sauvegardé(s)**")
+            
+            # Affichage en cartes
+            for i, trans in enumerate(reversed(transcriptions)):
+                with st.container(border=True):
+                    col_h1, col_h2, col_h3 = st.columns([2, 1, 1])
+                    
+                    with col_h1:
+                        client_id = trans.get("client_id", f"Enregistrement {i+1}")
+                        st.markdown(f"**🎤 {client_id}**")
+                        timestamp = trans.get("timestamp", "")
+                        if timestamp:
+                            st.caption(f"📅 {timestamp[:19].replace('T', ' à ')}")
+                    
+                    with col_h2:
+                        if trans.get("tags"):
+                            urgence = trans["tags"].get("urgence_score", 1)
+                            st.metric("Urgence", f"{urgence}/5")
+                    
+                    with col_h3:
+                        if st.button("👁️ Voir", key=f"view_{i}"):
+                            st.session_state[f"show_detail_{i}"] = not st.session_state.get(f"show_detail_{i}", False)
+                    
+                    # Détails (expandable)
+                    if st.session_state.get(f"show_detail_{i}", False):
+                        st.markdown("---")
+                        st.markdown("**💬 Transcription nettoyée :**")
+                        st.write(trans.get("cleaned_text", "N/A"))
+                        
+                        if trans.get("tags"):
+                            st.markdown("**🏷️ Tags détectés :**")
+                            tags = trans["tags"]
+                            st.json(tags)
+            
+            # Export CSV
+            st.markdown("---")
+            if st.button("📥 Exporter tout en CSV", use_container_width=True):
+                # Créer un DataFrame
+                export_data = []
+                for trans in transcriptions:
+                    tags = trans.get("tags", {})
+                    export_data.append({
+                        "client_id": trans.get("client_id"),
+                        "timestamp": trans.get("timestamp"),
+                        "transcription": trans.get("transcription"),
+                        "cleaned_text": trans.get("cleaned_text"),
+                        "ville": tags.get("ville"),
+                        "age": tags.get("age"),
+                        "budget": tags.get("budget"),
+                        "urgence": tags.get("urgence_score"),
+                        "style": ", ".join(tags.get("style", [])),
+                        "motif_achat": ", ".join(tags.get("motif_achat", []))
+                    })
+                
+                df_export = pd.DataFrame(export_data)
+                csv = df_export.to_csv(index=False).encode('utf-8')
+                
+                st.download_button(
+                    label="📥 Télécharger CSV",
+                    data=csv,
+                    file_name=f"transcriptions_vendeur_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    use_container_width=True
+                )
+    
+    # ============================================================================
+    # TAB 3: CONFIGURATION
+    # ============================================================================
+    with tab3:
+        st.header("⚙️ Configuration")
+        
+        st.subheader("🔑 Clés API")
+        
+        # Status Deepgram
+        if deepgram_key:
+            st.success("✅ **Deepgram API** : Configurée")
+            st.caption("Utilisée pour la transcription vocale (Nova-2)")
+        else:
+            st.error("❌ **Deepgram API** : Non configurée")
+            st.code("DEEPGRAM_API_KEY=votre_clé_ici", language="bash")
+            st.caption("Ajoutez cette ligne dans le fichier `.env`")
+            st.info("🎁 **Offre gratuite** : $200 de crédits sur https://console.deepgram.com/")
+        
+        # Status Mistral
+        if mistral_key:
+            st.success("✅ **Mistral AI** : Configurée")
+            st.caption("Utilisée pour le nettoyage des transcriptions")
+        else:
+            st.warning("⚠️ **Mistral AI** : Non configurée")
+            st.caption("Le nettoyage automatique sera désactivé")
+        
+        st.markdown("---")
+        
+        st.subheader("📖 Guide d'utilisation")
+        
+        st.markdown("""
+        ### Comment utiliser l'enregistrement vocal ?
+        
+        1. **Préparez-vous** : Ayez le client devant vous ou ses informations
+        2. **Cliquez sur le micro** 🎙️ pour démarrer l'enregistrement
+        3. **Parlez naturellement** : Décrivez la conversation avec le client
+        4. **Arrêtez l'enregistrement** en cliquant à nouveau sur le micro
+        5. **Cliquez sur "Transcrire"** : L'IA va transformer votre voix en texte
+        6. **Vérifiez le texte** : Vous pouvez le modifier si nécessaire
+        7. **Sauvegardez** : Les tags seront automatiquement extraits
+        
+        ### Conseils pour de meilleurs résultats
+        
+        - 🎯 Parlez clairement et à un rythme normal
+        - 📍 Mentionnez les informations clés : budget, style, préférences
+        - 🔇 Enregistrez dans un endroit calme si possible
+        - ✅ Relisez toujours la transcription avant de sauvegarder
+        
+        ### Que fait l'IA ?
+        
+        1. **Deepgram (Nova-2)** : Transforme votre voix en texte (95%+ précision)
+        2. **Mistral AI** : Nettoie le texte (supprime les "euh", répétitions)
+        3. **Moteur Python** : Extrait automatiquement les tags (ville, budget, style, etc.)
+        """)
 
 
 # ============================================================================
