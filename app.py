@@ -17,6 +17,22 @@ from dotenv import load_dotenv
 # Import modules custom
 from src.tag_extractor import extract_all_tags
 from src.ai_analyzer import analyze_batch
+from src.auth import authenticate
+
+# Import advanced extractor (taxonomie complète LVMH)
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
+try:
+    from src.mappings.identity import GENRE_MAPPING, LANGUE_MAPPING, STATUT_MAPPING, PROFESSIONS_ADVANCED
+    from src.mappings.location import CITIES_ADVANCED
+    from src.mappings.lifestyle import SPORT_MAPPING, MUSIQUE_MAPPING, ANIMAUX_MAPPING, VOYAGE_MAPPING, ART_CULTURE_MAPPING, GASTRONOMIE_MAPPING
+    from src.mappings.style import PIECES_MAPPING, COULEURS_ADVANCED, MATIERES_ADVANCED, SENSIBILITE_MODE, TAILLES_MAPPING
+    from src.mappings.purchase import MOTIF_ADVANCED, TIMING_MAPPING, MARQUES_LVMH, FREQUENCE_ACHAT
+    from src.mappings.preferences import REGIME_MAPPING, ALLERGIES_MAPPING, VALEURS_MAPPING
+    from src.mappings.tracking import ACTIONS_MAPPING, ECHEANCES_MAPPING, CANAUX_MAPPING
+    ADVANCED_MODE = True
+except ImportError:
+    ADVANCED_MODE = False
 
 # Charger variables d'environnement
 load_dotenv()
@@ -74,6 +90,124 @@ def sanitize_display_text(text: str) -> str:
     return text
 
 
+def scan_text_advanced(text: str, mapping: dict) -> list:
+    """Scanner avancé pour les mappings de la taxonomie complète."""
+    if not text:
+        return []
+    text_lower = text.lower()
+    found = []
+    for category, keywords in mapping.items():
+        for kw in keywords:
+            if kw.lower() in text_lower:
+                found.append(category)
+                break
+    return list(set(found))
+
+
+def scan_nested_cities(text: str, cities_mapping: dict) -> dict:
+    """Scanner pour les villes avec structure imbriquée."""
+    if not text:
+        return {}
+    text_lower = text.lower()
+    results = {}
+    for region, cities in cities_mapping.items():
+        found = []
+        for city, keywords in cities.items():
+            for kw in keywords:
+                if kw.lower() in text_lower:
+                    found.append(city)
+                    break
+        if found:
+            results[region] = found
+    return results
+
+
+def extract_advanced_tags(text: str, base_tags: dict) -> dict:
+    """Enrichit les tags de base avec la taxonomie avancée."""
+    if not ADVANCED_MODE:
+        return base_tags
+    
+    cleaned = base_tags.get("cleaned_text", text)
+    
+    # Identité
+    genre = scan_text_advanced(cleaned, GENRE_MAPPING)
+    langue = scan_text_advanced(cleaned, LANGUE_MAPPING)
+    statut = scan_text_advanced(cleaned, STATUT_MAPPING)
+    profession_adv = scan_text_advanced(cleaned, PROFESSIONS_ADVANCED)
+    
+    # Localisation enrichie
+    localisation = scan_nested_cities(cleaned, CITIES_ADVANCED)
+    
+    # Lifestyle
+    sport = scan_text_advanced(cleaned, SPORT_MAPPING)
+    musique = scan_text_advanced(cleaned, MUSIQUE_MAPPING)
+    animaux = scan_text_advanced(cleaned, ANIMAUX_MAPPING)
+    voyage = scan_text_advanced(cleaned, VOYAGE_MAPPING)
+    art_culture = scan_text_advanced(cleaned, ART_CULTURE_MAPPING)
+    gastronomie = scan_text_advanced(cleaned, GASTRONOMIE_MAPPING)
+    
+    # Style avancé
+    pieces = scan_text_advanced(cleaned, PIECES_MAPPING)
+    couleurs_adv = scan_text_advanced(cleaned, COULEURS_ADVANCED)
+    matieres_adv = scan_text_advanced(cleaned, MATIERES_ADVANCED)
+    sensibilite = scan_text_advanced(cleaned, SENSIBILITE_MODE)
+    tailles = scan_text_advanced(cleaned, TAILLES_MAPPING)
+    
+    # Achat avancé
+    motif_adv = scan_text_advanced(cleaned, MOTIF_ADVANCED)
+    timing = scan_text_advanced(cleaned, TIMING_MAPPING)
+    marques = scan_text_advanced(cleaned, MARQUES_LVMH)
+    frequence = scan_text_advanced(cleaned, FREQUENCE_ACHAT)
+    
+    # Préférences
+    regime = scan_text_advanced(cleaned, REGIME_MAPPING)
+    allergies = scan_text_advanced(cleaned, ALLERGIES_MAPPING)
+    valeurs = scan_text_advanced(cleaned, VALEURS_MAPPING)
+    
+    # Suivi CRM
+    actions = scan_text_advanced(cleaned, ACTIONS_MAPPING)
+    echeances = scan_text_advanced(cleaned, ECHEANCES_MAPPING)
+    canaux = scan_text_advanced(cleaned, CANAUX_MAPPING)
+    
+    # Enrichir les tags de base
+    base_tags["genre"] = genre[0] if genre else None
+    base_tags["langue"] = langue
+    base_tags["statut_client"] = statut[0] if statut else None
+    base_tags["profession"] = profession_adv if profession_adv else base_tags.get("profession", [])
+    base_tags["localisation_detail"] = localisation
+    base_tags["sport"] = sport
+    base_tags["musique"] = musique
+    base_tags["animaux"] = animaux[0] if animaux else None
+    base_tags["voyage"] = voyage
+    base_tags["art_culture"] = art_culture
+    base_tags["gastronomie"] = gastronomie
+    base_tags["pieces_favorites"] = pieces
+    base_tags["couleurs"] = couleurs_adv if couleurs_adv else base_tags.get("couleurs", [])
+    base_tags["matieres"] = matieres_adv if matieres_adv else base_tags.get("matieres", [])
+    base_tags["sensibilite_mode"] = sensibilite[0] if sensibilite else None
+    base_tags["tailles"] = tailles
+    base_tags["motif_achat"] = motif_adv if motif_adv else base_tags.get("motif_achat", [])
+    base_tags["timing"] = timing[0] if timing else None
+    base_tags["marques_preferees"] = marques
+    base_tags["frequence_achat"] = frequence[0] if frequence else None
+    base_tags["regime"] = regime
+    base_tags["allergies"] = allergies
+    base_tags["valeurs"] = valeurs
+    base_tags["actions_crm"] = actions
+    base_tags["echeances"] = echeances
+    base_tags["canaux_contact"] = canaux
+    
+    # Fusionner centres_interet avec les nouveaux
+    centres = base_tags.get("centres_interet", [])
+    centres.extend(sport)
+    centres.extend(musique)
+    centres.extend(art_culture)
+    centres.extend(gastronomie)
+    base_tags["centres_interet"] = list(set(centres))
+    
+    return base_tags
+
+
 def detect_date_column(df: pd.DataFrame):
     """Détecte une colonne de date exploitable dans le CSV."""
     candidates = [
@@ -108,20 +242,41 @@ def build_export_dataframe(results):
         tags = r.get("tags_extracted", {})
         insights = r.get("insights_marketing", {})
         analysis = r.get("analyse_intelligente", {})
-        rows.append({
+        row = {
             "client_id": r.get("client_id"),
             "source_date": r.get("source_date"),
             "segment_client": r.get("segment_client"),
             "ice_breaker": r.get("ice_breaker"),
             "resume_complet": r.get("resume_complet"),
             "urgency_score_final": r.get("urgency_score_final"),
+            # Identité
+            "genre": tags.get("genre"),
+            "langue": _list_to_text(tags.get("langue", [])),
+            "statut_client": tags.get("statut_client"),
+            # Démographie
             "budget": tags.get("budget"),
             "ville": tags.get("ville"),
             "age": tags.get("age"),
+            # Style & Préférences
             "motif_achat": _list_to_text(tags.get("motif_achat", [])),
             "style": _list_to_text(tags.get("style", [])),
             "famille": _list_to_text(tags.get("famille", [])),
             "centres_interet": _list_to_text(tags.get("centres_interet", [])),
+            # Nouvelles catégories avancées
+            "profession": _list_to_text(tags.get("profession", [])),
+            "sport": _list_to_text(tags.get("sport", [])),
+            "musique": _list_to_text(tags.get("musique", [])),
+            "pieces_favorites": _list_to_text(tags.get("pieces_favorites", [])),
+            "couleurs": _list_to_text(tags.get("couleurs", [])),
+            "matieres": _list_to_text(tags.get("matieres", [])),
+            "marques_preferees": _list_to_text(tags.get("marques_preferees", [])),
+            "timing": tags.get("timing"),
+            "frequence_achat": tags.get("frequence_achat"),
+            "sensibilite_mode": tags.get("sensibilite_mode"),
+            "regime": _list_to_text(tags.get("regime", [])),
+            "valeurs": _list_to_text(tags.get("valeurs", [])),
+            "canaux_contact": _list_to_text(tags.get("canaux_contact", [])),
+            # IA
             "opportunites_vente": _list_to_text(insights.get("opportunites_vente", [])),
             "produits_recommandes": _list_to_text(insights.get("produits_recommandes", [])),
             "actions_suggerees": _list_to_text(insights.get("actions_suggerees", [])),
@@ -130,7 +285,8 @@ def build_export_dataframe(results):
             "objections_freins": _list_to_text(r.get("objections_freins", [])),
             "transcription_originale": r.get("transcription_originale"),
             "cleaned_text": r.get("cleaned_text")
-        })
+        }
+        rows.append(row)
     return pd.DataFrame(rows)
 
 def get_available_fields(results):
@@ -139,38 +295,64 @@ def get_available_fields(results):
         return {}
     
     fields = {
+        "Identité": [],
         "Démographiques": [],
+        "Lifestyle": [],
+        "Style": [],
         "Achat": [],
         "Préférences": [],
+        "CRM": [],
         "IA Insights": []
     }
     
-    # Sample first result to get structure
-    sample = results[0]
-    tags = sample.get("tags_extracted", {})
+    # Collecte sur TOUS les résultats (pas juste le premier)
+    all_tag_keys = set()
+    for r in results:
+        tags = r.get("tags_extracted", {})
+        for k, v in tags.items():
+            if v and k != "cleaned_text":
+                if isinstance(v, list) and len(v) > 0:
+                    all_tag_keys.add(k)
+                elif isinstance(v, (str, int, float)) and v:
+                    all_tag_keys.add(k)
+                elif isinstance(v, dict) and len(v) > 0:
+                    all_tag_keys.add(k)
+    
+    # Identity
+    for f in ["genre", "langue", "statut_client"]:
+        if f in all_tag_keys: fields["Identité"].append(f)
     
     # Demographics
-    if tags.get("age"): fields["Démographiques"].append("age")
-    if tags.get("ville"): fields["Démographiques"].append("ville")
-    if tags.get("profession"): fields["Démographiques"].append("profession")
-    if tags.get("famille"): fields["Démographiques"].append("famille")
+    for f in ["age", "ville", "profession", "famille"]:
+        if f in all_tag_keys: fields["Démographiques"].append(f)
+    
+    # Lifestyle
+    for f in ["sport", "musique", "animaux", "voyage", "art_culture", "gastronomie", "centres_interet"]:
+        if f in all_tag_keys: fields["Lifestyle"].append(f)
+    
+    # Style
+    for f in ["pieces_favorites", "couleurs", "matieres", "sensibilite_mode", "tailles", "style"]:
+        if f in all_tag_keys: fields["Style"].append(f)
     
     # Purchase
-    if tags.get("budget"): fields["Achat"].append("budget")
-    if tags.get("urgence_score"): fields["Achat"].append("urgence_score")
-    if tags.get("motif_achat"): fields["Achat"].append("motif_achat")
+    for f in ["budget", "urgence_score", "motif_achat", "timing", "marques_preferees", "frequence_achat"]:
+        if f in all_tag_keys: fields["Achat"].append(f)
     
     # Preferences
-    if tags.get("couleurs"): fields["Préférences"].append("couleurs")
-    if tags.get("matieres"): fields["Préférences"].append("matieres")
-    if tags.get("style"): fields["Préférences"].append("style")
-    if tags.get("centres_interet"): fields["Préférences"].append("centres_interet")
+    for f in ["regime", "allergies", "valeurs"]:
+        if f in all_tag_keys: fields["Préférences"].append(f)
+    
+    # CRM
+    for f in ["actions_crm", "echeances", "canaux_contact"]:
+        if f in all_tag_keys: fields["CRM"].append(f)
     
     # AI Insights (if available)
+    sample = results[0]
     if sample.get("segment_client"): fields["IA Insights"].append("segment_client")
     if sample.get("urgency_score_final"): fields["IA Insights"].append("urgency_score_final")
     
-    return fields
+    # Remove empty categories
+    return {k: v for k, v in fields.items() if v}
 
 
 def prepare_chart_data(results, x_field, y_field=None, chart_type="bar", filters=None):
@@ -189,13 +371,21 @@ def prepare_chart_data(results, x_field, y_field=None, chart_type="bar", filters
         tags = r.get("tags_extracted", {})
         
         # Get x value
-        if x_field in ["age", "ville", "budget", "profession", "famille"]:
-            x_val = tags.get(x_field)
-        elif x_field in ["urgence_score"]:
+        # Scalar fields
+        scalar_fields = ["age", "ville", "budget", "profession", "famille", "genre", 
+                         "statut_client", "animaux", "sensibilite_mode", "timing", 
+                         "frequence_achat", "urgence_score"]
+        list_fields = ["motif_achat", "couleurs", "matieres", "style", "centres_interet",
+                       "sport", "musique", "voyage", "art_culture", "gastronomie",
+                       "pieces_favorites", "marques_preferees", "langue",
+                       "regime", "allergies", "valeurs", "actions_crm", 
+                       "echeances", "canaux_contact", "tailles"]
+        
+        if x_field in scalar_fields:
             x_val = tags.get(x_field)
         elif x_field in ["segment_client", "urgency_score_final"]:
             x_val = r.get(x_field)
-        elif x_field in ["motif_achat", "couleurs", "matieres", "style", "centres_interet"]:
+        elif x_field in list_fields:
             x_val = tags.get(x_field, [])
             if isinstance(x_val, list) and x_val:
                 x_val = x_val[0]  # Take first item for simplicity
@@ -253,10 +443,429 @@ def create_custom_chart(data, chart_type, x_label, y_label="Count"):
 
 
 # ============================================================================
+# INTERFACES PAR RÔLE
+# ============================================================================
+
+def show_vendeur_interface():
+    """Interface pour les vendeurs avec enregistrement vocal"""
+    from audio_recorder_streamlit import audio_recorder
+    from src.voice_transcriber import VoiceTranscriber, save_transcription_to_session, get_transcriptions_history, delete_transcription_from_file, clear_all_transcriptions_file
+    from src.tag_extractor import extract_all_tags
+    
+    # Bouton de déconnexion dans la sidebar
+    with st.sidebar:
+        st.markdown("---")
+        user = st.session_state.get("user", {})
+        st.markdown(f"**👤 {user.get('name', 'Utilisateur')}**")
+        st.caption(f"Rôle : {user.get('role', 'N/A').upper()}")
+        
+        # Statistiques rapides
+        st.markdown("---")
+        st.subheader("📊 Mes Stats")
+        transcriptions = get_transcriptions_history()
+        st.metric("Enregistrements", len(transcriptions))
+        
+        if st.button("🚪 Déconnexion", use_container_width=True):
+            # Clear session
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.rerun()
+    
+    # Header
+    st.title("👔 Espace Vendeur")
+    st.markdown("**Enregistrez vos conversations clients en un clic**")
+    
+    # Tabs
+    tab1, tab2, tab3 = st.tabs(["🎤 Nouvel Enregistrement", "📋 Historique", "⚙️ Configuration"])
+    
+    # ============================================================================
+    # TAB 1: NOUVEL ENREGISTREMENT
+    # ============================================================================
+    with tab1:
+        # Vérification discrète des clés (bloquant seulement si erreur critique)
+        deepgram_key = os.getenv("DEEPGRAM_API_KEY")
+        mistral_key = os.getenv("MISTRAL_API_KEY")
+
+        if not deepgram_key:
+            st.error("❌ Configuration requise : Ajoutez votre DEEPGRAM_API_KEY dans le fichier .env")
+            st.info("Obtenez une clé GRATUITE ($200) sur : https://console.deepgram.com/")
+            st.stop()
+            
+        if not mistral_key:
+             st.warning("⚠️ Note : Mistral AI n'est pas configuré. Le nettoyage du texte sera désactivé.")
+
+        # Le flux linéaire commence ici directement
+
+        
+        # Design épuré : "Step by Step"
+        
+        # --- ÉTAPE 1 : ENREGISTREMENT ---
+        st.markdown("### 1️⃣ Enregistrement de l'interaction")
+        st.info("Cliquez sur le micro ci-dessous et décrivez l'échange avec le client.")
+        
+        # Centrer le recorder
+        col_rec1, col_rec2, col_rec3 = st.columns([1, 2, 1])
+        with col_rec2:
+            audio_bytes = audio_recorder(
+                text="",
+                recording_color="#e8b15d",
+                neutral_color="#303030",
+                icon_size="3x",
+            )
+        
+        # --- ÉTAPE 2 : TRANSCRIPTION & ANALYSE ---
+        if audio_bytes:
+            st.markdown("---")
+            st.markdown("### 2️⃣ Résultat de l'analyse")
+            
+            # Transcription (Si pas déjà fait ou si changement)
+            # Note: dans Streamlit, process_voice_recording est appelé à chaque rerun si on ne cache pas
+            # Ici on laisse refaire pour simplifier, ou on pourrait utiliser st.cache_data
+            
+            with st.spinner("🤖 L'IA transcrit et analyse votre voix..."):
+                transcriber = VoiceTranscriber()
+                result = transcriber.process_voice_recording(
+                    audio_bytes=audio_bytes,
+                    language=language,
+                    clean=auto_clean
+                )
+            
+            if result["success"]:
+                # Container pour structurer la vue
+                with st.container(border=True):
+                    # Texte nettoyé (le plus important)
+                    st.subheader("💬 Ce que j'ai compris :")
+                    st.write(result["cleaned_text"])
+                    
+                    # Tags (en petit)
+                    with st.expander("Voir les tags détectés (Style, Budget, etc.)"):
+                        st.json(result["tags"])
+
+                # --- ÉTAPE 3 : IDENTIFICATION OBLIGATOIRE ---
+                st.markdown("---")
+                st.markdown("### 3️⃣ Finalisation (Obligatoire)")
+                
+                with st.container(border=True):
+                    st.warning("⚠️ Pour sauvegarder cette interaction dans la base de données Analysts, vous DOIVEZ saisir l'ID Client.")
+                    
+                    col_form1, col_form2 = st.columns([1, 1])
+                    
+                    with col_form1:
+                        client_id_input = st.text_input(
+                            "🆔 Identifiant Client", 
+                            placeholder="Ex: CA-1024",
+                            key="input_client_id_final"
+                        )
+                    
+                    with col_form2:
+                        st.write("") # Spacer
+                        st.write("")
+                        
+                        # Bouton de sauvegarde
+                        save_btn = st.button(
+                            "💾 ENREGISTRER DANS LA BASE (CSV)", 
+                            type="primary", 
+                            use_container_width=True,
+                            disabled=not client_id_input # Désactivé si pas d'ID
+                        )
+                
+                # Action de sauvegarde
+                if save_btn:
+                    if client_id_input:
+                        # Sauvegarde
+                        result["tags"] = result.get("tags", {})
+                        result["client_name"] = client_id_input
+                        
+                        save_transcription_to_session(result, client_id=client_id_input)
+                        
+                        st.success(f"✅ Interaction sauvegardée avec succès pour **{client_id_input}** !")
+                        st.info("📂 Les données sont maintenant accessibles aux analystes dans `data/interactions_vendeur.csv`")
+                        st.balloons()
+                    else:
+                        st.error("❌ L'identifiant client est manquant.")
+
+                # Bouton Annuler (en bas, discret)
+                st.markdown("")
+                if st.button("🗑️ Annuler et recommencer", type="secondary"):
+                    st.rerun()
+
+            else:
+                st.error(f"❌ Erreur lors de la transcription : {result['error']}")
+    
+    # ============================================================================
+    # TAB 2: HISTORIQUE
+    # ============================================================================
+    with tab2:
+        st.header("📋 Historique des Enregistrements")
+        
+        transcriptions = get_transcriptions_history()
+        
+        if not transcriptions:
+            st.info("Aucun enregistrement pour le moment. Commencez par créer votre premier enregistrement dans l'onglet 'Nouvel Enregistrement'.")
+        else:
+            col_titre, col_del_all = st.columns([3, 1])
+            with col_titre:
+                st.success(f"**{len(transcriptions)} enregistrement(s) sauvegardé(s)**")
+            with col_del_all:
+                if st.button("🗑️ Tout effacer", type="primary", use_container_width=True):
+                     clear_all_transcriptions_file()
+                     if "voice_transcriptions" in st.session_state:
+                         del st.session_state["voice_transcriptions"]
+                     st.rerun()
+
+            
+            # Affichage en cartes
+            # On utilise indices inversés pour la suppression correcte (le dernier est le premier affiché)
+            # Mais attention, si on supprime par index, il faut utiliser l'index original.
+            # Reversed retourne un itérateur.
+            
+            # On crée une liste inversée avec les index originaux : [(index, item)]
+            items_with_index = list(enumerate(transcriptions))
+            reversed_items = list(reversed(items_with_index))
+            
+            for original_idx, trans in reversed_items:
+                with st.container(border=True):
+                    col_h1, col_h2, col_h3, col_h4 = st.columns([2, 1, 0.5, 0.5])
+                    
+                    with col_h1:
+                        client_id = trans.get("client_id", f"Enregistrement")
+                        st.markdown(f"**🎤 {client_id}**")
+                        timestamp = trans.get("timestamp", "")
+                        if timestamp:
+                            st.caption(f"📅 {timestamp[:19].replace('T', ' à ')}")
+                    
+                    with col_h2:
+                        if trans.get("tags"):
+                            urgence = trans["tags"].get("urgence_score", 1)
+                            st.metric("Urgence", f"{urgence}/5")
+                    
+                    with col_h3:
+                        if st.button("👁️", key=f"view_{original_idx}", help="Voir les détails"):
+                            st.session_state[f"show_detail_{original_idx}"] = not st.session_state.get(f"show_detail_{original_idx}", False)
+                    
+                    with col_h4:
+                        if st.button("🗑️", key=f"del_{original_idx}", help="Supprimer cet enregistrement"):
+                            # Suppression sécurisée par index persistante
+                            delete_transcription_from_file(original_idx)
+                            # Rechargement de la page pour mettre à jour l'affichage
+                            if "voice_transcriptions" in st.session_state:
+                                del st.session_state["voice_transcriptions"]
+                            st.rerun()
+                    
+                    # Détails (expandable)
+                    if st.session_state.get(f"show_detail_{original_idx}", False):
+                        st.markdown("---")
+                        st.markdown("**💬 Transcription nettoyée :**")
+                        st.write(trans.get("cleaned_text", "N/A"))
+                        
+                        if trans.get("tags"):
+                            st.markdown("**🏷️ Tags détectés :**")
+                            tags = trans["tags"]
+                            st.json(tags)
+            
+            # Export CSV
+            st.markdown("---")
+            if st.button("📥 Exporter tout en CSV", use_container_width=True):
+                # Créer un DataFrame
+                export_data = []
+                for trans in transcriptions:
+                    tags = trans.get("tags", {})
+                    export_data.append({
+                        "client_id": trans.get("client_id"),
+                        "timestamp": trans.get("timestamp"),
+                        "transcription": trans.get("transcription"),
+                        "cleaned_text": trans.get("cleaned_text"),
+                        "ville": tags.get("ville"),
+                        "age": tags.get("age"),
+                        "budget": tags.get("budget"),
+                        "urgence": tags.get("urgence_score"),
+                        "style": ", ".join(tags.get("style", [])),
+                        "motif_achat": ", ".join(tags.get("motif_achat", []))
+                    })
+                
+                df_export = pd.DataFrame(export_data)
+                csv = df_export.to_csv(index=False).encode('utf-8')
+                
+                st.download_button(
+                    label="📥 Télécharger CSV",
+                    data=csv,
+                    file_name=f"transcriptions_vendeur_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                    mime="text/csv",
+                    use_container_width=True
+                )
+    
+    # ============================================================================
+    # TAB 3: CONFIGURATION
+    # ============================================================================
+    with tab3:
+        st.header("⚙️ Configuration")
+        
+        st.subheader("🔑 Clés API")
+        
+        # Status Deepgram
+        if deepgram_key:
+            st.success("✅ **Deepgram API** : Configurée")
+            st.caption("Utilisée pour la transcription vocale (Nova-2)")
+        else:
+            st.error("❌ **Deepgram API** : Non configurée")
+            st.code("DEEPGRAM_API_KEY=votre_clé_ici", language="bash")
+            st.caption("Ajoutez cette ligne dans le fichier `.env`")
+            st.info("🎁 **Offre gratuite** : $200 de crédits sur https://console.deepgram.com/")
+        
+        # Status Mistral
+        if mistral_key:
+            st.success("✅ **Mistral AI** : Configurée")
+            st.caption("Utilisée pour le nettoyage des transcriptions")
+        else:
+            st.warning("⚠️ **Mistral AI** : Non configurée")
+            st.caption("Le nettoyage automatique sera désactivé")
+        
+        st.markdown("---")
+        
+        st.subheader("📖 Guide d'utilisation")
+        
+        st.markdown("""
+        ### Comment utiliser l'enregistrement vocal ?
+        
+        1. **Préparez-vous** : Ayez le client devant vous ou ses informations
+        2. **Cliquez sur le micro** 🎙️ pour démarrer l'enregistrement
+        3. **Parlez naturellement** : Décrivez la conversation avec le client
+        4. **Arrêtez l'enregistrement** en cliquant à nouveau sur le micro
+        5. **Cliquez sur "Transcrire"** : L'IA va transformer votre voix en texte
+        6. **Vérifiez le texte** : Vous pouvez le modifier si nécessaire
+        7. **Sauvegardez** : Les tags seront automatiquement extraits
+        
+        ### Conseils pour de meilleurs résultats
+        
+        - 🎯 Parlez clairement et à un rythme normal
+        - 📍 Mentionnez les informations clés : budget, style, préférences
+        - 🔇 Enregistrez dans un endroit calme si possible
+        - ✅ Relisez toujours la transcription avant de sauvegarder
+        
+        ### Que fait l'IA ?
+        
+        1. **Deepgram (Nova-2)** : Transforme votre voix en texte (95%+ précision)
+        2. **Mistral AI** : Nettoie le texte (supprime les "euh", répétitions)
+        3. **Moteur Python** : Extrait automatiquement les tags (ville, budget, style, etc.)
+        """)
+
+
+# ============================================================================
 # INTERFACE PRINCIPALE
 # ============================================================================
 
 def main():
+    # ============================================================================
+    # AUTHENTIFICATION
+    # ============================================================================
+    
+    # Initialiser l'état d'authentification
+    if "authenticated" not in st.session_state:
+        st.session_state["authenticated"] = False
+    
+    # Si non authentifié, afficher la page de connexion
+    if not st.session_state["authenticated"]:
+        # Style de la page de connexion
+        st.markdown("""
+            <style>
+            .login-container {
+                max-width: 500px;
+                margin: 100px auto;
+                padding: 40px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 20px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            }
+            .login-title {
+                color: white;
+                text-align: center;
+                font-size: 2.5em;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            .login-subtitle {
+                color: rgba(255,255,255,0.9);
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            </style>
+        """, unsafe_allow_html=True)
+        
+        col1, col2, col3 = st.columns([1, 2, 1])
+        
+        with col2:
+            st.markdown('<div class="login-container">', unsafe_allow_html=True)
+            st.markdown('<h1 class="login-title">🎯 LVMH</h1>', unsafe_allow_html=True)
+            st.markdown('<p class="login-subtitle">Client Analytics Platform</p>', unsafe_allow_html=True)
+            
+            with st.form("login_form"):
+                username = st.text_input("👤 Nom d'utilisateur", placeholder="analyste")
+                password = st.text_input("🔒 Mot de passe", type="password", placeholder="••••••••")
+                
+                col_btn1, col_btn2 = st.columns(2)
+                with col_btn1:
+                    submit = st.form_submit_button("🚀 Connexion", use_container_width=True)
+                with col_btn2:
+                    help_btn = st.form_submit_button("❓ Aide", use_container_width=True)
+                
+                if submit:
+                    if username and password:
+                        user_info = authenticate(username, password)
+                        if user_info:
+                            st.session_state["authenticated"] = True
+                            st.session_state["user"] = user_info
+                            st.success(f"✅ Bienvenue {user_info['name']} !")
+                            st.rerun()
+                        else:
+                            st.error("❌ Identifiants incorrects")
+                    else:
+                        st.warning("⚠️ Veuillez remplir tous les champs")
+                
+                if help_btn:
+                    st.info("""
+                    **Comptes Disponibles :**
+                    
+                    👔 **Vendeur**
+                    - Utilisateur : `vendeur`
+                    - Mot de passe : `vendeur123`
+                    
+                    📊 **Analyste**
+                    - Utilisateur : `analyste`
+                    - Mot de passe : `analyste123`
+                    """)
+            
+            st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Arrêter l'exécution ici si non authentifié
+        st.stop()
+    
+    # ============================================================================
+    # APPLICATION PRINCIPALE (après authentification)
+    # ============================================================================
+    
+    # Routage par rôle
+    user = st.session_state.get("user", {})
+    user_role = user.get("role", "")
+    
+    if user_role == "vendeur":
+        # Rediriger vers l'espace vendeur
+        show_vendeur_interface()
+        return  # Arrêter l'exécution ici pour ne pas afficher l'interface analyste
+    
+    # Si analyste ou autre, continuer avec l'interface complète
+    
+    # Bouton de déconnexion dans la sidebar
+    with st.sidebar:
+        st.markdown("---")
+        st.markdown(f"**👤 {user.get('name', 'Utilisateur')}**")
+        st.caption(f"Rôle : {user.get('role', 'N/A').upper()}")
+        
+        if st.button("🚪 Déconnexion", use_container_width=True):
+            # Clear session
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.rerun()
+    
     # Header
     st.title("🎯 LVMH Client Analytics")
     st.markdown("**Architecture Hybride:** Python (tags) + IA (insights) + Dashboard Looker")
@@ -369,8 +978,12 @@ def main():
                             source_date = parse_date_value(row.get(date_col)) if date_col else pd.NaT
                             safe_text = sanitize_display_text(raw_text)
                             
-                            # Extraction 100% Python
+                            # Extraction 100% Python (base)
                             tags = extract_all_tags(raw_text)
+                            
+                            # Enrichissement avec taxonomie avancée (30 catégories)
+                            if ADVANCED_MODE:
+                                tags = extract_advanced_tags(raw_text, tags)
                             
                             # Structure de résultat préliminaire (sans IA)
                             scan_results.append({
@@ -390,7 +1003,8 @@ def main():
                             progress_bar.progress((idx + 1) / max_clients)
                         
                         progress_bar.empty()
-                        st.success(f"✅ {max_clients} clients scannés en < 1 seconde !")
+                        mode_label = "Taxonomie Complète (30 catégories)" if ADVANCED_MODE else "Tags de Base"
+                        st.success(f"✅ {max_clients} clients scannés ! Mode: {mode_label}")
                         
                         # Sauvegarde Session
                         st.session_state["results"] = scan_results
@@ -479,21 +1093,36 @@ def main():
             
             results = st.session_state["results"]
             
-            # Vue tabulaire enrichie
+            # Vue tabulaire enrichie (30 catégories)
             tags_data = []
             for r in results:
                 t = r.get("tags_extracted", {})
-                tags_data.append({
+                row = {
                     "ID": r["client_id"],
-                    "Ville": t.get("ville"),
-                    "Âge": t.get("age"),
-                    "Budget": t.get("budget"),
-                    "Urgence": f"{t.get('urgence_score')}/5",
+                    "Genre": t.get("genre", ""),
+                    "Âge": t.get("age", ""),
+                    "Ville": t.get("ville", ""),
+                    "Budget": t.get("budget", ""),
+                    "Urgence": f"{t.get('urgence_score', 1)}/5",
                     "Motif": ", ".join(t.get("motif_achat", [])),
                     "Style": ", ".join(t.get("style", [])),
                     "Famille": ", ".join(t.get("famille", [])),
-                    "Centres d'intérêt": ", ".join(t.get("centres_interet", []))
-                })
+                    "Profession": ", ".join(t.get("profession", [])),
+                }
+                # Ajouter champs avancés si disponibles
+                if ADVANCED_MODE:
+                    row.update({
+                        "Langue": ", ".join(t.get("langue", [])),
+                        "Marques": ", ".join(t.get("marques_preferees", [])),
+                        "Pièces": ", ".join(t.get("pieces_favorites", [])),
+                        "Sport": ", ".join(t.get("sport", [])),
+                        "Musique": ", ".join(t.get("musique", [])),
+                        "Couleurs": ", ".join(t.get("couleurs", [])),
+                        "Matières": ", ".join(t.get("matieres", [])),
+                        "Timing": t.get("timing", ""),
+                        "Canaux": ", ".join(t.get("canaux_contact", [])),
+                    })
+                tags_data.append(row)
             
             st.dataframe(pd.DataFrame(tags_data), use_container_width=True)
 
@@ -586,7 +1215,7 @@ def main():
                 
                 st.markdown("---")
                 
-                # Graphiques principaux
+                # Graphiques principaux - Ligne 1
                 c1, c2 = st.columns(2)
                 
                 with c1:
@@ -601,7 +1230,6 @@ def main():
                     st.plotly_chart(fig, use_container_width=True)
                     
                 with c2:
-                    # Segments : Vient de l'IA. Si pas IA, on affiche une répartition par ville ou autre tag Python
                     if ai_done:
                         st.subheader("Segments Clients (IA)")
                         segments = {}
@@ -610,7 +1238,7 @@ def main():
                             segments[s] = segments.get(s, 0) + 1
                         fig = px.pie(names=list(segments.keys()), values=list(segments.values()), hole=0.4)
                     else:
-                        st.subheader("Répartition Villes (Python)")
+                        st.subheader("Répartition Villes")
                         cities = {}
                         for r in filtered_results:
                             c = r.get("tags_extracted", {}).get("ville") or "Non détectée"
@@ -619,8 +1247,73 @@ def main():
                         
                     st.plotly_chart(fig, use_container_width=True)
 
+                # Graphiques avancés - Ligne 2 (nouvelles catégories)
+                if ADVANCED_MODE:
+                    st.markdown("---")
+                    st.subheader("📊 Analyses Avancées (Taxonomie Complète)")
+                    
+                    c3, c4 = st.columns(2)
+                    
+                    with c3:
+                        st.markdown("**👤 Répartition Genre**")
+                        genre_counts = {}
+                        for r in filtered_results:
+                            g = r.get("tags_extracted", {}).get("genre") or "Non détecté"
+                            genre_counts[g] = genre_counts.get(g, 0) + 1
+                        if genre_counts:
+                            fig = px.pie(names=list(genre_counts.keys()), values=list(genre_counts.values()), hole=0.4,
+                                        color_discrete_sequence=['#FF6B6B', '#4ECDC4', '#95E1D3'])
+                            st.plotly_chart(fig, use_container_width=True)
+                    
+                    with c4:
+                        st.markdown("**🏷️ Marques LVMH Préférées**")
+                        marques_counts = {}
+                        for r in filtered_results:
+                            for m in r.get("tags_extracted", {}).get("marques_preferees", []):
+                                marques_counts[m] = marques_counts.get(m, 0) + 1
+                        if marques_counts:
+                            sorted_m = sorted(marques_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+                            fig = px.bar(x=[m[0] for m in sorted_m], y=[m[1] for m in sorted_m],
+                                        labels={'x': 'Marque', 'y': 'Mentions'},
+                                        color_discrete_sequence=['#C9A96E'])
+                            st.plotly_chart(fig, use_container_width=True)
+                        else:
+                            st.info("Aucune marque LVMH détectée.")
+                    
+                    c5, c6 = st.columns(2)
+                    
+                    with c5:
+                        st.markdown("**🎾 Sports / Activités**")
+                        sport_counts = {}
+                        for r in filtered_results:
+                            for s in r.get("tags_extracted", {}).get("sport", []):
+                                sport_counts[s] = sport_counts.get(s, 0) + 1
+                        if sport_counts:
+                            sorted_s = sorted(sport_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+                            fig = px.bar(x=[s[0] for s in sorted_s], y=[s[1] for s in sorted_s],
+                                        labels={'x': 'Sport', 'y': 'Clients'},
+                                        color_discrete_sequence=['#2ECC71'])
+                            st.plotly_chart(fig, use_container_width=True)
+                        else:
+                            st.info("Aucun sport détecté.")
+                    
+                    with c6:
+                        st.markdown("**👜 Pièces Favorites**")
+                        pieces_counts = {}
+                        for r in filtered_results:
+                            for p in r.get("tags_extracted", {}).get("pieces_favorites", []):
+                                pieces_counts[p] = pieces_counts.get(p, 0) + 1
+                        if pieces_counts:
+                            sorted_p = sorted(pieces_counts.items(), key=lambda x: x[1], reverse=True)[:10]
+                            fig = px.bar(x=[p[0] for p in sorted_p], y=[p[1] for p in sorted_p],
+                                        labels={'x': 'Pièce', 'y': 'Mentions'},
+                                        color_discrete_sequence=['#9B59B6'])
+                            st.plotly_chart(fig, use_container_width=True)
+                        else:
+                            st.info("Aucune pièce détectée.")
+
                 st.markdown("---")
-                st.subheader("Analyse Temporelle")
+                st.subheader("📈 Analyse Temporelle")
                 date_series = pd.to_datetime(
                     [r.get("source_date") for r in filtered_results],
                     errors="coerce"
