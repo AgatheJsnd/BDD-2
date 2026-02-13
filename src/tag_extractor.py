@@ -229,29 +229,31 @@ def _keyword_in_text(text: str, keyword: str) -> bool:
 
 def extract_genre_precise(text: str) -> List[str]:
     """
-    Détection genre contextuelle pour éviter les erreurs de type:
-    'acheter un sac à sa femme' -> ne doit pas impliquer Femme.
+    Détection genre STRICTE (uniquement auto-déclaration explicite du client).
+    Exemple: "acheter un sac à sa femme" NE doit PAS impliquer "Femme".
     """
     if not text:
         return []
 
     t = text.lower()
-    male_score = 0
-    female_score = 0
+    # On ne garde que les formulations en "je/moi" pour éviter les faux positifs contextuels.
+    male_patterns = [
+        r"\bje\s+suis\s+un\s+homme\b",
+        r"\bje\s+suis\s+monsieur\b",
+        r"\bje\s+suis\s+mr\b",
+        r"\bmoi[, ]+\s*je\s+suis\s+un\s+homme\b",
+    ]
+    female_patterns = [
+        r"\bje\s+suis\s+une\s+femme\b",
+        r"\bje\s+suis\s+madame\b",
+        r"\bje\s+suis\s+mme\b",
+        r"\bje\s+suis\s+mademoiselle\b",
+        r"\bmoi[, ]+\s*je\s+suis\s+une\s+femme\b",
+    ]
 
-    # Indices forts explicites
-    if re.search(r"\b(je suis un homme|monsieur|mr|mister)\b", t):
-        male_score += 3
-    if re.search(r"\b(je suis une femme|madame|mme|mademoiselle|mlle|mrs|miss)\b", t):
-        female_score += 3
-
-    # Pronoms du sujet (pondération faible)
-    male_score += len(re.findall(r"\bil\b", t))
-    female_score += len(re.findall(r"\belle\b", t))
-
-    if male_score > female_score and male_score > 0:
+    if any(re.search(p, t) for p in male_patterns):
         return ["Homme"]
-    if female_score > male_score and female_score > 0:
+    if any(re.search(p, t) for p in female_patterns):
         return ["Femme"]
     return []
 
@@ -359,20 +361,15 @@ def extract_age_turbo(text: str) -> Optional[str]:
             if val <= 55: return "46-55"
             return "56+"
 
-    # Mots clés tranches d'âge
-    if any(x in text_lower for x in ["vingtaine", "twenties", "etudiant"]): return "18-25"
-    if any(x in text_lower for x in ["trentaine", "thirties"]): return "26-35"
-    if any(x in text_lower for x in ["quarantaine", "forties"]): return "36-45"
-    if any(x in text_lower for x in ["cinquantaine", "fifties"]): return "46-55"
-    if any(x in text_lower for x in ["soixantaine", "sixties", "retraité"]): return "56+"
-    
+    # IMPORTANT: pas d'inférence implicite (ex: "étudiant" => tranche d'âge).
+    # On n'affiche l'âge que s'il est explicitement mentionné.
     return None
 
 def extract_budget_turbo(text: str) -> Optional[str]:
     """Extraction budget normalisée"""
     if not text: return None
     text_lower = text.lower()
-    
+
     # 1. Détection "Illimité"
     if any(x in text_lower for x in ["illimité", "no limit", "flexible", "pas de budget", "gros budget"]):
         return "25k+"
@@ -413,28 +410,30 @@ def extract_budget_turbo(text: str) -> Optional[str]:
     if amount < 25000: return "15-25k"
     return "25k+"
 
-def extract_urgency_turbo(text: str) -> int:
-    """Score d'urgence 1-5 basé sur mots-clés pondérés"""
-    score = 1
+def extract_urgency_turbo(text: str) -> Optional[int]:
+    """Score d'urgence 1-5 UNIQUEMENT si urgence explicitement mentionnée."""
+    if not text:
+        return None
     text_lower = text.lower()
-    
-    # Niveau 5 (Critical)
-    if any(x in text_lower for x in ["urgent", "demain", "cette semaine", "tout de suite", "immédiat", "asap", "broken", "cassé", "perdu"]):
+
+    # Mention explicite de non-urgence: on n'affiche pas d'urgence.
+    if any(x in text_lower for x in ["pas urgent", "aucune urgence", "sans urgence", "quand vous voulez", "plus tard"]):
+        return None
+
+    # Niveau 5 (très urgent explicite)
+    if any(x in text_lower for x in ["urgent", "urgence", "tout de suite", "immédiat", "immediat", "asap", "au plus vite"]):
         return 5
-        
-    # Niveau 4 (High)
-    if any(x in text_lower for x in ["mariage", "anniversaire", "mois prochain", "avant le", "besoin de", "faut que"]):
-        score = max(score, 4)
-        
-    # Niveau 3 (Medium)
-    if any(x in text_lower for x in ["cherche", "voudrais", "j'aime", "intéressé", "combien", "stock"]):
-        score = max(score, 3)
-        
-    # Niveau 2 (Low - Exploration)
-    if any(x in text_lower for x in ["regarde", "infos", "question", "peut-être", "hésite"]):
-        score = max(score, 2)
-        
-    return score
+
+    # Niveau 4 (contrainte temporelle explicite)
+    if any(x in text_lower for x in ["demain", "aujourd'hui", "ce soir", "cette semaine", "avant le", "d'ici", "pour ce week-end", "pour weekend"]):
+        return 4
+
+    # Niveau 3 (urgence modérée explicitée)
+    if any(x in text_lower for x in ["rapidement", "vite", "dans les prochains jours", "mois prochain"]):
+        return 3
+
+    # Sinon: aucune urgence explicite détectée.
+    return None
 
 def extract_motif_precise(text: str) -> List[str]:
     """
@@ -572,17 +571,19 @@ def extract_tailles_precise(text: str) -> List[str]:
     if re.search(r"\b(large|taille l| l )\b", f" {t} "):
         out.append("L")
 
-    # Pointures chiffrées directes
-    for p in re.findall(r"\b(3[5-9]|4[0-6])\b", t):
-        val = int(p)
-        if 35 <= val <= 37 and "35_37" not in out:
-            out.append("35_37")
-        elif 38 <= val <= 40 and "38_40" not in out:
-            out.append("38_40")
-        elif 41 <= val <= 43 and "41_43" not in out:
-            out.append("41_43")
-        elif 44 <= val <= 46 and "44_46" not in out:
-            out.append("44_46")
+    # Pointures chiffrées directes UNIQUEMENT en contexte taille/chaussure
+    size_context_spans = re.findall(r"(?:taille|pointure|chausse|chaussure)s?\s*(?:du|de|:)?\s*([^.!?\n]{0,80})", t)
+    for span in size_context_spans:
+        for p in re.findall(r"\b(3[5-9]|4[0-6])\b", span):
+            val = int(p)
+            if 35 <= val <= 37 and "35_37" not in out:
+                out.append("35_37")
+            elif 38 <= val <= 40 and "38_40" not in out:
+                out.append("38_40")
+            elif 41 <= val <= 43 and "41_43" not in out:
+                out.append("41_43")
+            elif 44 <= val <= 46 and "44_46" not in out:
+                out.append("44_46")
 
     # Pointures en lettres (ex: "pointure trente-cinq trente-sept")
     number_words = {
@@ -655,12 +656,94 @@ def _extract_piece_by_context(text: str, context_patterns: List[str]) -> List[st
 
     return list(dict.fromkeys(found))
 
+def extract_sensibilite_mode_precise(text: str) -> List[str]:
+    """
+    Sensibilité mode stricte:
+    - évite de classer "classique" musical/culturel comme style vestimentaire.
+    """
+    if not text:
+        return []
+
+    t = text.lower()
+    out = []
+    # Termes de contexte mode/look/vestimentaire autour du mot-clé
+    context = r"(style|look|mode|vestimentaire|tenue|porter|habill[eé]|garde-robe|silhouette)"
+
+    for category, keywords in SENSIBILITE_MODE.items():
+        matched = False
+        for kw in keywords:
+            kw_clean = kw.strip().lower()
+            if len(kw_clean) <= 2 or _is_ambiguous_keyword(kw_clean):
+                continue
+            p1 = rf"{context}.{{0,35}}(?<!\w){re.escape(kw_clean)}(?!\w)"
+            p2 = rf"(?<!\w){re.escape(kw_clean)}(?!\w).{{0,35}}{context}"
+            if re.search(p1, t) or re.search(p2, t):
+                matched = True
+                break
+        if matched:
+            out.append(category)
+    return out
+
+def extract_canaux_contact_precis(text: str) -> List[str]:
+    """
+    Canaux de contact stricts:
+    - garde seulement les préférences de canal explicites
+    - évite le faux positif "numéro de téléphone"
+    """
+    if not text:
+        return []
+
+    t = text.lower()
+    out = []
+
+    # Exclusions explicites (donnée RGPD ou mention descriptive sans préférence)
+    if re.search(r"\bnum[ée]ro\s+de\s+t[ée]l[ée]phone\b", t):
+        t = re.sub(r"\bnum[ée]ro\s+de\s+t[ée]l[ée]phone\b", " ", t)
+
+    channel_patterns = {
+        "Email": [
+            r"\bpar\s+(mail|email|e-mail|courriel)\b",
+            r"\b(contact|joindre|recontacter).{0,25}(mail|email|e-mail|courriel)\b",
+            r"\bcanaux?\s+de\s+contact.{0,25}(mail|email|e-mail|courriel)\b",
+        ],
+        "Telephone": [
+            r"\bpar\s+t[ée]l[ée]phone\b",
+            r"\b(appel(?:er)?|m[' ]?appeler|joindre).{0,25}(t[ée]l[ée]phone)\b",
+            r"\bcanaux?\s+de\s+contact.{0,25}(t[ée]l[ée]phone)\b",
+        ],
+        "SMS": [
+            r"\bpar\s+sms\b",
+            r"\b(texto|sms)\b",
+            r"\bcanaux?\s+de\s+contact.{0,25}sms\b",
+        ],
+        "WhatsApp": [
+            r"\b(par\s+)?whats\s?app\b",
+            r"\bcanaux?\s+de\s+contact.{0,25}whats\s?app\b",
+        ],
+        "Reseaux_sociaux": [
+            r"\b(par|via)\s+(instagram|facebook|linkedin|r[ée]seaux?\s+sociaux)\b",
+            r"\b(dm|message priv[ée])\b",
+        ],
+        "Site_web": [
+            r"\b(par|via)\s+(site web|website|internet|en ligne)\b",
+            r"\bformulaire\s+en\s+ligne\b",
+        ],
+    }
+
+    for channel, patterns in channel_patterns.items():
+        if any(re.search(p, t) for p in patterns):
+            out.append(channel)
+
+    return list(dict.fromkeys(out))
+
 def extract_pieces_favorites_precise(text: str) -> List[str]:
     """Pièces favorites = préférences (pas achat ponctuel)."""
     favorite_context = [
         r"\bj[' ]?aime\b", r"\bil aime\b", r"\belle aime\b",
         r"\bj[' ]?adore\b", r"\bil adore\b", r"\belle adore\b",
         r"\bpr[eé]f[eè]re\b", r"\bpr[eé]f[eè]rent\b",
+        r"\bpr[eé]f[eé]r[ée]e?s?\b", r"\bfavori(?:te)?s?\b",
+        r"\bpi[eè]ce[s]?\s+(?:pr[eé]f[eé]r[ée]e?s?|favori(?:te)?s?)\b",
         r"\bfan de\b", r"\bporte\b", r"\bstyle\b", r"\bprivil[eé]gie\b"
     ]
     if not text:
@@ -840,8 +923,8 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
         "pieces_recherchees": pieces_recherchees_precise,
         "couleurs": scan_text_for_keywords_advanced(cleaned_text, COULEURS_ADVANCED),
         "matieres": matieres_detectees,
-        "sensibilite_mode": scan_text_for_keywords_advanced(cleaned_text, SENSIBILITE_MODE),
-        "tailles": tailles_precises if tailles_precises else scan_text_for_keywords_advanced(cleaned_text, TAILLES_MAPPING),
+        "sensibilite_mode": extract_sensibilite_mode_precise(cleaned_text),
+        "tailles": tailles_precises,
         "style": scan_text_for_keywords(cleaned_text, STYLE_MAPPING),
 
         # Achat
@@ -858,7 +941,7 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
         # CRM
         "actions_crm": scan_text_for_keywords_advanced(cleaned_text, ACTIONS_MAPPING),
         "echeances": scan_text_for_keywords_advanced(cleaned_text, ECHEANCES_MAPPING),
-        "canaux_contact": scan_text_for_keywords_advanced(cleaned_text, CANAUX_MAPPING),
+        "canaux_contact": extract_canaux_contact_precis(cleaned_text),
     })
 
     return result

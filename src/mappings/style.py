@@ -50,7 +50,7 @@ PIECES_MAPPING = {
     "Lunettes": ["lunettes", "glasses", "sunglasses", "lunettes de soleil"],
     "Bijoux": ["bijoux", "jewelry", "jewellery", "bague", "collier", "bracelet", "boucles d'oreilles"],
     "Gants": ["gants", "gloves"],
-    "Montres": ["montre", "watch", "timepiece"]
+    "Montres": ["montre", "montres", "watch", "watches", "timepiece"]
 }
 
 # ============================================================================

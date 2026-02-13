@@ -7,7 +7,7 @@ import io
 import tempfile
 import re
 from datetime import datetime
-from typing import Optional, Dict
+from typing import Optional, Dict, List
 from deepgram import DeepgramClient
 from mistralai import Mistral
 from src.tag_extractor import extract_all_tags
@@ -44,17 +44,18 @@ class VoiceTranscriber:
             self.mistral_client = None
 
     def _parse_french_number_words(self, raw: str) -> Optional[int]:
-        """Convertit des nombres FR simples en entier (utile pour les âges)."""
+        """Convertit des nombres FR simples en entier (utile pour âges/budget)."""
         if not raw:
             return None
 
         text = raw.lower().strip()
-        text = text.replace("'", " ")
+        text = text.replace("’", "'").replace("'", " ")
         text = text.replace("quatre-vingts", "quatre-vingt")
         text = text.replace("quatre vingt", "quatre-vingt")
         text = text.replace("soixante dix", "soixante-dix")
         text = text.replace("quatre-vingt dix", "quatre-vingt-dix")
         text = text.replace("-", " ")
+        compact = " ".join(text.split())
 
         units = {
             "zero": 0, "zéro": 0, "un": 1, "une": 1, "deux": 2, "trois": 3,
@@ -68,50 +69,78 @@ class VoiceTranscriber:
             "vingt": 20, "trente": 30, "quarante": 40, "cinquante": 50,
             "soixante": 60, "soixante dix": 70, "quatre vingt": 80, "quatre vingt dix": 90,
         }
+        allowed = set(units) | set(teens) | set(tens) | {"cent", "cents", "mille", "et", "de", "d"}
 
-        # Cas directs composés avant tokenisation simple
-        compact = " ".join(text.split())
         if compact in teens:
             return teens[compact]
         if compact in tens:
             return tens[compact]
 
-        tokens = [t for t in compact.split() if t not in {"et", "de", "d"}]
+        def _parse_tokens(tokens: List[str]) -> Optional[int]:
+            if not tokens:
+                return None
+            total = 0
+            current = 0
+            idx = 0
+            while idx < len(tokens):
+                tok = tokens[idx]
+                nxt = tokens[idx + 1] if idx + 1 < len(tokens) else ""
+                pair = f"{tok} {nxt}".strip()
+
+                if pair in teens:
+                    current += teens[pair]
+                    idx += 2
+                    continue
+                if pair in tens:
+                    current += tens[pair]
+                    idx += 2
+                    continue
+                if tok in teens:
+                    current += teens[tok]
+                    idx += 1
+                    continue
+                if tok in tens:
+                    current += tens[tok]
+                    idx += 1
+                    continue
+                if tok in units:
+                    current += units[tok]
+                    idx += 1
+                    continue
+                if tok in {"cent", "cents"}:
+                    current = max(1, current) * 100
+                    idx += 1
+                    continue
+                if tok == "mille":
+                    total += max(1, current) * 1000
+                    current = 0
+                    idx += 1
+                    continue
+                return None
+            return total + current
+
+        tokens = [t for t in compact.split() if t]
         if not tokens:
             return None
 
-        total = 0
-        current = 0
-        idx = 0
-        while idx < len(tokens):
-            tok = tokens[idx]
-            nxt = tokens[idx + 1] if idx + 1 < len(tokens) else ""
-            pair = f"{tok} {nxt}".strip()
+        # 1) parsing direct si tout est numérique-linguistique
+        if all(t in allowed for t in tokens):
+            parsed = _parse_tokens([t for t in tokens if t not in {"et", "de", "d"}])
+            if parsed is not None:
+                return parsed
 
-            if pair in teens:
-                current += teens[pair]
-                idx += 2
+        # 2) fallback: prend le suffixe numérique le plus long (ex: "à moins de cent mille")
+        for start in range(len(tokens)):
+            candidate = tokens[start:]
+            if not candidate:
                 continue
-            if pair in tens:
-                current += tens[pair]
-                idx += 2
+            if not all(t in allowed for t in candidate):
                 continue
-            if tok in units:
-                current += units[tok]
-                idx += 1
-                continue
-            if tok in {"cent", "cents"}:
-                current = max(1, current) * 100
-                idx += 1
-                continue
-            if tok == "mille":
-                total += max(1, current) * 1000
-                current = 0
-                idx += 1
-                continue
-            return None
+            parsed = _parse_tokens([t for t in candidate if t not in {"et", "de", "d"}])
+            if parsed is not None:
+                return parsed
 
-        return total + current
+        return None
 
     def _normalize_age_to_digits(self, text: str) -> str:
         """Convertit les âges en lettres vers chiffres (ex: quarante cinq ans -> 45 ans)."""
@@ -131,6 +160,145 @@ class VoiceTranscriber:
             return f"{value} ans"
 
         return pattern.sub(repl, text)
+
+    def _normalize_common_numbers_to_digits(self, text: str) -> str:
+        """
+        Convertit les nombres en lettres les plus courants en chiffres
+        lorsqu'ils précèdent un nom mesurable (enfants, euros, jours, etc.).
+        """
+        if not text:
+            return text
+
+        units = [
+            "ans?", "enfants?", "euros?", "dollars?", "fois", "mois", "jours?",
+            "semaines?", "minutes?", "heures?", "personnes?", "articles?",
+            "pi[eè]ces?", "tailles?"
+        ]
+        unit_pattern = "|".join(units)
+        number_token = (
+            r"(?:z[eé]ro|un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|"
+            r"quatorze|quinze|seize|vingt|trente|quarante|cinquante|soixante|cent|cents|mille|et|de|d)"
+        )
+        number_words_pattern = re.compile(
+            rf"\b((?:{number_token})(?:[ '-]+(?:{number_token})){{0,8}})\s+({unit_pattern})\b",
+            flags=re.IGNORECASE,
+        )
+
+        def repl(match):
+            raw_words = " ".join(match.group(1).strip().split())
+            unit = match.group(2)
+            value = self._parse_french_number_words(raw_words)
+            if value is None:
+                return match.group(0)
+            keep_de = re.match(r"^\s*de\b", raw_words, flags=re.IGNORECASE) is not None
+            return f"{'de ' if keep_de else ''}{value} {unit}"
+
+        return number_words_pattern.sub(repl, text)
+
+    def _remove_consecutive_duplicates(self, text: str) -> str:
+        """Supprime les répétitions immédiates de mots/groupes de mots."""
+        if not text:
+            return text
+        cleaned = text
+        # mot répété: "je je veux"
+        cleaned = re.sub(r"\b(\w+)(\s+\1\b)+", r"\1", cleaned, flags=re.IGNORECASE)
+        # groupe de 2 mots répété: "je veux je veux"
+        cleaned = re.sub(r"\b(\w+\s+\w+)(\s+\1\b)+", r"\1", cleaned, flags=re.IGNORECASE)
+        # groupe répété avec ponctuation: "client fidèle, client fidèle"
+        cleaned = re.sub(
+            r"\b([A-Za-zÀ-ÖØ-öø-ÿ' -]{3,80}?)\b\s*[,;:]\s*\1\b",
+            r"\1",
+            cleaned,
+            flags=re.IGNORECASE,
+        )
+        cleaned = re.sub(r"\s{2,}", " ", cleaned).strip()
+        return cleaned
+
+    def _remove_filler_words(self, text: str) -> str:
+        """Retire les mots parasites fréquents restant après nettoyage IA."""
+        if not text:
+            return text
+        cleaned = text
+        filler_pattern = re.compile(
+            r"\b(?:euh+|heu+|hum+|voil[aà]|du coup|en fait|genre|tu vois|bah|ben)\b",
+            flags=re.IGNORECASE,
+        )
+        cleaned = filler_pattern.sub(" ", cleaned)
+        cleaned = re.sub(r"\s{2,}", " ", cleaned).strip()
+        return cleaned
+
+    def _normalize_spacing_and_punctuation(self, text: str) -> str:
+        """Nettoie les espaces et la ponctuation pour un rendu lisible."""
+        if not text:
+            return text
+        cleaned = text
+        # Corrige les collages lettres/chiffres (ex: "appelle45")
+        cleaned = re.sub(r"([A-Za-zÀ-ÖØ-öø-ÿ])(\d)", r"\1 \2", cleaned)
+        cleaned = re.sub(r"(\d)([A-Za-zÀ-ÖØ-öø-ÿ])", r"\1 \2", cleaned)
+        # Corrige les espaces avant/après ponctuation
+        cleaned = re.sub(r"\s+([,;:.!?])", r"\1", cleaned)
+        cleaned = re.sub(r"([,;:.!?])(?!\s|$)", r"\1 ", cleaned)
+        cleaned = re.sub(r"\s{2,}", " ", cleaned).strip()
+        return cleaned
+
+    def _fix_common_transcription_errors(self, text: str) -> str:
+        """Corrige des formulations incohérentes fréquentes."""
+        if not text:
+            return text
+        cleaned = text
+        # "s'appelle 45 ans" -> "a 45 ans"
+        cleaned = re.sub(
+            r"\bs['’]?\s*appelle\s+(\d{1,2})\s+ans\b",
+            r"a \1 ans",
+            cleaned,
+            flags=re.IGNORECASE,
+        )
+        # "le client s'appelle 45 ans" -> "le client a 45 ans"
+        cleaned = re.sub(
+            r"\b(le|la)\s+client(?:e)?\s+s['’]?\s*appelle\s+(\d{1,2})\s+ans\b",
+            r"\1 client a \2 ans",
+            cleaned,
+            flags=re.IGNORECASE,
+        )
+        return cleaned
+
+    def _dedupe_consecutive_sentences(self, text: str) -> str:
+        """Supprime les phrases strictement répétées à la suite."""
+        if not text:
+            return text
+        sentences = re.split(r"(?<=[.!?])\s+", text.strip())
+        kept = []
+        prev_key = None
+        for s in sentences:
+            normalized = re.sub(r"[^\wÀ-ÖØ-öø-ÿ]+", " ", s.lower()).strip()
+            if not normalized:
+                continue
+            if normalized == prev_key:
+                continue
+            kept.append(s.strip())
+            prev_key = normalized
+        return " ".join(kept).strip()
+
+    def _finalize_cleaned_text(self, text: str) -> str:
+        """Post-traitement final pour garantir un texte fluide et propre."""
+        if not text:
+            return ""
+        cleaned = text.strip()
+        cleaned = self._remove_filler_words(cleaned)
+        cleaned = self._normalize_age_to_digits(cleaned)
+        cleaned = self._normalize_common_numbers_to_digits(cleaned)
+        cleaned = self._anonymize_rgpd(cleaned)
+        cleaned = self._remove_consecutive_duplicates(cleaned)
+        cleaned = self._normalize_spacing_and_punctuation(cleaned)
+        cleaned = self._fix_common_transcription_errors(cleaned)
+        cleaned = self._dedupe_consecutive_sentences(cleaned)
+        cleaned = self._normalize_spacing_and_punctuation(cleaned)
+
+        if cleaned and cleaned[-1] not in ".!?":
+            cleaned = f"{cleaned}."
+        if cleaned:
+            cleaned = cleaned[0].upper() + cleaned[1:]
+        return cleaned
 
     def _anonymize_rgpd(self, text: str) -> str:
         """Applique un masquage RGPD strict côté code (défense en profondeur)."""
@@ -360,9 +528,7 @@ TEXTE NETTOYÉ ET ANONYMISÉ :"""
                 max_tokens=2000
             )
             
-            cleaned = response.choices[0].message.content.strip()
-            cleaned = self._normalize_age_to_digits(cleaned)
-            cleaned = self._anonymize_rgpd(cleaned)
+            cleaned = self._finalize_cleaned_text(response.choices[0].message.content.strip())
             
             return {
                 "success": True,
@@ -372,8 +538,7 @@ TEXTE NETTOYÉ ET ANONYMISÉ :"""
             }
             
         except Exception as e:
-            fallback = self._normalize_age_to_digits(raw_text)
-            fallback = self._anonymize_rgpd(fallback)
+            fallback = self._finalize_cleaned_text(raw_text)
             return {
                 "success": False,
                 "cleaned_text": fallback,
@@ -418,8 +583,7 @@ TEXTE NETTOYÉ ET ANONYMISÉ :"""
             cleaning_result = self.clean_transcription(raw_text)
             cleaned = cleaning_result["cleaned_text"]
         else:
-            cleaned = self._normalize_age_to_digits(raw_text)
-            cleaned = self._anonymize_rgpd(cleaned)
+            cleaned = self._finalize_cleaned_text(raw_text)
         
         tags = extract_all_tags(cleaned)
         # Sécurité supplémentaire: si l'âge n'est pas trouvé après nettoyage,
@@ -494,7 +658,7 @@ def _save_to_csv(transcription_data: Dict):
         "transcription": transcription_data.get("text", ""),
         "texte_nettoye": transcription_data.get("cleaned_text", ""),
         "confiance": transcription_data.get("confidence", 0),
-        "urgence": tags.get("urgence_score", 1),
+        "urgence": tags.get("urgence_score") if tags.get("urgence_score") is not None else "",
         "ville": tags.get("ville", ""),
         "budget": tags.get("budget", ""),
         "styles": ", ".join(tags.get("style", [])),

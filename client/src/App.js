@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -14,9 +14,8 @@ import {
   Loader2,
   Search,
   Calendar,
-  CheckCircle2,
-  AlertCircle,
   Clock3,
+  Trash2,
   Eye,
   EyeOff
 } from 'lucide-react';
@@ -99,6 +98,24 @@ const styles = {
   }
 };
 
+const VENDEUR_HISTORY_STORAGE_KEY = 'lvmh_vendeur_history_v1';
+
+const loadPersistedVendeurHistory = () => {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = window.localStorage.getItem(VENDEUR_HISTORY_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.map((item) => ({
+      ...item,
+      recordedAt: item?.recordedAt ? new Date(item.recordedAt) : new Date()
+    }));
+  } catch (e) {
+    return [];
+  }
+};
+
 function App() {
   const [auth, setAuth] = useState({ isAuthenticated: false, user: null });
   const [activeTab, setActiveTab] = useState('data');
@@ -107,6 +124,74 @@ function App() {
   const [showHelp, setShowHelp] = useState(false);
   const [sidebarHovered, setSidebarHovered] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [historyItems, setHistoryItems] = useState(() => loadPersistedVendeurHistory());
+
+  useEffect(() => {
+    try {
+      const serializableHistory = historyItems.map((item) => ({
+        ...item,
+        recordedAt: item?.recordedAt instanceof Date ? item.recordedAt.toISOString() : item?.recordedAt
+      }));
+      window.localStorage.setItem(VENDEUR_HISTORY_STORAGE_KEY, JSON.stringify(serializableHistory));
+    } catch (e) {
+      // Ignore storage errors (private mode, quota, etc.)
+    }
+  }, [historyItems]);
+
+  const extractClientName = (text) => {
+    if (!text || typeof text !== 'string') return null;
+    const patterns = [
+      /(?:s[' ]appelle|s'appelle)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+(?:\s+[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+){0,2})/i,
+      /(?:client(?:e)?\s*:\s*)([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+(?:\s+[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+){0,2})/i
+    ];
+    for (const p of patterns) {
+      const m = text.match(p);
+      if (m && m[1]) return m[1].trim();
+    }
+    return null;
+  };
+
+  const hasMeaningfulTags = (tags) => {
+    if (!tags || typeof tags !== 'object') return false;
+    const ignore = new Set(['cleaned_text', 'centres_interet', 'timing']);
+    return Object.entries(tags).some(([key, value]) => {
+      if (ignore.has(key)) return false;
+      if (Array.isArray(value)) return value.length > 0;
+      return value !== null && value !== undefined && String(value).trim() !== '';
+    });
+  };
+
+  const addToHistoryFromTranscription = (payload) => {
+    if (!payload || !payload.success) return;
+    const tags = payload.tags_extracted || {};
+    if (!hasMeaningfulTags(tags)) return;
+
+    const clientName =
+      extractClientName(payload.cleaned_text) ||
+      extractClientName(payload.transcription) ||
+      'Client anonyme';
+
+    const meaningfulTagCount = Object.entries(tags).filter(([key, value]) => {
+      if (key === 'cleaned_text' || key === 'centres_interet' || key === 'timing') return false;
+      if (Array.isArray(value)) return value.length > 0;
+      return value !== null && value !== undefined && String(value).trim() !== '';
+    }).length;
+
+    const item = {
+      id: `H-${Date.now()}`,
+      client: clientName,
+      recordedAt: payload.timestamp ? new Date(payload.timestamp) : new Date(),
+      confidence: Number.isFinite(Number(payload.confidence)) ? Math.round(Number(payload.confidence) * 100) : 0,
+      tags: meaningfulTagCount,
+      summary: payload.cleaned_text || payload.transcription || 'Transcription disponible'
+    };
+
+    setHistoryItems((prev) => [item, ...prev]);
+  };
+
+  const deleteHistoryItem = (itemId) => {
+    setHistoryItems((prev) => prev.filter((item) => item.id !== itemId));
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -394,8 +479,8 @@ function App() {
             {activeTab === 'global' && <PlaceholderTab title="Vue Globale" />}
             {activeTab === 'ai' && <PlaceholderTab title="Analyse IA" />}
             {activeTab === 'builder' && <PlaceholderTab title="Studio Builder" />}
-            {activeTab === 'voice' && <VoiceTab />}
-            {activeTab === 'history' && <HistoryTab />}
+            {activeTab === 'voice' && <VoiceTab onAddHistoryItem={addToHistoryFromTranscription} />}
+            {activeTab === 'history' && <HistoryTab history={historyItems} onDeleteHistoryItem={deleteHistoryItem} />}
             {activeTab === 'database' && <DatabaseTab />}
           </motion.div>
         </AnimatePresence>
@@ -482,7 +567,7 @@ function DataTab() {
   );
 }
 
-function VoiceTab() {
+function VoiceTab({ onAddHistoryItem }) {
   const [isRecording, setIsRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const [transcription, setTranscription] = useState(null);
@@ -522,6 +607,7 @@ function VoiceTab() {
     try {
       const response = await axios.post('http://localhost:5001/api/transcribe', data);
       setTranscription(response.data);
+      if (onAddHistoryItem) onAddHistoryItem(response.data);
     } catch (err) {
       console.error(err);
       alert('Erreur lors de la transcription.');
@@ -638,7 +724,7 @@ function VoiceTab() {
     <div>
       <div style={{ marginBottom: '40px' }}>
         <h1 style={{ fontSize: '32px', fontWeight: 800, margin: '0 0 8px 0', letterSpacing: '-1px' }}>Enregistrement Client</h1>
-        <p style={{ color: '#666', fontSize: '16px' }}>Capturez les interactions clients et laissez l'IA extraire les données.</p>
+        <p style={{ color: '#666', fontSize: '16px' }}>Capturez les échanges clients et laissez l’IA en extraire les données.</p>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '30px' }}>
@@ -670,21 +756,21 @@ function VoiceTab() {
                 ? "L'IA analyse votre voix..."
                 : isRecording
                 ? "Cliquez pour arrêter l'enregistrement."
-                : "Cliquez sur le micro pour démarrer l'interaction."}
+                : "Activez le micro pour enregistrer le compte rendu du rendez-vous"}
             </p>
           </div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={styles.card}>
-            <h3 style={{ margin: '0 0 15px 0', fontSize: '18px', fontWeight: 700 }}>Dernière Transcription</h3>
+            <h3 style={{ margin: '0 0 15px 0', fontSize: '18px', fontWeight: 700 }}>Transcription de l'audio</h3>
             <div style={{ padding: '15px', backgroundColor: '#f9f9f9', borderRadius: '12px', minHeight: '150px', fontSize: '14px', color: '#666', fontStyle: transcription ? 'normal' : 'italic', lineHeight: '1.6' }}>
               {transcription ? transcription.cleaned_text : "Les résultats apparaîtront ici après l'enregistrement..."}
             </div>
           </div>
 
           <div style={styles.card}>
-            <h3 style={{ margin: '0 0 15px 0', fontSize: '18px', fontWeight: 700 }}>Tags Extraits (IA)</h3>
+            <h3 style={{ margin: '0 0 15px 0', fontSize: '18px', fontWeight: 700 }}>Tags détectés</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {transcription ? (
                 getExtractedTagGroups().length > 0 ? (
@@ -719,9 +805,8 @@ function TagBadge({ label, color, textColor }) {
   return <span style={{ padding: '6px 12px', borderRadius: '8px', fontSize: '12px', fontWeight: 600, backgroundColor: color, color: textColor }}>{label}</span>;
 }
 
-function HistoryTab() {
+function HistoryTab({ history = [], onDeleteHistoryItem }) {
   const [search, setSearch] = useState('');
-  const [statusFilter, setStatusFilter] = useState('all');
   const [timeFilter, setTimeFilter] = useState('all');
   const [customFrom, setCustomFrom] = useState('');
   const [customTo, setCustomTo] = useState('');
@@ -744,61 +829,25 @@ function HistoryTab() {
     return x;
   };
 
-  const history = [
-    {
-      id: 'H-240212-01',
-      client: 'Client anonyme',
-      timeBucket: 'today',
-      recordedAt: subDays(now, 0),
-      status: 'Traité',
-      duration: '01:46',
-      confidence: 94,
-      tags: 12,
-      summary: 'Préférence forte pour les pièces en cuir, budget clarifié et besoin identifié pour un achat rapide.'
-    },
-    {
-      id: 'H-240211-03',
-      client: 'Client anonyme',
-      timeBucket: '7d',
-      recordedAt: subDays(now, 1),
-      status: 'En cours',
-      duration: '00:58',
-      confidence: 0,
-      tags: 0,
-      summary: 'Enregistrement effectué, traitement IA en attente.'
-    },
-    {
-      id: 'H-240210-07',
-      client: 'Client anonyme',
-      timeBucket: '30d',
-      recordedAt: subDays(now, 10),
-      status: 'Traité',
-      duration: '02:34',
-      confidence: 91,
-      tags: 15,
-      summary: 'Tags lifestyle et style détectés avec précision, informations RGPD correctement masquées.'
-    }
-  ];
-
   const filteredHistory = history.filter((item) => {
     const matchesSearch =
       item.client.toLowerCase().includes(search.toLowerCase()) ||
       item.id.toLowerCase().includes(search.toLowerCase()) ||
       item.summary.toLowerCase().includes(search.toLowerCase());
-    const matchesStatus = statusFilter === 'all' ? true : item.status === statusFilter;
 
     const sevenDaysAgo = toStartOfDay(subDays(now, 7));
     const thirtyDaysAgo = toStartOfDay(subDays(now, 30));
     const startToday = toStartOfDay(now);
     const endToday = toEndOfDay(now);
 
+    const recordedAt = item.recordedAt instanceof Date ? item.recordedAt : new Date(item.recordedAt);
     let matchesTime = true;
     if (timeFilter === 'today') {
-      matchesTime = item.recordedAt >= startToday && item.recordedAt <= endToday;
+      matchesTime = recordedAt >= startToday && recordedAt <= endToday;
     } else if (timeFilter === '7d') {
-      matchesTime = item.recordedAt >= sevenDaysAgo && item.recordedAt <= endToday;
+      matchesTime = recordedAt >= sevenDaysAgo && recordedAt <= endToday;
     } else if (timeFilter === '30d') {
-      matchesTime = item.recordedAt >= thirtyDaysAgo && item.recordedAt <= endToday;
+      matchesTime = recordedAt >= thirtyDaysAgo && recordedAt <= endToday;
     } else if (timeFilter === 'custom') {
       const hasFrom = !!customFrom;
       const hasTo = !!customTo;
@@ -809,24 +858,17 @@ function HistoryTab() {
           // Tolérant: si l'utilisateur inverse les dates, on corrige automatiquement.
           const start = fromDate <= toDate ? fromDate : toStartOfDay(new Date(customTo));
           const end = fromDate <= toDate ? toDate : toEndOfDay(new Date(customFrom));
-          matchesTime = item.recordedAt >= start && item.recordedAt <= end;
+          matchesTime = recordedAt >= start && recordedAt <= end;
         } else if (fromDate) {
-          matchesTime = item.recordedAt >= fromDate;
+          matchesTime = recordedAt >= fromDate;
         } else if (toDate) {
-          matchesTime = item.recordedAt <= toDate;
+          matchesTime = recordedAt <= toDate;
         }
       }
     }
 
-    return matchesSearch && matchesStatus && matchesTime;
+    return matchesSearch && matchesTime;
   });
-
-  const getStatusStyle = (status) => {
-    if (status === 'Traité') {
-      return { color: '#166534', backgroundColor: '#dcfce7', border: '1px solid #86efac' };
-    }
-    return { color: '#92400e', backgroundColor: '#fef3c7', border: '1px solid #fcd34d' };
-  };
 
   const filterControlStyle = {
     ...styles.input,
@@ -851,9 +893,15 @@ function HistoryTab() {
 
   const formatHistoryDate = (dateValue) => {
     if (!(dateValue instanceof Date) || Number.isNaN(dateValue.getTime())) return '';
-    return dateValue.toLocaleString('fr-FR', {
+    return dateValue.toLocaleDateString('fr-FR', {
       day: '2-digit',
-      month: 'short',
+      month: 'short'
+    });
+  };
+
+  const formatHistoryTime = (dateValue) => {
+    if (!(dateValue instanceof Date) || Number.isNaN(dateValue.getTime())) return '';
+    return dateValue.toLocaleTimeString('fr-FR', {
       hour: '2-digit',
       minute: '2-digit'
     });
@@ -877,15 +925,6 @@ function HistoryTab() {
             style={{ ...styles.input, paddingLeft: '22px', paddingRight: '38px', marginBottom: 0 }}
           />
         </div>
-        <select
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-          style={{ ...selectControlStyle, width: 'fit-content', minWidth: 'unset', flexShrink: 0 }}
-        >
-          <option value="all">Tous les statuts</option>
-          <option value="Traité">Traité</option>
-          <option value="En cours">En cours</option>
-        </select>
         <select
           value={timeFilter}
           onChange={(e) => setTimeFilter(e.target.value)}
@@ -937,23 +976,39 @@ function HistoryTab() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {filteredHistory.map((item) => (
           <div key={item.id} style={{ ...styles.card, padding: '16px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '14px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '10px' }}>
               <div>
                 <div style={{ fontWeight: 800, fontSize: '16px', marginBottom: '2px' }}>{item.client}</div>
                 <div style={{ fontSize: '12px', color: '#6b7280', fontWeight: 600 }}>ID: {item.id}</div>
               </div>
-              <div style={{ ...getStatusStyle(item.status), borderRadius: '999px', padding: '5px 10px', fontSize: '12px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                {item.status === 'Traité' ? <CheckCircle2 size={14} /> : <AlertCircle size={14} />}
-                {item.status}
-              </div>
+              <button
+                type="button"
+                onClick={() => onDeleteHistoryItem?.(item.id)}
+                aria-label={`Supprimer ${item.client}`}
+                title="Supprimer cet enregistrement"
+                style={{
+                  width: '34px',
+                  height: '34px',
+                  borderRadius: '10px',
+                  border: '1px solid #e5e7eb',
+                  background: '#fff',
+                  color: '#6b7280',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <Trash2 size={15} />
+              </button>
             </div>
 
             <div style={{ display: 'flex', gap: '16px', marginTop: '10px', fontSize: '13px', color: '#4b5563', flexWrap: 'wrap' }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                <Calendar size={14} /> {formatHistoryDate(item.recordedAt)}
+                <Calendar size={14} /> {formatHistoryDate(item.recordedAt instanceof Date ? item.recordedAt : new Date(item.recordedAt))}
               </span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                <Clock3 size={14} /> {item.duration}
+                <Clock3 size={14} /> {formatHistoryTime(item.recordedAt instanceof Date ? item.recordedAt : new Date(item.recordedAt))}
               </span>
               <span>Tags: <strong>{item.tags}</strong></span>
               <span>Confiance: <strong>{item.confidence}%</strong></span>

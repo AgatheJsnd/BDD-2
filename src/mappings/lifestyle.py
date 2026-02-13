@@ -131,7 +131,7 @@ VOYAGE_MAPPING = {
     "Ville": ["ville", "city", "urbain", "urban", "métropole"],
     
     # Fréquence
-    "Voyageur_frequent": ["voyage souvent", "travel often", "frequent flyer", "plusieurs fois par an", "nomade"],
+    "Voyageur_frequent": ["voyage souvent", "voyager", "voyage", "travel often", "frequent flyer", "plusieurs fois par an", "nomade"],
     "Occasionnel": ["voyage occasionnel", "occasional travel", "une ou deux fois par an"],
     "Rare": ["voyage rare", "rarely travel", "peu de voyages"]
 }
@@ -152,7 +152,7 @@ ART_CULTURE_MAPPING = {
     "Monuments": ["monument", "patrimoine", "heritage", "site historique"],
     
     # Spectacles
-    "Theatre": ["théâtre", "theater", "pièce", "comédie", "tragédie"],
+    "Theatre": ["théâtre", "theater", "pièce de théâtre", "comédie", "tragédie"],
     "Danse": ["danse", "dance", "ballet", "chorégraphie"],
     "Concerts": ["concert", "spectacle", "live", "scène"],
     
