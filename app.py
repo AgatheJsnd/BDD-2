@@ -483,8 +483,12 @@ def show_vendeur_interface():
     # ============================================================================
     with tab1:
         # Vérification discrète des clés (bloquant seulement si erreur critique)
+        load_dotenv(override=True) # Force reload
         deepgram_key = os.getenv("DEEPGRAM_API_KEY")
         mistral_key = os.getenv("MISTRAL_API_KEY")
+        
+        # Debug pour l'assistant (sera visible dans les logs si besoin)
+        # st.write(f"Debug Key: {deepgram_key[:5]}..." if deepgram_key else "Debug Key: None")
 
         if not deepgram_key:
             st.error("❌ Configuration requise : Ajoutez votre DEEPGRAM_API_KEY dans le fichier .env")
@@ -546,27 +550,40 @@ def show_vendeur_interface():
                 st.markdown("### 3️⃣ Finalisation (Obligatoire)")
                 
                 with st.container(border=True):
-                    st.warning("⚠️ Pour sauvegarder cette interaction dans la base de données Analysts, vous DOIVEZ saisir l'ID Client.")
+                    st.warning("⚠️ Pour sauvegarder cette interaction dans la base de données Analysts, vous DOIVEZ saisir les informations client.")
                     
                     col_form1, col_form2 = st.columns([1, 1])
                     
                     with col_form1:
+                        client_nom = st.text_input("👤 Nom", placeholder="Ex: Dupont", key="input_client_nom")
+                        client_prenom = st.text_input("👤 Prénom", placeholder="Ex: Jean", key="input_client_prenom")
                         client_id_input = st.text_input(
-                            "🆔 Identifiant Client", 
+                            "🆔 Identifiant Client (ID)", 
                             placeholder="Ex: CA-1024",
                             key="input_client_id_final"
                         )
                     
                     with col_form2:
+                        client_tel = st.text_input("📞 Numéro de téléphone", placeholder="Ex: +33 6...", key="input_client_tel")
+                        client_mail = st.text_input("📧 Email", placeholder="Ex: jean.dupont@email.com", key="input_client_mail")
+                        
+                        # Remplacement du multiselect par une zone de texte libre pour les canaux
+                        contact_channels_raw = st.text_input(
+                            "📲 Canaux de contact préférés",
+                            placeholder="Ex: WhatsApp, Email, Téléphone...",
+                            key="input_contact_channels_text"
+                        )
+                        # Conversion en liste pour la compatibilité avec le reste du code
+                        contact_channels = [c.strip() for c in contact_channels_raw.split(",")] if contact_channels_raw else []
+                        
                         st.write("") # Spacer
-                        st.write("")
                         
                         # Bouton de sauvegarde
                         save_btn = st.button(
                             "💾 ENREGISTRER DANS LA BASE (CSV)", 
                             type="primary", 
                             use_container_width=True,
-                            disabled=not client_id_input # Désactivé si pas d'ID
+                            disabled=not (client_id_input and client_nom and client_prenom) # Désactivé si champs obligatoires vides
                         )
                 
                 # Action de sauvegarde
@@ -574,7 +591,15 @@ def show_vendeur_interface():
                     if client_id_input:
                         # Sauvegarde
                         result["tags"] = result.get("tags", {})
-                        result["client_name"] = client_id_input
+                        result["client_name"] = f"{client_prenom} {client_nom}"
+                        result["client_id"] = client_id_input
+                        result["metadata_vendeur"] = {
+                            "nom": client_nom,
+                            "prenom": client_prenom,
+                            "telephone": client_tel,
+                            "email": client_mail,
+                            "canaux_contact": contact_channels
+                        }
                         
                         save_transcription_to_session(result, client_id=client_id_input)
                         
@@ -750,6 +775,18 @@ def show_vendeur_interface():
         """)
 
 
+import base64
+
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+def get_img_with_href(local_img_path):
+    img_format = local_img_path.split('.')[-1]
+    bin_str = get_base64_of_bin_file(local_img_path)
+    return f"data:image/{img_format};base64,{bin_str}"
+
 # ============================================================================
 # INTERFACE PRINCIPALE
 # ============================================================================
@@ -765,78 +802,244 @@ def main():
     
     # Si non authentifié, afficher la page de connexion
     if not st.session_state["authenticated"]:
-        # Style de la page de connexion
-        st.markdown("""
+        # Charger l'image locale pour le fond
+        try:
+            img_path = os.path.join(os.getcwd(), "assets", "images", "Capture d’écran 2026-02-11 à 13.41.50.png")
+            img_base64 = get_img_with_href(img_path)
+            bg_style = f"background-image: url('{img_base64}') !important;"
+        except Exception as e:
+            bg_style = "background-color: #f0f2f6 !important;"
+
+        # Style pour ressembler à la capture d'écran (Test école)
+        st.markdown(f"""
             <style>
-            .login-container {
-                max-width: 500px;
-                margin: 100px auto;
-                padding: 40px;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* CACHER TOUT LE CONTENU STREAMLIT PAR DÉFAUT */
+            .stApp {{
+                background: none !important;
+                background-color: #f0f2f6 !important;
+            }}
+            
+            header, [data-testid="stSidebar"], [data-testid="stHeader"] {{
+                display: none !important;
+            }}
+
+            /* FOND DE TOUTE LA PAGE AVEC FLOU */
+            .full-bg {{
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                {bg_style}
+                background-size: cover;
+                background-position: center;
+                filter: blur(10px);
+                z-index: -1;
+                width: 100vw;
+                height: 100vh;
+            }}
+
+            /* WRAPPER POUR CENTRER LE POPUP */
+            .login-wrapper {{
+                position: fixed;
+                top: 0; left: 0; width: 100vw; height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000000;
+            }}
+
+            .login-container {{
+                width: 500px;
+                background-color: #f0f0f0;
                 border-radius: 20px;
-                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            }
-            .login-title {
-                color: white;
-                text-align: center;
-                font-size: 2.5em;
-                margin-bottom: 10px;
-                font-weight: bold;
-            }
-            .login-subtitle {
-                color: rgba(255,255,255,0.9);
-                text-align: center;
+                padding: 40px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }}
+
+            /* HEADER ICONS (CERCLES) */
+            .login-header-icons {{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                margin-bottom: 25px;
+            }}
+            .circle {{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                box-shadow: inset 5px 5px 15px rgba(0,0,0,0.1);
+            }}
+            .circle-gold {{ background-color: #d4af37; }}
+            .circle-blue {{ background-color: #87ceeb; }}
+            .header-x {{ font-size: 1.5em; color: #999; }}
+
+            .login-welcome {{
+                color: #333;
+                font-size: 0.95em;
                 margin-bottom: 30px;
-            }
+                text-align: center;
+            }}
+
+            /* FORMULAIRE HTML */
+            .login-form-html {{
+                width: 100%;
+            }}
+            .input-row {{
+                display: flex;
+                gap: 15px;
+                margin-bottom: 15px;
+            }}
+            .input-group {{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }}
+            .input-label {{
+                font-size: 0.7em;
+                font-weight: bold;
+                color: #666;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+            }}
+            .input-field {{
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                background: white;
+                font-size: 0.9em;
+                color: #333;
+            }}
+            
+            .submit-btn {{
+                width: 100%;
+                padding: 15px;
+                background-color: #2b6cf0;
+                color: white;
+                border: none;
+                border-radius: 10px;
+                font-weight: bold;
+                font-size: 1em;
+                cursor: pointer;
+                margin-top: 20px;
+                box-shadow: 0 5px 15px rgba(43, 108, 240, 0.3);
+            }}
+            
+            .login-footer {{
+                margin-top: 20px;
+                font-size: 0.75em;
+                color: #888;
+                text-align: center;
+            }}
             </style>
         """, unsafe_allow_html=True)
         
-        col1, col2, col3 = st.columns([1, 2, 1])
-        
-        with col2:
-            st.markdown('<div class="login-container">', unsafe_allow_html=True)
-            st.markdown('<h1 class="login-title">🎯 LVMH</h1>', unsafe_allow_html=True)
-            st.markdown('<p class="login-subtitle">Client Analytics Platform</p>', unsafe_allow_html=True)
-            
-            with st.form("login_form"):
-                username = st.text_input("👤 Nom d'utilisateur", placeholder="analyste")
-                password = st.text_input("🔒 Mot de passe", type="password", placeholder="••••••••")
-                
-                col_btn1, col_btn2 = st.columns(2)
-                with col_btn1:
-                    submit = st.form_submit_button("🚀 Connexion", use_container_width=True)
-                with col_btn2:
-                    help_btn = st.form_submit_button("❓ Aide", use_container_width=True)
-                
-                if submit:
-                    if username and password:
-                        user_info = authenticate(username, password)
-                        if user_info:
-                            st.session_state["authenticated"] = True
-                            st.session_state["user"] = user_info
-                            st.success(f"✅ Bienvenue {user_info['name']} !")
-                            st.rerun()
-                        else:
-                            st.error("❌ Identifiants incorrects")
-                    else:
-                        st.warning("⚠️ Veuillez remplir tous les champs")
-                
-                if help_btn:
-                    st.info("""
-                    **Comptes Disponibles :**
+        # RENDU FINAL
+        st.markdown(f'''
+            <div class="full-bg"></div>
+            <div class="login-wrapper">
+                <div class="login-container">
+                    <div class="login-header-icons">
+                        <div class="circle circle-gold"></div>
+                        <div class="header-x">✕</div>
+                        <div class="circle circle-blue"></div>
+                    </div>
                     
-                    👔 **Vendeur**
-                    - Utilisateur : `vendeur`
-                    - Mot de passe : `vendeur123`
+                    <p class="login-welcome">Bienvenue sur la plateforme LVMH Client Analytics</p>
                     
-                    📊 **Analyste**
-                    - Utilisateur : `analyste`
-                    - Mot de passe : `analyste123`
-                    """)
-            
-            st.markdown('</div>', unsafe_allow_html=True)
+                    <form class="login-form-html" method="get" action="/">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label class="input-label">Utilisateur</label>
+                                <input type="text" name="user_login" class="input-field" placeholder="analyste" required>
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Rôle</label>
+                                <input type="text" class="input-field" placeholder="Analyste" disabled>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group" style="margin-top: 10px;">
+                            <label class="input-label">Mot de passe</label>
+                            <input type="password" name="user_pass" class="input-field" placeholder="••••••••" required>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Se connecter</button>
+                    </form>
+                    
+                    <div class="login-footer">
+                        👔 Vendeur: vendeur / vendeur123 | 📊 Analyste: analyste / analyste123
+                    </div>
+                </div>
+            </div>
+        ''', unsafe_allow_html=True)
         
-        # Arrêter l'exécution ici si non authentifié
+        # Logique de connexion (query params)
+        query_params = st.query_params
+        if "user_login" in query_params and "user_pass" in query_params:
+            username = query_params["user_login"]
+            password = query_params["user_pass"]
+            user_info = authenticate(username, password)
+            if user_info:
+                st.session_state["authenticated"] = True
+                st.session_state["user"] = user_info
+                st.query_params.clear()
+                st.rerun()
+            else:
+                st.error("❌ Identifiants incorrects")
+                st.query_params.clear()
+        
+        st.stop()
+        
+        # Interface de connexion HTML/JS pour une structure parfaite
+        # On utilise des query params pour communiquer avec Streamlit
+        st.markdown(f'''
+            <div class="login-wrapper">
+                <div class="login-container">
+                    <div class="login-overlay"></div>
+                    <div class="login-content">
+                        <h1 class="login-title">🎯 LVMH</h1>
+                        <p class="login-subtitle">Client Analytics Platform</p>
+                        
+                        <form method="get" action="/">
+                            <div class="login-input-group">
+                                <label class="login-input-label">👤 Nom d'utilisateur</label>
+                                <input type="text" name="user_login" class="login-input" placeholder="analyste" required>
+                            </div>
+                            <div class="login-input-group">
+                                <label class="login-input-label">🔒 Mot de passe</label>
+                                <input type="password" name="user_pass" class="login-input" placeholder="••••••••" required>
+                            </div>
+                            <button type="submit" class="login-button">🚀 Connexion</button>
+                        </form>
+                        
+                        <div class="login-help">
+                            👔 Vendeur: vendeur / vendeur123<br>
+                            📊 Analyste: analyste / analyste123
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ''', unsafe_allow_html=True)
+        
+        # Récupérer les données du formulaire via les paramètres d'URL
+        query_params = st.query_params
+        if "user_login" in query_params and "user_pass" in query_params:
+            username = query_params["user_login"]
+            password = query_params["user_pass"]
+            
+            user_info = authenticate(username, password)
+            if user_info:
+                st.session_state["authenticated"] = True
+                st.session_state["user"] = user_info
+                # Nettoyer l'URL
+                st.query_params.clear()
+                st.rerun()
+            else:
+                st.error("❌ Identifiants incorrects")
+                st.query_params.clear()
+        
         st.stop()
     
     # ============================================================================

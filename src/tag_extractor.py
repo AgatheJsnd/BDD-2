@@ -6,6 +6,17 @@ Optimisé pour la vitesse et la précision des détails.
 import re
 from typing import Dict, List, Optional, Any
 from datetime import datetime
+try:
+    from src.mappings.identity import GENRE_MAPPING, LANGUE_MAPPING, STATUT_MAPPING, PROFESSIONS_ADVANCED
+    from src.mappings.location import CITIES_ADVANCED
+    from src.mappings.lifestyle import SPORT_MAPPING, MUSIQUE_MAPPING, ANIMAUX_MAPPING, VOYAGE_MAPPING, ART_CULTURE_MAPPING, GASTRONOMIE_MAPPING
+    from src.mappings.style import PIECES_MAPPING, COULEURS_ADVANCED, MATIERES_ADVANCED, SENSIBILITE_MODE, TAILLES_MAPPING
+    from src.mappings.purchase import MOTIF_ADVANCED, TIMING_MAPPING, MARQUES_LVMH, FREQUENCE_ACHAT
+    from src.mappings.preferences import REGIME_MAPPING, ALLERGIES_MAPPING, VALEURS_MAPPING
+    from src.mappings.tracking import ACTIONS_MAPPING, ECHEANCES_MAPPING, CANAUX_MAPPING
+    ADVANCED_TAXONOMY_AVAILABLE = True
+except Exception:
+    ADVANCED_TAXONOMY_AVAILABLE = False
 
 # ============================================================================
 # 0. NETTOYAGE TURBO (REGEX)
@@ -136,32 +147,129 @@ def scan_text_for_keywords(text: str, mapping: Dict[str, List[str]]) -> List[str
     """Scanne le texte pour trouver les clés correspondantes aux mots-clés"""
     if not text:
         return []
-    
-    text_lower = text.lower()
+
     found = []
-    
+
     for category, keywords in mapping.items():
-        # Vérification "word boundary" pour éviter les faux positifs (ex: "tour" dans "tourisme")
         for kw in keywords:
-            # Recherche simple (plus rapide que regex pour chaque mot)
-            # Convertir le keyword en minuscules pour la comparaison
-            if kw.lower() in text_lower:
+            if _keyword_in_text(text, kw):
                 found.append(category)
-                break # On a trouvé cette catégorie, on passe à la suivante
-                
-    return list(set(found)) # Déduplication
+                break
+
+    return list(dict.fromkeys(found))  # Déduplication stable
+
+def scan_text_for_keywords_advanced(text: str, mapping: Dict[str, Any]) -> List[str]:
+    """
+    Scan générique pour mappings avancés:
+    - {Categorie: [keywords]}
+    - {Region: {Categorie: [keywords]}}
+    """
+    if not text:
+        return []
+
+    found = []
+
+    for key, value in mapping.items():
+        if isinstance(value, dict):
+            # Mapping imbriqué (ex: villes par région)
+            for sub_key, sub_keywords in value.items():
+                for kw in sub_keywords:
+                    if _keyword_in_text(text, kw):
+                        found.append(sub_key)
+                        break
+        elif isinstance(value, list):
+            for kw in value:
+                if _keyword_in_text(text, kw):
+                    found.append(key)
+                    break
+
+    # Déduplication en conservant l'ordre
+    seen = set()
+    ordered = []
+    for item in found:
+        if item not in seen:
+            seen.add(item)
+            ordered.append(item)
+    return ordered
+
+def _is_ambiguous_keyword(kw: str) -> bool:
+    """
+    Mots trop ambigus causant des faux positifs (ex: 'or' dans une phrase FR).
+    """
+    bad = {
+        "or", "ai", "pr", "s", "m", "l", "xs", "xl", "xxs",
+        "lv", "cb", "la", "le", "de", "jean"
+    }
+    return kw.strip().lower() in bad
+
+def _keyword_in_text(text: str, keyword: str) -> bool:
+    """
+    Matching robuste:
+    - mot entier (pas sous-chaîne)
+    - ignore les mots trop courts/ambigus
+    - gère les expressions multi-mots
+    """
+    if not text or not keyword:
+        return False
+
+    kw = keyword.strip().lower()
+    if not kw:
+        return False
+
+    if _is_ambiguous_keyword(kw):
+        return False
+
+    # Évite les mots trop courts qui génèrent trop de bruit
+    if len(kw) <= 2:
+        return False
+
+    escaped = re.escape(kw)
+    pattern = rf"(?<!\w){escaped}(?!\w)"
+    return re.search(pattern, text.lower()) is not None
+
+def extract_genre_precise(text: str) -> List[str]:
+    """
+    Détection genre contextuelle pour éviter les erreurs de type:
+    'acheter un sac à sa femme' -> ne doit pas impliquer Femme.
+    """
+    if not text:
+        return []
+
+    t = text.lower()
+    male_score = 0
+    female_score = 0
+
+    # Indices forts explicites
+    if re.search(r"\b(je suis un homme|monsieur|mr|mister)\b", t):
+        male_score += 3
+    if re.search(r"\b(je suis une femme|madame|mme|mademoiselle|mlle|mrs|miss)\b", t):
+        female_score += 3
+
+    # Pronoms du sujet (pondération faible)
+    male_score += len(re.findall(r"\bil\b", t))
+    female_score += len(re.findall(r"\belle\b", t))
+
+    if male_score > female_score and male_score > 0:
+        return ["Homme"]
+    if female_score > male_score and female_score > 0:
+        return ["Femme"]
+    return []
 
 def extract_age_turbo(text: str) -> Optional[str]:
-    """Extraction d'âge avancée"""
-    if not text: return None
+    """Extraction d'âge avancée (tolérante, évite les faux négatifs)."""
+    if not text:
+        return None
     text_lower = text.lower()
     
-    # Regex précises
+    # Regex précises (chiffres)
     patterns = [
-        r'\b(\d{2})\s*(?:ans|year|yo|jahre)\b',
-        r'\b(\d{2})\s*years?\s*old\b',
+        r"\bj[' ]?ai\s*(\d{1,2})\s*ans\b",
+        r"\bj[' ]?ai\s*(\d{1,2})\b",
+        r"\b(\d{1,2})\s*(?:ans|an|year|yo|jahre)\b",
+        r"\b(\d{1,2})\s*years?\s*old\b",
+        r"\bage\s*(?:de)?\s*(\d{1,2})\b",
         r'\bné[e]?\s*(?:en)?\s*(19\d{2}|20\d{2})\b', # Année naissance
-        r'\bage\s*[:]?\s*(\d{2})\b'
+        r"\bage\s*[:]?\s*(\d{1,2})\b"
     ]
     
     for p in patterns:
@@ -171,7 +279,80 @@ def extract_age_turbo(text: str) -> Optional[str]:
             if val > 1900: # C'est une année
                 val = datetime.now().year - val
             
-            # Catégorisation Taxonomie
+            # Garde-fou simple sur les âges plausibles
+            if val < 15 or val > 99:
+                continue
+
+            # Catégorisation taxonomie
+            if val <= 25: return "18-25"
+            if val <= 35: return "26-35"
+            if val <= 45: return "36-45"
+            if val <= 55: return "46-55"
+            return "56+"
+
+    # Âges en lettres FR (ex: "quarante-cinq ans")
+    word_to_num = {
+        "dix-huit": 18, "dix huit": 18, "dix-neuf": 19, "dix neuf": 19,
+        "vingt": 20, "vingt-et-un": 21, "vingt et un": 21, "vingt-deux": 22, "vingt deux": 22,
+        "vingt-trois": 23, "vingt trois": 23, "vingt-quatre": 24, "vingt quatre": 24,
+        "vingt-cinq": 25, "vingt cinq": 25, "trente": 30, "quarante": 40, "cinquante": 50,
+        "soixante": 60,
+    }
+
+    units = {
+        "zero": 0, "zéro": 0, "un": 1, "une": 1, "deux": 2, "trois": 3, "quatre": 4,
+        "cinq": 5, "six": 6, "sept": 7, "huit": 8, "neuf": 9
+    }
+    tens = {
+        "dix": 10, "vingt": 20, "trente": 30, "quarante": 40, "cinquante": 50, "soixante": 60
+    }
+
+    def _parse_simple_french_age_words(raw_age: str) -> Optional[int]:
+        s = raw_age.strip().lower().replace("’", "'")
+        if s in word_to_num:
+            return word_to_num[s]
+
+        # Normalise séparateurs: "quarante-cinq", "quarante cinq", "quarante et cinq"
+        tokens = [t for t in re.split(r"[\s\-']+", s) if t and t != "et"]
+        if not tokens:
+            return None
+
+        # Ignore préfixes de contexte fréquents: "il a", "elle a", "j ai", etc.
+        stopwords = {"il", "elle", "a", "j", "je", "ai", "ans", "age", "âge", "de"}
+        tokens = [t for t in tokens if t not in stopwords]
+        if not tokens:
+            return None
+
+        # Cas direct unitaire (ex: "quarante")
+        if len(tokens) == 1:
+            if tokens[0] in tens:
+                return tens[tokens[0]]
+            if tokens[0] in units:
+                return units[tokens[0]]
+            return None
+
+        # Cas dizaine + unité (ex: "quarante cinq")
+        if len(tokens) == 2 and tokens[0] in tens and tokens[1] in units:
+            return tens[tokens[0]] + units[tokens[1]]
+
+        # Cas avec contexte résiduel: on tente les 2 derniers puis le dernier token
+        if len(tokens) >= 3:
+            last_two = tokens[-2:]
+            if last_two[0] in tens and last_two[1] in units:
+                return tens[last_two[0]] + units[last_two[1]]
+            if tokens[-1] in tens:
+                return tens[tokens[-1]]
+            if tokens[-1] in units:
+                return units[tokens[-1]]
+
+        return None
+    age_words = re.search(r"\b([a-zàâçéèêëîïôûùüÿœæ' -]{3,25})\s+ans\b", text_lower)
+    if age_words:
+        raw = " ".join(age_words.group(1).strip().split())
+        raw = raw.replace("’", "'")
+        parsed_age = _parse_simple_french_age_words(raw)
+        if parsed_age is not None and 15 <= parsed_age <= 99:
+            val = parsed_age
             if val <= 25: return "18-25"
             if val <= 35: return "26-35"
             if val <= 45: return "36-45"
@@ -255,35 +436,432 @@ def extract_urgency_turbo(text: str) -> int:
         
     return score
 
+def extract_motif_precise(text: str) -> List[str]:
+    """
+    Détection motif plus fiable et explicite (évite les oublis).
+    """
+    if not text:
+        return []
+
+    t = text.lower()
+    motifs = []
+
+    # Cadeau / achat pour quelqu'un
+    cadeau_patterns = [
+        r"\bcadeau\b",
+        r"\boffrir\b",
+        r"\bpour\s+(ma|mon|sa|son)\s+(femme|mari|copine|copain|mère|mere|père|pere|enfant|fils|fille)\b",
+        r"\b[aà]\s+(ma|mon|sa|son)\s+(femme|mari|copine|copain|mère|mere|père|pere|enfant|fils|fille)\b",
+    ]
+    if any(re.search(p, t) for p in cadeau_patterns):
+        motifs.append("Cadeau")
+
+    if re.search(r"\banniversaire|birthday|bday\b", t):
+        motifs.append("Anniversaire")
+    if re.search(r"\bmariage|wedding|fianc[aé]illes\b", t):
+        motifs.append("Mariage")
+    if re.search(r"\bnaissance|nouveau[- ]n[ée]|baby shower\b", t):
+        motifs.append("Naissance")
+    if re.search(r"\bpour moi\b|\bme faire plaisir\b|\bself[- ]gift\b", t):
+        motifs.append("Plaisir_personnel")
+    # Voyage seulement si contexte d'achat réel
+    if re.search(r"(pour|avant|spécial|special|achat).{0,25}\b(voyage|vacances|trip)\b|\b(valise)\b", t):
+        motifs.append("Voyage")
+
+    # Déduplication stable
+    return list(dict.fromkeys(motifs))
+
+def extract_country_precise(text: str) -> Optional[str]:
+    """Détecte le pays mentionné (utile quand aucune ville n'est donnée)."""
+    if not text:
+        return None
+
+    t = text.lower()
+    country_aliases = {
+        "États-Unis": ["états-unis", "etats-unis", "etats unis", "usa", "u.s.a", "united states"],
+        "France": ["france"],
+        "Italie": ["italie", "italy"],
+        "Espagne": ["espagne", "spain"],
+        "Allemagne": ["allemagne", "germany"],
+        "Royaume-Uni": ["royaume-uni", "uk", "united kingdom", "angleterre", "england"],
+        "Suisse": ["suisse", "switzerland"],
+        "Belgique": ["belgique", "belgium"],
+        "Portugal": ["portugal", "portugais"],
+        "Canada": ["canada"],
+        "Maroc": ["maroc", "morocco"],
+    }
+
+    for country, aliases in country_aliases.items():
+        for alias in aliases:
+            if _keyword_in_text(t, alias):
+                return country
+    return None
+
+def extract_famille_precise(text: str) -> List[str]:
+    """Détection famille sans faux positif sur le mot générique 'famille'."""
+    if not text:
+        return []
+    t = text.lower()
+    out = []
+    if re.search(r"\b(couple|en couple|partenaire|copain|copine|conjoint)\b", t):
+        out.append("Couple")
+    if re.search(r"\b(enfant|enfants|fils|fille|kids|children)\b", t):
+        out.append("Avec_enfants")
+    if re.search(r"\b(célibataire|single|seul)\b", t):
+        out.append("Célibataire")
+    if re.search(r"\b(mari[ée]|époux|épouse|husband|wife)\b", t):
+        out.append("Marié(e)")
+    return list(dict.fromkeys(out))
+
+def extract_marques_precises(text: str) -> List[str]:
+    """Marques: seulement mentions explicites de marque, sans inférence matière."""
+    if not text:
+        return []
+    t = text.lower()
+    brand_terms = {
+        "Louis_Vuitton": ["louis vuitton", " vuitton", " lv "],
+        "Dior": ["dior", "christian dior"],
+        "Gucci": ["gucci"],
+        "Loro_Piana": ["loro piana"],
+        "Bulgari": ["bulgari", "bvlgari"],
+        "Givenchy": ["givenchy"],
+        "Tiffany": ["tiffany", "tiffany & co", "tiffany co"],
+        "Celine": ["celine", "céline"],
+        "Fendi": ["fendi"],
+        "Sephora": ["sephora"],
+    }
+    out = []
+    for brand, terms in brand_terms.items():
+        if any(_keyword_in_text(t, term) for term in terms):
+            out.append(brand)
+    return out
+
+def extract_gastronomie_precise(text: str) -> List[str]:
+    """Gastronomie uniquement si contexte alimentaire/boisson explicite."""
+    if not text:
+        return []
+    t = text.lower()
+    out = []
+    if re.search(r"\b(vin|wine|dégustation|degustation|sommelier)\b", t):
+        out.append("Vins")
+    if re.search(r"\b(champagne|champagnes)\b", t):
+        out.append("Champagnes")
+    # Spiritueux: exclure faux positif 'cognac' couleur
+    if re.search(r"\b(whisky|rhum|vodka|spiritueux|cocktail|mixologie)\b", t):
+        out.append("Spiritueux")
+    elif re.search(r"\bcognac\b", t) and re.search(r"\b(boire|boisson|drink|dégust|alcool)\b", t):
+        out.append("Spiritueux")
+    if re.search(r"\b(restaurant|gastronomie|fine dining|chef|étoilé|etoile)\b", t):
+        out.append("Fine_dining")
+    return list(dict.fromkeys(out))
+
+def extract_tailles_precise(text: str) -> List[str]:
+    """Tailles explicites (XS/S/M/L) + pointure explicite."""
+    if not text:
+        return []
+    t = text.lower()
+    out = []
+
+    # XS/S/M/L explicites
+    if re.search(r"\b(x\s*s|xs|extra small)\b", t):
+        out.append("XS")
+    if re.search(r"\b(small|taille s| s )\b", f" {t} "):
+        out.append("S")
+    if re.search(r"\b(medium|taille m| m )\b", f" {t} "):
+        out.append("M")
+    if re.search(r"\b(large|taille l| l )\b", f" {t} "):
+        out.append("L")
+
+    # Pointures chiffrées directes
+    for p in re.findall(r"\b(3[5-9]|4[0-6])\b", t):
+        val = int(p)
+        if 35 <= val <= 37 and "35_37" not in out:
+            out.append("35_37")
+        elif 38 <= val <= 40 and "38_40" not in out:
+            out.append("38_40")
+        elif 41 <= val <= 43 and "41_43" not in out:
+            out.append("41_43")
+        elif 44 <= val <= 46 and "44_46" not in out:
+            out.append("44_46")
+
+    # Pointures en lettres (ex: "pointure trente-cinq trente-sept")
+    number_words = {
+        "trente-cinq": 35, "trente cinq": 35,
+        "trente-six": 36, "trente six": 36,
+        "trente-sept": 37, "trente sept": 37,
+        "trente-huit": 38, "trente huit": 38,
+        "trente-neuf": 39, "trente neuf": 39,
+        "quarante": 40,
+        "quarante-et-un": 41, "quarante et un": 41,
+        "quarante-deux": 42, "quarante deux": 42,
+        "quarante-trois": 43, "quarante trois": 43,
+        "quarante-quatre": 44, "quarante quatre": 44,
+        "quarante-cinq": 45, "quarante cinq": 45,
+        "quarante-six": 46, "quarante six": 46,
+    }
+
+    pointure_spans = re.findall(r"(?:pointure|chausse)\s*(?:du|de|:)?\s*([^.!?\n]{0,80})", t)
+    for span in pointure_spans:
+        s = " ".join(span.split())
+        for w, val in number_words.items():
+            if re.search(rf"(?<!\w){re.escape(w)}(?!\w)", s):
+                if 35 <= val <= 37 and "35_37" not in out:
+                    out.append("35_37")
+                elif 38 <= val <= 40 and "38_40" not in out:
+                    out.append("38_40")
+                elif 41 <= val <= 43 and "41_43" not in out:
+                    out.append("41_43")
+                elif 44 <= val <= 46 and "44_46" not in out:
+                    out.append("44_46")
+
+    return out
+
+def _extract_piece_by_context(text: str, context_patterns: List[str]) -> List[str]:
+    """
+    Extrait les pièces en filtrant par contexte:
+    - favori (préférence)
+    - recherché (besoin d'achat)
+    """
+    if not text:
+        return []
+
+    t = text.lower()
+    found = []
+
+    for piece, keywords in PIECES_MAPPING.items():
+        # Vérifie que la pièce est présente
+        has_piece = any(_keyword_in_text(t, kw) for kw in keywords if len(kw.strip()) > 2)
+        if not has_piece:
+            continue
+
+        # Vérifie qu'il y a un contexte valide autour
+        is_contextual = False
+        for kw in keywords:
+            kw_clean = kw.strip().lower()
+            if len(kw_clean) <= 2 or _is_ambiguous_keyword(kw_clean):
+                continue
+            for ctx in context_patterns:
+                # contexte avant ou après le mot-clé
+                p1 = rf"{ctx}.{{0,40}}(?<!\w){re.escape(kw_clean)}(?!\w)"
+                p2 = rf"(?<!\w){re.escape(kw_clean)}(?!\w).{{0,40}}{ctx}"
+                if re.search(p1, t) or re.search(p2, t):
+                    is_contextual = True
+                    break
+            if is_contextual:
+                break
+
+        if is_contextual:
+            found.append(piece)
+
+    return list(dict.fromkeys(found))
+
+def extract_pieces_favorites_precise(text: str) -> List[str]:
+    """Pièces favorites = préférences (pas achat ponctuel)."""
+    favorite_context = [
+        r"\bj[' ]?aime\b", r"\bil aime\b", r"\belle aime\b",
+        r"\bj[' ]?adore\b", r"\bil adore\b", r"\belle adore\b",
+        r"\bpr[eé]f[eè]re\b", r"\bpr[eé]f[eè]rent\b",
+        r"\bfan de\b", r"\bporte\b", r"\bstyle\b", r"\bprivil[eé]gie\b"
+    ]
+    if not text:
+        return []
+
+    t = text.lower()
+    found = []
+    max_window = 80
+
+    # Ajouter des pièces génériques pour mieux capter la phrase naturelle
+    piece_catalog = dict(PIECES_MAPPING)
+    piece_catalog["Chaussures"] = ["chaussure", "chaussures", "souliers", "shoes", "footwear"]
+
+    purchase_context = [
+        r"\bcherche\b", r"\brecherche\b", r"\bvoudrai[st]?\b", r"\bveut\b",
+        r"\bbesoin de\b", r"\bvenir acheter\b", r"\bvenu acheter\b",
+        r"\bacheter\b", r"\bachat\b", r"\boffrir\b", r"\bcadeau\b", r"\blooking for\b"
+    ]
+
+    for piece, keywords in piece_catalog.items():
+        piece_is_favorite = False
+        for kw in keywords:
+            kw_clean = kw.strip().lower()
+            if len(kw_clean) <= 2 or _is_ambiguous_keyword(kw_clean):
+                continue
+
+            for m in re.finditer(rf"(?<!\w){re.escape(kw_clean)}(?!\w)", t):
+                left_ctx = t[max(0, m.start() - max_window):m.start()]
+
+                # Contexte de préférence et d'achat
+                has_favorite_ctx = any(re.search(ctx, left_ctx) for ctx in favorite_context)
+                has_purchase_ctx = any(re.search(ctx, left_ctx) for ctx in purchase_context)
+
+                # Si achat explicite sans préférence explicite, ne pas classer en favori
+                if has_purchase_ctx and not has_favorite_ctx:
+                    continue
+
+                if has_favorite_ctx:
+                    piece_is_favorite = True
+                    break
+            if piece_is_favorite:
+                break
+
+        if piece_is_favorite:
+            found.append(piece)
+
+    return list(dict.fromkeys(found))
+
+def extract_pieces_recherchees_precise(text: str) -> List[str]:
+    """Pièces recherchées = objectif d'achat actuel."""
+    purchase_context = [
+        r"\bcherche\b", r"\brecherche\b", r"\bvoudrai[st]?\b", r"\bveut\b",
+        r"\bbesoin de\b", r"\bvenir acheter\b", r"\bvenu acheter\b",
+        r"\bacheter\b", r"\bachat\b", r"\blooking for\b"
+    ]
+    if not text:
+        return []
+
+    t = text.lower()
+    found = []
+    max_window = 100
+
+    piece_catalog = dict(PIECES_MAPPING)
+    piece_catalog["Chaussures"] = ["chaussure", "chaussures", "souliers", "shoes", "footwear"]
+
+    for piece, keywords in piece_catalog.items():
+        matched = False
+        for kw in keywords:
+            kw_clean = kw.strip().lower()
+            if len(kw_clean) <= 2 or _is_ambiguous_keyword(kw_clean):
+                continue
+
+            # Contexte d'achat AVANT le mot-clé
+            for m in re.finditer(rf"(?<!\w){re.escape(kw_clean)}(?!\w)", t):
+                left_ctx = t[max(0, m.start() - max_window):m.start()]
+                if any(re.search(ctx, left_ctx) for ctx in purchase_context):
+                    matched = True
+                    break
+            if matched:
+                break
+        if matched:
+            found.append(piece)
+
+    return list(dict.fromkeys(found))
+
 def extract_all_tags(text: str) -> Dict[str, Any]:
     """
     FONCTION MAÎTRESSE : Extrait tout en une fraction de seconde.
     """
     cleaned_text = clean_text_turbo(text)
-    
-    return {
-        # Texte nettoyé (pour affichage/usage futur)
+
+    # Base minimale toujours disponible
+    result = {
         "cleaned_text": cleaned_text,
-        
-        # Données Démographiques
         "age": extract_age_turbo(cleaned_text),
-        "profession": scan_text_for_keywords(cleaned_text, PROFESSIONS_MAPPING),
-        "ville": scan_text_for_keywords(cleaned_text, CITIES).pop(0) if scan_text_for_keywords(cleaned_text, CITIES) else None,
-        "famille": scan_text_for_keywords(cleaned_text, FAMILLE_MAPPING),
-        
-        # Données Achat
         "budget": extract_budget_turbo(cleaned_text),
         "urgence_score": extract_urgency_turbo(cleaned_text),
-        "motif_achat": scan_text_for_keywords(cleaned_text, MOTIF_MAPPING),
-        
-        # Préférences Produit
-        "couleurs": scan_text_for_keywords(cleaned_text, COLORS_MAPPING),
-        "matieres": scan_text_for_keywords(cleaned_text, MATERIALS_MAPPING),
-        "style": scan_text_for_keywords(cleaned_text, STYLE_MAPPING),
-        
-        # Lifestyle
-        "centres_interet": scan_text_for_keywords(cleaned_text, LIFESTYLE_MAPPING)
     }
+
+    # Taxonomie simple (fallback)
+    if not ADVANCED_TAXONOMY_AVAILABLE:
+        result.update({
+            "profession": scan_text_for_keywords(cleaned_text, PROFESSIONS_MAPPING),
+            "ville": scan_text_for_keywords(cleaned_text, CITIES).pop(0) if scan_text_for_keywords(cleaned_text, CITIES) else None,
+            "famille": scan_text_for_keywords(cleaned_text, FAMILLE_MAPPING),
+            "motif_achat": scan_text_for_keywords(cleaned_text, MOTIF_MAPPING),
+            "couleurs": scan_text_for_keywords(cleaned_text, COLORS_MAPPING),
+            "matieres": scan_text_for_keywords(cleaned_text, MATERIALS_MAPPING),
+            "style": scan_text_for_keywords(cleaned_text, STYLE_MAPPING),
+            "centres_interet": scan_text_for_keywords(cleaned_text, LIFESTYLE_MAPPING),
+        })
+        return result
+
+    # Taxonomie avancée complète
+    sport = scan_text_for_keywords_advanced(cleaned_text, SPORT_MAPPING)
+    musique = scan_text_for_keywords_advanced(cleaned_text, MUSIQUE_MAPPING)
+    animaux = scan_text_for_keywords_advanced(cleaned_text, ANIMAUX_MAPPING)
+    voyage = scan_text_for_keywords_advanced(cleaned_text, VOYAGE_MAPPING)
+    art_culture = scan_text_for_keywords_advanced(cleaned_text, ART_CULTURE_MAPPING)
+    gastronomie = extract_gastronomie_precise(cleaned_text)
+
+    centres_interet = []
+    for group in [sport, musique, voyage, art_culture, gastronomie]:
+        centres_interet.extend(group)
+    centres_interet = list(dict.fromkeys(centres_interet))
+
+    villes_detectees = scan_text_for_keywords_advanced(cleaned_text, CITIES_ADVANCED)
+
+    matieres_detectees = scan_text_for_keywords_advanced(cleaned_text, MATIERES_ADVANCED)
+    # Évite le faux positif Denim sur le prénom "Jean"
+    if "Denim" in matieres_detectees and not re.search(r"\b(denim|jeans?)\b", cleaned_text.lower()):
+        matieres_detectees = [m for m in matieres_detectees if m != "Denim"]
+
+    motifs_precis = extract_motif_precise(cleaned_text)
+
+    pieces_favorites_precise = extract_pieces_favorites_precise(cleaned_text)
+    pieces_recherchees_precise = extract_pieces_recherchees_precise(cleaned_text)
+    pays_detecte = extract_country_precise(cleaned_text)
+    famille_precise = extract_famille_precise(cleaned_text)
+    marques_precises = extract_marques_precises(cleaned_text)
+    tailles_precises = extract_tailles_precise(cleaned_text)
+    if not pays_detecte and villes_detectees:
+        city_country_map = {
+            "Paris": "France", "Lyon": "France", "Milan": "Italie", "Rome": "Italie",
+            "Madrid": "Espagne", "Barcelona": "Espagne", "London": "Royaume-Uni",
+            "Berlin": "Allemagne", "Munich": "Allemagne", "Genève": "Suisse",
+            "Zurich": "Suisse", "Bruxelles": "Belgique", "New York": "États-Unis",
+            "Los Angeles": "États-Unis", "Miami": "États-Unis", "Chicago": "États-Unis",
+            "San Francisco": "États-Unis", "Boston": "États-Unis", "Toronto": "Canada",
+            "Montreal": "Canada",
+        }
+        pays_detecte = city_country_map.get(villes_detectees[0])
+
+    result.update({
+        # Identité
+        "genre": extract_genre_precise(cleaned_text),
+        "langue": scan_text_for_keywords_advanced(cleaned_text, LANGUE_MAPPING),
+        "statut_client": scan_text_for_keywords_advanced(cleaned_text, STATUT_MAPPING),
+
+        # Démographiques
+        "profession": scan_text_for_keywords_advanced(cleaned_text, PROFESSIONS_ADVANCED),
+        "ville": villes_detectees[0] if villes_detectees else None,
+        "pays": pays_detecte,
+        "famille": famille_precise,
+
+        # Lifestyle
+        "sport": sport,
+        "musique": musique,
+        "animaux": animaux,
+        "voyage": voyage,
+        "art_culture": art_culture,
+        "gastronomie": gastronomie,
+        "centres_interet": centres_interet,
+
+        # Style
+        "pieces_favorites": pieces_favorites_precise,
+        "pieces_recherchees": pieces_recherchees_precise,
+        "couleurs": scan_text_for_keywords_advanced(cleaned_text, COULEURS_ADVANCED),
+        "matieres": matieres_detectees,
+        "sensibilite_mode": scan_text_for_keywords_advanced(cleaned_text, SENSIBILITE_MODE),
+        "tailles": tailles_precises if tailles_precises else scan_text_for_keywords_advanced(cleaned_text, TAILLES_MAPPING),
+        "style": scan_text_for_keywords(cleaned_text, STYLE_MAPPING),
+
+        # Achat
+        "motif_achat": motifs_precis if motifs_precis else scan_text_for_keywords_advanced(cleaned_text, MOTIF_ADVANCED),
+        "timing": scan_text_for_keywords_advanced(cleaned_text, TIMING_MAPPING),
+        "marques_preferees": marques_precises,
+        "frequence_achat": scan_text_for_keywords_advanced(cleaned_text, FREQUENCE_ACHAT),
+
+        # Préférences
+        "regime": scan_text_for_keywords_advanced(cleaned_text, REGIME_MAPPING),
+        "allergies": scan_text_for_keywords_advanced(cleaned_text, ALLERGIES_MAPPING),
+        "valeurs": scan_text_for_keywords_advanced(cleaned_text, VALEURS_MAPPING),
+
+        # CRM
+        "actions_crm": scan_text_for_keywords_advanced(cleaned_text, ACTIONS_MAPPING),
+        "echeances": scan_text_for_keywords_advanced(cleaned_text, ECHEANCES_MAPPING),
+        "canaux_contact": scan_text_for_keywords_advanced(cleaned_text, CANAUX_MAPPING),
+    })
+
+    return result
 
 # Test rapide quand exécuté directement
 if __name__ == "__main__":
