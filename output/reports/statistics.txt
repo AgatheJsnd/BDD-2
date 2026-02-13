@@ -6,14 +6,14 @@ Total clients : 455
 
 Répartition par genre :
   - Femme: 379 (83.3%)
-  - Autre: 56 (12.3%)
+  - Autre: 57 (12.5%)
   - Homme: 18 (4.0%)
 
 Répartition par âge :
-  - 36-45: 123 (27.0%)
-  - 46-55: 58 (12.7%)
-  - 26-35: 33 (7.3%)
-  - 56+: 20 (4.4%)
+  - 36-45: 129 (28.4%)
+  - 46-55: 65 (14.3%)
+  - 26-35: 35 (7.7%)
+  - 56+: 21 (4.6%)
   - 18-25: 10 (2.2%)
 
 Répartition par statut :
@@ -25,19 +25,19 @@ Répartition par statut :
 
 Top 5 sports :
   - Yoga: 62 clients
-  - Running: 39 clients
+  - Running: 38 clients
   - Golf: 18 clients
-  - Fitness: 9 clients
   - Tennis: 8 clients
+  - Ski: 8 clients
 
 Top 5 couleurs :
-  - Or: 309 clients
+  - Or: 360 clients
   - Noir: 186 clients
   - Beige: 169 clients
-  - Cognac: 126 clients
-  - Rouge: 125 clients
+  - Rouge: 134 clients
+  - Cognac: 128 clients
 
 Régimes alimentaires :
-  - Vegetarien: 97 clients
-  - Pescetarien: 45 clients
-  - Vegane: 42 clients
+  - Vegetarien: 112 clients
+  - Vegane: 60 clients
+  - Pescetarien: 49 clients

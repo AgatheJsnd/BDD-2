@@ -3,42 +3,56 @@
   "metadata": {
     "date_conversation": "2026-03-11",
     "duration": "40 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
+  "transcription": "Signor Greco, 50 anni, direttore banca investimenti, cliente regolare 2016. Acquista regali moglie anniversario e madre festa mamma. Budget combinato 14K. Moglie 48 anni insegnante liceo letteratura, ama leggere teatro. Madre 75 anni pensionata maestra, eleganza classica tradizionale. Moglie stile elegante professionale, preferisce bordeaux navy. Madre tradizionale cognac oro. Anniversario matrimonio maggio, festa mamma stesso mese. Entrambe vegetariane eventi. Moglie allergia nichel importante. Due figli: figlia università economia figlio liceo. Cliente fedele soddisfatto sempre. Rete bancaria finanziaria contatti numerosi. Richiamare aprile selezione mostrare. Famiglia unita tradizioni importanti.",
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Fidèle",
-    "profession": "Cadre"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Bordeaux",
-      "Cognac",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "10-15k"
+    "budget": "10–15k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien",
-    "allergies": [
-      "nickel"
-    ]
   }
 }

@@ -3,44 +3,67 @@
   "metadata": {
     "date_conversation": "2026-02-19",
     "duration": "30 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Ms. Park, 34, YouTuber luxury lifestyle content 1.5M subscribers, first visit high potential. Looking for pieces content creation and personal use. Budget 14K flexible. Travels constantly luxury destinations content, next trips Dubai then Maldives. Style modern elegant on-camera appropriate. Passionate about wellness spa treatments, practices meditation. Vegan strict lifestyle choice events. No allergies. Partner tech entrepreneur also influence. Excellent visibility social media potential brand partnership. Very interested sustainability asked materials sourcing. Follow up immediately maintain relationship. Invite exclusive VIP events content opportunities. Could become brand ambassador long-term.",
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {
     "moyen_orient_asie": [
       "Dubai"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe"
+    "voyage": {
+      "experience": [
+        "Détente",
+        "Luxe"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "budget": "10-15k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
-  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

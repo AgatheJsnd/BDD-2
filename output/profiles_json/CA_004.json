@@ -3,44 +3,74 @@
   "metadata": {
     "date_conversation": "2026-01-09",
     "duration": "20 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "M. Dubois, 62 ans retraité, ancien dirigeant bancaire, client régulier. Achat rapide portefeuille cadeau gendre architecte. Budget 1500€. Cuir noir classique sobre. Gendre amateur photographie voyage beaucoup Asie Amérique Sud. Anniversaire gendre février. Client fidèle depuis 2015, achète toujours cadeaux famille ici. Satisfait comme toujours, parti rapidement.",
   "identite": {
     "genre": "Femme",
-    "age": "56+",
     "statut_relationnel": "Fidèle",
-    "profession": "Cadre"
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Portefeuille"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire"
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

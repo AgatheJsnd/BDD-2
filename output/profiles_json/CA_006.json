@@ -3,41 +3,65 @@
   "metadata": {
     "date_conversation": "2026-01-10",
     "duration": "30 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
+  "transcription": "Sr. García, 29 años, futbolista profesional Real Madrid, primera visita. Viene con novia influencer 400K seguidores Instagram. Busca bolso regalo cumpleaños novia próxima semana. Presupuesto amplio 8-10K, quiere algo excepcional único. Ella estilo moderno colorido, no demasiado clásico. Él interesado también pequeña marroquinería hombre. Mencionó organizan eventos casa frecuentemente, anotar alergia mariscos ella para futuros cócteles boutique. Pareja joven mucho potencial, compras frecuentes probable. Invitar eventos VIP, buena visibilidad redes sociales. Seguimiento previsto después compra para fidelizar. Ella vegana estricta importante eventos.",
   "identite": {
     "genre": "Homme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "age": "26-35",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Madrid"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {},
   "style_personnel": {
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "25k+"
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

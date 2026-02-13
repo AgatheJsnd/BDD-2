@@ -3,51 +3,69 @@
   "metadata": {
     "date_conversation": "2026-02-24",
     "duration": "35 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
+  "transcription": "Signor Rossi, 42 anni, chef stellato Michelin ristorante Milano, nuovo cliente ottimo. Cerca regalo moglie anniversario 15 anni matrimonio. Budget 9K flessibile. Moglie sommelier ristorante stesso, coppia lavora insieme passione gastronomia. Viaggiano ricerca ingredienti produttori artigianali Francia Giappone. Moglie stile elegante professionale, preferisce cognac nero rosé gold. Collezionano bottiglie vino rare cantina impressionante. Anniversario marzo ristorante chiude settimana celebrazione privata. Entrambi pescetariani ovviamente. Moglie allergia nichel attenzione. Nessun figli focus carriera. Cliente interessante rete gastronomia lusso alta, molti clienti ristorante potenziali. Richiamare febbraio fine confermare. Interessato collaborazione evento boutique ristorante possibile.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "Fidèle",
     "age": "36-45",
-    "statut_relationnel": "Fidèle"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Milan"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Rose_gold",
-      "Noir",
-      "Cognac"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Rouge",
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "allergies": [
-      "nickel"
-    ]
   }
 }

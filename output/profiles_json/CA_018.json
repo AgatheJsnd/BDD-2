@@ -3,51 +3,80 @@
   "metadata": {
     "date_conversation": "2026-01-20",
     "duration": "35 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mr. Davis, 41, professional tennis player recently retired, new client high potential. Looking for lifestyle pieces post-sports career, starting coaching academy. Budget around 12K initial. Wants travel bags, small leather goods, professional pieces for coaching. Still plays tennis daily, member multiple clubs, attends Wimbledon every year. Passionate about wine, taking sommelier courses, planning vineyard visit Bordeaux. Wife's birthday coming March, married to physiotherapist. Follows plant-based diet athlete habits. No allergies. Mentioned starting foundation for young athletes, could be partnership opportunity boutique. Good media presence former professional, 300K followers social media. Interested in durability quality pieces for active lifestyle. Follow up in month with personalized selection. Invite to sports-related VIP events.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Sport": [
+        "Athlète"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Tennis",
-        "Running"
-      ]
+      "collectif": [],
+      "individuel": {
+        "raquette": [
+          "Tennis"
+        ],
+        "endurance": [
+          "Running"
+        ]
+      }
     },
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {}
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Bordeaux"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Bordeaux",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "10-15k"
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

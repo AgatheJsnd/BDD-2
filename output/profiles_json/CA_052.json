@@ -3,49 +3,76 @@
   "metadata": {
     "date_conversation": "2026-02-12",
     "duration": "45 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Dr. and Mrs. Montgomery, both 56, long-time VIP clients since 2012. Shopping for daughter's wedding gifts bridesmaids and family. Combined budget 25K+ very generous. He's orthopedic surgeon, she's retired former diplomat. Daughter getting married June destination wedding Tuscany. Looking for gifts 6 bridesmaids, mother of groom, special pieces family members. Daughter works UN sustainable development passionate ethics. Bridesmaids age range 28-32 varied tastes. Mother groom Italian traditional elegant. Both passionate about opera theater, season ticket holders. Travel extensively cultural trips, just back from Prague planning Vienna. She prefers classic elegant pieces rose gold burgundy cognac. He wants quality timeless pieces. Both vegetarian for events. She has severe nut allergy critical boutique events. Mentioned son studying medicine Oxford, graduation next year gift opportunity. Wedding June big family affair 200 guests. Excellent lifetime value family occasions always shop here. Follow up April final selections confirm. Very interested ethical sourcing for daughter's values, asked detailed questions supply chain workers conditions. Could be advocates sustainable luxury line. Top priority clients maintain relationship carefully.",
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Profession_libérale"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Opera"
-    ],
-    "voyage": [
-      "Luxe",
-      "Culturel"
-    ]
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Rose_gold",
-      "Bordeaux",
-      "Noir",
-      "Cognac"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Bordeaux",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "25k+"
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Diplome",
+        "Cadeau",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

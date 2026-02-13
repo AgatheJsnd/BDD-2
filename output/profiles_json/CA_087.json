@@ -3,43 +3,76 @@
   "metadata": {
     "date_conversation": "2026-03-10",
     "duration": "30 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "M. Blanc, 44 ans, restaurateur étoilé Michelin, nouveau client excellent. Cherche cadeaux équipe cuisine service étoile obtenue récemment. Budget 10K pour 5 personnes clés. Restaurant obtenu étoile février célébration grande. Équipe chef pâtissier sommelier maître hôtel sous-chef. Veut remercier pièces mémorables qualité. Cuirs couleurs variées classiques. Équipe diète variée plusieurs végétariens. Client passionné gastronomie vin, cave restaurant impressionnante. Très satisfait service boutique. Mentionné si deuxième étoile obtenue futur, reviendra budget plus important. Réseau gastronomie luxe excellent potentiel. Rappeler été. Possible collaboration événement restaurant boutique discuté.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "VIP",
     "age": "36-45",
-    "statut_relationnel": "VIP"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "voyage": [
-      "Luxe"
-    ]
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    },
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Blanc"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Blanc"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin",
+        "Cuir"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "10-15k"
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

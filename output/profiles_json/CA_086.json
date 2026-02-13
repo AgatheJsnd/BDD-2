@@ -3,50 +3,75 @@
   "metadata": {
     "date_conversation": "2026-03-09",
     "duration": "50 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mrs. Harrison and mother shopping together, multi-generational excellent clients. Mrs. Harrison 47 barrister QC, mother 72 retired diplomat. Combined budget 18K. Mother elegant classic timeless style, decades diplomatic service worldwide lived many countries. Collects diplomatic memorabilia, house museum personal history. Daughter modern professional sophisticated, busy court schedule. Both passionate about theater opera, season tickets Royal Opera House. Travel cultural trips, just returned India next planning Egypt. Mother prefers burgundy navy gold classic diplomatic elegance. Daughter wants versatile professional pieces rose gold black cognac. Both vegetarian events. Mother severe nut allergy critical boutique events. Mentioned mother's 75th birthday coming this year September big family celebration. Daughter's husband architect two children teenagers boarding school. Anniversary mother's late husband June memory honors annually. Excellent multi-generational lifetime value, diplomatic legal network extensive internationally referred many over years. Follow up July summer collection preview. Very interested heritage craftsmanship, mother shared stories diplomatic gifts received career appreciates quality artisanship. Top relationship maintain carefully ongoing loyalty years appreciated.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat",
+        "Architecte"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Musees",
-      "Opera",
-      "Art"
-    ],
-    "voyage": [
-      "Culturel"
-    ]
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Cognac",
-      "Rose_gold",
-      "Bordeaux",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Bordeaux",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "15-25k"
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

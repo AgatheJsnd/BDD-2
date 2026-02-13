@@ -3,41 +3,66 @@
   "metadata": {
     "date_conversation": "2026-01-31",
     "duration": "25 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "M. Simon, 59 ans, entrepreneur import-export, client occasionnel. Cherche cadeau épouse anniversaire 30 ans mariage. Budget 8K. Épouse galeriste art africain contemporain, organise expositions. Elle voyage fréquent Afrique recherche artistes. Style élégant bohème, aime couleurs tissus africains. Épouse végane convictions éthiques événements. Anniversaire mars. Client satisfait service, mentionné épouse collectionne sculptures bois africain. Fils travaille ONG environnement. Rappeler février montrer sélection.",
   "identite": {
     "genre": "Femme",
-    "age": "56+",
     "statut_relationnel": "Nouveau",
-    "profession": "Entrepreneur"
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {}
   },
   "style_personnel": {
-    "pieces_favorites": [
-      "Montres"
-    ]
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

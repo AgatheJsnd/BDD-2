@@ -3,36 +3,70 @@
   "metadata": {
     "date_conversation": "2026-01-30",
     "duration": "30 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
+  "transcription": "Sr. Torres, 28 años, DJ productor musical éxito internacional, nuevo cliente potencial alto. Busca piezas statement estilo personal y regalo novia cantante. Presupuesto 12K hoy futuro más. Estilo moderno urbano trendy pero aprecia artesanía calidad. Viaja constantemente festivales música mundial, próximos Tomorrowland Coachella. Colecciona vinilos raros música electrónica. Novia influencer música 1M seguidores posible visibilidad. Vegano estricto ético eventos. Sin alergias. Mencionó planea crear propia marca ropa streetwear, posible colaboración boutique futuro. Excelente potencial nuevo segmento clientela joven rica creativa. Muy activo redes sociales 800K followers. Follow-up inmediato fidelizar. Invitar eventos exclusivos música relacionados. Interesado innovación materiales tecnología wearable.",
   "identite": {
     "genre": "Homme",
+    "statut_relationnel": "Fidèle",
     "age": "26-35",
-    "statut_relationnel": "Fidèle"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Sport": [
+        "Athlète"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "10-15k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

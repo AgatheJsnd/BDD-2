@@ -3,48 +3,77 @@
   "metadata": {
     "date_conversation": "2026-03-17",
     "duration": "40 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mrs. Cooper, 46, surgeon orthopedic hospital private practice, regular client since 2018. Shopping for professional wardrobe update promotion department head. Budget 11K. Style professional elegant appropriate medical setting. Passionate about marathon running training Boston Marathon. Travels medical conferences presentations international. Collects medical history artifacts curiosity professional. Prefers classic timeless pieces black navy burgundy. Vegan lifestyle choice events. Latex allergy occupational important. Mentioned daughter studying medicine follows career, son engineering university. Husband architect also potential client. Anniversary September annually. Good client consistent purchases, medical network extensive colleagues referred. Follow up April spring collection. Interested quality craftsmanship durability investment pieces professional use.",
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "Fidèle",
-    "profession": "Profession_libérale"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin",
+        "Architecte"
+      ],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness",
-        "Running"
-      ]
-    },
-    "art_culture": [
-      "Opera",
-      "Art"
-    ]
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Bordeaux",
-      "Noir",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Bordeaux",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {}
   },
   "projet_achat": {
-    "budget": "10-15k"
+    "budget": "10–15k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

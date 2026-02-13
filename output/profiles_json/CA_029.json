@@ -3,50 +3,72 @@
   "metadata": {
     "date_conversation": "2026-01-28",
     "duration": "40 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
+  "transcription": "Frau Meyer, 39 Jahre, tech entrepreneur Berlin startup unicorn, neue Kundin hohes Potenzial. Sucht Luxusaccessoires nach erfolgreichem Exit. Budget sehr flexibel 25K+ besprochen. Modern-professioneller Stil, schätzt Qualität Handwerk. Interessiert Handtaschen Kollektion, Kleinlederwaren, Reisestücke. Leidenschaftlich Triathlon, trainiert täglich, Ironman-Wettbewerbe international. Sammelt digitale Kunst NFTs, folgt Tech-Trends. Vegane Ernährung ethische Wahl Events. Keine Allergien. Partner ebenfalls Tech-Entrepreneur, beide einflussreich Startup-Szene. Plant Hochzeit Herbst, Hochzeitsgeschenke Opportunity. Ausgezeichnetes Potenzial neues Kundensegment wohlhabende junge Tech. Follow-up sofort nach Kauf. VIP-Events einladen. Sehr interessiert Nachhaltigkeit, fragte nach Materialherkunft Transparenz. Möchte langfristige Beziehung aufbauen.",
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Berlin"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
   },
   "style_personnel": {
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
     "budget": "25k+"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

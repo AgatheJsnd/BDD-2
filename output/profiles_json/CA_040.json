@@ -3,49 +3,76 @@
   "metadata": {
     "date_conversation": "2026-02-04",
     "duration": "35 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "Mme Blanc et mari, 51-54 ans, clients fidèles 2016. Achat multiple collection printemps et cadeaux anniversaires enfants. Budget combiné 16K. Elle avocate droit famille cabinet propre, lui chirurgien maxillo-facial. Tous deux passionnés équitation, possèdent chevaux, compétitions dressage régionales. Voyagent équitation Europe, prochaine compétition Aachen. Collectionnent art équestre peintures sculptures chevaux. Elle élégance classique raffinée, préfère cognac bordeaux or. Lui style sobre fonctionnel, noir marron argent. Tous deux pescetariens événements. Elle allergie nickel hardware attention. Trois enfants adultes maintenant, fils aîné vétérinaire, fille médecin, benjamin étudiant droit suit mère. Anniversaire mariage mai chaque année rituel shopping. Excellents clients lifetime value, réseau équestre haut niveau, référé plusieurs. Rappeler mars preview exclusive. Intéressés collaboration équestre événements sponsoring possibilité.",
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "VIP",
-    "profession": "Profession_libérale"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat",
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Bordeaux",
-      "Noir",
-      "Cognac",
-      "Blanc"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Blanc"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Argent",
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "15-25k"
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien",
-    "allergies": [
-      "nickel"
-    ]
   }
 }

@@ -19,6 +19,21 @@ import {
   Eye,
   EyeOff
 } from 'lucide-react';
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  Cell,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  LineChart,
+  Line
+} from 'recharts';
 
 const styles = {
   loginWrapper: {
@@ -68,8 +83,11 @@ const styles = {
   logoImg: {
     width: '100%',
     height: '100%',
-    objectFit: 'cover',
-    objectPosition: '48% 50%'
+    objectFit: 'contain',
+    objectPosition: 'center',
+    padding: '2px',
+    boxSizing: 'border-box',
+    transform: 'scale(1.18)'
   },
   card: {
     backgroundColor: 'rgba(255,255,255,0.95)',
@@ -119,6 +137,8 @@ const loadPersistedVendeurHistory = () => {
 function App() {
   const [auth, setAuth] = useState({ isAuthenticated: false, user: null });
   const [activeTab, setActiveTab] = useState('data');
+  const [analyticsData, setAnalyticsData] = useState(null);
+  const [importedTaxonomyRows, setImportedTaxonomyRows] = useState([]);
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
   const [loading, setLoading] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
@@ -377,33 +397,26 @@ function App() {
             transform: sidebarExpanded ? 'none' : 'translateX(-4px)'
           }}
         >
-          {auth.user.role === 'vendeur' ? (
-            sidebarExpanded ? (
-              <h2
-                style={{
-                  margin: 0,
-                  fontSize: '32px',
-                  color: '#000',
-                  fontWeight: 400,
-                  fontFamily: '"Times New Roman", Times, serif',
-                  letterSpacing: '2px',
-                  textTransform: 'uppercase',
-                  textAlign: 'center',
-                  width: '100%'
-                }}
-              >
-                Loewe
-              </h2>
-            ) : (
-              <div style={{ width: '42px', height: '42px', borderRadius: '50%', border: '1px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', backgroundColor: '#fff' }}>
-                <img src="/assets/images/loewe_logo.png" alt="Loewe" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '3px' }} />
-              </div>
-            )
-          ) : (
-            <h2 style={{ margin: 0, fontSize: sidebarExpanded ? '24px' : '0px', color: '#000', display: 'flex', alignItems: 'center', gap: sidebarExpanded ? '12px' : '0px' }}>
-              <span style={{ backgroundColor: '#000', color: '#fff', padding: '4px 10px', borderRadius: '6px', fontWeight: 900 }}>LVMH</span>
-              {sidebarExpanded && <span style={{ fontSize: '16px', fontWeight: 500, color: '#666' }}>Analytics</span>}
+          {sidebarExpanded ? (
+            <h2
+              style={{
+                margin: 0,
+                fontSize: '32px',
+                color: '#000',
+                fontWeight: 400,
+                fontFamily: '"Times New Roman", Times, serif',
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                textAlign: 'center',
+                width: '100%'
+              }}
+            >
+              Loewe
             </h2>
+          ) : (
+            <div style={{ width: '42px', height: '42px', borderRadius: '50%', border: '1px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', backgroundColor: '#fff' }}>
+              <img src="/assets/images/loewe_logo.png" alt="Loewe" style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', padding: '2px', boxSizing: 'border-box', transform: 'scale(1.15)' }} />
+            </div>
           )}
         </div>
 
@@ -441,12 +454,11 @@ function App() {
           {sidebarExpanded ? (
             <>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', marginBottom: '14px', width: '100%' }}>
-                <div style={{ width: '34px', height: '34px', borderRadius: '50%', overflow: 'hidden', border: '1px solid #000' }}>
-                  <img src={auth.user.role === 'vendeur' ? '/assets/images/loewe_logo.png' : 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'} alt="Profile" style={{ width: '100%', height: '100%', objectFit: auth.user.role === 'vendeur' ? 'contain' : 'cover', backgroundColor: auth.user.role === 'vendeur' ? '#fff' : 'transparent' }} />
+                <div style={{ width: '34px', height: '34px', borderRadius: '50%', overflow: 'hidden', border: '1px solid #000', backgroundColor: '#fff' }}>
+                  <img src="/assets/images/loewe_logo.png" alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', padding: '2px', boxSizing: 'border-box', transform: 'scale(1.15)' }} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#1a1a1a' }}>{auth.user.role === 'vendeur' ? 'VENDEUR' : auth.user.name}</div>
-                  {auth.user.role !== 'vendeur' && <div style={{ fontSize: '10px', color: '#999', textTransform: 'uppercase', fontWeight: 600 }}>{auth.user.role}</div>}
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#1a1a1a' }}>{auth.user.role === 'vendeur' ? 'VENDEUR' : 'ANALYSTE'}</div>
                 </div>
               </div>
               <button
@@ -475,10 +487,18 @@ function App() {
       >
         <AnimatePresence mode="wait">
           <motion.div key={activeTab} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }} transition={{ duration: 0.2 }}>
-            {activeTab === 'data' && <DataTab />}
-            {activeTab === 'global' && <PlaceholderTab title="Vue Globale" />}
-            {activeTab === 'ai' && <PlaceholderTab title="Analyse IA" />}
-            {activeTab === 'builder' && <PlaceholderTab title="Studio Builder" />}
+            {activeTab === 'data' && (
+              <DataTab
+                onImportSuccess={(payload) => {
+                  setAnalyticsData(payload?.preview || null);
+                  setImportedTaxonomyRows(Array.isArray(payload?.taxonomyRows) ? payload.taxonomyRows : []);
+                }}
+                taxonomyRows={importedTaxonomyRows}
+              />
+            )}
+            {activeTab === 'global' && <GlobalTab analyticsData={analyticsData} />}
+            {activeTab === 'ai' && <AITab analyticsData={analyticsData} />}
+            {activeTab === 'builder' && <BuilderTab analyticsData={analyticsData} />}
             {activeTab === 'voice' && <VoiceTab onAddHistoryItem={addToHistoryFromTranscription} />}
             {activeTab === 'history' && <HistoryTab history={historyItems} onDeleteHistoryItem={deleteHistoryItem} />}
             {activeTab === 'database' && <DatabaseTab />}
@@ -520,10 +540,46 @@ function SidebarItem({ icon, label, active, isExpanded, onClick }) {
   );
 }
 
-function DataTab() {
+function DataTab({ onImportSuccess, taxonomyRows = [] }) {
   const [isUploading, setIsUploading] = useState(false);
   const [uploadStatus, setUploadStatus] = useState(null);
+  const [uploadError, setUploadError] = useState('');
+  const [uploadWarning, setUploadWarning] = useState('');
   const fileInputRef = useRef(null);
+  const tagLabels = {
+    genre: 'Genre',
+    langue: 'Langue',
+    statut_client: 'Statut client',
+    age: 'Age',
+    profession: 'Profession',
+    ville: 'Ville',
+    pays: 'Pays',
+    famille: 'Famille',
+    sport: 'Sport',
+    musique: 'Musique',
+    animaux: 'Animaux',
+    voyage: 'Voyage',
+    art_culture: 'Art et culture',
+    gastronomie: 'Gastronomie',
+    pieces_favorites: 'Pieces favorites',
+    pieces_recherchees: 'Pieces recherchees',
+    couleurs: 'Couleurs',
+    matieres: 'Matieres',
+    sensibilite_mode: 'Sensibilite mode',
+    tailles: 'Tailles',
+    style: 'Style',
+    budget: 'Budget',
+    urgence_score: 'Urgence',
+    motif_achat: "Motif d'achat",
+    marques_preferees: 'Marques preferees',
+    frequence_achat: "Frequence d'achat",
+    regime: 'Regime',
+    allergies: 'Allergies',
+    valeurs: 'Valeurs',
+    actions_crm: 'Actions CRM',
+    echeances: 'Echeances',
+    canaux_contact: 'Canaux contact'
+  };
 
   const handleFileSelect = () => {
     if (fileInputRef.current) fileInputRef.current.click();
@@ -534,16 +590,31 @@ function DataTab() {
     if (!file) return;
     setIsUploading(true);
     setUploadStatus(null);
+    setUploadError('');
+    setUploadWarning('');
     const formData = new FormData();
     formData.append('file', file);
     try {
-      await axios.post('http://localhost:5001/api/analyze', formData, {
+      const response = await axios.post('http://localhost:5001/api/analyze', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
+      onImportSuccess?.({
+        preview: response?.data?.preview || null,
+        taxonomyRows: response?.data?.taxonomy_rows || []
+      });
+      if (response?.data?.warning) {
+        setUploadWarning(response.data.warning);
+      }
       setUploadStatus('success');
     } catch (err) {
       console.error(err);
       setUploadStatus('error');
+      const backendError =
+        err?.response?.data?.error ||
+        err?.response?.data?.details ||
+        err?.message ||
+        "Erreur pendant l'import.";
+      setUploadError(backendError);
     } finally {
       setIsUploading(false);
       if (fileInputRef.current) fileInputRef.current.value = '';
@@ -555,14 +626,58 @@ function DataTab() {
       <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Ingestion & Tags</h1>
       <p style={{ color: '#555', marginTop: 0 }}>Importez un fichier pour lancer le nettoyage et l'analyse.</p>
       <div style={{ ...styles.card, maxWidth: '760px', marginTop: '24px' }}>
-        <input ref={fileInputRef} type="file" accept=".csv,.xlsx,.xls,.json,.txt" onChange={handleFileChange} style={{ display: 'none' }} />
+        <input ref={fileInputRef} type="file" onChange={handleFileChange} style={{ display: 'none' }} />
         <button onClick={handleFileSelect} style={{ padding: '12px 16px', borderRadius: '12px', border: 'none', background: '#000', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }} disabled={isUploading}>
-          {isUploading ? <Loader2 size={16} className="animate-spin" /> : <Upload size={16} />}
+          {isUploading ? (
+            <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}>
+              <Loader2 size={16} />
+            </motion.div>
+          ) : (
+            <Upload size={16} />
+          )}
           {isUploading ? 'Traitement...' : 'Sélectionner un fichier'}
         </button>
         {uploadStatus === 'success' && <p style={{ color: '#15803d', marginTop: '14px' }}>Import terminé.</p>}
-        {uploadStatus === 'error' && <p style={{ color: '#b91c1c', marginTop: '14px' }}>Erreur pendant l'import.</p>}
+        {uploadWarning && <p style={{ color: '#92400e', marginTop: '10px' }}>{uploadWarning}</p>}
+        {uploadStatus === 'error' && <p style={{ color: '#b91c1c', marginTop: '14px' }}>{uploadError || "Erreur pendant l'import."}</p>}
       </div>
+
+      {taxonomyRows.length > 0 && (
+        <div style={{ ...styles.card, marginTop: '18px' }}>
+          <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 700 }}>Clients et tags taxonomie</h3>
+          <div style={{ color: '#6b7280', fontSize: '13px', marginBottom: '12px' }}>
+            {taxonomyRows.length} client(s) détecté(s) dans le fichier importé.
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxHeight: '460px', overflowY: 'auto', paddingRight: '4px' }}>
+            {taxonomyRows.map((row, idx) => (
+              <div key={`${row.client || 'client'}-${idx}`} style={{ border: '1px solid #eceff3', borderRadius: '12px', padding: '10px', background: '#fafafa' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
+                  <span style={{ fontWeight: 800, fontSize: '14px', color: '#111827' }}>{row.client || `Client ${idx + 1}`}</span>
+                  {row.client_id && (
+                    <span style={{ fontSize: '12px', color: '#6b7280', fontWeight: 600 }}>
+                      ID: {row.client_id}
+                    </span>
+                  )}
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                  {Object.entries(row.tags || {}).map(([tagKey, tagValue]) => {
+                    const valueText = Array.isArray(tagValue) ? tagValue.join(', ') : String(tagValue);
+                    if (!valueText || valueText.trim() === '') return null;
+                    return (
+                      <TagBadge
+                        key={`${row.client || idx}-${tagKey}`}
+                        label={`${tagLabels[tagKey] || tagKey}: ${valueText}`}
+                        color="#f3f4f6"
+                        textColor="#111827"
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -746,7 +861,13 @@ function VoiceTab({ onAddHistoryItem }) {
               }}
               onClick={() => (isRecording ? stopRecording() : startRecording())}
             >
-              {isProcessing ? <Loader2 size={30} color="white" className="animate-spin" /> : <Mic size={30} color="white" />}
+              {isProcessing ? (
+                <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}>
+                  <Loader2 size={30} color="white" />
+                </motion.div>
+              ) : (
+                <Mic size={30} color="white" />
+              )}
             </motion.div>
             <h4 style={{ margin: '0 0 8px 0', fontSize: '18px', fontWeight: 700 }}>
               {isProcessing ? 'Traitement IA...' : isRecording ? 'Enregistrement en cours...' : 'Prêt à enregistrer'}
@@ -1037,12 +1158,179 @@ function DatabaseTab() {
   );
 }
 
-function PlaceholderTab({ title }) {
+function EmptyAnalyticsState({ title }) {
   return (
     <div>
       <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>{title}</h1>
       <div style={{ ...styles.card, marginTop: '24px' }}>
-        <p style={{ margin: 0, color: '#555' }}>Cette section est restaurée et peut être affinée.</p>
+        <p style={{ margin: 0, color: '#555' }}>
+          Importe une base de données dans `Ingestion & Tags` pour afficher les graphiques et insights.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+const CHART_COLORS = ['#111827', '#374151', '#6b7280', '#9ca3af', '#d1d5db', '#4b5563', '#1f2937', '#94a3b8'];
+
+const formatCompactNumber = (value) => {
+  const num = Number(value);
+  if (!Number.isFinite(num)) return '0';
+  return new Intl.NumberFormat('fr-FR').format(Math.round(num));
+};
+
+function GlobalTab({ analyticsData }) {
+  if (!analyticsData) return <EmptyAnalyticsState title="Vue Globale" />;
+
+  const missingData = (analyticsData.missing_by_column || []).slice(0, 8);
+  const firstCategory = analyticsData.top_categories?.[0];
+  const pieData = (firstCategory?.values || []).map((x) => ({ name: String(x.name).slice(0, 22), value: Number(x.count) || 0 }));
+  const completionRate = analyticsData.row_count > 0 && analyticsData.column_count > 0
+    ? Math.max(
+        0,
+        Math.min(
+          100,
+          Math.round(
+            100 *
+              (1 -
+                (analyticsData.missing_by_column || []).reduce((acc, item) => acc + (Number(item.missing) || 0), 0) /
+                  (analyticsData.row_count * analyticsData.column_count)
+              )
+          )
+        )
+      )
+    : 0;
+
+  return (
+    <div>
+      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Vue Globale</h1>
+      <p style={{ color: '#555', marginTop: 0 }}>
+        Fichier: <strong>{analyticsData.file_name}</strong>
+      </p>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '14px', marginTop: '20px' }}>
+        <div style={styles.card}><div style={{ color: '#6b7280', fontSize: '12px' }}>Lignes</div><div style={{ fontSize: '28px', fontWeight: 800 }}>{formatCompactNumber(analyticsData.row_count)}</div></div>
+        <div style={styles.card}><div style={{ color: '#6b7280', fontSize: '12px' }}>Colonnes</div><div style={{ fontSize: '28px', fontWeight: 800 }}>{formatCompactNumber(analyticsData.column_count)}</div></div>
+        <div style={styles.card}><div style={{ color: '#6b7280', fontSize: '12px' }}>Complétude</div><div style={{ fontSize: '28px', fontWeight: 800 }}>{completionRate}%</div></div>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '16px', marginTop: '18px' }}>
+        <div style={styles.card}>
+          <div style={{ fontWeight: 700, marginBottom: '10px' }}>Valeurs manquantes par colonne</div>
+          <div style={{ width: '100%', height: 280 }}>
+            <ResponsiveContainer>
+              <BarChart data={missingData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="column" tick={{ fontSize: 11 }} />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="missing" fill="#111827" radius={[6, 6, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+        <div style={styles.card}>
+          <div style={{ fontWeight: 700, marginBottom: '10px' }}>
+            Répartition: {firstCategory?.column || 'N/A'}
+          </div>
+          <div style={{ width: '100%', height: 280 }}>
+            <ResponsiveContainer>
+              <PieChart>
+                <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={92} label>
+                  {pieData.map((entry, idx) => (
+                    <Cell key={`${entry.name}-${idx}`} fill={CHART_COLORS[idx % CHART_COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AITab({ analyticsData }) {
+  if (!analyticsData) return <EmptyAnalyticsState title="Analyse IA" />;
+
+  const numericSeries = (analyticsData.numeric_metrics || [])
+    .filter((m) => Number.isFinite(Number(m.mean)))
+    .map((m) => ({ column: m.column, mean: Number(m.mean), min: Number(m.min) || 0, max: Number(m.max) || 0 }))
+    .slice(0, 8);
+
+  return (
+    <div>
+      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Analyse IA</h1>
+      <p style={{ color: '#555', marginTop: 0 }}>Synthèse automatique des colonnes numériques et catégories détectées.</p>
+      <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '16px', marginTop: '18px' }}>
+        <div style={styles.card}>
+          <div style={{ fontWeight: 700, marginBottom: '10px' }}>Moyennes par colonne numérique</div>
+          <div style={{ width: '100%', height: 300 }}>
+            <ResponsiveContainer>
+              <LineChart data={numericSeries}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="column" tick={{ fontSize: 11 }} />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line type="monotone" dataKey="mean" stroke="#111827" strokeWidth={2.2} dot={{ r: 3 }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+        <div style={styles.card}>
+          <div style={{ fontWeight: 700, marginBottom: '10px' }}>Colonnes détectées</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+            {(analyticsData.columns || []).slice(0, 30).map((col) => (
+              <TagBadge key={col} label={col} color="#f3f4f6" textColor="#111827" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BuilderTab({ analyticsData }) {
+  const [selectedCategory, setSelectedCategory] = useState('');
+  if (!analyticsData) return <EmptyAnalyticsState title="Studio Builder" />;
+
+  const categories = analyticsData.top_categories || [];
+  const initialCategory = categories[0]?.column || '';
+  const activeCategory = selectedCategory || initialCategory;
+  const activeData = categories.find((c) => c.column === activeCategory)?.values || [];
+
+  return (
+    <div>
+      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Studio Builder</h1>
+      <p style={{ color: '#555', marginTop: 0 }}>Construis un graphique à partir des dimensions détectées.</p>
+
+      <div style={{ ...styles.card, marginTop: '18px' }}>
+        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '12px' }}>
+          <label style={{ ...styles.label, marginBottom: 0 }}>Dimension X</label>
+          <select
+            value={activeCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            style={{ ...styles.input, maxWidth: '320px', marginBottom: 0 }}
+          >
+            {categories.map((c) => (
+              <option key={c.column} value={c.column}>{c.column}</option>
+            ))}
+          </select>
+        </div>
+        <div style={{ width: '100%', height: 320 }}>
+          <ResponsiveContainer>
+            <BarChart data={activeData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" tick={{ fontSize: 11 }} />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="count" fill="#111827" radius={[6, 6, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );

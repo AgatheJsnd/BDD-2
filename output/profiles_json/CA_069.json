@@ -3,37 +3,57 @@
   "metadata": {
     "date_conversation": "2026-02-25",
     "duration": "25 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
+  "transcription": "Sra. Castro, 53 años, jueza tribunal superior, cliente regular desde 2017. Compra renovación accesorios profesionales cargo nuevo presidenta asociación magistrados. Budget 7K. Estilo autoridad elegante discreto, negro navy cognac. Practica natación diaria disciplina. Colecciona libros derecho antiguo primera edición. Viaja conferencias jurídicas Europa. Vegetariana estricta eventos. Hija mayor abogada también potencial cliente, hijo menor estudia derecho. Marido arquitecto jubilado. Aniversario matrimonio octubre cada año. Cliente fiel muy satisfecha siempre servicio. Red profesional jurídica extensa. Llamar abril nuevas llegadas.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "Fidèle",
     "age": "46-55",
-    "statut_relationnel": "Fidèle"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Navy",
-      "Cognac"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Rouge",
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

@@ -3,51 +3,77 @@
   "metadata": {
     "date_conversation": "2026-01-14",
     "duration": "35 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "Mme Bertrand, 55 ans, médecin cardiologue, cliente régulière depuis 2019. Renouvelle collection sacs travail, cherche modèle élégant professionnel. Budget 5-6K. Préfère cuirs discrets noir marine, fonctionnalité importante. Végétarienne noter pour déjeuners VIP. Voyage régulièrement congrès médicaux Europe Asie. Fille termine études médecine Bordeaux, diplomation juillet opportunité cadeau. Mari architecte, anniversaire mari septembre pourrait intéresser maroquinerie homme. Excellente cliente, achète 2-3 pièces par an, toujours satisfaite. Collectionne photographie contemporaine Helmut Newton fan. Rappeler juin preview collection été. Mentionné planifie grand voyage Japon octobre, besoin bagage qualité.",
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "VIP",
-    "profession": "Profession_libérale"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin",
+        "Architecte"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {}
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Bordeaux",
-      "Noir",
-      "Navy"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ],
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

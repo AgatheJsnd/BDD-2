@@ -3,47 +3,56 @@
   "metadata": {
     "date_conversation": "2026-03-09",
     "duration": "40 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
+  "transcription": "Sr. y Sra. Delgado, 56-58 años, clientes VIP excelentes desde 2014. Compra viaje aniversario 30 años matrimonio crucero Alaska verano. Presupuesto combinado 16K flexible. Él ingeniero civil proyectos grandes infraestructura, ella profesora universidad literatura. Ambos pasión lectura, biblioteca casa extensa colección libros raros. Viaje julio agosto Alaska crucero naturaleza. Coleccionan mapas antiguos exploraciones. Ella elegancia intelectual, prefiere gris azul colores fríos Alaska tema. Él clásico funcional, navy marrón. Ambos pescetarianos eventos. Él intolerancia gluten importante. Dos hijos adultos, hija profesora Madrid hijo ingeniero Barcelona. Aniversario junio cada año shopping ritual. Excelentes clientes lifetime value, red académica profesional ingeniería referido colegas. Llamar mayo confirmar piezas viaje. Muy aprecian artesanía historia piezas, disfrutan narrativa detrás objetos.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "VIP",
     "age": "56+",
-    "statut_relationnel": "VIP"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Madrid"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Gris",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Gris",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "25k+"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

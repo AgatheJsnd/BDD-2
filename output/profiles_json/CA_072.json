@@ -3,45 +3,63 @@
   "metadata": {
     "date_conversation": "2026-02-26",
     "duration": "40 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mrs. Bennett, 44, television presenter news anchor national network, regular client since 2019. Shopping for on-camera professional wardrobe update new show starting. Budget 10K. Style polished elegant camera-appropriate, needs versatile pieces. Passionate about journalism investigative reporting, travels conflict zones documentaries. Practices kickboxing fitness stress relief. Collects vintage cameras photography hobby. Prefers timeless classic pieces black navy burgundy. Vegan lifestyle choice events. No allergies. Mentioned show prime time slot major opportunity career. Husband documentary filmmaker also potential client. Anniversary July annually. Good client consistent purchases, good media visibility potential. Follow up March show launches. Network broadcasting media extensive could refer colleagues.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Fidèle"
+    "statut_relationnel": "Fidèle",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness"
-      ]
+      "collectif": [],
+      "individuel": {}
     },
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {}
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Bordeaux",
-      "Noir",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {}
   },
   "projet_achat": {
-    "budget": "10-15k"
+    "budget": "10–15k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

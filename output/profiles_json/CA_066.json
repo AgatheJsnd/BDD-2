@@ -3,53 +3,80 @@
   "metadata": {
     "date_conversation": "2026-02-21",
     "duration": "50 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mr. and Mrs. Shah, both 49, excellent new clients exceptional potential. He's private equity partner, she's art curator major museum. Looking for complete wardrobe update luxury accessories after successful fund closing. Budget extremely generous 30K+ discussed. Both passionate contemporary art, just acquired major piece Damien Hirst. Travel constantly art fairs investment meetings worldwide. He plays squash competitively club level, member exclusive club. She practices pilates daily, wellness retreat quarterly. Both collect rare books first editions, library home extensive. She elegant sophisticated style, rose gold soft neutrals beige. He modern professional, wants quality functional pieces black navy. Both follow Mediterranean diet, pescatarian events. She severe shellfish allergy critical boutique lunches. Two children boarding school Switzerland, daughter 16 son 14. Anniversary September annually. Mentioned planning major charity gala art foundation autumn could be partnership opportunity. Excellent network finance art circles, can refer many high-value clients. Follow up weekly curated selections build relationship. Invite all VIP events especially art-related. Very interested bespoke customization asked about commissioning unique pieces. Top priority relationship develop carefully ongoing high-value potential.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
-      ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
     },
-    "art_culture": [
-      "Musees",
-      "Art"
-    ],
-    "voyage": [
-      "Luxe",
-      "Culturel"
-    ]
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Rose_gold",
-      "Noir",
-      "Beige",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Beige",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {}
   },
   "projet_achat": {
     "budget": "25k+"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

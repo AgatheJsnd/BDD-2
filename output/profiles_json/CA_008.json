@@ -3,50 +3,70 @@
   "metadata": {
     "date_conversation": "2026-01-13",
     "duration": "25 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "Mme Petit et M. Petit, couple 35-38 ans, nouveaux quartier. Lui entrepreneur tech startup, elle chef de projet marketing. Cherchent cadeaux pendaison crémaillère famille amis. Budget total 10K pour 5-6 pièces variées. Goûts contemporains design épuré. Madame pratique course à pied, prépare marathon Paris avril. Monsieur amateur vin, cours sommelier le soir. Lui allergique gluten sévère pour événements boutique. Mentionné reçoivent beaucoup chez eux aiment diners. Potentiel excellent clientèle jeune dynamique. Anniversaire mariage juin chaque année. Rappeler mai pour suggestions cadeaux. Proposer programme fidélité.",
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Paris"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Running"
-      ]
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
     },
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {}
   },
-  "style_personnel": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "10-15k"
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "allergies": [
-      "gluten"
-    ]
   }
 }

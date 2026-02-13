@@ -3,42 +3,68 @@
   "metadata": {
     "date_conversation": "2026-03-05",
     "duration": "35 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mr. Thompson, 36, hedge fund analyst, regular client. Shopping for sister's 30th birthday gift. Budget 6K. Sister works fashion PR agency London, style trendy modern follows trends. Loves travel Instagram content 80K followers lifestyle. Practices pilates barre fitness. Sister vegan lifestyle. Birthday next month April. Client satisfied always purchases family gifts here. Mentioned bonus coming year-end could shop more personal. Wife expecting baby first child autumn gift opportunities. Follow up March show selection. Good steady client family occasions.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Fidèle"
+    "statut_relationnel": "Fidèle",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "London"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness",
-        "Yoga"
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
       ]
     }
   },
-  "style_personnel": {},
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

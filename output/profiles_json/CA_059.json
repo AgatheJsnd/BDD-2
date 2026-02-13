@@ -3,38 +3,59 @@
   "metadata": {
     "date_conversation": "2026-02-18",
     "duration": "25 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
+  "transcription": "Signora Esposito, 36 anni, avvocato societario, nuova cliente. Cerca regalo migliore amica matrimonio prossimo mese. Budget 4K. Amica stilista brand piccolo emergente. Stile moderno creativo apprezza design innovativo. Amica pratica surf viaggia oceano frequente. Cuoio nero rosé gold. Amica pescetariana. Matrimonio marzo Sicilia. Cliente soddisfatta servizio. Mentionò fidanzato lavora finanza potenziale cliente. Richiamare estate.",
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "Fidèle",
-    "profession": "Profession_libérale"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "<5k"
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

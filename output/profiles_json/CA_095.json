@@ -3,49 +3,81 @@
   "metadata": {
     "date_conversation": "2026-03-16",
     "duration": "45 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "M. et Mme Chevalier, couple 50-52 ans, excellents clients VIP depuis 2012. Achat important voyage anniversaire 25 ans mariage Japon cerisiers floraison. Budget combiné 24K très généreux. Lui professeur littérature japonaise Sorbonne spécialiste, elle traductrice japonais français. Tous deux passionnés culture japonaise toute vie, voyage rêve planifié années. Collectionnent estampes japonaises ukiyo-e, maison décoration japonaise zen. Voyage avril mai incluant Tokyo Kyoto Hiroshima cérémonie floraison. Elle élégance minimaliste japonaise, préfère beige gris noir esthétique wabi-sabi. Lui style sobre professeur, marine gris. Tous deux végétariens zen événements. Aucune allergie. Deux enfants adultes, fille traductrice aussi suit mère, fils travaille diplomatie Tokyo. Anniversaire mariage mai pendant voyage tradition continuer. Excellents clients lifetime value élevé, réseau académique japonisant France international, référé nombreux professeurs étudiants. Rappeler mars dernier ajustements voyage. Mentionné livre co-écrivent culture japonaise publier automne, possibilité mention boutique appréciation. Très intéressés artisanat japonais histoire pièces, apprécient qualité esthétique minimaliste zen durabilité. Clients précieux relation long terme entretenir soigneusement.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "VIP",
     "age": "46-55",
-    "statut_relationnel": "VIP"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "moyen_orient_asie": [
       "Tokyo"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Gris",
-      "Beige",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Gris",
+        "Marine",
+        "Beige",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "15-25k"
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Anniversaire",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

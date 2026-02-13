@@ -3,56 +3,82 @@
   "metadata": {
     "date_conversation": "2026-03-12",
     "duration": "50 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mr. and Mrs. Wellington, both 59, exceptional long-time VIP clients since 2008. Shopping for extended family gifts daughter's wedding June. Combined budget extremely generous 32K+. He's retired investment banker, she's art consultant private collections. Daughter marrying Oxford professor classics, wedding Oxford college traditional elegant affair 300 guests. Looking for gifts bridesmaids groomsmen parents family members special pieces. Daughter 31 works museum curator, passionate ancient history art. Groom's family academic distinguished professors. Both passionate about classical music art, collectors rare manuscripts. Travel extensively art auctions acquisitions, just returned Christie's London planning Sotheby's New York. She impeccable taste elegant sophisticated, rose gold burgundy cognac neutrals. He classic traditional, wants quality timeless pieces black navy brown. Both vegetarian 15 years events. She latex allergy severe critical. Son 28 works finance London married two grandchildren. Daughter's wedding June major family event year. Anniversary October annually tradition shopping here decades. Exceptional clients lifetime value extraordinary highest tier, art collecting finance network international extensive referred countless high-value clients years. Follow up monthly wedding preparations coordinate everything. Very interested bespoke customization commissioned several pieces past, asked about unique pieces wedding party personalized meaningful. Planning major charitable gala art foundation autumn after wedding could be partnership sponsorship opportunity. Treasure clients relationship decades maintained impeccably appreciation loyalty extraordinary. Absolute top priority relationship continue excellence service maintain carefully ongoing.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "age": "18-25",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "London"
     ],
     "amerique": [
-      "New_York"
+      "New York"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Musees",
-      "Art"
-    ],
-    "voyage": [
-      "Culturel"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Cognac",
-      "Rose_gold",
-      "Bordeaux",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Bordeaux",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "25k+"
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

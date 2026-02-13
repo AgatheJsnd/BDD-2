@@ -3,38 +3,58 @@
   "metadata": {
     "date_conversation": "2026-02-10",
     "duration": "35 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mr. and Mrs. Foster, 45-47, corporate clients excellent. Looking for business gifts top performers company annual awards. Budget 20K for 8 pieces. He CEO consulting firm, she CFO tech company. Want elegant professional pieces varied. Mix men women recipients different tastes. Mentioned company hosts annual gala awards December, could be ongoing partnership opportunity. Both vegan some staff dietary considerations events. Follow up quarterly for ongoing gifting needs. Excellent corporate relationship potential. Asked about bulk ordering customization options monograms company logo subtle. Very satisfied service professionalism.",
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "25k+"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
-  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

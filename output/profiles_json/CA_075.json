@@ -3,39 +3,49 @@
   "metadata": {
     "date_conversation": "2026-03-02",
     "duration": "35 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
+  "transcription": "Frau Schulz, 46 Jahre, Galeristin zeitgenössische Fotografie Hamburg, regelmäßige Kundin. Kauft Geschenk Schwester 50. Geburtstag großes Ereignis. Budget 8K. Schwester Ärztin Kinderärztin, liebt Kinder Beruf Berufung. Reist medizinische Hilfsorganisation Afrika jährlich. Stil praktisch elegant, bevorzugt cognac beige erdtöne. Schwester Vegetarierin. Geburtstag April Familie Freunde groß. Kundin selbst sammelt Fotografie investiert Künstler aufstrebende. Schwester zwei Kinder Teenager. Kundin zufrieden immer, Netzwerk Kunst Kultur Hamburg groß. Nachfassen März Auswahl zeigen. Schwester schätzt Handwerk Qualität Langlebigkeit Reisen robust.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "Régulier",
     "age": "46-55",
-    "statut_relationnel": "Régulier"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Autres": []
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Beige",
-      "Cognac"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

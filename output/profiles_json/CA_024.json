@@ -3,63 +3,80 @@
   "metadata": {
     "date_conversation": "2026-01-23",
     "duration": "50 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
+  "transcription": "Signora e Signor Ferrara, coppia 42-45 anni, clienti VIP 2017. Acquisto multiplo collezione primavera e regali famiglia. Budget combinato 22K molto flessibile. Lei avvocato societario Milano, lui imprenditore immobiliare. Entrambi appassionati tennis, membri Tennis Club Milano, competono tornei amatoriali. Collezionano fotografia vintage italiana, casa piena opere Ghirri Basilico. Viaggiano lusso frequente, prossimi viaggi New York poi safari Tanzania estate. Lei eleganza moderna sofisticata, preferisce nero cognac rosé gold. Lui stile classico senza tempo, marrone navy argento. Entrambi pescetariani per eventi boutique. Lui intolleranza lattosio importante. Due figli: figlia 18 studia economia Bocconi potenziale cliente futura, figlio 15 passione calcio. Anniversario matrimonio settembre ogni anno shopping rituale. Eccellenti clienti lifetime value, riferito numerosi amici. Richiamare marzo anteprima esclusiva privata. Interessati personalizzazione monogrammi pezzi speciali.",
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Milan"
     ],
     "amerique": [
-      "New_York"
+      "New York"
     ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
   },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Tennis"
-      ],
-      "collectif": [
-        "Football"
-      ]
+      "collectif": [],
+      "individuel": {
+        "raquette": [
+          "Tennis"
+        ]
+      }
     },
-    "art_culture": [
-      "Opera"
-    ],
-    "voyage": [
-      "Luxe",
-      "Aventure"
-    ]
+    "voyage": {
+      "experience": [
+        "Aventure"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Rose_gold",
-      "Noir",
-      "Cognac",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Argent",
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "15-25k"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

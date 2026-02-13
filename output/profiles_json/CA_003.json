@@ -3,54 +3,66 @@
   "metadata": {
     "date_conversation": "2026-01-09",
     "duration": "45 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
+  "transcription": "Signora Rossi e figlia insieme, cliente fedele da 2020. Signora 58 anni cerca borse nuove stagione, figlia 28 anni laureata medicina cerca regalo se stessa nuovo lavoro ospedale. Budget combinato circa 12K. Signora ama cuoio bordeaux cognac, stile classico raffinato, colleziona arte contemporanea frequenta Biennale Venezia ogni anno. Figlia preferisce stile più giovane moderno, colori vivaci, pratica yoga pilates regolare. Madre allergica nichel quindi attenzione hardware. Figlia vegetariana stretta per eventi boutique. Viaggiano insieme spesso Toscana casa vacanze famiglia. Ottimo potenziale multi-generazionale, entrambe soddisfatte servizio. Richiamare aprile pre-collezione estate, invitare evento VIP madre.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "VIP",
     "age": "56+",
-    "statut_relationnel": "VIP"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
-      ]
-    },
-    "art_culture": [
-      "Art"
-    ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Bordeaux",
-      "Cognac"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Bordeaux",
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Diplome",
-    "budget": "10-15k"
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien",
-    "allergies": [
-      "nickel"
-    ]
   }
 }

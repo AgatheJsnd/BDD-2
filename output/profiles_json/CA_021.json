@@ -3,42 +3,77 @@
   "metadata": {
     "date_conversation": "2026-01-22",
     "duration": "25 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "M. Bernard, 56 ans, chirurgien orthopédique, client occasionnel. Cherche cadeau épouse 25 ans mariage mois prochain. Budget 6K flexible. Épouse professeur piano conservatoire, passionnée musique classique opéra. Elle voyage souvent concerts Europe. Style élégant classique, préfère bordeaux navy. Épouse végétarienne pour événements. Mentionné fils étudiant médecine Strasbourg, fille architecte Lyon. Anniversaire épouse mars rappeler février. Satisfait achat précédent il y a deux ans. Bon client potentiel occasions familiales.",
   "identite": {
     "genre": "Femme",
-    "age": "56+",
     "statut_relationnel": "Occasionnel",
-    "profession": "Profession_libérale"
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin",
+        "Architecte"
+      ],
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Opera"
-    ]
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Bordeaux",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Plaisir",
+        "Cadeau",
+        "Anniversaire",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

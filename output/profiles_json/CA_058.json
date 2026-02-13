@@ -3,52 +3,91 @@
   "metadata": {
     "date_conversation": "2026-02-17",
     "duration": "45 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "M. et Mme Garnier, couple 50-52 ans, clients VIP depuis 2014. Achat important voyage anniversaire 25 ans mariage safari luxe Kenya Tanzanie puis Seychelles. Budget combiné 22K très généreux. Lui cardiologue chef service hôpital universitaire, elle psychologue cabinet privé réputé. Tous deux passionnés photographie animalière, safari rêve longtemps planifié. Collectionnent photos grands photographes nature Salgado Arthus-Bertrand. Voyage trois semaines juillet incluant repos plage après safari. Elle élégance naturelle discrète, préfère beige cognac cuirs souples. Lui style sobre fonctionnel, kaki olive pour safari noir élégant plage. Tous deux végétariens événements. Elle allergie soleil sévère protection important même accessoires. Trois enfants adultes, fils médecin suit père, deux filles architectes. Anniversaire mariage juin chaque année tradition shopping ici. Excellents clients lifetime value élevé, réseau médical professionnel important, référé nombreux collègues. Rappeler mai preview exclusive été confirmer pièces voyage. Mentionné planifient retraite dans 5 ans, voyages fréquents futurs, excellent potentiel long terme. Très intéressés artisanat qualité durabilité pièces investissement.",
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "VIP",
-    "profession": "Profession_libérale"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin",
+        "Architecte"
+      ],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe",
-      "Aventure"
-    ]
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Détente",
+        "Luxe",
+        "Aventure"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Beige",
-      "Noir",
-      "Cognac"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "15-25k"
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Plaisir",
+        "Anniversaire",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

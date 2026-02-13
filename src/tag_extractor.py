@@ -11,12 +11,23 @@ try:
     from src.mappings.location import CITIES_ADVANCED
     from src.mappings.lifestyle import SPORT_MAPPING, MUSIQUE_MAPPING, ANIMAUX_MAPPING, VOYAGE_MAPPING, ART_CULTURE_MAPPING, GASTRONOMIE_MAPPING
     from src.mappings.style import PIECES_MAPPING, COULEURS_ADVANCED, MATIERES_ADVANCED, SENSIBILITE_MODE, TAILLES_MAPPING
-    from src.mappings.purchase import MOTIF_ADVANCED, TIMING_MAPPING, MARQUES_LVMH, FREQUENCE_ACHAT
+    from src.mappings.purchase import MOTIF_ADVANCED, TIMING_MAPPING, MARQUES_LVMH
     from src.mappings.preferences import REGIME_MAPPING, ALLERGIES_MAPPING, VALEURS_MAPPING
     from src.mappings.tracking import ACTIONS_MAPPING, ECHEANCES_MAPPING, CANAUX_MAPPING
     ADVANCED_TAXONOMY_AVAILABLE = True
 except Exception:
-    ADVANCED_TAXONOMY_AVAILABLE = False
+    try:
+        # Fallback when script is executed from inside `src/`
+        from mappings.identity import GENRE_MAPPING, LANGUE_MAPPING, STATUT_MAPPING, PROFESSIONS_ADVANCED
+        from mappings.location import CITIES_ADVANCED
+        from mappings.lifestyle import SPORT_MAPPING, MUSIQUE_MAPPING, ANIMAUX_MAPPING, VOYAGE_MAPPING, ART_CULTURE_MAPPING, GASTRONOMIE_MAPPING
+        from mappings.style import PIECES_MAPPING, COULEURS_ADVANCED, MATIERES_ADVANCED, SENSIBILITE_MODE, TAILLES_MAPPING
+        from mappings.purchase import MOTIF_ADVANCED, TIMING_MAPPING, MARQUES_LVMH
+        from mappings.preferences import REGIME_MAPPING, ALLERGIES_MAPPING, VALEURS_MAPPING
+        from mappings.tracking import ACTIONS_MAPPING, ECHEANCES_MAPPING, CANAUX_MAPPING
+        ADVANCED_TAXONOMY_AVAILABLE = True
+    except Exception:
+        ADVANCED_TAXONOMY_AVAILABLE = False
 
 # ============================================================================
 # 0. NETTOYAGE TURBO (REGEX)
@@ -236,7 +247,7 @@ def extract_genre_precise(text: str) -> List[str]:
         return []
 
     t = text.lower()
-    # On ne garde que les formulations en "je/moi" pour éviter les faux positifs contextuels.
+    # 1) Formulations explicites en "je/moi"
     male_patterns = [
         r"\bje\s+suis\s+un\s+homme\b",
         r"\bje\s+suis\s+monsieur\b",
@@ -255,6 +266,15 @@ def extract_genre_precise(text: str) -> List[str]:
         return ["Homme"]
     if any(re.search(p, t) for p in female_patterns):
         return ["Femme"]
+
+    # 2) Formulations explicites de narration client (utile côté vendeur)
+    # Ex: "Le client ... il ..." / "La cliente ... elle ..."
+    if re.search(r"\b(le|ce)\s+client\b|\bmonsieur\b", t):
+        return ["Homme"]
+    if re.search(r"\b(la|cette)\s+cliente\b|\bmadame\b|\bmme\b", t):
+        return ["Femme"]
+
+    # 3) Pas de fallback pronoms seuls ("il/elle") pour rester strictement explicite.
     return []
 
 def extract_age_turbo(text: str) -> Optional[str]:
@@ -370,11 +390,7 @@ def extract_budget_turbo(text: str) -> Optional[str]:
     if not text: return None
     text_lower = text.lower()
 
-    # 1. Détection "Illimité"
-    if any(x in text_lower for x in ["illimité", "no limit", "flexible", "pas de budget", "gros budget"]):
-        return "25k+"
-
-    # 2. Extraction numérique
+    # 1. Extraction numérique (prioritaire sur "flexible")
     # Cherche 5000€, 5k, 5000 euros...
     matches = re.findall(r'(\d+[.,]?\d*)\s*(?:k|m|€|\$|euros?|dollars?|francs?)', text_lower)
     
@@ -402,13 +418,19 @@ def extract_budget_turbo(text: str) -> Optional[str]:
         if nums:
             amount = max([int(n) for n in nums])
 
-    # 3. Mapping Taxonomie
-    if amount == 0: return None
-    if amount < 5000: return "<5k"
-    if amount < 10000: return "5-10k"
-    if amount < 15000: return "10-15k"
-    if amount < 25000: return "15-25k"
-    return "25k+"
+    # 2. Mapping Taxonomie si montant explicite trouvé
+    if amount > 0:
+        if amount < 5000: return "<5k"
+        if amount < 10000: return "5-10k"
+        if amount < 15000: return "10-15k"
+        if amount < 25000: return "15-25k"
+        return "25k+"
+
+    # 3. Sinon seulement: détection "illimité/flexible/pas de budget"
+    if any(x in text_lower for x in ["illimité", "no limit", "flexible", "pas de budget", "gros budget"]):
+        return "25k+"
+
+    return None
 
 def extract_urgency_turbo(text: str) -> Optional[int]:
     """Score d'urgence 1-5 UNIQUEMENT si urgence explicitement mentionnée."""
@@ -477,7 +499,8 @@ def extract_country_precise(text: str) -> Optional[str]:
 
     t = text.lower()
     country_aliases = {
-        "États-Unis": ["états-unis", "etats-unis", "etats unis", "usa", "u.s.a", "united states"],
+        # "usa" seul crée des faux positifs (ex: verbe italien "usa")
+        "États-Unis": ["états-unis", "etats-unis", "etats unis", "u.s.a", "united states"],
         "France": ["france"],
         "Italie": ["italie", "italy"],
         "Espagne": ["espagne", "spain"],
@@ -495,6 +518,187 @@ def extract_country_precise(text: str) -> Optional[str]:
             if _keyword_in_text(t, alias):
                 return country
     return None
+
+def extract_statut_precis(text: str) -> List[str]:
+    """Statut client avec garde-fous (évite faux positif 'vip' dans email)."""
+    if not text:
+        return []
+    t = text.lower()
+    statuts = scan_text_for_keywords_advanced(t, STATUT_MAPPING)
+
+    # Formes genrées et formulations fréquentes non couvertes mot-à-mot.
+    if re.search(r"\bclient[e]?\s+occasionnel(?:le)?\b|\boccasionnel(?:le)?\b", t):
+        statuts.append("Occasionnel")
+    if re.search(r"\bclient[e]?\s+r[ée]gulier(?:e|ère)?\b|\br[ée]gulier(?:e|ère)?\b", t):
+        statuts.append("Régulier")
+    if re.search(r"\bclient[e]?\s+fid[èe]le\b|\bfid[èe]le\b", t):
+        statuts.append("Fidèle")
+    if re.search(r"\bnouveau(?:lle)?\s+client[e]?\b|\bpremi[èe]re?\s+visite\b", t):
+        statuts.append("Nouveau")
+
+    if "VIP" in statuts:
+        # Garde VIP uniquement quand ce n'est pas un token d'email.
+        has_safe_vip = re.search(r"\bvip\b(?!@)", t) is not None
+        if not has_safe_vip:
+            statuts = [s for s in statuts if s != "VIP"]
+    # Déduplication stable
+    seen = set()
+    out = []
+    for s in statuts:
+        if s not in seen:
+            seen.add(s)
+            out.append(s)
+    return out
+
+def extract_couleurs_precises(text: str) -> List[str]:
+    """Couleurs explicites avec gestion des négations (ex: 'pas fan noir')."""
+    if not text:
+        return []
+    t = text.lower()
+    colors = scan_text_for_keywords_advanced(t, COULEURS_ADVANCED)
+    if not colors:
+        return []
+
+    negation_lead = r"(?:pas|jamais|sans|évite|evite|pas fan(?: de)?)"
+    filtered = []
+    for color in colors:
+        aliases = COULEURS_ADVANCED.get(color, [])
+        is_negated = False
+        for alias in aliases:
+            a = re.escape(alias.lower())
+            # Négation proche avant la couleur.
+            if re.search(rf"{negation_lead}.{{0,20}}(?<!\w){a}(?!\w)", t):
+                is_negated = True
+                break
+        if not is_negated:
+            filtered.append(color)
+    return filtered
+
+def extract_allergies_precises(text: str) -> List[str]:
+    """Allergies explicites + cas 'intolérant(e) aux produits chimiques'."""
+    if not text:
+        return []
+    t = text.lower()
+    out = scan_text_for_keywords_advanced(t, ALLERGIES_MAPPING)
+
+    if re.search(r"\b(intol[ée]rant(?:e)?|allergi(?:e|que))\b.{0,40}\b(produits?|substances?)\s+chimiques?\b", t):
+        out.append("Synthetiques")
+    if re.search(r"\b(finition|finitions)\b", t) and re.search(r"\bchimique|colorant\b", t):
+        out.append("Colorants")
+
+    return list(dict.fromkeys(out))
+
+def extract_voyage_precis(text: str) -> List[str]:
+    """Voyage avec signaux implicites forts de fréquence et de destinations loisir."""
+    if not text:
+        return []
+    t = text.lower()
+    out = scan_text_for_keywords_advanced(t, VOYAGE_MAPPING)
+
+    if re.search(r"\b(partent|partir|voyage(?:nt)?|voyagent)\b.{0,20}\b(souvent|fr[ée]quemment)\b", t):
+        out.append("Voyageur_frequent")
+    if re.search(r"\b(c[ôo]te|cote)\b.{0,20}\b(basque|mer|oc[ée]an|plage)\b|\bplage\b", t):
+        out.append("Plage")
+    if re.search(r"\bprovence\b|\bcampagne\b", t):
+        out.append("Nature")
+
+    # Évite "Resort" déclenché par des contextes non-voyage (ex: "Racing Club Paris").
+    if "Resort" in out and not re.search(r"\b(resort|all inclusive|club med|club de vacances?)\b", t):
+        out = [v for v in out if v != "Resort"]
+
+    return list(dict.fromkeys(out))
+
+def extract_profession_precise(text: str) -> List[str]:
+    """Profession explicite avec variantes genrées usuelles (ex: avocate)."""
+    if not text:
+        return []
+    t = text.lower()
+    out = scan_text_for_keywords_advanced(t, PROFESSIONS_ADVANCED)
+
+    hard_rules = [
+        (r"\bavocat(?:e)?\b", "Avocat"),
+        (r"\bm[ée]decin(?:e)?\b", "Médecin"),
+        (r"\barchitecte\b", "Architecte"),
+        (r"\bconsultant(?:e)?\b", "Consultant"),
+        (r"\bjournaliste\b", "Journaliste"),
+        (r"\bdesigner\b|\bcr[ée]atrice?\b", "Designer"),
+    ]
+    for pattern, label in hard_rules:
+        if re.search(pattern, t):
+            out.append(label)
+
+    return list(dict.fromkeys(out))
+
+def extract_frequence_achat_precise(text: str, statut_client: Optional[List[str]] = None) -> List[str]:
+    """
+    Fréquence d'achat stricte:
+    - ne pas déclencher sur "souvent" hors contexte achat/client
+    - récupère les mentions explicites (occasionnel, régulier, rare)
+    """
+    if not text:
+        return []
+    t = text.lower()
+    out: List[str] = []
+
+    # Formulations explicites les plus fiables.
+    if re.search(r"\b(client[e]?\s+)?occasionnel(?:le)?\b|\bde temps en temps\b|une ou deux fois par an", t):
+        out.append("Occasionnelle")
+    if re.search(r"\b(client[e]?\s+)?r[ée]gulier(?:e|ère)?\b", t):
+        out.append("Reguliere")
+    if re.search(r"\brare(?:ment)?\b|\bpremi[èe]re\s+fois\b", t):
+        out.append("Rare")
+
+    # "Souvent" uniquement si le contexte achat/client est explicite.
+    if re.search(
+        r"(achat|ach[èe]te|commande|visite|client[e]?).{0,22}\b(souvent|fr[ée]quent(?:e)?|regular)\b|"
+        r"\b(souvent|fr[ée]quent(?:e)?|regular)\b.{0,22}(achat|ach[èe]te|commande|visite|client[e]?)",
+        t
+    ):
+        out.append("Reguliere")
+
+    # Backfill léger depuis statut client quand explicite.
+    statut_client = statut_client or []
+    if "Occasionnel" in statut_client:
+        out.append("Occasionnelle")
+    if "Régulier" in statut_client:
+        out.append("Reguliere")
+
+    # Priorité de restitution: Occasionnelle > Reguliere > Rare
+    priority = ["Occasionnelle", "Reguliere", "Rare"]
+    ordered = []
+    for key in priority:
+        if key in out:
+            ordered.append(key)
+    return ordered
+
+def extract_echeances_precises(text: str) -> List[str]:
+    """Échéances avec interprétation de dates naturelles (semaine prochaine, fin mars...)."""
+    if not text:
+        return []
+    t = text.lower()
+    out = scan_text_for_keywords_advanced(t, ECHEANCES_MAPPING)
+
+    if re.search(r"\b(semaine prochaine|next week)\b", t):
+        out.append("M_1")
+
+    month_map = {
+        "janvier": 1, "fevrier": 2, "février": 2, "mars": 3, "avril": 4, "mai": 5, "juin": 6,
+        "juillet": 7, "aout": 8, "août": 8, "septembre": 9, "octobre": 10, "novembre": 11, "decembre": 12, "décembre": 12
+    }
+    now_month = datetime.now().month
+    for name, month_num in month_map.items():
+        if re.search(rf"\b(fin|debut|début|mi)?\s*{name}\b", t):
+            delta = (month_num - now_month) % 12
+            if delta <= 1:
+                out.append("M_1")
+            elif delta == 2:
+                out.append("M_2")
+            elif delta == 3:
+                out.append("M_3")
+            else:
+                out.append("M_3_plus")
+
+    return list(dict.fromkeys(out))
 
 def extract_famille_precise(text: str) -> List[str]:
     """Détection famille sans faux positif sur le mot générique 'famille'."""
@@ -744,7 +948,8 @@ def extract_pieces_favorites_precise(text: str) -> List[str]:
         r"\bpr[eé]f[eè]re\b", r"\bpr[eé]f[eè]rent\b",
         r"\bpr[eé]f[eé]r[ée]e?s?\b", r"\bfavori(?:te)?s?\b",
         r"\bpi[eè]ce[s]?\s+(?:pr[eé]f[eé]r[ée]e?s?|favori(?:te)?s?)\b",
-        r"\bfan de\b", r"\bporte\b", r"\bstyle\b", r"\bprivil[eé]gie\b"
+        r"\bfan de\b", r"\bporte\b", r"\bstyle\b", r"\bprivil[eé]gie\b",
+        r"\bcollectionne\b", r"\bcollectionneur\b"
     ]
     if not text:
         return []
@@ -755,7 +960,11 @@ def extract_pieces_favorites_precise(text: str) -> List[str]:
 
     # Ajouter des pièces génériques pour mieux capter la phrase naturelle
     piece_catalog = dict(PIECES_MAPPING)
+    # Évite le faux positif "Sac_main" sur le mot générique "sac".
+    piece_catalog["Sac_main"] = ["sac à main", "sac a main", "handbag"]
     piece_catalog["Chaussures"] = ["chaussure", "chaussures", "souliers", "shoes", "footwear"]
+    piece_catalog["Portefeuille"] = ["portefeuille", "wallet", "porte-feuille"]
+    piece_catalog["Sac_voyage"] = piece_catalog.get("Sac_voyage", []) + ["weekend bag", "sac weekend", "sac week-end"]
 
     purchase_context = [
         r"\bcherche\b", r"\brecherche\b", r"\bvoudrai[st]?\b", r"\bveut\b",
@@ -797,7 +1006,7 @@ def extract_pieces_recherchees_precise(text: str) -> List[str]:
     purchase_context = [
         r"\bcherche\b", r"\brecherche\b", r"\bvoudrai[st]?\b", r"\bveut\b",
         r"\bbesoin de\b", r"\bvenir acheter\b", r"\bvenu acheter\b",
-        r"\bacheter\b", r"\bachat\b", r"\blooking for\b"
+        r"\bacheter\b", r"\bachat\b", r"\blooking for\b", r"\bh[eé]site entre\b", r"\bentre\b"
     ]
     if not text:
         return []
@@ -807,7 +1016,11 @@ def extract_pieces_recherchees_precise(text: str) -> List[str]:
     max_window = 100
 
     piece_catalog = dict(PIECES_MAPPING)
+    # Évite le faux positif "Sac_main" sur le mot générique "sac".
+    piece_catalog["Sac_main"] = ["sac à main", "sac a main", "handbag"]
     piece_catalog["Chaussures"] = ["chaussure", "chaussures", "souliers", "shoes", "footwear"]
+    piece_catalog["Portefeuille"] = ["portefeuille", "wallet", "porte-feuille"]
+    piece_catalog["Sac_voyage"] = piece_catalog.get("Sac_voyage", []) + ["weekend bag", "sac weekend", "sac week-end"]
 
     for piece, keywords in piece_catalog.items():
         matched = False
@@ -861,7 +1074,7 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
     sport = scan_text_for_keywords_advanced(cleaned_text, SPORT_MAPPING)
     musique = scan_text_for_keywords_advanced(cleaned_text, MUSIQUE_MAPPING)
     animaux = scan_text_for_keywords_advanced(cleaned_text, ANIMAUX_MAPPING)
-    voyage = scan_text_for_keywords_advanced(cleaned_text, VOYAGE_MAPPING)
+    voyage = extract_voyage_precis(cleaned_text)
     art_culture = scan_text_for_keywords_advanced(cleaned_text, ART_CULTURE_MAPPING)
     gastronomie = extract_gastronomie_precise(cleaned_text)
 
@@ -897,14 +1110,17 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
         }
         pays_detecte = city_country_map.get(villes_detectees[0])
 
+    statut_client = extract_statut_precis(cleaned_text)
+    profession = extract_profession_precise(cleaned_text)
+
     result.update({
         # Identité
         "genre": extract_genre_precise(cleaned_text),
         "langue": scan_text_for_keywords_advanced(cleaned_text, LANGUE_MAPPING),
-        "statut_client": scan_text_for_keywords_advanced(cleaned_text, STATUT_MAPPING),
+        "statut_client": statut_client,
 
         # Démographiques
-        "profession": scan_text_for_keywords_advanced(cleaned_text, PROFESSIONS_ADVANCED),
+        "profession": profession,
         "ville": villes_detectees[0] if villes_detectees else None,
         "pays": pays_detecte,
         "famille": famille_precise,
@@ -921,7 +1137,7 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
         # Style
         "pieces_favorites": pieces_favorites_precise,
         "pieces_recherchees": pieces_recherchees_precise,
-        "couleurs": scan_text_for_keywords_advanced(cleaned_text, COULEURS_ADVANCED),
+        "couleurs": extract_couleurs_precises(cleaned_text),
         "matieres": matieres_detectees,
         "sensibilite_mode": extract_sensibilite_mode_precise(cleaned_text),
         "tailles": tailles_precises,
@@ -931,16 +1147,16 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
         "motif_achat": motifs_precis if motifs_precis else scan_text_for_keywords_advanced(cleaned_text, MOTIF_ADVANCED),
         "timing": scan_text_for_keywords_advanced(cleaned_text, TIMING_MAPPING),
         "marques_preferees": marques_precises,
-        "frequence_achat": scan_text_for_keywords_advanced(cleaned_text, FREQUENCE_ACHAT),
+        "frequence_achat": extract_frequence_achat_precise(cleaned_text, statut_client),
 
         # Préférences
         "regime": scan_text_for_keywords_advanced(cleaned_text, REGIME_MAPPING),
-        "allergies": scan_text_for_keywords_advanced(cleaned_text, ALLERGIES_MAPPING),
+        "allergies": extract_allergies_precises(cleaned_text),
         "valeurs": scan_text_for_keywords_advanced(cleaned_text, VALEURS_MAPPING),
 
         # CRM
         "actions_crm": scan_text_for_keywords_advanced(cleaned_text, ACTIONS_MAPPING),
-        "echeances": scan_text_for_keywords_advanced(cleaned_text, ECHEANCES_MAPPING),
+        "echeances": extract_echeances_precises(cleaned_text),
         "canaux_contact": extract_canaux_contact_precis(cleaned_text),
     })
 

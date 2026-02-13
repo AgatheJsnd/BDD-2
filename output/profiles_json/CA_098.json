@@ -3,51 +3,67 @@
   "metadata": {
     "date_conversation": "2026-03-17",
     "duration": "50 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
+  "transcription": "Herr und Frau Fischer, beide 54 Jahre, ausgezeichnete treue Kunden seit 2011. Einkauf wichtig Feier Silberhochzeit 25 Jahre große Party Familie Freunde. Budget kombiniert sehr großzügig 21K. Er Rechtsanwalt Partner große Kanzlei Frankfurt, sie Innenarchitektin eigenes Büro erfolgreich. Beide leidenschaftlich Oper klassische Musik, Abonnement Staatsoper jahrelang. Sammeln Opernprogramme signiert Künstler, Haus voll Memorabilia. Party Mai Hotel luxuriös 200 Gäste Kollegen Familie Freunde. Sie elegant raffiniert Stil, bevorzugt rosé Gold bordeaux cognac. Er klassisch traditionell, schwarz navy silber. Beide Pescetarier Events. Sie Nickelallergie beachten Hardware. Drei Kinder erwachsen erfolgreich: Tochter Ärztin Hamburg, Sohn Anwalt München folgt Vater, jüngste Tochter Architektin folgt Mutter Berlin. Familie eng verbunden Traditionen wichtig. Hochzeitstag Mai jedes Jahr Einkauf Ritual hier Jahrzehnt. Ausgezeichnete Kunden Lifetime Value außergewöhnlich höchste Stufe, Netzwerk Recht Architektur Kultur Frankfurt international ausgedehnt, verwiesen zahlreiche hochwertige Kunden Jahre. Follow-up monatlich Party Vorbereitungen koordinieren alles. Sehr interessiert Handwerk Personalisierung, beauftragt mehrere Stücke Vergangenheit individuell, fragten einzigartige Stücke Party bedeutungsvoll persönlich. Planen große Reise Weltreise Ruhestand fünf Jahre Geschenk sich selbst, könnte Ausstattung Opportunity. Schatz Kunden Beziehung Jahrzehnte makellos gepflegt Wertschätzung Loyalität außergewöhnlich. Absolute höchste Priorität Beziehung fortsetzen Exzellenz Service sorgfältig weiter pflegen.",
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "Fidèle",
-    "profession": "Profession_libérale"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Berlin"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "art_culture": [
-      "Opera",
-      "Art"
-    ]
-  },
+  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Cognac",
-      "Rose_gold",
-      "Bordeaux",
-      "Navy"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "15-25k"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "allergies": [
-      "nickel"
-    ]
   }
 }

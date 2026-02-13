@@ -3,45 +3,61 @@
   "metadata": {
     "date_conversation": "2026-02-17",
     "duration": "30 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
+  "transcription": "Herr Becker, 51 Jahre, Rechtsanwalt Partner Kanzlei, Stammkunde. Kauft Geschenk Ehefrau Muttertag Mai. Budget 6K. Ehefrau Lehrerin Gymnasium, liebt Literatur Theater. Reisen Theaterfestivals Salzburg Avignon. Stil klassisch elegant, bevorzugt bordeaux navy. Vegetarierin. Drei Kinder, älteste Tochter Medizinstudium, Zwillinge Söhne Gymnasium. Muttertag wichtig Familie Tradition. Kunde sehr zufrieden immer, kauft regelmäßig Anlässe. Nachfassen April Auswahl zeigen.",
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Régulier",
-    "profession": "Profession_libérale"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness"
-      ]
-    },
-    "art_culture": [
-      "Art"
-    ]
+      "collectif": [],
+      "individuel": {}
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Navy",
-      "Bordeaux"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

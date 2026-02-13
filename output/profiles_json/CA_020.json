@@ -3,47 +3,70 @@
   "metadata": {
     "date_conversation": "2026-01-21",
     "duration": "30 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
+  "transcription": "Sra. López, 39 años, influencer moda lifestyle 2M seguidores Instagram TikTok, primera visita importante. Busca piezas contenido redes sociales y uso personal. Presupuesto 10-12K hoy, potencial compras regulares. Estilo moderno trendy pero aprecia calidad artesanía. Interesada bolsos statement, accesorios únicos, pequeña marroquinería. Viaja constantemente eventos moda, semanas moda París Milán Nueva York. Practica pilates yoga diario, wellness contenido también. Vegana estricta valores éticos fuertes para eventos. Sin alergias. Mencionó colaboraciones marcas importante visibilidad, posible partnership boutique contenido redes. Novio empresario tech también influencia. Excelente potencial nuevo cliente segmento joven, gran alcance social media. Follow-up inmediato después compra fidelizar. Invitar todos eventos VIP, aprecia exclusividad contenido. Interesada sostenibilidad transparencia materiales proceso.",
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
-      ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
     },
-    "art_culture": [
-      "Art"
-    ]
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
   },
   "style_personnel": {
-    "pieces_favorites": [
-      "Sacs"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "10-15k"
+    "budget": "10–15k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

@@ -3,57 +3,84 @@
   "metadata": {
     "date_conversation": "2026-01-27",
     "duration": "35 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mr. Chen, 47, hedge fund manager Hong Kong based, excellent new client. First visit but very high potential. Looking for gifts wife and business associates. Budget 20K discussed flexible. Wife interior designer, passionate about contemporary Asian art, attends Hong Kong Art Basel. He plays golf regularly, member exclusive club Peak. They travel luxury extensively, homes Hong Kong London. Wife prefers modern elegant pieces, rose gold neutral tones. Vegan both lifestyle choice events. No allergies. Mentioned two children studying abroad UK universities, graduation gifts opportunities coming years. Anniversary in August annually. Excellent network finance luxury circles, could refer many. Follow up next week personalized selection. Invite to VIP events when in town. Asked about bespoke customization options interested.",
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "VIP",
-    "profession": "Entrepreneur"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Cadre_Manager": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
-    "moyen_orient_asie": [
-      "Hong_Kong"
-    ],
     "europe": [
       "London"
+    ],
+    "moyen_orient_asie": [
+      "Hong Kong"
     ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
   },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Golf"
-      ]
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
     },
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe"
-    ]
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Rose_gold"
-    ]
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Diplome",
-    "budget": "15-25k"
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Diplome",
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

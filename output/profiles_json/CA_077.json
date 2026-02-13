@@ -3,45 +3,76 @@
   "metadata": {
     "date_conversation": "2026-03-03",
     "duration": "30 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mr. Phillips, 41, venture capitalist tech startups, new client high potential. Looking for professional pieces after recent successful exits. Budget 15K very flexible. Invests AI companies, travels Silicon Valley Asia constantly. Passionate about innovation technology, follows emerging trends. Plays tennis weekends, member club. Collects modern art digital NFTs combination. Vegan tech lifestyle choice events. No allergies. Partner works Google senior position also potential. Planning move San Francisco London offices both. Excellent new tech segment client. Very active LinkedIn Twitter thought leader 100K followers. Follow up immediately relationship. Invite VIP events tech innovation related. Asked about technology integration products smart features interested.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "London"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Tennis"
+      "collectif": [],
+      "individuel": {
+        "raquette": [
+          "Tennis"
+        ]
+      }
+    },
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
       ]
     },
-    "art_culture": [
-      "Art"
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "budget": "15-25k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
-  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

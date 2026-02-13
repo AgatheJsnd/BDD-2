@@ -3,45 +3,70 @@
   "metadata": {
     "date_conversation": "2026-02-26",
     "duration": "30 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "M. Lambert, 48 ans, producteur cinéma films auteur, client occasionnel. Cherche cadeaux équipe film primé festival Cannes. Budget 12K pour 6 personnes. Film sélection officielle mai grande opportunité. Équipe réalisatrice acteurs producteurs. Veut pièces mémorables élégantes variées goûts. Cuirs couleurs classiques noir cognac navy. Réalisatrice végane, acteur principal pescetarien. Festival mai donc urgent confirmer. Client connecté milieu cinéma art, beaucoup contacts potentiels. Mentionné si film succès, budget futurs projets beaucoup plus important. Rappeler avril coordonner livraison Cannes possible. Opportunité visibilité festival tapis rouge.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "Occasionnel",
     "age": "46-55",
-    "statut_relationnel": "Occasionnel"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Art"
-    ]
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Cognac",
-      "Navy"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "10-15k"
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane",
+      "Pescetarien"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

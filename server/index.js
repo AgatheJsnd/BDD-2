@@ -21,7 +21,7 @@ app.use(morgan('dev'));
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     const uploadDir = path.join(__dirname, '../uploads');
-    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
+    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
     cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
@@ -58,19 +58,59 @@ app.get('/api/status', (req, res) => {
 app.post('/api/analyze', upload.single('file'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No file uploaded' });
 
-  const options = {
-    mode: 'text',
-    pythonPath: 'python3', // Use the system python3
+  const previewOptions = {
+    mode: 'json',
+    pythonPath: 'python3',
     scriptPath: path.join(__dirname, '../'),
     args: [req.file.path]
   };
 
-  // We will create a bridge script to call your existing tag_extractor.py
-  PythonShell.run('main.py', options).then(results => {
-    res.json({ success: true, results });
+  PythonShell.run('src/file_preview.py', previewOptions).then((previewResults) => {
+    const preview = Array.isArray(previewResults) && previewResults.length > 0 ? previewResults[0] : {};
+    const taxonomyOptions = {
+      mode: 'json',
+      pythonPath: 'python3',
+      scriptPath: path.join(__dirname, '../'),
+      args: [req.file.path]
+    };
+
+    PythonShell.run('src/file_taxonomy.py', taxonomyOptions).then((taxonomyResults) => {
+      const taxonomyPayload = Array.isArray(taxonomyResults) && taxonomyResults.length > 0 ? taxonomyResults[0] : {};
+      const taxonomyRows = Array.isArray(taxonomyPayload?.taxonomy_rows) ? taxonomyPayload.taxonomy_rows : [];
+
+      const options = {
+        mode: 'text',
+        pythonPath: 'python3', // Use the system python3
+        scriptPath: path.join(__dirname, '../'),
+        args: ['--input', req.file.path]
+      };
+
+      // Run legacy pipeline too; keep app usable even if this heavy pass fails.
+      PythonShell.run('main.py', options).then((results) => {
+        res.json({ success: true, preview, taxonomy_rows: taxonomyRows, results });
+      }).catch((pipelineErr) => {
+        console.error(pipelineErr);
+        res.json({
+          success: true,
+          preview,
+          taxonomy_rows: taxonomyRows,
+          results: [],
+          warning: pipelineErr?.message || 'Le pipeline complet a echoue, mais la visualisation est disponible.'
+        });
+      });
+    }).catch((taxonomyErr) => {
+      console.error(taxonomyErr);
+      res.status(500).json({
+        error: 'Extraction taxonomique impossible pour ce fichier.',
+        details: taxonomyErr?.message || 'Erreur inconnue'
+      });
+    });
   }).catch(err => {
     console.error(err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({
+      error: 'Analyse impossible pour ce fichier.',
+      details: err?.message || 'Erreur inconnue'
+    });
   });
 });
 

@@ -3,42 +3,70 @@
   "metadata": {
     "date_conversation": "2026-03-04",
     "duration": "25 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
+  "transcription": "Sra. Romero, 37 años, arquitecta proyectos sostenibles, cliente ocasional. Compra regalo hermana boda próximo mes. Budget 5K. Hermana diseñadora gráfica freelance estilo creativo moderno. Practica yoga escalada deportes aventura. Cuero negro cognac rosé gold. Hermana vegana valores fuertes. Boda abril Barcelona playa. Cliente satisfecha servicio. Mencionó proyecto grande edificio sostenible premio arquitectura posible, futuras compras probable éxito. Marido ingeniero también potencial. Llamar verano.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Fidèle"
-  },
-  "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "sport": {
-      "individuel": [
-        "Yoga"
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
       ]
     }
   },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Rose_gold",
-      "Cognac"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

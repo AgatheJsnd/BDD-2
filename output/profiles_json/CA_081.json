@@ -3,47 +3,84 @@
   "metadata": {
     "date_conversation": "2026-03-05",
     "duration": "30 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "Mme Leclerc, 41 ans, avocate environnement, nouvelle cliente potentiel. Cherche pièces professionnelles travail ONG international. Budget 8K. Style sobre élégant, valeurs durabilité importantes. Voyage missions Afrique Asie régulièrement. Pratique yoga méditation, retraites wellness occasionnels Bali. Cuir cognac beige matériaux éthiques préférence. Végane stricte convictions événements. Aucune allergie. Mari photographe documentaire voyagent ensemble missions. Très intéressée transparence chaîne approvisionnement, posa beaucoup questions éthique. Pourrait devenir cliente ambassadrice luxe durable si développé. Rappeler avril. Réseau ONG environnement étendu.",
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "Fidèle",
-    "profession": "Profession_libérale"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
-      ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
     },
-    "voyage": [
-      "Luxe"
-    ]
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Détente",
+        "Luxe"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Beige",
-      "Cognac"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

@@ -3,43 +3,78 @@
   "metadata": {
     "date_conversation": "2026-02-14",
     "duration": "50 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mr. Taylor, 38, professional golfer PGA Tour, first time client exceptional potential. Looking for travel pieces lifestyle professional golf circuit. Budget 16K very flexible. Travels constantly tournaments worldwide, on road 40 weeks year. Needs durable elegant functional pieces. Passionate about golf obviously, also fitness training, follows strict athlete regimen. Wife former model now sports agent represents athletes. Planning start golf academy youth after retiring few years. Vegan athlete diet performance. No allergies. Mentioned major tournament wins significant, brand partnerships several companies, good visibility potential. Wife birthday coming May gift opportunity. Anniversary August annually. Excellent new client segment professional athletes. Very active social media 500K followers lifestyle golf content. Follow up immediately after purchase maintain relationship. Invite VIP events sports-related. Asked about durability testing pieces travel wear tear important. Interested innovation materials technology lightweight durable. Could be brand ambassador if relationship develops well ongoing purchases likely.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "VIP"
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Fitness",
-        "Golf"
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    },
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
       ]
     },
-    "art_culture": [
-      "Art"
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Éthique / durable"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "15-25k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
-  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane"
   }
 }

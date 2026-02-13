@@ -17,13 +17,14 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description="Systeme d'automatisation - Profils Clients LVMH")
-    parser.add_argument("--input", default="LVMH_sample_multilang_FULL_cleaned.csv", help="Chemin du fichier CSV d'entrée")
+    parser.add_argument("input_path", nargs="?", default=None, help="Chemin du fichier d'entree (positionnel)")
+    parser.add_argument("--input", dest="input_flag", default=None, help="Chemin du fichier d'entree (--input)")
     args = parser.parse_args()
 
     # 1. Initialisation des modules
     print("Initialisation des modules...")
     # Utilisation du fichier passé en argument ou par défaut
-    input_file = args.input
+    input_file = args.input_flag or args.input_path or "LVMH_sample_multilang_FULL_cleaned.csv"
     print(f"Fichier d'entrée : {input_file}")
     
     csv_processor = CSVProcessor(input_file)

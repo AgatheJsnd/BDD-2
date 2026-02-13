@@ -3,52 +3,67 @@
   "metadata": {
     "date_conversation": "2026-02-21",
     "duration": "40 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
+  "transcription": "Frau Wagner, 51 Jahre, Professorin Kunstgeschichte Universität Berlin, treue Kundin seit 2016. Kauft Geschenke Tochter Promotion Architektur. Budget 8K. Tochter 28 Jahre promoviert nachhaltige Architektur, beginnt eigenes Büro. Beide leidenschaftlich Kunst Design, besuchen Documenta Kassel regelmäßig. Tochter praktiziert Yoga, interessiert Wellness nachhaltig Leben. Mutter sammelt Kunstbücher Erstausgaben, Tochter digitale Architektur renderings. Tochter Stil minimalistisch funktional, beige grau schwarz. Beide Vegetarier Events. Tochter Latex Allergie wichtig. Promotion Feier Mai Familie Kollegen. Kundin ausgezeichnet, empfohlen viele Akademiker Freunde. Nachfassen April. Sehr interessiert ethische Produktion Handwerk Geschichte Stücke.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Fidèle"
+    "statut_relationnel": "Fidèle",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Berlin"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Yoga"
-      ]
-    },
-    "art_culture": [
-      "Art"
-    ]
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Gris",
-      "Beige"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Cadeau",
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "allergies": [
-      "latex"
-    ]
   }
 }

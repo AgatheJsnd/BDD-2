@@ -3,36 +3,65 @@
   "metadata": {
     "date_conversation": "2026-03-16",
     "duration": "30 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
+  "transcription": "Sr. Silva, 40 años, periodista investigación premiado, cliente regular. Compra regalo esposa cumpleaños 38 años. Budget 7K. Esposa fotógrafa documentalista proyectos sociales. Viajan juntos misiones reportajes mundial zonas conflicto. Esposa estilo práctico elegante, necesita funcional durable viajes difíciles. Cuero negro cognac resistente. Ambos vegetarianos. Cumpleaños abril. Pareja apasionada justicia social derechos humanos. Mencionó proyecto documentación importante premiado posible, futuro compras probable éxito. Hijo adolescente 14 años. Red periodismo internacional contactos. Llamar mayo.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "Fidèle",
     "age": "36-45",
-    "statut_relationnel": "Fidèle"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Cognac"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge",
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    },
+    "marques_preferees": {
+      "Louis Vuitton": []
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

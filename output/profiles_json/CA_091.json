@@ -3,37 +3,66 @@
   "metadata": {
     "date_conversation": "2026-03-12",
     "duration": "25 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "Mme Mercier, 37 ans, dentiste, nouvelle. Achat rapide cadeau meilleure amie mariage. Budget 4K. Amie designer graphique freelance style créatif. Pratique escalade week-ends. Cuir noir rosé gold. Amie végane. Mariage mai Bretagne. Satisfaite. Mentionné cabinet ouvre associée bientôt, futures opportunités cadeaux professionnels. Rappeler été.",
   "identite": {
     "genre": "Femme",
+    "statut_relationnel": "Nouveau",
     "age": "36-45",
-    "statut_relationnel": "Nouveau"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
+  "lifestyle_centres_interet": {
+    "musique": {}
   },
-  "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "<5k"
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Mariage"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

@@ -3,40 +3,58 @@
   "metadata": {
     "date_conversation": "2026-02-07",
     "duration": "45 min",
-    "language": "Allemand"
+    "language": "Allemand",
+    "profile_version": "2.0"
   },
+  "transcription": "Herr Schulz, 58 Jahre, Dirigent Symphonieorchester München, neuer Kunde ausgezeichnet. Sucht Geschenk Ehefrau 30. Hochzeitstag großes Ereignis Familie. Budget sehr großzügig 12K flexibel. Ehefrau Cellistin Orchester auch, beide leidenschaftlich klassische Musik leben dafür. Reisen Konzerte weltweit, nächste Tournee Japan China. Sammeln Musikinstrumente antik, Haus voll historische Stücke. Ehefrau liebt japanische Ästhetik minimalistisch elegant, bevorzugt subtile Farben beige grau rosé Gold. Beide Vegetarier Events. Keine Allergien. Zwei Kinder erwachsen, Tochter Pianistin Paris Sohn Architekt Berlin. Feier Hochzeitstag groß April Familie Freunde Kollegen. Kunde sehr zufrieden Service, erwähnt viele Freunde Kulturkreise könnten interessieren. Nachfassen März. Interessiert Boutique Event Sponsoring Konzert Saison möglich. Exzellentes Netzwerk Kultur Musik.",
   "identite": {
     "genre": "Femme",
-    "statut_relationnel": "Nouveau"
+    "statut_relationnel": "Nouveau",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
-      "Berlin",
-      "Paris"
+      "Paris",
+      "Berlin"
     ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
   },
   "lifestyle_centres_interet": {},
   "style_personnel": {
-    "couleurs_preferees": [
-      "Rose_gold",
-      "Gris",
-      "Beige"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "10-15k"
+    "budget": "10–15k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {}
+  }
 }

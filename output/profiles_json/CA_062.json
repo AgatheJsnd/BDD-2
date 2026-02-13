@@ -3,55 +3,85 @@
   "metadata": {
     "date_conversation": "2026-02-19",
     "duration": "35 min",
-    "language": "Français"
+    "language": "Français",
+    "profile_version": "2.0"
   },
+  "transcription": "M. Dubois, 63 ans, collectionneur art contemporain, client VIP 2010. Achat cadeau petite-fille diplomation Sciences Po Paris. Budget 7K. Petite-fille 24 ans commence carrière diplomatie, stage ONU Genève. Style jeune professionnel international, voyage beaucoup. Cuir noir cognac classique élégant. Petite-fille végétarienne. Client excellent collectionne depuis 40 ans, maison musée privé. Autre petite-fille médecine Lyon diplomation année prochaine opportunité. Anniversaire petite-fille mai. Client fidèle famille toujours satisfait. Réseau diplomatique culturel étendu. Rappeler avril.",
   "identite": {
     "genre": "Femme",
-    "age": "56+",
     "statut_relationnel": "VIP",
-    "profession": "Profession_libérale"
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Paris"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Musees",
-      "Art"
-    ],
-    "voyage": [
-      "Culturel"
-    ]
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    },
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Cognac"
-    ],
-    "matieres_preferees": [
-      "Cuir"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "5-10k"
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {
-    "influence": "Réseau_affluent"
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
   },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

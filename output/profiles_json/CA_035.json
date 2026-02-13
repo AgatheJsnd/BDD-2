@@ -3,44 +3,54 @@
   "metadata": {
     "date_conversation": "2026-01-31",
     "duration": "40 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
+  "transcription": "Signor Marino, 51 anni, imprenditore moda Milano, cliente regolare 2018. Acquista regali moglie compleanno e figlia laurea. Budget 15K flessibile. Moglie stilista brand proprio, ama moda avant-garde contemporanea. Figlia 25 anni laureata design Politecnico cerca primo lavoro. Moglie frequenta settimane moda tutte città, colleziona pezzi designer emergenti. Figlia appassionata sostenibilità eco-design. Famiglia pratica sci inverno vela estate. Moglie preferisce pezzi unici statement colorati audaci. Figlia stile minimale sostenibile. Moglie pescetariana figlia vegana eventi. Figlia allergia nichel importante. Mentionato figlio maschio 28 lavora finanza Londra, possibile cliente futuro. Anniversario matrimonio settembre. Cliente ottimo rete contatti moda lusso, riferito diversi amici. Richiamare febbraio anteprima esclusiva. Interessato collaborazioni designer italiani emergenti edizioni limitate.",
   "identite": {
     "genre": "Femme",
-    "age": "46-55",
     "statut_relationnel": "Fidèle",
-    "profession": "Entrepreneur"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Milan"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
   },
-  "lifestyle_centres_interet": {
-    "voyage": [
-      "Luxe"
+  "projet_achat": {
+    "budget": "15–25k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
     ]
   },
-  "style_personnel": {},
-  "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "15-25k"
-  },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végane",
-    "allergies": [
-      "nickel"
-    ]
   }
 }

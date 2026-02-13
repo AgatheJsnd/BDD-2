@@ -3,51 +3,63 @@
   "metadata": {
     "date_conversation": "2026-03-06",
     "duration": "25 min",
-    "language": "Italien"
+    "language": "Italien",
+    "profile_version": "2.0"
   },
+  "transcription": "Signora Mancini, 39 anni, giornalista televisione, cliente occasionale. Acquista regalo marito compleanno 40 anni. Budget 5K. Marito avvocato diritti umani ONU Ginevra. Stile classico professionale, viaggia molto lavoro. Pratica corsa maratone. Cuoio nero cognac. Marito vegetariano. Compleanno aprile. Cliente soddisfatta servizio. Mentionò trasferimento New York possibile prossimo anno, potrebbe continuare cliente. Richiamare estate.",
   "identite": {
     "genre": "Femme",
-    "age": "36-45",
     "statut_relationnel": "Fidèle",
-    "profession": "Profession_libérale"
-  },
-  "localisation": {
-    "amerique": [
-      "New_York"
-    ]
-  },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
-  "lifestyle_centres_interet": {
-    "sport": {
-      "individuel": [
-        "Running"
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
       ]
     }
   },
-  "style_personnel": {
-    "couleurs_preferees": [
-      "Noir",
-      "Cognac"
-    ],
-    "matieres_preferees": [
-      "Cuir"
+  "localisation": {
+    "amerique": [
+      "New York"
     ]
   },
-  "projet_achat": {
-    "motif": "Anniversaire",
-    "budget": "5-10k"
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "projet_achat": {
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Végétarien"
   }
 }

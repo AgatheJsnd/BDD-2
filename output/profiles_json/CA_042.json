@@ -3,43 +3,55 @@
   "metadata": {
     "date_conversation": "2026-02-05",
     "duration": "35 min",
-    "language": "Anglais"
+    "language": "Anglais",
+    "profile_version": "2.0"
   },
+  "transcription": "Mrs. Hamilton, 52, philanthropy director foundation, regular client. Shopping for gala charity event next week needs elegant evening pieces. Budget 7K. She organizes fundraising events regularly, this one opera house benefit. Passionate about classical music, board member philharmonic. Travels cultural events Europe. Prefers elegant timeless pieces rose gold burgundy. Pescatarian for events. Mentioned annual gala September every year always shops here for it. Good client consistent. Follow up next month spring arrivals. Interested in boutique sponsoring foundation events possibility.",
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "Fidèle",
-    "profession": "Cadre"
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Cadre_Manager": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
   },
   "localisation": {},
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
-    "art_culture": [
-      "Opera"
-    ],
-    "voyage": [
-      "Culturel"
-    ]
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Rose_gold",
-      "Bordeaux"
-    ]
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "budget": "5-10k"
+    "budget": "5–10k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }

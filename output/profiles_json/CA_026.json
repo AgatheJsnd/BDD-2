@@ -3,54 +3,70 @@
   "metadata": {
     "date_conversation": "2026-01-24",
     "duration": "45 min",
-    "language": "Espagnol"
+    "language": "Espagnol",
+    "profile_version": "2.0"
   },
+  "transcription": "Sr. Ramírez y esposa, 50-52 años, excelentes clientes desde 2016. Compra importante aniversario 20 años matrimonio próximo mes. Presupuesto muy generoso 18-20K. Él empresario construcción proyectos lujo, ella directora marketing empresa cosmética. Ambos pasión golf, miembros club exclusivo, viajan torneos internacionales. Coleccionan arte latinoamericano contemporáneo, asisten Art Basel Miami cada año. Viajan constantemente negocios placer, próximos destinos Aspen esquí luego Caribe vela. Ella prefiere elegancia sofisticada, cuero cognac beige hardware dorado. Él clásico funcional, negro marón plata. Ambos pescetarianos eventos. Ella alergia níquel crítica hardware. Tres hijos adultos: hijo mayor arquitecto Barcelona, hija mediana abogada Madrid, menor estudiante universidad. Familia unida, potencial multi-generacional excelente. Llamar febrero preview privada exclusiva colección. Mencionaron planean fiesta aniversario grande mayo, posible colaboración boutique evento. Red extensa contactos empresariales, referido muchos clientes.",
   "identite": {
     "genre": "Femme",
     "statut_relationnel": "Fidèle",
-    "profession": "Entrepreneur"
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
   },
   "localisation": {
     "europe": [
       "Madrid"
     ]
   },
-  "mobilite_rythme_vie": {
-    "frequence_deplacement": "Mobile"
-  },
   "lifestyle_centres_interet": {
     "sport": {
-      "individuel": [
-        "Golf"
-      ]
-    },
-    "art_culture": [
-      "Art"
-    ],
-    "voyage": [
-      "Luxe"
-    ]
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    }
   },
   "style_personnel": {
-    "couleurs_preferees": [
-      "Beige",
-      "Noir",
-      "Cognac"
-    ]
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige",
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
   },
   "projet_achat": {
-    "motif": "Mariage",
-    "budget": "15-25k"
+    "budget": "15–25k"
   },
-  "appetence_evenementielle": {},
-  "relation_produit_innovation": {},
-  "reseau_influence": {},
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
   "suivi": {
-    "action": "Rappeler",
+    "action": [
+      "Rappeler"
+    ],
     "echeance": "M+1",
     "canal_contact": "Email"
-  },
-  "metadata_client": {
-    "regime_alimentaire": "Pescetarien"
   }
 }
