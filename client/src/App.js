@@ -9,9 +9,9 @@
  */
 import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Menu, Search, Plus, ArrowRight, Mic, Upload, UploadCloud, ChevronDown,
+  Menu, Search, Plus, ArrowRight, Mic, Upload, UploadCloud, ChevronDown, ChevronLeft, ChevronRight,
   Lock, Clock, MoreVertical, Filter, X, CheckCircle2, AlertTriangle, Loader2,
-  BarChart3, Calendar as CalIcon, TrendingUp, Sparkles, Play, Database, Eye, AlertCircle, Clipboard, Dna, User, LogOut
+  BarChart3, Calendar as CalIcon, TrendingUp, Sparkles, Play, Database, Eye, AlertCircle, Clipboard, Dna, User, LogOut, Tag
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { supabase } from './supabaseClient';
@@ -19,6 +19,8 @@ import ClientProfileCard from './components/ClientProfileCard';
 import DatabaseFilterPage from './components/DatabaseFilterPage';
 import LoginPage from './components/LoginPage';
 import VendeurPage from './components/VendeurPage';
+import AnalysisPage from './components/AnalysisPage';
+import StatsPage from './components/StatsPage';
 
 /* ═══ SIMULATED AI DATA ═══ */
 const FAKE_CLIENTS = [
@@ -36,28 +38,25 @@ const pick = (arr, n) => [...arr].sort(() => 0.5 - Math.random()).slice(0, n);
 
 /* ═══ REUSABLE COMPONENTS ═══ */
 
-const C = ({ children, className = '' }) => (
-  <div className={`bg-white rounded-[40px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.03)] p-6 relative ${className}`}>{children}</div>
+const C = ({ children, className = '', ...props }) => (
+  <div className={`bg-white rounded-[40px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.03)] p-6 relative ${className}`} {...props}>{children}</div>
 );
 
+const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+
 const CalendarWidget = ({ activeDays = [] }) => {
+  const todayInitial = new Date();
   const [selectedDays, setSelectedDays] = useState([14, 15, 16]);
-  const [month, setMonth] = useState('Oct');
-  const [year, setYear] = useState(2026);
+  const [month, setMonth] = useState(months[todayInitial.getMonth()]);
+  const [year, setYear] = useState(todayInitial.getFullYear());
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartMode, setDragStartMode] = useState(null);
 
-  // Derive "Upload Days" from props if available?
-  // Ideally, CalendarWidget should accept a prop `highlightedDays`
-  // But since it's defined inside App.js (in this file), we can't easily pass props without refactoring.
-  // Wait, CalendarWidget IS defined in App.js but used as <CalendarWidget /> in JSX.
-  // Use Context? Or just pass props? 
-  // I will refactor CalendarWidget to accept { activeDays = [] } prop.
-  // But wait, the component is defined at line 40.
-  // I need to change the definition first.
-
-
-  const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+  // Check for "Today"
+  const isToday = (d) => {
+    const today = new Date();
+    return d === today.getDate() && months.indexOf(month) === today.getMonth() && year === today.getFullYear();
+  };
 
   // Dynamic days based on month/year
   const getDaysInMonth = (m, y) => {
@@ -109,14 +108,18 @@ const CalendarWidget = ({ activeDays = [] }) => {
             onMouseEnter={() => handleMouseEnter(d)}
             className={`
               w-full h-full rounded-md flex items-center justify-center text-[9px] font-medium transition-all duration-150 relative
-              ${selectedDays.includes(d)
-                ? 'bg-[#C87961] text-white shadow-sm scale-110'
-                : 'bg-gray-100 text-gray-400 hover:bg-gray-200'}
+              ${isToday(d)
+                ? selectedDays.includes(d)
+                  ? 'bg-[#C87961] text-white shadow-md font-bold border-2 border-emerald-500 scale-110 z-10'
+                  : 'bg-emerald-500 text-white font-bold shadow-md hover:bg-emerald-600'
+                : selectedDays.includes(d)
+                  ? 'bg-[#C87961] text-white shadow-sm scale-110'
+                  : 'bg-gray-100 text-gray-400 hover:bg-gray-200'}
             `}
           >
             {d}
             {/* Dot for activity */}
-            {activeDays.includes(d) && (
+            {activeDays.includes(d) && !isToday(d) && (
               <div className="absolute bottom-1 h-1 w-1 rounded-full bg-emerald-500" />
             )}
           </button>
@@ -125,13 +128,17 @@ const CalendarWidget = ({ activeDays = [] }) => {
 
       {/* RIGHT: Selectors */}
       <div className="flex flex-col gap-2 min-w-[50px] justify-center items-end py-1">
-        {/* Year */}
-        <div
-          onClick={() => setYear(prev => prev === 2026 ? 2025 : 2026)}
-          className="flex items-center gap-1 border-b-2 border-gray-100 pb-1 cursor-pointer hover:border-[#C87961] transition-colors"
-        >
+        {/* Year Selector with Arrows */}
+        <div className="flex items-center gap-1 border-b-2 border-transparent pb-1">
+          <button onClick={() => setYear(y => y - 1)} className="text-[#C87961] hover:bg-orange-50 rounded p-0.5"><ChevronLeft size={14} /></button>
           <span className="text-[14px] font-bold text-[#111]">{year}</span>
-          <ChevronDown size={14} className="text-[#C87961]" />
+          <button
+            onClick={() => setYear(y => y < todayInitial.getFullYear() ? y + 1 : y)}
+            disabled={year >= todayInitial.getFullYear()}
+            className={`rounded p-0.5 ${year >= todayInitial.getFullYear() ? 'text-gray-300 cursor-not-allowed' : 'text-[#C87961] hover:bg-orange-50'}`}
+          >
+            <ChevronRight size={14} />
+          </button>
         </div>
 
         {/* Month List */}
@@ -613,6 +620,14 @@ export default function App() {
     return <DatabaseFilterPage onBack={() => setCurrentView('dashboard')} />;
   }
 
+  if (currentView === 'analysis') {
+    return <AnalysisPage onBack={() => setCurrentView('dashboard')} />;
+  }
+
+  if (currentView === 'stats') {
+    return <StatsPage onBack={() => setCurrentView('dashboard')} />;
+  }
+
   return (
     <div className="min-h-screen xl:h-screen h-auto w-full bg-[#F3F5F7] p-4 md:p-7 xl:overflow-hidden overflow-x-hidden flex flex-col" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* CLIENT PROFILE MODAL */}
@@ -884,8 +899,8 @@ export default function App() {
           </C >
 
           {/* 3 — Tags Lock */}
-          < C className="flex flex-col items-center justify-center gap-2" >
-            <div className="h-11 w-11 rounded-2xl bg-[#F3F5F7] flex items-center justify-center"><Lock size={18} className="text-[#555]" /></div>
+          < C className="flex flex-col items-center justify-center gap-2 cursor-pointer hover:shadow-lg transition-all" onClick={() => setCurrentView('analysis')}>
+            <div className="h-11 w-11 rounded-2xl bg-[#F3F5F7] flex items-center justify-center"><Tag size={18} className="text-[#C87961]" /></div>
             <p className="text-[12px] font-semibold text-[#111]">Data Tags</p>
             {
               tagCounts.length > 0 && (
@@ -900,7 +915,10 @@ export default function App() {
           </C>
 
           {/* 5 — Chart icon */}
-          < C className="flex items-center justify-center" > <BarChart3 size={28} className="text-[#C87961]" /></C >
+          < C className="flex flex-col items-center justify-center cursor-pointer hover:shadow-lg transition-all gap-2" onClick={() => setCurrentView('stats')}>
+            <BarChart3 size={28} className="text-[#C87961]" />
+            <p className="text-[10px] text-center font-medium text-[#111] leading-tight">Analyser les<br />transcripts</p>
+          </C >
 
           {/* 6 — Growth Circle */}
           < div className="flex items-center justify-center" >
