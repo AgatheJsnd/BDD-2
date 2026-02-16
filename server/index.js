@@ -31,8 +31,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Check for local venv
+// Check for local venv, otherwise use system python
 const venvPath = path.join(__dirname, '../.venv/Scripts/python.exe');
-const pythonPath = fs.existsSync(venvPath) ? venvPath : 'python3';
+const pythonPath = fs.existsSync(venvPath) ? venvPath : (process.platform === 'win32' ? 'py' : 'python3');
 
 // Route for Voice Transcription
 app.post('/api/transcribe', upload.single('audio'), (req, res) => {
@@ -50,6 +51,40 @@ app.post('/api/transcribe', upload.single('audio'), (req, res) => {
   }).catch(err => {
     console.error(err);
     res.status(500).json({ error: err.message });
+  });
+});
+
+app.post('/api/insights', (req, res) => {
+  const { date_range, current_taxonomy, transcripts } = req.body;
+
+  if (!transcripts || !Array.isArray(transcripts)) {
+    return res.status(400).json({ error: 'Invalid transcripts data' });
+  }
+
+  const options = {
+    mode: 'json',
+    pythonPath: pythonPath, // Re-use the pythonPath variable
+    scriptPath: path.join(__dirname, '../src'),
+  };
+
+  const pyshell = new PythonShell('generate_insights.py', options);
+
+  pyshell.send({
+    date_range,
+    current_taxonomy,
+    transcripts
+  });
+
+  pyshell.on('message', function (message) {
+    // received a message sent from the Python script (a simple "print" statement)
+    res.json(message);
+  });
+
+  pyshell.end(function (err) {
+    if (err) {
+      console.error('PythonShell Error:', err);
+      if (!res.headersSent) res.status(500).json({ error: err.message });
+    }
   });
 });
 

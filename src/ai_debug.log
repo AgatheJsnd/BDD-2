@@ -1,0 +1,299 @@
+Analyzing 1 transcripts. Date range: Test 2026
+Sending request to Mistral...
+Received content (len=3030): ```json
+{
+  "analysis_period": "Test 2026",
+  "taxonomy_suggestions": [
+    {
+      "term": "cuir ve...
+JSON Parse Error: Expecting ':' delimiter: line 15 column 26 (char 496)
+Bad JSON Content: {
+  "analysis_period": "Test 2026",
+  "taxonomy_suggestions": [
+    {
+      "term": "cuir vegan",
+      "reason": "Demande croissante pour des matériaux éthiques et durables dans le luxe, alignée avec les valeurs RSE.",
+      "category": "Produit"
+    },
+    {
+      "term": "rose (couleur)",
+      "reason": "Préférence pour des teintes audacieuses et personnalisées, reflétant une tendance à l'individualisation des produits.",
+      "category": "Produit"
+    },
+    {
+      "cadeau (occasion)",
+      "reason": "Identification d'un contexte d'achat émotionnel (cadeau pour un proche), pertinent pour le ciblage marketing.",
+      "category": "Service"
+    },
+    {
+      "éthique (matériaux)",
+      "reason": "Sensibilité accrue des clients aux enjeux environnementaux et animaux, à intégrer dans la communication produit.",
+      "category": "Sentiment"
+    },
+    {
+      "personnalisation",
+      "reason": "Intérêt pour des options sur-mesure ou des couleurs uniques, tendance clé dans le luxe contemporain.",
+      "category": "Service"
+    }
+  ],
+  "marketing_actions": [
+    {
+      "insight": "Demande pour des matériaux durables et éthiques (cuir vegan) en hausse, notamment pour les cadeaux.",
+      "suggested_action": "Lancer une campagne digitale mettant en avant les collections 'éthiques' avec des témoignages clients et des certifications (ex: PETA-approved). Cibler les réseaux sociaux avec des influenceurs engagés dans la mode responsable.",
+      "priority": "High"
+    },
+    {
+      "insight": "Couleur rose comme critère de sélection, reflétant une tendance à l'audace et à l'individualisation.",
+      "suggested_action": "Créer une série limitée 'Couleurs de Saison' avec des teintes exclusives (dont rose) et un storytelling autour de l'émotion. Proposer des options de personnalisation (gravure, choix de couleur).",
+      "priority": "Medium"
+    },
+    {
+      "insight": "Contexte d'achat cadeau identifié, avec une dimension émotionnelle forte.",
+      "suggested_action": "Développer un service 'Cadeau Luxe' avec emballage premium, carte personnalisée et livraison express. Promouvoir via des partenariats avec des plateformes de cadeaux haut de gamme (ex: Mr & Mrs Smith).",
+      "priority": "High"
+    },
+    {
+      "insight": "Absence de mention de marque ou de modèle spécifique, suggérant une recherche exploratoire.",
+      "suggested_action": "Optimiser le SEO et les chatbots pour guider les clients vers des produits 'cuir vegan' ou 'couleurs tendances' dès les premières interactions. Utiliser des visuels 3D pour faciliter la découverte.",
+      "priority": "Medium"
+    }
+  ],
+  "graph_data": {
+    "top_tags_global": [
+      { "tag": "cuir vegan", "count": 1 },
+      { "tag": "rose", "count": 1 },
+      { "tag": "cadeau", "count": 1 },
+      { "tag": "éthique", "count": 1 },
+      { "tag": "personnalisation", "count": 1 }
+    ],
+    "top_tags_by_language": {
+      "fr": ["cuir vegan", "rose", "cadeau", "éthique", "personnalisation"],
+      "en": []
+    }
+  }
+}
+Analyzing 1 transcripts. Date range: Test 2026
+Sending request to Mistral...
+Received content (len=2663): ```json
+{
+  "analysis_period": "Test 2026",
+  "taxonomy_suggestions": [
+    {
+      "term": "cuir ve...
+JSON Parse Error: Expecting ':' delimiter: line 15 column 26 (char 497)
+Bad JSON Content: {
+  "analysis_period": "Test 2026",
+  "taxonomy_suggestions": [
+    {
+      "term": "cuir vegan",
+      "reason": "Demande croissante pour des matériaux éthiques et durables dans le luxe, alignée avec les valeurs RSE.",
+      "category": "Produit"
+    },
+    {
+      "term": "rose (couleur)",
+      "reason": "Préférence pour des teintes audacieuses et personnalisées, tendance forte dans les accessoires féminins haut de gamme.",
+      "category": "Produit"
+    },
+    {
+      "cadeau (occasion)",
+      "reason": "Mention explicite d'un achat pour un tiers, indiquant un potentiel segment de clients acheteurs pour autrui.",
+      "category": "Service"
+    },
+    {
+      "personnalisation",
+      "reason": "Implicite dans le choix d'une couleur spécifique pour un proche, reflétant une attente de customisation.",
+      "category": "Service"
+    },
+    {
+      "éthique (matériaux)",
+      "reason": "Association du luxe avec des valeurs responsables, critère de choix de plus en plus décisif.",
+      "category": "Sentiment"
+    }
+  ],
+  "marketing_actions": [
+    {
+      "insight": "Demande pour des matériaux éthiques (cuir vegan) en hausse dans le segment luxe.",
+      "suggested_action": "Créer une collection capsule 'Éthique & Luxe' mettant en avant des matériaux innovants et durables, avec storytelling sur l'artisanat responsable.",
+      "priority": "High"
+    },
+    {
+      "insight": "Couleurs personnalisées (ex: rose) comme critère de différenciation.",
+      "suggested_action": "Lancer un service de personnalisation de couleur en ligne avec visualisation 3D, et promouvoir via des influenceurs lifestyle ciblant les Millennials/Gen Z.",
+      "priority": "High"
+    },
+    {
+      "insight": "Achat pour un tiers (cadeau) comme motif récurrent.",
+      "suggested_action": "Développer des coffrets cadeaux premium avec options de personnalisation (gravure, emballage luxe) et campagnes saisonnières (Saint-Valentin, fêtes).",
+      "priority": "Medium"
+    },
+    {
+      "insight": "Sensibilité aux valeurs RSE dans le processus d'achat.",
+      "suggested_action": "Intégrer des badges 'Matériaux Durables' et 'Artisanat Éthique' dans les fiches produits, avec contenu transparent sur l'origine des matériaux.",
+      "priority": "Medium"
+    }
+  ],
+  "graph_data": {
+    "top_tags_global": [
+      { "tag": "cuir vegan", "count": 1 },
+      { "tag": "rose", "count": 1 },
+      { "tag": "cadeau", "count": 1 },
+      { "tag": "personnalisation", "count": 1 },
+      { "tag": "éthique", "count": 1 }
+    ],
+    "top_tags_by_language": {
+      "fr": ["cuir vegan", "rose", "cadeau", "personnalisation", "éthique"]
+    }
+  }
+}
+Analyzing 1 transcripts. Date range: Test 2026
+Sending request to Mistral...
+Received content (len=2791): ```json
+{
+  "analysis_period": "Test 2026",
+  "taxonomy_suggestions": [
+    {
+      "term": "cuir ve...
+JSON Parse Error: Expecting ':' delimiter: line 15 column 26 (char 497)
+Bad JSON Content: {
+  "analysis_period": "Test 2026",
+  "taxonomy_suggestions": [
+    {
+      "term": "cuir vegan",
+      "reason": "Demande croissante pour des matériaux éthiques et durables dans le luxe, alignée avec les valeurs RSE.",
+      "category": "Produit"
+    },
+    {
+      "term": "rose (couleur)",
+      "reason": "Préférence pour des teintes audacieuses et personnalisées, tendance forte dans les accessoires féminins haut de gamme.",
+      "category": "Produit"
+    },
+    {
+      "cadeau (occasion)",
+      "reason": "Contexte d'achat lié à un cadeau, nécessitant des services d'emballage premium ou des conseils personnalisés.",
+      "category": "Service"
+    },
+    {
+      "personnalisation",
+      "reason": "Implicite dans la recherche d'un produit unique pour un proche, aligné avec la demande de customisation en luxe.",
+      "category": "Service"
+    },
+    {
+      "éthique (matériaux)",
+      "reason": "Sensibilité accrue aux enjeux environnementaux et animaux, à intégrer dans la communication produit.",
+      "category": "Sentiment"
+    }
+  ],
+  "marketing_actions": [
+    {
+      "insight": "Demande pour des matériaux alternatifs (cuir vegan) combinée à des couleurs tendances (rose).",
+      "suggested_action": "Lancer une collection capsule 'Éthique & Audacieuse' mettant en avant des sacs en cuir vegan avec des teintes vibrantes, accompagnée d'un storytelling sur l'innovation durable.",
+      "priority": "High"
+    },
+    {
+      "insight": "Contexte d'achat cadeau avec attente de personnalisation.",
+      "suggested_action": "Développer un service 'Cadeau Sur-Mesure' incluant emballage luxe, gravure et livraison express, promu via des campagnes ciblées (ex: Saint-Valentin, anniversaires).",
+      "priority": "High"
+    },
+    {
+      "insight": "Sensibilité aux valeurs éthiques chez les clients luxe.",
+      "suggested_action": "Créer une certification 'LVMH Vegan Approved' pour les produits sans matière animale, avec un badge visible en ligne et en boutique pour renforcer la transparence.",
+      "priority": "Medium"
+    },
+    {
+      "insight": "Absence de mention de marque dans la demande, opportunité de conversion.",
+      "suggested_action": "Mettre en place un chatbot ou un outil de recommandation en ligne qui suggère des produits LVMH en réponse à des requêtes génériques (ex: 'sac cuir vegan rose').",
+      "priority": "Medium"
+    }
+  ],
+  "graph_data": {
+    "top_tags_global": [
+      { "tag": "cuir vegan", "count": 1 },
+      { "tag": "rose", "count": 1 },
+      { "tag": "cadeau", "count": 1 },
+      { "tag": "personnalisation", "count": 1 },
+      { "tag": "éthique", "count": 1 }
+    ],
+    "top_tags_by_language": {
+      "fr": ["cuir vegan", "rose", "cadeau", "personnalisation", "éthique"],
+      "en": []
+    }
+  }
+}
+Analyzing 1 transcripts. Date range: Test 2026
+Sending request to Mistral...
+Received content (len=3005): ```json
+{
+  "analysis_period": "Test 2026",
+  "taxonomy_suggestions": [
+    {
+      "term": "Minimal...
+Analyzing 25 transcripts. Date range: 2026-2 (Current Batch)
+Sending request to Mistral...
+Received content (len=10777): ```json
+{
+  "analysis_period": "2026-2 (Current Batch)",
+  "taxonomy_suggestions": [
+    {
+      "te...
+Starting analysis for 100 transcripts (Batch Size: 25)
+Processing Batch 1/4 (25 items)
+Sending chunk request...
+Mistral Call Error: Expecting ',' delimiter: line 60 column 104 (char 2801)
+Batch 1 failed to produce valid JSON.
+Processing Batch 2/4 (25 items)
+Sending chunk request...
+Mistral Call Error: Expecting ':' delimiter: line 14 column 50 (char 522)
+Batch 2 failed to produce valid JSON.
+Processing Batch 3/4 (25 items)
+Sending chunk request...
+Processing Batch 4/4 (25 items)
+Sending chunk request...
+Aggregating results...
+Analysis complete.
+Starting analysis for 109 transcripts (Batch Size: 25)
+Processing Batch 1/5 (25 items)
+Sending chunk request...
+Processing Batch 2/5 (25 items)
+Sending chunk request...
+Processing Batch 3/5 (25 items)
+Sending chunk request...
+Processing Batch 4/5 (25 items)
+Sending chunk request...
+Processing Batch 5/5 (9 items)
+Sending chunk request...
+Aggregating results...
+Analysis complete.
+Starting analysis for 109 transcripts (Batch Size: 25)
+Processing Batch 1/5 (25 items)
+Sending chunk request...
+Mistral Call Error: Expecting ',' delimiter: line 70 column 84 (char 3055)
+Batch 1 failed to produce valid JSON.
+Processing Batch 2/5 (25 items)
+Sending chunk request...
+Processing Batch 3/5 (25 items)
+Sending chunk request...
+Processing Batch 4/5 (25 items)
+Sending chunk request...
+Processing Batch 5/5 (9 items)
+Sending chunk request...
+Aggregating results...
+Synthesizing 43 marketing actions into top 15...
+Sending chunk request...
+Mistral Call Error: Extra data: line 5 column 4 (char 616)
+Analysis complete.
+Starting analysis for 109 transcripts (Batch Size: 25)
+Processing Batch 1/5 (25 items)
+Sending chunk request...
+Processing Batch 2/5 (25 items)
+Sending chunk request...
+Processing Batch 3/5 (25 items)
+Sending chunk request...
+Processing Batch 4/5 (25 items)
+Sending chunk request...
+Processing Batch 5/5 (9 items)
+Sending chunk request...
+Aggregating results...
+Synthesizing 49 marketing actions into top 15...
+Sending chunk request...
+Mistral Call Error: Extra data: line 5 column 4 (char 507)
+Analysis complete.

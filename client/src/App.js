@@ -44,15 +44,20 @@ const C = ({ children, className = '', ...props }) => (
 
 const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
 
-const CalendarWidget = ({ activeDays = [] }) => {
-  const todayInitial = new Date();
-  const [selectedDays, setSelectedDays] = useState([14, 15, 16]);
-  const [month, setMonth] = useState(months[todayInitial.getMonth()]);
-  const [year, setYear] = useState(todayInitial.getFullYear());
+const CalendarWidget = ({
+  activeDays = [],
+  selectedDays = [],
+  setSelectedDays,
+  month,
+  setMonth,
+  year,
+  setYear
+}) => {
   const [isDragging, setIsDragging] = useState(false);
   const [dragStartMode, setDragStartMode] = useState(null);
 
   // Check for "Today"
+  const todayInitial = new Date();
   const isToday = (d) => {
     const today = new Date();
     return d === today.getDate() && months.indexOf(month) === today.getMonth() && year === today.getFullYear();
@@ -248,6 +253,11 @@ export default function App() {
 
   // ── KPI states ──
   const [totalCount, setTotalCount] = useState(0);
+
+  // ── Date Selection State (Lifted from CalendarWidget) ──
+  const [selectedDays, setSelectedDays] = useState([new Date().getDate()]);
+  const [selectedMonth, setSelectedMonth] = useState(months[new Date().getMonth()]);
+  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
   const [tagCounts, setTagCounts] = useState([]);
   const [recentTranscriptions, setRecentTranscriptions] = useState([]);
 
@@ -625,7 +635,16 @@ export default function App() {
   }
 
   if (currentView === 'stats') {
-    return <StatsPage onBack={() => setCurrentView('dashboard')} />;
+    return (
+      <StatsPage
+        onBack={() => setCurrentView('dashboard')}
+        selectedDate={{
+          days: selectedDays,
+          month: selectedMonth,
+          year: selectedYear
+        }}
+      />
+    );
   }
 
   return (
@@ -911,7 +930,15 @@ export default function App() {
 
           {/* 4 — Calendar */}
           <C className="flex flex-col justify-center relative overflow-hidden">
-            <CalendarWidget activeDays={uploadDates} />
+            <CalendarWidget
+              activeDays={uploadDates}
+              selectedDays={selectedDays}
+              setSelectedDays={setSelectedDays}
+              month={selectedMonth}
+              setMonth={setSelectedMonth}
+              year={selectedYear}
+              setYear={setSelectedYear}
+            />
           </C>
 
           {/* 5 — Chart icon */}
