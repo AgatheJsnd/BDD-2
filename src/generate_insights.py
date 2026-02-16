@@ -94,7 +94,7 @@ Format JSON STRICT :
   "marketing_actions": [ {{ "insight": "...", "suggested_action": "...", "priority": "High" }} ],
   "graph_data": {{
     "top_tags_global": [ {{ "tag": "...", "count": 1 }} ],
-    "top_tags_by_language": {{ "fr": ["..."], "en": ["..."] }}
+    "top_tags_by_language": {{ "fr": ["..."], "en": ["..."], "es": ["..."], "it": ["..."], "other": ["..."] }}
   }}
 }}
 
