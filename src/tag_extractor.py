@@ -158,9 +158,9 @@ def scan_text_for_keywords(text: str, mapping: Dict[str, List[str]]) -> List[str
     """Scanne le texte pour trouver les clés correspondantes aux mots-clés"""
     if not text:
         return []
-
+    
     found = []
-
+    
     for category, keywords in mapping.items():
         for kw in keywords:
             if _keyword_in_text(text, kw):
@@ -389,7 +389,7 @@ def extract_budget_turbo(text: str) -> Optional[str]:
     """Extraction budget normalisée"""
     if not text: return None
     text_lower = text.lower()
-
+    
     # 1. Extraction numérique (prioritaire sur "flexible")
     # Cherche 5000€, 5k, 5000 euros...
     matches = re.findall(r'(\d+[.,]?\d*)\s*(?:k|m|€|\$|euros?|dollars?|francs?)', text_lower)
@@ -420,11 +420,11 @@ def extract_budget_turbo(text: str) -> Optional[str]:
 
     # 2. Mapping Taxonomie si montant explicite trouvé
     if amount > 0:
-        if amount < 5000: return "<5k"
-        if amount < 10000: return "5-10k"
-        if amount < 15000: return "10-15k"
-        if amount < 25000: return "15-25k"
-        return "25k+"
+    if amount < 5000: return "<5k"
+    if amount < 10000: return "5-10k"
+    if amount < 15000: return "10-15k"
+    if amount < 25000: return "15-25k"
+    return "25k+"
 
     # 3. Sinon seulement: détection "illimité/flexible/pas de budget"
     if any(x in text_lower for x in ["illimité", "no limit", "flexible", "pas de budget", "gros budget"]):
@@ -437,7 +437,7 @@ def extract_urgency_turbo(text: str) -> Optional[int]:
     if not text:
         return None
     text_lower = text.lower()
-
+    
     # Mention explicite de non-urgence: on n'affiche pas d'urgence.
     if any(x in text_lower for x in ["pas urgent", "aucune urgence", "sans urgence", "quand vous voulez", "plus tard"]):
         return None
@@ -445,7 +445,7 @@ def extract_urgency_turbo(text: str) -> Optional[int]:
     # Niveau 5 (très urgent explicite)
     if any(x in text_lower for x in ["urgent", "urgence", "tout de suite", "immédiat", "immediat", "asap", "au plus vite"]):
         return 5
-
+        
     # Niveau 4 (contrainte temporelle explicite)
     if any(x in text_lower for x in ["demain", "aujourd'hui", "ce soir", "cette semaine", "avant le", "d'ici", "pour ce week-end", "pour weekend"]):
         return 4
@@ -1047,7 +1047,7 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
     FONCTION MAÎTRESSE : Extrait tout en une fraction de seconde.
     """
     cleaned_text = clean_text_turbo(text)
-
+    
     # Base minimale toujours disponible
     result = {
         "cleaned_text": cleaned_text,
@@ -1062,10 +1062,10 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
             "profession": scan_text_for_keywords(cleaned_text, PROFESSIONS_MAPPING),
             "ville": scan_text_for_keywords(cleaned_text, CITIES).pop(0) if scan_text_for_keywords(cleaned_text, CITIES) else None,
             "famille": scan_text_for_keywords(cleaned_text, FAMILLE_MAPPING),
-            "motif_achat": scan_text_for_keywords(cleaned_text, MOTIF_MAPPING),
-            "couleurs": scan_text_for_keywords(cleaned_text, COLORS_MAPPING),
-            "matieres": scan_text_for_keywords(cleaned_text, MATERIALS_MAPPING),
-            "style": scan_text_for_keywords(cleaned_text, STYLE_MAPPING),
+        "motif_achat": scan_text_for_keywords(cleaned_text, MOTIF_MAPPING),
+        "couleurs": scan_text_for_keywords(cleaned_text, COLORS_MAPPING),
+        "matieres": scan_text_for_keywords(cleaned_text, MATERIALS_MAPPING),
+        "style": scan_text_for_keywords(cleaned_text, STYLE_MAPPING),
             "centres_interet": scan_text_for_keywords(cleaned_text, LIFESTYLE_MAPPING),
         })
         return result
@@ -1124,7 +1124,7 @@ def extract_all_tags(text: str) -> Dict[str, Any]:
         "ville": villes_detectees[0] if villes_detectees else None,
         "pays": pays_detecte,
         "famille": famille_precise,
-
+        
         # Lifestyle
         "sport": sport,
         "musique": musique,

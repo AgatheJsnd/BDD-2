@@ -41,9 +41,14 @@ const TAG_LABELS = {
   style: 'Style',
   budget: 'Budget',
   urgence_score: 'Urgence',
+  timing: 'Timing',
   motif_achat: "Motif d'achat",
   marques_preferees: 'Marques préférées',
   frequence_achat: "Fréquence d'achat",
+  regime: 'Régime',
+  allergies: 'Allergies',
+  valeurs: 'Valeurs',
+  centres_interet: "Centres d'intérêt",
   actions_crm: 'Actions CRM',
   echeances: 'Echéances',
   canaux_contact: 'Canaux contact',
@@ -54,9 +59,20 @@ const TAG_SECTIONS = [
   { title: 'DÉMOGRAPHIQUE', keys: ['age', 'profession', 'ville', 'pays', 'famille'] },
   { title: 'LIFESTYLE', keys: ['sport', 'musique', 'animaux', 'voyage', 'art_culture', 'gastronomie'] },
   { title: 'STYLE', keys: ['pieces_favorites', 'pieces_recherchees', 'couleurs', 'matieres', 'sensibilite_mode', 'tailles', 'style'] },
-  { title: 'ACHAT', keys: ['budget', 'urgence_score', 'motif_achat', 'marques_preferees', 'frequence_achat'] },
+  { title: 'ACHAT', keys: ['budget', 'urgence_score', 'timing', 'motif_achat', 'marques_preferees', 'frequence_achat'] },
+  { title: 'PRÉFÉRENCES', keys: ['regime', 'allergies', 'valeurs'] },
   { title: 'CRM', keys: ['actions_crm', 'echeances', 'canaux_contact'] },
 ];
+
+const TAG_KEY_ALIASES = {
+  urgence: 'urgence_score',
+};
+
+const prettifyTagText = (value) =>
+  String(value)
+    .replace(/_/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 
 const loadPersistedVendeurHistory = () => {
   if (typeof window === 'undefined') return [];
@@ -87,13 +103,15 @@ export default function VendeurPage({ onLogout }) {
   const extractClientName = (text) => {
     if (!text || typeof text !== 'string') return null;
     const patterns = [
-      /(?:rendez[- ]vous|rdv)\s+(mme|mr|monsieur|madame)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+)/i,
+      /(?:rendez[- ]vous|rdv)\s+(mme|mr|monsieur|madame)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+(?:\s+[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+){0,1})/i,
+      /\b(mme|mr|monsieur|madame)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+(?:\s+[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+){0,1})/i,
       /(?:s[' ]appelle|s'appelle)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+(?:\s+[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+){0,2})/i,
       /(?:client(?:e)?\s*:\s*)([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+(?:\s+[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+){0,2})/i,
     ];
     for (const p of patterns) {
       const m = text.match(p);
       if (!m) continue;
+      if (m[2] && m[1]) return `${m[1]} ${m[2]}`.trim();
       if (m[2]) return m[2].trim();
       if (m[1]) return m[1].trim();
     }
@@ -270,21 +288,45 @@ export default function VendeurPage({ onLogout }) {
 
   const buildTagSections = (tags) => {
     if (!tags || typeof tags !== 'object') return [];
-    const hidden = new Set(['cleaned_text', 'centres_interet', 'timing']);
+    const hidden = new Set(['cleaned_text']);
+    const normalizedTags = { ...tags };
+    Object.entries(TAG_KEY_ALIASES).forEach(([legacyKey, canonicalKey]) => {
+      if (normalizedTags[canonicalKey] === undefined && normalizedTags[legacyKey] !== undefined) {
+        normalizedTags[canonicalKey] = normalizedTags[legacyKey];
+      }
+    });
+    const usedKeys = new Set();
     const sections = [];
     for (const section of TAG_SECTIONS) {
       const items = [];
       for (const key of section.keys) {
         if (hidden.has(key)) continue;
-        const value = tags[key];
+        const value = normalizedTags[key];
         if (Array.isArray(value) && value.length > 0) {
-          items.push(`${TAG_LABELS[key] || key}: ${value.join(', ')}`);
+          items.push(`${TAG_LABELS[key] || prettifyTagText(key)}: ${value.map(prettifyTagText).join(', ')}`);
+          usedKeys.add(key);
         } else if (value !== null && value !== undefined && String(value).trim() !== '') {
-          items.push(`${TAG_LABELS[key] || key}: ${String(value)}`);
+          items.push(`${TAG_LABELS[key] || prettifyTagText(key)}: ${prettifyTagText(value)}`);
+          usedKeys.add(key);
         }
       }
       if (items.length > 0) sections.push({ title: section.title, items });
     }
+
+    // Fallback: conserver les tags non mappés dans une section dédiée.
+    const otherItems = [];
+    Object.entries(normalizedTags).forEach(([key, value]) => {
+      if (hidden.has(key) || usedKeys.has(key)) return;
+      if (Array.isArray(value) && value.length > 0) {
+        otherItems.push(`${TAG_LABELS[key] || prettifyTagText(key)}: ${value.map(prettifyTagText).join(', ')}`);
+      } else if (value !== null && value !== undefined && String(value).trim() !== '') {
+        otherItems.push(`${TAG_LABELS[key] || prettifyTagText(key)}: ${prettifyTagText(value)}`);
+      }
+    });
+    if (otherItems.length > 0) {
+      sections.push({ title: 'AUTRES', items: otherItems });
+    }
+
     return sections;
   };
 
@@ -381,11 +423,20 @@ export default function VendeurPage({ onLogout }) {
                       const confidence = Number.isFinite(Number(transcriptionResult?.confidence))
                         ? Math.round(Number(transcriptionResult.confidence) * 100)
                         : 99;
+                      const detectedClient =
+                        extractClientName(transcriptionResult?.cleaned_text) ||
+                        extractClientName(transcriptionResult?.transcription) ||
+                        null;
                       return (
                         <div className="space-y-2.5">
                           <div className="bg-[#dbeafe] text-[#1d4f91] font-bold px-2.5 py-1.5 rounded-lg text-xs">
                             Confiance: {confidence}%
                           </div>
+                          {detectedClient && (
+                            <div className="bg-[#ecfdf3] text-[#166534] font-semibold px-2.5 py-1.5 rounded-lg text-xs">
+                              Client détecté: {detectedClient}
+                            </div>
+                          )}
                           {sections.map((section) => (
                             <div key={section.title} className="bg-[#f3f4f6] border border-[#e5e7eb] rounded-xl p-2.5">
                               <p className="text-[#4b5563] text-sm font-extrabold tracking-wide mb-1.5">{section.title}</p>
@@ -463,11 +514,15 @@ export default function VendeurPage({ onLogout }) {
               {filteredHistory.map((item) => {
                 const count = tagsCount(item.tags);
                 const confidence = item?.metadata?.confidence || 99;
+                const displayedClient =
+                  item.client_name ||
+                  extractClientName(item.content_summary) ||
+                  'Client anonyme';
                 return (
                   <div key={item.id} className="bg-white rounded-2xl border border-gray-100 p-4">
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <h3 className="font-bold text-2xl text-[#111827]">{item.client_name || 'Client anonyme'}</h3>
+                        <h3 className="font-bold text-2xl text-[#111827]">{displayedClient}</h3>
                         <p className="text-xs text-[#9ca3af] font-semibold">{`ID: ${item.id}`}</p>
                       </div>
                       <div className="flex items-center gap-2">
