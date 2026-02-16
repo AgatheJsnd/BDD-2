@@ -420,11 +420,11 @@ def extract_budget_turbo(text: str) -> Optional[str]:
 
     # 2. Mapping Taxonomie si montant explicite trouvé
     if amount > 0:
-    if amount < 5000: return "<5k"
-    if amount < 10000: return "5-10k"
-    if amount < 15000: return "10-15k"
-    if amount < 25000: return "15-25k"
-    return "25k+"
+        if amount < 5000: return "<5k"
+        if amount < 10000: return "5-10k"
+        if amount < 15000: return "10-15k"
+        if amount < 25000: return "15-25k"
+        return "25k+"
 
     # 3. Sinon seulement: détection "illimité/flexible/pas de budget"
     if any(x in text_lower for x in ["illimité", "no limit", "flexible", "pas de budget", "gros budget"]):
