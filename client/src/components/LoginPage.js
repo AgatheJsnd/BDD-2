@@ -23,7 +23,7 @@ export default function LoginPage({ onLogin }) {
     } else if (inputUsername === vendeurUsername && inputPassword === vendeurPassword) {
       onLogin('vendeur');
     } else {
-      setError("Identifiants incorrects.");
+      setError('Identifiants incorrects.');
     }
   };
 
@@ -117,7 +117,6 @@ export default function LoginPage({ onLogin }) {
             {`VENDEUR: ${vendeurUsername} / ${vendeurPassword}`}
           </div>
         )}
-
       </motion.div>
     </div>
   );
