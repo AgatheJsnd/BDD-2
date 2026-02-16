@@ -1,0 +1,71 @@
+{
+  "client_id": "CA_039",
+  "metadata": {
+    "date_conversation": "2026-02-04",
+    "duration": "45 min",
+    "language": "Allemand",
+    "profile_version": "2.0"
+  },
+  "transcription": "Frau und Herr Zimmermann, 43-46 Jahre, exzellente neue Kunden hohes Potenzial. Sie Galeristin zeitgenössische Kunst Hamburg, er Unternehmer Tech-Sektor. Suchen Luxusaccessoires nach erfolgreichen Geschäftsjahr beide. Budget großzügig 24K sehr flexibel. Sie kuratiert Ausstellungen internationale Künstler, besucht alle wichtigen Kunstmessen weltweit. Er Tech-Startup verkauft letztes Jahr, jetzt Angel Investor. Beide leidenschaftlich Segeln, besitzen Yacht Ostsee, Regatta-Teilnahme Sommer. Sammeln digitale Kunst traditionelle Kunst Kombination. Reisen ständig geschäftlich privat, nächste Trips San Francisco Art Basel. Sie modern avantgarde Stil, bevorzugt außergewöhnliche Stücke rosé Gold. Er klassisch funktional, schwarz navy silber. Beide Pescetarier Events. Er Glutenunverträglichkeit wichtig. Zwei Kinder, Tochter 12 Sohn 9, internationale Schule. Planen umziehen Berlin expandieren Geschäfte. Hochzeitstag Dezember jährlich. Ausgezeichnetes Netzwerk Kunst Tech Kreise, können viele verweisen. Sofort Follow-up wöchentlich kuratierte Auswahl. VIP-Events einladen besonders Kunst bezogen. Sehr interessiert Künstlerkooperationen limitierte Editionen Investitionsstücke. Fragen nach Wertsteigerung Sammelpotenzial bestimmter Stücke. Top-Priorität Kundenbeziehung entwickeln.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Berlin"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_froids": [
+        "Vert"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "client_id": 401,
+  "metadata": {
+    "date_conversation": "2026-02-04",
+    "duration": "00:01:12",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mme Boulanger, 34 ans, “euh” architecte d’intérieur, cliente occasionnelle depuis 2022, enfin tu vois. Veut un sac pro discret mais “genre” luxe, pour rendez-vous chantier et tout, du coup. Budget 4 200€ environ, enfin bref. Couleurs: noir / taupe, hardware doré, un peu “vous savez”. À livrer: 18 rue des Lilas, 75010 Paris, code porte 9382. Contact: 06 12 34 56 78, email claire.boulanger+vip@example.com. Elle insiste “en fait” sur une gravure initiales CB. Mentionne au passage qu’elle a eu une opération du genou l’an dernier, donc veut un modèle léger, voilà quoi. Paiement possible par carte: 4111 1111 1111 1111, exp 12/29, CVC 123.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "26-35",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Paris"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    },
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Beige"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

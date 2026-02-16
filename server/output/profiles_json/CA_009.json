@@ -1,0 +1,83 @@
+{
+  "client_id": "CA_009",
+  "metadata": {
+    "date_conversation": "2026-01-14",
+    "duration": "50 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mr. and Mrs. Kim, Korean couple living in London, late 40s, first visit but high potential. He's hedge fund manager, she's interior designer with own firm. Looking for multiple pieces for themselves and corporate gifts. Budget very flexible, discussed around 25-30K total. He's interested in leather goods for office, she wants handbags and accessories. Both passionate about contemporary art, recently purchased piece from Frieze. They ski regularly in Alps, planning trip Verbier next month. She practices yoga daily at exclusive studio Chelsea. He plays golf, member at Sunningdale. Both follow plant-based diet mostly, she has severe shellfish allergy critical for events. Mentioned they host charity gala annually in autumn, could be boutique partnership opportunity. Son studying at Imperial College engineering, graduation gift next year. Daughter at boarding school Switzerland. Excellent network, could refer many clients. Follow up in two weeks with personalized selection. Invite to VIP events, they appreciate exclusivity.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf",
+          "Ski"
+        ],
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Diplome",
+        "Cadeau"
+      ]
+    },
+    "marques_preferees": {
+      "Louis Vuitton": []
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

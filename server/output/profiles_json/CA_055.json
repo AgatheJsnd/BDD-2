@@ -1,0 +1,72 @@
+{
+  "client_id": "CA_055",
+  "metadata": {
+    "date_conversation": "2026-02-14",
+    "duration": "35 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sra. Jiménez, 42 años, directora recursos humanos multinacional, cliente ocasional. Compra regalos retiros ejecutivos empresa programa liderazgo. Budget 10K para 5 ejecutivos. Retiro wellness resort lujo Marbella próximo mes. Quiere piezas elegantes profesionales memorables. Mix géneros edades 35-55. Empresa valores sostenibilidad importante. Cuero negro cognac navy. Ejecutivos dietas variadas varios vegetarianos veganos. Follow-up trimestral retiros regulares empresa. Excelente oportunidad corporate continua. Preguntó personalización logo empresa sutil. Muy satisfecha atención profesional.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane",
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

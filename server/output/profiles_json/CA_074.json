@@ -1,0 +1,69 @@
+{
+  "client_id": "CA_074",
+  "metadata": {
+    "date_conversation": "2026-02-27",
+    "duration": "25 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sr. Herrera, 35 años, jugador tenis profesional ATP top 50, primera visita excelente potencial. Busca piezas viaje circuito profesional calidad. Budget 11K flexible. Viaja constantemente torneos mundiales, próximos Roland Garros Wimbledon. Necesita funcional durable elegante. Practica obviamente tenis también fitness entrenamiento riguroso. Novia fisioterapeuta deportiva equipo. Vegano atleta rendimiento dieta. Sin alergias. Mencionó victoria reciente torneo importante, patrocinios varias marcas visibilidad buena. Cumpleaños novia junio oportunidad regalo. Aniversario relación agosto. Excelente nuevo cliente segmento atletas profesionales. Activo redes sociales 300K seguidores contenido tenis lifestyle. Follow-up inmediato mantener relación. Invitar eventos VIP deportivos. Preguntó durabilidad piezas viajes constantes importante. Interesado innovación materiales tecnología.",
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "VIP",
+    "age": "26-35",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {}
+    },
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

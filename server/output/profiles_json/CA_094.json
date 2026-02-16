@@ -1,0 +1,70 @@
+{
+  "client_id": "CA_094",
+  "metadata": {
+    "date_conversation": "2026-03-13",
+    "duration": "35 min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Signora Romano, 54 anni, psicologa clinica studio privato, cliente occasionale. Acquista regalo figlia laurea psicologia università Milano. Budget 6K. Figlia 25 anni inizia master clinica continua studi. Stile giovane professionale, pratica danza contemporanea hobby. Cuoio cognac nero rosé gold. Figlia vegetariana. Laurea giugno cerimonia famiglia. Madre colleziona libri psicologia prima edizione Freud Jung. Figlia fidanzata medico anche potenziale cliente futuro. Cliente soddisfatta servizio. Rete professionale psicologi medici buona. Richiamare maggio.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

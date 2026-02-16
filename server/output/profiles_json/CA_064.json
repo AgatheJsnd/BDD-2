@@ -1,0 +1,58 @@
+{
+  "client_id": "CA_064",
+  "metadata": {
+    "date_conversation": "2026-02-20",
+    "duration": "25 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sr. Vega, 27 años, streamer Twitch gaming 900K seguidores, nuevo cliente potencial. Busca piezas lujo después éxito contratos marcas. Budget 9K hoy. Estilo urbano moderno gamer pero aprecia calidad. Viaja eventos gaming torneos mundiales. Colecciona consolas vintage raras. Novia también streamer 400K seguidores. Vegano lifestyle eventos. Sin alergias. Mencionó planea comprar casa pronto, posible compras futuras decoración. Excelente nuevo segmento clientela joven gaming. Muy activo redes sociales posible visibilidad. Follow-up inmediato. Interesado tecnología materiales innovación.",
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Fidèle",
+    "age": "26-35",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

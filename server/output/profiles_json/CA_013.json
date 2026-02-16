@@ -1,0 +1,67 @@
+{
+  "client_id": "CA_013",
+  "metadata": {
+    "date_conversation": "2026-01-16",
+    "duration": "20 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. Lefevre, 70 ans, retraité ancien ambassadeur, client fidèle depuis 2012. Achat cadeau petite-fille 25 ans nouveau travail cabinet consulting. Budget 2500€. Petite-fille style jeune moderne, voyage beaucoup professionnellement. Cuir noir pratique élégant. Client toujours satisfait, jamais problème. Petite-fille végétarienne. Parti content. Rappeler novembre cadeaux Noël famille comme chaque année.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

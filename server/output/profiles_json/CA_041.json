@@ -1,0 +1,81 @@
+{
+  "client_id": "CA_041",
+  "metadata": {
+    "date_conversation": "2026-02-05",
+    "duration": "20 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. Renaud, 41 ans, directeur commercial, première visite. Cherche cadeau épouse Saint-Valentin urgent dans deux jours. Budget 3K. Épouse aime voyages yoga. Style moderne. Cuir noir. Pressé beaucoup. Végane épouse. Satisfait achat rapide. Rappeler prochain événement.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    },
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Culturel"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

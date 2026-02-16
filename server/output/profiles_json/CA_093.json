@@ -1,0 +1,47 @@
+{
+  "client_id": "CA_093",
+  "metadata": {
+    "date_conversation": "2026-03-13",
+    "duration": "30 min",
+    "language": "Allemand",
+    "profile_version": "2.0"
+  },
+  "transcription": "Herr Richter, 46 Jahre, Pilot Langstrecke internationale Airline, neuer Kunde. Sucht Geschenke Ehefrau Stewardess gleiche Airline kennen gelernt. Budget 9K. Beide reisen ständig beruflich, nächste freie Woche Urlaub Malediven geplant. Ehefrau Stil elegant reisefreundlich praktisch. Sammeln Souvenirs Destinationen weltweit. Hochzeitstag April. Beide praktizieren Tauchen Unterwasserfotografie Hobby. Pescetarier beide. Keine Allergien. Kunde zufrieden Service, erwähnt viele Kollegen Piloten Crew potenzielle Kunden Flughafen Nähe bequem. Follow-up gut Beziehung. Airline Netzwerk international interessant.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

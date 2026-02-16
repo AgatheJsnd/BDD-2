@@ -1,0 +1,67 @@
+{
+  "client_id": "CA_096",
+  "metadata": {
+    "date_conversation": "2026-03-16",
+    "duration": "30 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sr. Silva, 40 años, periodista investigación premiado, cliente regular. Compra regalo esposa cumpleaños 38 años. Budget 7K. Esposa fotógrafa documentalista proyectos sociales. Viajan juntos misiones reportajes mundial zonas conflicto. Esposa estilo práctico elegante, necesita funcional durable viajes difíciles. Cuero negro cognac resistente. Ambos vegetarianos. Cumpleaños abril. Pareja apasionada justicia social derechos humanos. Mencionó proyecto documentación importante premiado posible, futuro compras probable éxito. Hijo adolescente 14 años. Red periodismo internacional contactos. Llamar mayo.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Cognac",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    },
+    "marques_preferees": {
+      "Louis Vuitton": []
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "client_id": "CA_011",
+  "metadata": {
+    "date_conversation": "2026-01-15",
+    "duration": "30 min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Signor Conti, 33 anni, imprenditore crypto Bitcoin, nuovissimo cliente. Prima visita, vuole investire pezzi qualità dopo successo finanziario recente. Budget aperto circa 15K oggi. Stile giovane moderno ma apprezza artigianalità. Interessato borse viaggio, piccola pelletteria, accessori. Pratica kitesurf, viaggia spesso Caraibi Bali spot migliori. Colleziona NFT arte digitale, segue tendenze tech. Vegano scelta etica per eventi. Nessuna allergia. Menzionato compagna influencer beauty 800K followers possibile visibilità social. Ottimo potenziale nuovo segmento clientela giovane ricca. Invitare eventi esclusivi. Follow-up settimana prossima mostrare nuovi arrivi. Apprezza innovazione sostenibilità materiali.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "26-35",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

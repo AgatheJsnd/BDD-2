@@ -1,0 +1,64 @@
+{
+  "client_id": "CA_050",
+  "metadata": {
+    "date_conversation": "2026-02-11",
+    "duration": "50 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sr. y Sra. Navarro, 52-54 años, clientes excelentes desde 2015. Compra importante viaje aniversario 25 matrimonio crucero Mediterráneo mes próximo. Presupuesto combinado 18K muy flexible. Él empresario viñedos Rioja productor vino, ella sommelier reconocida restaurante estrella Michelin. Ambos pasión vino gastronomía, viajan rutas vino mundial constantemente. Coleccionan etiquetas vino raras vintage. Crucero lujo para con grupo amigos íntimos parejas similar perfil. Ella elegancia sofisticada, prefiere cognac beige hardware dorado. Él clásico funcional, negro marrón plata. Ambos pescetarianos eventos. Él alergia mariscos severa crítico eventos boutique. Tres hijos adultos: hijo mayor enólogo continúa negocio familia, hija chef París, menor sommelier formación. Familia unida negocio vino generaciones. Aniversario julio cada año ritual compras. Red extensa contactos gastronomía lujo enología, referido muchos clientes. Llamar mayo preview privada verano. Mencionaron planean evento vendimia septiembre viñedo grande, posible colaboración boutique regalos invitados VIP. Cliente prioritario lifetime value altísimo.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

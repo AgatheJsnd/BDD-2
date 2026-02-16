@@ -1,0 +1,93 @@
+{
+  "client_id": "CA_076",
+  "metadata": {
+    "date_conversation": "2026-03-02",
+    "duration": "45 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. et Mme Rousseau, couple 55-57 ans, clients VIP excellents depuis 2013. Achat voyage croisière luxe tour monde 3 mois départ mai. Budget combiné très généreux 26K. Lui architecte renommé projets internationaux retraite récente, elle historienne art professeur Sorbonne également retraite. Tous deux passionnés voyages culture, croisière rêve planifié années. Visitent musées sites historiques 20 pays parcours. Collectionnent art primitif africain océanien, maison collection impressionnante. Voyage mai août incluant Asie Océanie Amérique Sud. Elle élégance intellectuelle raffinée, préfère cuirs naturels beige cognac tissus ethniques. Lui style professeur sobre classique, marine gris. Tous deux végétariens depuis toujours événements. Lui allergie fruits coque sévère critique croisière. Trois enfants adultes établis, cinq petits-enfants. Anniversaire mariage juin pendant croisière tradition continuer. Excellents clients lifetime value élevé, réseau académique culturel étendu international, référé nombreux professeurs. Rappeler avril dernier ajustements avant départ. Mentionné retour croisière planifient livre voyage publier, possibilité mention boutique reconnaissance. Très intéressés artisanat histoire pièces, apprécient qualité héritage transmission. Clients précieux relation long terme entretenir soigneusement.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    },
+    "voyage": {
+      "experience": [
+        "Luxe",
+        "Culturel"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Gris",
+        "Beige",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Mariage",
+        "Anniversaire",
+        "Plaisir"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Qualité & savoir-faire"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

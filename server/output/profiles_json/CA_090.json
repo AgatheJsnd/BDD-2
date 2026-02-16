@@ -1,0 +1,81 @@
+{
+  "client_id": "CA_090",
+  "metadata": {
+    "date_conversation": "2026-03-11",
+    "duration": "45 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sra. Vargas y esposo, 43-45 años, clientes excelentes nuevos alto potencial. Ella empresaria tech startup unicornio exit reciente, él arquitecto proyectos sostenibles. Buscan renovación completa accesorios lujo después éxito financiero. Presupuesto muy generoso 22K+ flexible. Ella estilo moderno profesional tech, aprecia innovación calidad. Él arquitecto sostenible minimalista funcional. Ambos pasión diseño arquitectura, coleccionan muebles diseño escandinavo. Viajan constantemente conferencias tech ferias diseño. Ella practica running maratones, él ciclismo montaña. Ambos veganos éticos fuertes valores sostenibilidad eventos. Sin alergias. Planean boda otoño después años relación, oportunidad regalos invitados. Excelente nuevo segmento clientela joven rica tech consciencia ambiental. Muy activos redes sociales ella 150K seguidores tech entrepreneurship. Follow-up semanal relación construir. Invitar eventos VIP especialmente innovación sostenibilidad relacionados. Muy interesados transparencia materiales origen ético, preguntaron detallado cadena suministro condiciones trabajadores. Podrían ser defensores línea lujo sostenible si desarrolla. Prioridad máxima relación cuidar potencial alto largo plazo.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
+    },
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

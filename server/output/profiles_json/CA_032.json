@@ -1,0 +1,76 @@
+{
+  "client_id": "CA_032",
+  "metadata": {
+    "date_conversation": "2026-01-29",
+    "duration": "45 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Dr. Patel and husband, both 38, first-time clients exceptional potential. She's plastic surgeon Harley Street, he's barrister specializing corporate law. Looking for professional pieces and gifts. Budget 17K very flexible. She's passionate about wellness, practices yoga daily teacher training, attends wellness retreats quarterly Bali. He plays cricket weekends, member MCC Lords. Both collect contemporary Indian art, attend India Art Fair Delhi. Travel extensively medical conferences legal work, next trips Mumbai then Singapore. She prefers elegant professional pieces, rose gold soft leathers. He wants classic functional dark colors. Both follow Ayurvedic diet principles, vegetarian for events. She has severe peanut allergy critical for boutique events. Mentioned planning family soon, could be long-term relationship. Anniversary in November annually. Excellent network professional medical legal circles, potential many referrals. Follow up in two weeks curated selection. Invite VIP events especially cultural art-related. Very interested ethical sourcing sustainability, asked detailed questions materials.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat",
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
+  },
+  "localisation": {
+    "moyen_orient_asie": [
+      "Singapore"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

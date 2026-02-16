@@ -1,0 +1,95 @@
+{
+  "client_id": "CA_067",
+  "metadata": {
+    "date_conversation": "2026-02-24",
+    "duration": "30 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mme Fontaine, 57 ans, directrice hôtel palace 5 étoiles, nouvelle cliente potentiel. Cherche pièces professionnelles élégantes représentation. Budget 11K. Style raffiné discret luxe hôtellerie. Voyage fréquent congrès hôteliers internationaux. Pratique golf, membre club prestigieux. Collectionne argenterie ancienne passion famille. Cuir bordeaux cognac or classique. Végétarienne événements. Mentionné hôtel organise événements luxe réguliers, possibilité partenariat boutique cadeaux VIP clients. Mari directeur finance également intéressé maroquinerie. Excellente opportunité réseau hôtellerie luxe. Rappeler mars. Fille travaille communication luxe Paris pourrait cliente.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Paris"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    },
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    },
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Cognac",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Argent",
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

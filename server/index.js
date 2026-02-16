@@ -30,13 +30,17 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+// Check for local venv
+const venvPath = path.join(__dirname, '../.venv/Scripts/python.exe');
+const pythonPath = fs.existsSync(venvPath) ? venvPath : 'python3';
+
 // Route for Voice Transcription
 app.post('/api/transcribe', upload.single('audio'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'No audio file uploaded' });
 
   const options = {
     mode: 'json',
-    pythonPath: 'python3',
+    pythonPath: pythonPath,
     scriptPath: path.join(__dirname, '../src'),
     args: [req.file.path]
   };
@@ -60,7 +64,7 @@ app.post('/api/analyze', upload.single('file'), (req, res) => {
 
   const previewOptions = {
     mode: 'json',
-    pythonPath: 'python3',
+    pythonPath: pythonPath,
     scriptPath: path.join(__dirname, '../'),
     args: [req.file.path]
   };
@@ -69,7 +73,7 @@ app.post('/api/analyze', upload.single('file'), (req, res) => {
     const preview = Array.isArray(previewResults) && previewResults.length > 0 ? previewResults[0] : {};
     const taxonomyOptions = {
       mode: 'json',
-      pythonPath: 'python3',
+      pythonPath: pythonPath,
       scriptPath: path.join(__dirname, '../'),
       args: [req.file.path]
     };
@@ -80,7 +84,7 @@ app.post('/api/analyze', upload.single('file'), (req, res) => {
 
       const options = {
         mode: 'text',
-        pythonPath: 'python3', // Use the system python3
+        pythonPath: pythonPath,
         scriptPath: path.join(__dirname, '../'),
         args: ['--input', req.file.path]
       };

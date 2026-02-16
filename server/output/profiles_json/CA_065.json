@@ -1,0 +1,69 @@
+{
+  "client_id": "CA_065",
+  "metadata": {
+    "date_conversation": "2026-02-21",
+    "duration": "40 min",
+    "language": "Allemand",
+    "profile_version": "2.0"
+  },
+  "transcription": "Frau Wagner, 51 Jahre, Professorin Kunstgeschichte Universität Berlin, treue Kundin seit 2016. Kauft Geschenke Tochter Promotion Architektur. Budget 8K. Tochter 28 Jahre promoviert nachhaltige Architektur, beginnt eigenes Büro. Beide leidenschaftlich Kunst Design, besuchen Documenta Kassel regelmäßig. Tochter praktiziert Yoga, interessiert Wellness nachhaltig Leben. Mutter sammelt Kunstbücher Erstausgaben, Tochter digitale Architektur renderings. Tochter Stil minimalistisch funktional, beige grau schwarz. Beide Vegetarier Events. Tochter Latex Allergie wichtig. Promotion Feier Mai Familie Kollegen. Kundin ausgezeichnet, empfohlen viele Akademiker Freunde. Nachfassen April. Sehr interessiert ethische Produktion Handwerk Geschichte Stücke.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Berlin"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Beige"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

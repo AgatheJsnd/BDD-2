@@ -1,0 +1,54 @@
+{
+  "client_id": "CA_054",
+  "metadata": {
+    "date_conversation": "2026-02-13",
+    "duration": "40 min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Signor e Signora De Luca, 47-49 anni, clienti fedeli 2017. Comprano regali genitori anniversario 50 anni matrimonio celebrazione grande famiglia. Budget 14K. Genitori anziani 75-77 anni, stile classico tradizionale elegante. Madre ama giardinaggio fiori, padre appassionato storia libri antichi. Celebrazione aprile villa lago Como, famiglia allargata 50 persone. Coppia stessa entrambi avvocati studio legale proprio. Viaggiano frequente lavoro Europa. Lei eleganza moderna, lui classico funzionale. Entrambi pescetariani eventi. Nessuna allergia. Due figli adolescenti studiano liceo. Famiglia molto unita, tradizioni importanti. Ottimi clienti, comprano regolare occasioni famiglia. Richiamare marzo coordinare consegna villa. Interessati possibilità personalizzazione incisione messaggio genitori speciale.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

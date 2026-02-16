@@ -1,0 +1,93 @@
+{
+  "client_id": "CA_005",
+  "metadata": {
+    "date_conversation": "2026-01-10",
+    "duration": "55 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mrs. Thompson with husband, both early 50s, excellent VIP clients since 2017. She's looking for new handbag collection spring, he wants briefcase. Combined budget around 18K very flexible. She's art gallery owner, he's cardiothoracic surgeon. Both travel extensively, just returned from Maldives, planning safari Kenya in June. She loves contemporary art, collects emerging artists, attends Art Basel and Frieze regularly. He plays golf twice weekly, member of Wentworth. She prefers rose gold hardware, soft leather tones beige cognac. He wants practical functional pieces, dark colors. Both vegan diet important note for boutique lunches. Severe nut allergy for her critical for events. Daughter studying at Oxford, graduation gift opportunity May. Anniversary in September every year, always shops here. Excellent lifetime value, referred three friends already. Follow up March for private showing new collection.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Profession_liberale": [
+        "Médecin"
+      ],
+      "Art_Creation": [
+        "Artiste"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    },
+    "voyage": {
+      "experience": [
+        "Aventure"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Diplome",
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

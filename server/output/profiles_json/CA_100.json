@@ -1,0 +1,79 @@
+{
+  "client_id": "CA_100",
+  "metadata": {
+    "date_conversation": "2026-03-18",
+    "duration": "55 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sir Richard and Lady Catherine, both 68, extraordinary VIP clients since 2005. Shopping for grandchildren university graduations and family milestone gifts. Combined budget exceptionally generous 35K+. He retired senior diplomat knighted service, she retired headmistress prestigious boarding school. Both distinguished accomplished careers public service education. Passionate about history literature, enormous library home accumulated decades. Travel extensively cultural historical tours, National Trust members visit stately homes regularly. Collect antique maps rare books, house treasure trove family heirlooms generations. Four grandchildren graduating this year: two Oxford, one Cambridge, one Edinburgh, ages 21-23. Looking graduation gifts also silver wedding anniversary gift son daughter-in-law July. She impeccable elegant timeless style decades refined taste, burgundy navy gold heritage pieces. He distinguished gentleman classic traditional, wants quality pieces pass down generations black brown silver. Both vegetarian decades events lifestyle choice. She severe peanut allergy critical boutique events decades known. Three children successful: son barrister QC, daughter museum director, youngest son academic Oxford professor. Family distinguished accomplished traditions heritage important values instilled generations. Anniversary late spring tradition shopping here two decades never missed. Extraordinary clients lifetime value exceptional highest possible tier, aristocratic diplomatic academic network Britain internationally unparalleled, referred countless distinguished clients years relationships decades. Follow up monthly graduations anniversary coordinate everything meticulously. Very interested heritage provenance craftsmanship, appreciate history stories pieces, several commissioned bespoke items years family crests meaningful. Planning major family reunion estate Scotland autumn all children grandchildren, could be multiple gifting opportunities. Treasure clients relationship two decades impeccable maintained highest standards, appreciation loyalty extraordinary beyond measure. Absolute pinnacle priority relationship continue utmost excellence service maintain precious carefully ongoing years come. Perfect finale dataset exceptional distinguished clients.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {
+      "electronique": [
+        "Electro"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Rouge",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or",
+        "Argent"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Diplome",
+        "Cadeau",
+        "Mariage"
+      ]
+    },
+    "marques_preferees": {
+      "Louis Vuitton": []
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "client_id": "CA_099",
+  "metadata": {
+    "date_conversation": "2026-03-18",
+    "duration": "25 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. Fabre, 58 ans, notaire, client fidèle. Achat cadeau épouse fête mères. Budget 5K. Épouse professeur musique conservatoire, adore piano classique. Style élégant traditionnel. Cuir bordeaux or. Végétarienne épouse. Fête mères mai. Trois enfants adultes tous mariés six petits-enfants. Client toujours satisfait achats réguliers occasions familiales. Rappeler juillet.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

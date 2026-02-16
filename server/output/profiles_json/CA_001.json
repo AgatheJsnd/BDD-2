@@ -1,0 +1,89 @@
+{
+  "client_id": "CA_001",
+  "metadata": {
+    "date_conversation": "2026-01-08",
+    "duration": "35 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Rendez-vous Mme Laurent, avocate affaires 45 ans, cliente occasionnelle. Cherche cadeau anniversaire mari 50 ans fin mars. Il est passionné golf, membre Racing Club Paris. Budget 3-4K flexible si pièce exceptionnelle. Hésite entre portefeuille et petit sac weekend pour tournois. Cuir marron ou cognac préféré, pas fan noir. Mentionné partent souvent Provence et côte basque. Mari collectionne montres vintage aussi. Elle intolérante produits chimiques forts donc attention finitions. Proposé collection capsule printemps, elle reviendra semaine prochaine avec photos mari pour mieux cibler style. Bon potentiel à rappeler fin février.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Paris"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    },
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

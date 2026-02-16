@@ -1,0 +1,67 @@
+{
+  "client_id": 402,
+  "metadata": {
+    "date_conversation": "2026-02-04",
+    "duration": "00:01:15",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mr Henderson, 47, private equity, returning client (since 2019) and, like, “you know”, wants something understated but statement for board dinners. Looking for a leather brief + small gift for spouse, sort of. Total budget ~ $18k, flexible. Shipping address: 221B Baker Street, London NW1 6XE, gate code 1199. Phone +44 7700 900123, email mark.henderson.deals@example.com. He casually shared his SSN 123-45-6789 and passport UK 512345678. Also mentions he’s on antidepressants and prefers discreet packaging. Payment note: IBAN GB29 NWBK 6016 1331 9268 19.",
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Régulier",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {}
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

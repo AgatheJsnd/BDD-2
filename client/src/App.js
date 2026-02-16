@@ -1,1339 +1,1174 @@
-import React, { useEffect, useRef, useState } from 'react';
-import axios from 'axios';
-import { motion, AnimatePresence } from 'framer-motion';
+/*
+ * ═══════════════════════════════════════════════════════════
+ *  LVMH PULSE DASHBOARD — Full Supabase Integration
+ *  CRA (React) + Tailwind CSS + Supabase + Framer Motion
+ * ═══════════════════════════════════════════════════════════
+ *
+ *  SQL SCHEMA — Run this in Supabase SQL Editor FIRST:
+ *  See file: client/supabase_schema.sql
+ */
+import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Upload,
-  Layout,
-  Palette,
-  BrainCircuit,
-  Mic,
-  History,
-  Database,
-  LogOut,
-  Settings,
-  Loader2,
-  Search,
-  Calendar,
-  Clock3,
-  Trash2,
-  Eye,
-  EyeOff
+  Menu, Search, Plus, ArrowRight, Mic, Upload, UploadCloud, ChevronDown,
+  Lock, Clock, MoreVertical, Filter, X, CheckCircle2, AlertTriangle, Loader2,
+  BarChart3, Calendar as CalIcon, TrendingUp, Sparkles, Play, Database, Eye, AlertCircle, Clipboard, Dna, User, LogOut
 } from 'lucide-react';
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  PieChart,
-  Pie,
-  Cell,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-  LineChart,
-  Line
-} from 'recharts';
+import { motion, AnimatePresence } from 'framer-motion';
+import { supabase } from './supabaseClient';
+import ClientProfileCard from './components/ClientProfileCard';
+import DatabaseFilterPage from './components/DatabaseFilterPage';
+import LoginPage from './components/LoginPage';
+import VendeurPage from './components/VendeurPage';
 
-const styles = {
-  loginWrapper: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 1000
-  },
-  fullBg: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundImage: 'url("/assets/images/background.png")',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    filter: 'blur(1.5px)',
-    zIndex: -1
-  },
-  loginContainer: {
-    width: '400px',
-    backgroundColor: 'rgba(255, 255, 255, 0.75)',
-    backdropFilter: 'blur(20px)',
-    borderRadius: '24px',
-    padding: '30px 40px',
-    boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    border: '1px solid rgba(255,255,255,0.4)'
-  },
-  circle: {
-    width: '100px',
-    height: '100px',
-    borderRadius: '50%',
-    overflow: 'hidden',
-    border: '2px solid #000',
-    backgroundColor: '#fff',
-    marginBottom: '6px'
-  },
-  logoImg: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'contain',
-    objectPosition: 'center',
-    padding: '2px',
-    boxSizing: 'border-box',
-    transform: 'scale(1.18)'
-  },
-  card: {
-    backgroundColor: 'rgba(255,255,255,0.95)',
-    borderRadius: '18px',
-    padding: '22px',
-    border: '1px solid rgba(0,0,0,0.04)',
-    boxShadow: '0 12px 28px rgba(0,0,0,0.05)'
-  },
-  label: {
-    display: 'block',
-    marginBottom: '8px',
-    fontWeight: 700,
-    color: '#444',
-    textTransform: 'uppercase',
-    letterSpacing: '0.4px',
-    fontSize: '13px'
-  },
-  input: {
-    width: '100%',
-    padding: '14px 16px',
-    fontSize: '16px',
-    borderRadius: '12px',
-    border: '1px solid #d1d5db',
-    outline: 'none',
-    boxSizing: 'border-box'
-  }
-};
+/* ═══ SIMULATED AI DATA ═══ */
+const FAKE_CLIENTS = [
+  { name: 'Sophie M.', summary: 'Intéressée par collection Capucines SS26', sentiment: 'positif' },
+  { name: 'Marc D.', summary: 'Demande entretien souliers, client fidèle', sentiment: 'neutre' },
+  { name: 'Hélène R.', summary: 'Cross-sell montre Tank après achat sac', sentiment: 'positif' },
+  { name: 'Louis P.', summary: 'Anniversaire dans 30 jours, budget élevé', sentiment: 'positif' },
+  { name: 'Claire B.', summary: 'Voyage Dubai prévu, intérêt Travel Retail', sentiment: 'positif' },
+  { name: 'Jean F.', summary: 'Réclamation livraison — à traiter urgent', sentiment: 'négatif' },
+  { name: 'Nadia K.', summary: 'Nouvelle cliente référée par VIP', sentiment: 'positif' },
+  { name: 'Pierre V.', summary: 'Commande cuir exotique, haute valeur', sentiment: 'positif' },
+];
+const FAKE_TAGS = ['Maroquinerie', 'Anniversaire', 'VIP', 'Cross-sell', 'Souliers', 'Montres', 'Voyage', 'Parfum', 'Joaillerie', 'Haute Couture'];
+const pick = (arr, n) => [...arr].sort(() => 0.5 - Math.random()).slice(0, n);
 
-const VENDEUR_HISTORY_STORAGE_KEY = 'lvmh_vendeur_history_v1';
+/* ═══ REUSABLE COMPONENTS ═══ */
 
-const loadPersistedVendeurHistory = () => {
-  if (typeof window === 'undefined') return [];
-  try {
-    const raw = window.localStorage.getItem(VENDEUR_HISTORY_STORAGE_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    return parsed.map((item) => ({
-      ...item,
-      recordedAt: item?.recordedAt ? new Date(item.recordedAt) : new Date()
-    }));
-  } catch (e) {
-    return [];
-  }
-};
+const C = ({ children, className = '' }) => (
+  <div className={`bg-white rounded-[40px] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.03)] p-6 relative ${className}`}>{children}</div>
+);
 
-function App() {
-  const [auth, setAuth] = useState({ isAuthenticated: false, user: null });
-  const [activeTab, setActiveTab] = useState('data');
-  const [analyticsData, setAnalyticsData] = useState(null);
-  const [importedTaxonomyRows, setImportedTaxonomyRows] = useState([]);
-  const [loginForm, setLoginForm] = useState({ username: '', password: '' });
-  const [loading, setLoading] = useState(false);
-  const [showHelp, setShowHelp] = useState(false);
-  const [sidebarHovered, setSidebarHovered] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const [historyItems, setHistoryItems] = useState(() => loadPersistedVendeurHistory());
+const CalendarWidget = ({ activeDays = [] }) => {
+  const [selectedDays, setSelectedDays] = useState([14, 15, 16]);
+  const [month, setMonth] = useState('Oct');
+  const [year, setYear] = useState(2026);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStartMode, setDragStartMode] = useState(null);
+
+  // Derive "Upload Days" from props if available?
+  // Ideally, CalendarWidget should accept a prop `highlightedDays`
+  // But since it's defined inside App.js (in this file), we can't easily pass props without refactoring.
+  // Wait, CalendarWidget IS defined in App.js but used as <CalendarWidget /> in JSX.
+  // Use Context? Or just pass props? 
+  // I will refactor CalendarWidget to accept { activeDays = [] } prop.
+  // But wait, the component is defined at line 40.
+  // I need to change the definition first.
+
+
+  const months = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Aoû', 'Sep', 'Oct', 'Nov', 'Déc'];
+
+  // Dynamic days based on month/year
+  const getDaysInMonth = (m, y) => {
+    const monthIndex = months.indexOf(m);
+    return new Date(y, monthIndex + 1, 0).getDate();
+  };
+
+  const daysCount = getDaysInMonth(month, year);
+  const days = Array.from({ length: daysCount }, (_, i) => i + 1);
+
+  const toggleDay = (d, forceState = null) => {
+    setSelectedDays(prev => {
+      const isSelected = prev.includes(d);
+      const newState = forceState !== null ? forceState : !isSelected;
+
+      if (newState && !isSelected) return [...prev, d];
+      if (!newState && isSelected) return prev.filter(day => day !== d);
+      return prev;
+    });
+  };
+
+  const handleMouseDown = (d) => {
+    setIsDragging(true);
+    const willSelect = !selectedDays.includes(d);
+    setDragStartMode(willSelect);
+    toggleDay(d, willSelect);
+  };
+
+  const handleMouseEnter = (d) => {
+    if (isDragging) {
+      toggleDay(d, dragStartMode);
+    }
+  };
 
   useEffect(() => {
-    try {
-      const serializableHistory = historyItems.map((item) => ({
-        ...item,
-        recordedAt: item?.recordedAt instanceof Date ? item.recordedAt.toISOString() : item?.recordedAt
-      }));
-      window.localStorage.setItem(VENDEUR_HISTORY_STORAGE_KEY, JSON.stringify(serializableHistory));
-    } catch (e) {
-      // Ignore storage errors (private mode, quota, etc.)
-    }
-  }, [historyItems]);
-
-  const extractClientName = (text) => {
-    if (!text || typeof text !== 'string') return null;
-    const patterns = [
-      /(?:s[' ]appelle|s'appelle)\s+([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+(?:\s+[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+){0,2})/i,
-      /(?:client(?:e)?\s*:\s*)([A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+(?:\s+[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ'-]+){0,2})/i
-    ];
-    for (const p of patterns) {
-      const m = text.match(p);
-      if (m && m[1]) return m[1].trim();
-    }
-    return null;
-  };
-
-  const hasMeaningfulTags = (tags) => {
-    if (!tags || typeof tags !== 'object') return false;
-    const ignore = new Set(['cleaned_text', 'centres_interet', 'timing']);
-    return Object.entries(tags).some(([key, value]) => {
-      if (ignore.has(key)) return false;
-      if (Array.isArray(value)) return value.length > 0;
-      return value !== null && value !== undefined && String(value).trim() !== '';
-    });
-  };
-
-  const addToHistoryFromTranscription = (payload) => {
-    if (!payload || !payload.success) return;
-    const tags = payload.tags_extracted || {};
-    if (!hasMeaningfulTags(tags)) return;
-
-    const clientName =
-      extractClientName(payload.cleaned_text) ||
-      extractClientName(payload.transcription) ||
-      'Client anonyme';
-
-    const meaningfulTagCount = Object.entries(tags).filter(([key, value]) => {
-      if (key === 'cleaned_text' || key === 'centres_interet' || key === 'timing') return false;
-      if (Array.isArray(value)) return value.length > 0;
-      return value !== null && value !== undefined && String(value).trim() !== '';
-    }).length;
-
-    const item = {
-      id: `H-${Date.now()}`,
-      client: clientName,
-      recordedAt: payload.timestamp ? new Date(payload.timestamp) : new Date(),
-      confidence: Number.isFinite(Number(payload.confidence)) ? Math.round(Number(payload.confidence) * 100) : 0,
-      tags: meaningfulTagCount,
-      summary: payload.cleaned_text || payload.transcription || 'Transcription disponible'
-    };
-
-    setHistoryItems((prev) => [item, ...prev]);
-  };
-
-  const deleteHistoryItem = (itemId) => {
-    setHistoryItems((prev) => prev.filter((item) => item.id !== itemId));
-  };
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      if (
-        (loginForm.username === 'analyste' && loginForm.password === 'analyste123') ||
-        (loginForm.username === 'vendeur' && loginForm.password === 'vendeur123')
-      ) {
-        setAuth({
-          isAuthenticated: true,
-          user: { name: loginForm.username.toUpperCase(), role: loginForm.username }
-        });
-        setActiveTab(loginForm.username === 'vendeur' ? 'voice' : 'data');
-      } else {
-        alert('Identifiants incorrects');
-      }
-      setLoading(false);
-    }, 500);
-  };
-
-  if (!auth.isAuthenticated) {
-    return (
-      <div style={styles.loginWrapper}>
-        <div style={styles.fullBg} />
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} style={styles.loginContainer}>
-          <div style={styles.circle}>
-            <img src="/assets/images/loewe_logo.png" alt="Logo" style={styles.logoImg} />
-          </div>
-          <p
-            style={{
-              color: '#000',
-              marginTop: 0,
-              marginBottom: '8px',
-              textAlign: 'center',
-              fontWeight: 400,
-              fontSize: '32px',
-              fontFamily: '"Times New Roman", Times, serif',
-              letterSpacing: '2px',
-              textTransform: 'uppercase'
-            }}
-          >
-            Loewe
-          </p>
-
-          <form onSubmit={handleLogin} style={{ width: '100%', marginTop: '6px' }}>
-            <div style={{ marginBottom: '14px' }}>
-              <label style={{ ...styles.label, fontSize: '14px' }}>Utilisateur</label>
-              <input
-                type="text"
-                placeholder="analyste / vendeur"
-                value={loginForm.username}
-                onChange={(e) => setLoginForm({ ...loginForm, username: e.target.value })}
-                style={{ ...styles.input, height: '52px' }}
-              />
-            </div>
-            <div style={{ marginBottom: '16px' }}>
-              <label style={{ ...styles.label, fontSize: '14px' }}>Mot de passe</label>
-              <div style={{ position: 'relative' }}>
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  placeholder="....."
-                  value={loginForm.password}
-                  onChange={(e) => setLoginForm({ ...loginForm, password: e.target.value })}
-                  autoComplete="current-password"
-                  style={{
-                    ...styles.input,
-                    height: '52px',
-                    fontSize: showPassword ? '16px' : '26px',
-                    textIndent: '1px',
-                    paddingRight: '48px'
-                  }}
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword((v) => !v)}
-                  style={{
-                    position: 'absolute',
-                    right: '16px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    border: 'none',
-                    background: 'transparent',
-                    cursor: 'pointer',
-                    color: '#6b7280',
-                    padding: 0,
-                    display: 'flex',
-                    alignItems: 'center'
-                  }}
-                  aria-label={showPassword ? 'Masquer le mot de passe' : 'Afficher le mot de passe'}
-                >
-                  {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
-                </button>
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              style={{
-                width: '100%',
-                padding: '14px',
-                borderRadius: '12px',
-                border: 'none',
-                backgroundColor: '#000',
-                color: '#fff',
-                fontWeight: 700,
-                fontSize: '16px',
-                cursor: 'pointer'
-              }}
-              disabled={loading}
-            >
-              {loading ? 'Connexion...' : 'Se connecter'}
-            </button>
-
-            <div
-              onClick={() => setShowHelp((v) => !v)}
-              style={{
-                marginTop: '15px',
-                textAlign: 'center',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                color: '#4b5563',
-                display: 'flex',
-                alignItems: 'center'
-              }}
-            >
-              <div style={{ height: '2px', flex: 1, backgroundColor: '#9ca3af' }} />
-              <span style={{ padding: '0 12px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px' }}>Aide</span>
-              <div style={{ height: '2px', flex: 1, backgroundColor: '#9ca3af' }} />
-            </div>
-
-            <AnimatePresence>
-              {showHelp && (
-                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} style={{ overflow: 'hidden' }}>
-                  <div
-                    style={{
-                      marginTop: '15px',
-                      fontSize: '16px',
-                      color: '#444',
-                      backgroundColor: '#f9f9f9',
-                      padding: '15px',
-                      borderRadius: '12px',
-                      border: '1px solid #eee',
-                      fontWeight: 500,
-                      textAlign: 'center'
-                    }}
-                  >
-                    vendeur / vendeur123 | analyste / analyste123
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </form>
-        </motion.div>
-      </div>
-    );
-  }
-
-  const sidebarExpanded = sidebarHovered;
-  const isVendeur = auth?.user?.role === 'vendeur';
+    const handleMouseUp = () => setIsDragging(false);
+    window.addEventListener('mouseup', handleMouseUp);
+    return () => window.removeEventListener('mouseup', handleMouseUp);
+  }, []);
 
   return (
-    <div style={{ display: 'flex', height: '100vh', background: '#f4f7f6', color: '#1a1a1a', fontFamily: 'Inter, system-ui, sans-serif' }}>
-      <div
-        onMouseEnter={() => setSidebarHovered(true)}
-        onMouseLeave={() => setSidebarHovered(false)}
-        style={{
-          width: sidebarExpanded ? '220px' : '70px',
-          backgroundColor: 'white',
-          borderRight: '1px solid #e5e7eb',
-          display: 'flex',
-          flexDirection: 'column',
-          boxShadow: '4px 0 20px rgba(0,0,0,0.02)',
-          transition: 'width 0.22s ease'
-        }}
-      >
-        <div
-          style={{
-            padding: sidebarExpanded ? '40px 30px' : '24px 12px',
-            display: 'flex',
-            justifyContent: 'center',
-            transform: sidebarExpanded ? 'none' : 'translateX(-4px)'
-          }}
-        >
-          {sidebarExpanded ? (
-            <h2
-              style={{
-                margin: 0,
-                fontSize: '32px',
-                color: '#000',
-                fontWeight: 400,
-                fontFamily: '"Times New Roman", Times, serif',
-                letterSpacing: '2px',
-                textTransform: 'uppercase',
-                textAlign: 'center',
-                width: '100%'
-              }}
-            >
-              Loewe
-            </h2>
-          ) : (
-            <div style={{ width: '42px', height: '42px', borderRadius: '50%', border: '1px solid #000', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', backgroundColor: '#fff' }}>
-              <img src="/assets/images/loewe_logo.png" alt="Loewe" style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', padding: '2px', boxSizing: 'border-box', transform: 'scale(1.15)' }} />
-            </div>
-          )}
-        </div>
-
-        <nav
-          style={{
-            flex: 1,
-            padding: sidebarExpanded ? '0 15px' : '0 8px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: sidebarExpanded ? 'stretch' : 'center',
-            transform: sidebarExpanded ? 'none' : 'translateX(-4px)'
-          }}
-        >
-          {auth.user.role === 'analyste' && (
-            <>
-              <SidebarItem icon={<Upload size={18} />} label="Ingestion & Tags" active={activeTab === 'data'} isExpanded={sidebarExpanded} onClick={() => setActiveTab('data')} />
-              <SidebarItem icon={<Layout size={18} />} label="Vue Globale" active={activeTab === 'global'} isExpanded={sidebarExpanded} onClick={() => setActiveTab('global')} />
-              <SidebarItem icon={<BrainCircuit size={18} />} label="Analyse IA" active={activeTab === 'ai'} isExpanded={sidebarExpanded} onClick={() => setActiveTab('ai')} />
-              <SidebarItem icon={<Palette size={18} />} label="Studio Builder" active={activeTab === 'builder'} isExpanded={sidebarExpanded} onClick={() => setActiveTab('builder')} />
-            </>
-          )}
-
-          {auth.user.role === 'vendeur' && (
-            <>
-              <SidebarItem icon={<Mic size={18} />} label="Enregistrement" active={activeTab === 'voice'} isExpanded={sidebarExpanded} onClick={() => setActiveTab('voice')} />
-              <SidebarItem icon={<History size={18} />} label="Historique" active={activeTab === 'history'} isExpanded={sidebarExpanded} onClick={() => setActiveTab('history')} />
-            </>
-          )}
-
-          <div style={{ height: '1px', backgroundColor: '#f0f0f0', margin: sidebarExpanded ? '20px 15px' : '20px 0', width: sidebarExpanded ? 'auto' : '42px', alignSelf: 'center' }} />
-          <SidebarItem icon={<Database size={18} />} label="Base de données" active={activeTab === 'database'} isExpanded={sidebarExpanded} onClick={() => setActiveTab('database')} />
-        </nav>
-
-        <div style={{ padding: sidebarExpanded ? '20px' : '14px 10px', borderTop: '1px solid #f0f0f0', transform: sidebarExpanded ? 'none' : 'translateX(-4px)', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          {sidebarExpanded ? (
-            <>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: '12px', marginBottom: '14px', width: '100%' }}>
-                <div style={{ width: '34px', height: '34px', borderRadius: '50%', overflow: 'hidden', border: '1px solid #000', backgroundColor: '#fff' }}>
-                  <img src="/assets/images/loewe_logo.png" alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center', padding: '2px', boxSizing: 'border-box', transform: 'scale(1.15)' }} />
-                </div>
-                <div>
-                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#1a1a1a' }}>{auth.user.role === 'vendeur' ? 'VENDEUR' : 'ANALYSTE'}</div>
-                </div>
-              </div>
-              <button
-                onClick={() => setAuth({ isAuthenticated: false, user: null })}
-                style={{ width: '100%', minWidth: '100%', padding: '12px', backgroundColor: '#fff', border: '1px solid #e5e7eb', borderRadius: '12px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', fontSize: '13px', color: '#ef4444', fontWeight: 600 }}
-              >
-                <LogOut size={16} /> Déconnexion
-              </button>
-            </>
-          ) : (
-            <button style={{ width: '52px', height: '52px', borderRadius: '16px', border: '1px solid #e5e7eb', backgroundColor: '#fff', color: '#6b7280', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'default', transform: 'translateY(-6px)' }} aria-label="Paramètres" title="Paramètres">
-              <Settings size={20} />
-            </button>
-          )}
-        </div>
-      </div>
-
-      <div
-        style={{
-          flex: 1,
-          overflowY: 'auto',
-          padding: '50px',
-          backgroundColor: '#f4f7f6',
-          backgroundImage: 'none'
-        }}
-      >
-        <AnimatePresence mode="wait">
-          <motion.div key={activeTab} initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }} transition={{ duration: 0.2 }}>
-            {activeTab === 'data' && (
-              <DataTab
-                onImportSuccess={(payload) => {
-                  setAnalyticsData(payload?.preview || null);
-                  setImportedTaxonomyRows(Array.isArray(payload?.taxonomyRows) ? payload.taxonomyRows : []);
-                }}
-                taxonomyRows={importedTaxonomyRows}
-              />
-            )}
-            {activeTab === 'global' && <GlobalTab analyticsData={analyticsData} />}
-            {activeTab === 'ai' && <AITab analyticsData={analyticsData} />}
-            {activeTab === 'builder' && <BuilderTab analyticsData={analyticsData} />}
-            {activeTab === 'voice' && <VoiceTab onAddHistoryItem={addToHistoryFromTranscription} />}
-            {activeTab === 'history' && <HistoryTab history={historyItems} onDeleteHistoryItem={deleteHistoryItem} />}
-            {activeTab === 'database' && <DatabaseTab />}
-          </motion.div>
-        </AnimatePresence>
-      </div>
-    </div>
-  );
-}
-
-function SidebarItem({ icon, label, active, isExpanded, onClick }) {
-  return (
-    <div
-      onClick={onClick}
-      style={{
-        width: isExpanded ? '100%' : '52px',
-        height: isExpanded ? 'auto' : '52px',
-        padding: isExpanded ? '14px 18px' : '0',
-        boxSizing: 'border-box',
-        borderRadius: isExpanded ? '14px' : '16px',
-        cursor: 'pointer',
-        backgroundColor: active ? '#000' : 'transparent',
-        color: active ? '#fff' : '#666',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: isExpanded ? 'flex-start' : 'center',
-        gap: isExpanded ? '14px' : '0px',
-        marginBottom: isExpanded ? '10px' : '12px',
-        fontSize: '14px',
-        fontWeight: active ? 600 : 500,
-        whiteSpace: 'nowrap',
-        transition: 'all 0.2s'
-      }}
-      title={!isExpanded ? label : undefined}
-    >
-      {icon}
-      {isExpanded && label}
-    </div>
-  );
-}
-
-function DataTab({ onImportSuccess, taxonomyRows = [] }) {
-  const [isUploading, setIsUploading] = useState(false);
-  const [uploadStatus, setUploadStatus] = useState(null);
-  const [uploadError, setUploadError] = useState('');
-  const [uploadWarning, setUploadWarning] = useState('');
-  const fileInputRef = useRef(null);
-  const tagLabels = {
-    genre: 'Genre',
-    langue: 'Langue',
-    statut_client: 'Statut client',
-    age: 'Age',
-    profession: 'Profession',
-    ville: 'Ville',
-    pays: 'Pays',
-    famille: 'Famille',
-    sport: 'Sport',
-    musique: 'Musique',
-    animaux: 'Animaux',
-    voyage: 'Voyage',
-    art_culture: 'Art et culture',
-    gastronomie: 'Gastronomie',
-    pieces_favorites: 'Pieces favorites',
-    pieces_recherchees: 'Pieces recherchees',
-    couleurs: 'Couleurs',
-    matieres: 'Matieres',
-    sensibilite_mode: 'Sensibilite mode',
-    tailles: 'Tailles',
-    style: 'Style',
-    budget: 'Budget',
-    urgence_score: 'Urgence',
-    motif_achat: "Motif d'achat",
-    marques_preferees: 'Marques preferees',
-    frequence_achat: "Frequence d'achat",
-    regime: 'Regime',
-    allergies: 'Allergies',
-    valeurs: 'Valeurs',
-    actions_crm: 'Actions CRM',
-    echeances: 'Echeances',
-    canaux_contact: 'Canaux contact'
-  };
-
-  const handleFileSelect = () => {
-    if (fileInputRef.current) fileInputRef.current.click();
-  };
-
-  const handleFileChange = async (e) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    setIsUploading(true);
-    setUploadStatus(null);
-    setUploadError('');
-    setUploadWarning('');
-    const formData = new FormData();
-    formData.append('file', file);
-    try {
-      const response = await axios.post('http://localhost:5001/api/analyze', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
-      onImportSuccess?.({
-        preview: response?.data?.preview || null,
-        taxonomyRows: response?.data?.taxonomy_rows || []
-      });
-      if (response?.data?.warning) {
-        setUploadWarning(response.data.warning);
-      }
-      setUploadStatus('success');
-    } catch (err) {
-      console.error(err);
-      setUploadStatus('error');
-      const backendError =
-        err?.response?.data?.error ||
-        err?.response?.data?.details ||
-        err?.message ||
-        "Erreur pendant l'import.";
-      setUploadError(backendError);
-    } finally {
-      setIsUploading(false);
-      if (fileInputRef.current) fileInputRef.current.value = '';
-    }
-  };
-
-  return (
-    <div>
-      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Ingestion & Tags</h1>
-      <p style={{ color: '#555', marginTop: 0 }}>Importez un fichier pour lancer le nettoyage et l'analyse.</p>
-      <div style={{ ...styles.card, maxWidth: '760px', marginTop: '24px' }}>
-        <input ref={fileInputRef} type="file" onChange={handleFileChange} style={{ display: 'none' }} />
-        <button onClick={handleFileSelect} style={{ padding: '12px 16px', borderRadius: '12px', border: 'none', background: '#000', color: '#fff', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }} disabled={isUploading}>
-          {isUploading ? (
-            <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}>
-              <Loader2 size={16} />
-            </motion.div>
-          ) : (
-            <Upload size={16} />
-          )}
-          {isUploading ? 'Traitement...' : 'Sélectionner un fichier'}
-        </button>
-        {uploadStatus === 'success' && <p style={{ color: '#15803d', marginTop: '14px' }}>Import terminé.</p>}
-        {uploadWarning && <p style={{ color: '#92400e', marginTop: '10px' }}>{uploadWarning}</p>}
-        {uploadStatus === 'error' && <p style={{ color: '#b91c1c', marginTop: '14px' }}>{uploadError || "Erreur pendant l'import."}</p>}
-      </div>
-
-      {taxonomyRows.length > 0 && (
-        <div style={{ ...styles.card, marginTop: '18px' }}>
-          <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 700 }}>Clients et tags taxonomie</h3>
-          <div style={{ color: '#6b7280', fontSize: '13px', marginBottom: '12px' }}>
-            {taxonomyRows.length} client(s) détecté(s) dans le fichier importé.
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxHeight: '460px', overflowY: 'auto', paddingRight: '4px' }}>
-            {taxonomyRows.map((row, idx) => (
-              <div key={`${row.client || 'client'}-${idx}`} style={{ border: '1px solid #eceff3', borderRadius: '12px', padding: '10px', background: '#fafafa' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
-                  <span style={{ fontWeight: 800, fontSize: '14px', color: '#111827' }}>{row.client || `Client ${idx + 1}`}</span>
-                  {row.client_id && (
-                    <span style={{ fontSize: '12px', color: '#6b7280', fontWeight: 600 }}>
-                      ID: {row.client_id}
-                    </span>
-                  )}
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                  {Object.entries(row.tags || {}).map(([tagKey, tagValue]) => {
-                    const valueText = Array.isArray(tagValue) ? tagValue.join(', ') : String(tagValue);
-                    if (!valueText || valueText.trim() === '') return null;
-                    return (
-                      <TagBadge
-                        key={`${row.client || idx}-${tagKey}`}
-                        label={`${tagLabels[tagKey] || tagKey}: ${valueText}`}
-                        color="#f3f4f6"
-                        textColor="#111827"
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function VoiceTab({ onAddHistoryItem }) {
-  const [isRecording, setIsRecording] = useState(false);
-  const [mediaRecorder, setMediaRecorder] = useState(null);
-  const [transcription, setTranscription] = useState(null);
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  const startRecording = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const recorder = new MediaRecorder(stream);
-      const chunks = [];
-      recorder.ondataavailable = (e) => chunks.push(e.data);
-      recorder.onstop = async () => {
-        const audioBlob = new Blob(chunks, { type: 'audio/webm' });
-        await sendAudioToBackend(audioBlob);
-      };
-      recorder.start();
-      setMediaRecorder(recorder);
-      setIsRecording(true);
-    } catch (err) {
-      console.error(err);
-      alert("Impossible d'accéder au micro.");
-    }
-  };
-
-  const stopRecording = () => {
-    if (!mediaRecorder) return;
-    mediaRecorder.stop();
-    setIsRecording(false);
-    mediaRecorder.stream.getTracks().forEach((track) => track.stop());
-  };
-
-  const sendAudioToBackend = async (blob) => {
-    setIsProcessing(true);
-    const audioFile = new File([blob], 'recording.webm', { type: 'audio/webm' });
-    const data = new FormData();
-    data.append('audio', audioFile);
-    try {
-      const response = await axios.post('http://localhost:5001/api/transcribe', data);
-      setTranscription(response.data);
-      if (onAddHistoryItem) onAddHistoryItem(response.data);
-    } catch (err) {
-      console.error(err);
-      alert('Erreur lors de la transcription.');
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-
-  const tagLabels = {
-    genre: 'Genre',
-    langue: 'Langue',
-    statut_client: 'Statut client',
-    age: 'Age',
-    profession: 'Profession',
-    ville: 'Ville',
-    pays: 'Pays',
-    famille: 'Famille',
-    sport: 'Sport',
-    musique: 'Musique',
-    animaux: 'Animaux',
-    voyage: 'Voyage',
-    art_culture: 'Art et culture',
-    gastronomie: 'Gastronomie',
-    pieces_favorites: 'Pièces favorites',
-    pieces_recherchees: 'Pièces recherchées',
-    couleurs: 'Couleurs',
-    matieres: 'Matières',
-    sensibilite_mode: 'Sensibilité mode',
-    tailles: 'Tailles',
-    style: 'Style',
-    budget: 'Budget',
-    urgence_score: 'Urgence',
-    motif_achat: "Motif d'achat",
-    marques_preferees: 'Marques préférées',
-    frequence_achat: "Fréquence d'achat",
-    regime: 'Régime',
-    allergies: 'Allergies',
-    valeurs: 'Valeurs',
-    actions_crm: 'Actions CRM',
-    echeances: 'Échéances',
-    canaux_contact: 'Canaux contact'
-  };
-
-  const taxonomySections = [
-    { title: 'Identité', keys: ['genre', 'langue', 'statut_client'] },
-    { title: 'Démographique', keys: ['age', 'profession', 'ville', 'pays', 'famille'] },
-    { title: 'Lifestyle', keys: ['sport', 'musique', 'animaux', 'voyage', 'art_culture', 'gastronomie'] },
-    { title: 'Style', keys: ['pieces_favorites', 'pieces_recherchees', 'couleurs', 'matieres', 'sensibilite_mode', 'tailles', 'style'] },
-    { title: 'Achat', keys: ['budget', 'urgence_score', 'motif_achat', 'marques_preferees', 'frequence_achat'] },
-    { title: 'Préférences', keys: ['regime', 'allergies', 'valeurs'] },
-    { title: 'CRM', keys: ['actions_crm', 'echeances', 'canaux_contact'] }
-  ];
-
-  const getExtractedTagGroups = () => {
-    const tags = transcription?.tags_extracted || {};
-    const groups = [];
-    const hiddenKeys = new Set(['cleaned_text', 'centres_interet', 'timing']);
-    taxonomySections.forEach((section) => {
-      const sectionItems = [];
-      section.keys.forEach((key) => {
-        const label = tagLabels[key] || key;
-        if (hiddenKeys.has(key)) return;
-
-        let value = tags[key];
-        // Fallback d'affichage pour ne jamais "manger" l'âge
-        if ((value === null || value === undefined || value === '') && key === 'age') {
-          const textForAge =
-            (typeof transcription?.cleaned_text === 'string' && transcription.cleaned_text) ||
-            (typeof transcription?.transcription === 'string' && transcription.transcription) ||
-            (typeof tags.cleaned_text === 'string' && tags.cleaned_text) ||
-            '';
-
-          const agePatterns = [
-            /\b(\d{1,2})\s*ans?\b/i,
-            /\bj[' ]?ai\s*(\d{1,2})\b/i,
-            /\bage\s*[:=]?\s*(\d{1,2})\b/i
-          ];
-
-          for (const pattern of agePatterns) {
-            const ageMatch = textForAge.match(pattern);
-            if (ageMatch) {
-              value = ageMatch[1];
-              break;
-            }
-          }
-        }
-
-        if (Array.isArray(value)) {
-          if (value.length > 0) {
-            sectionItems.push(`${label}: ${value.join(', ')}`);
-          }
-          return;
-        }
-
-        if (typeof value === 'string') {
-          if (value.trim() !== '') {
-            sectionItems.push(`${label}: ${value.trim()}`);
-          }
-          return;
-        }
-
-        if (value !== null && value !== undefined) {
-          sectionItems.push(`${label}: ${String(value)}`);
-        }
-      });
-      if (sectionItems.length > 0) {
-        groups.push({ title: section.title, items: sectionItems });
-      }
-    });
-    return groups;
-  };
-
-  return (
-    <div>
-      <div style={{ marginBottom: '40px' }}>
-        <h1 style={{ fontSize: '32px', fontWeight: 800, margin: '0 0 8px 0', letterSpacing: '-1px' }}>Enregistrement Client</h1>
-        <p style={{ color: '#666', fontSize: '16px' }}>Capturez les échanges clients et laissez l’IA en extraire les données.</p>
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '30px' }}>
-        <div style={{ ...styles.card, display: 'flex' }}>
-          <div style={{ padding: '30px', backgroundColor: '#f8f9fa', borderRadius: '15px', textAlign: 'center', border: '2px solid #eee', width: '100%', minHeight: '240px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <motion.div
-              animate={isRecording ? { scale: [1, 1.15, 1] } : {}}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              style={{
-                width: '80px',
-                height: '80px',
-                borderRadius: '50%',
-                backgroundColor: isRecording ? '#ef4444' : '#000',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                margin: '0 auto 20px',
-                cursor: 'pointer'
-              }}
-              onClick={() => (isRecording ? stopRecording() : startRecording())}
-            >
-              {isProcessing ? (
-                <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}>
-                  <Loader2 size={30} color="white" />
-                </motion.div>
-              ) : (
-                <Mic size={30} color="white" />
-              )}
-            </motion.div>
-            <h4 style={{ margin: '0 0 8px 0', fontSize: '18px', fontWeight: 700 }}>
-              {isProcessing ? 'Traitement IA...' : isRecording ? 'Enregistrement en cours...' : 'Prêt à enregistrer'}
-            </h4>
-            <p style={{ color: '#666', fontSize: '14px' }}>
-              {isProcessing
-                ? "L'IA analyse votre voix..."
-                : isRecording
-                ? "Cliquez pour arrêter l'enregistrement."
-                : "Activez le micro pour enregistrer le compte rendu du rendez-vous"}
-            </p>
-          </div>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          <div style={styles.card}>
-            <h3 style={{ margin: '0 0 15px 0', fontSize: '18px', fontWeight: 700 }}>Transcription de l'audio</h3>
-            <div style={{ padding: '15px', backgroundColor: '#f9f9f9', borderRadius: '12px', minHeight: '150px', fontSize: '14px', color: '#666', fontStyle: transcription ? 'normal' : 'italic', lineHeight: '1.6' }}>
-              {transcription ? transcription.cleaned_text : "Les résultats apparaîtront ici après l'enregistrement..."}
-            </div>
-          </div>
-
-          <div style={styles.card}>
-            <h3 style={{ margin: '0 0 15px 0', fontSize: '18px', fontWeight: 700 }}>Tags détectés</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {transcription ? (
-                getExtractedTagGroups().length > 0 ? (
-                  <>
-                    <TagBadge label={`Confiance: ${Number.isFinite(Number(transcription?.confidence)) ? Math.round(Number(transcription.confidence) * 100) : 0}%`} color="#e0f2fe" textColor="#0369a1" />
-                    {getExtractedTagGroups().map((group) => (
-                      <div key={group.title} style={{ backgroundColor: '#f9fafb', border: '1px solid #eceff3', borderRadius: '12px', padding: '10px' }}>
-                        <div style={{ fontSize: '12px', fontWeight: 700, color: '#4b5563', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.4px' }}>{group.title}</div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                          {group.items.map((item, idx) => (
-                            <TagBadge key={`${group.title}-${item}-${idx}`} label={item} color="#f3f4f6" textColor="#111827" />
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </>
-                ) : (
-                  <span style={{ color: '#999', fontSize: '13px' }}>Aucun tag détecté pour cette transcription.</span>
-                )
-              ) : (
-                <span style={{ color: '#999', fontSize: '13px' }}>En attente de données...</span>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function TagBadge({ label, color, textColor }) {
-  return <span style={{ padding: '6px 12px', borderRadius: '8px', fontSize: '12px', fontWeight: 600, backgroundColor: color, color: textColor }}>{label}</span>;
-}
-
-function HistoryTab({ history = [], onDeleteHistoryItem }) {
-  const [search, setSearch] = useState('');
-  const [timeFilter, setTimeFilter] = useState('all');
-  const [customFrom, setCustomFrom] = useState('');
-  const [customTo, setCustomTo] = useState('');
-
-  const now = new Date();
-  const dateToInputValue = (d) => d.toISOString().slice(0, 10);
-  const toStartOfDay = (d) => {
-    const x = new Date(d);
-    x.setHours(0, 0, 0, 0);
-    return x;
-  };
-  const toEndOfDay = (d) => {
-    const x = new Date(d);
-    x.setHours(23, 59, 59, 999);
-    return x;
-  };
-  const subDays = (baseDate, days) => {
-    const x = new Date(baseDate);
-    x.setDate(x.getDate() - days);
-    return x;
-  };
-
-  const filteredHistory = history.filter((item) => {
-    const matchesSearch =
-      item.client.toLowerCase().includes(search.toLowerCase()) ||
-      item.id.toLowerCase().includes(search.toLowerCase()) ||
-      item.summary.toLowerCase().includes(search.toLowerCase());
-
-    const sevenDaysAgo = toStartOfDay(subDays(now, 7));
-    const thirtyDaysAgo = toStartOfDay(subDays(now, 30));
-    const startToday = toStartOfDay(now);
-    const endToday = toEndOfDay(now);
-
-    const recordedAt = item.recordedAt instanceof Date ? item.recordedAt : new Date(item.recordedAt);
-    let matchesTime = true;
-    if (timeFilter === 'today') {
-      matchesTime = recordedAt >= startToday && recordedAt <= endToday;
-    } else if (timeFilter === '7d') {
-      matchesTime = recordedAt >= sevenDaysAgo && recordedAt <= endToday;
-    } else if (timeFilter === '30d') {
-      matchesTime = recordedAt >= thirtyDaysAgo && recordedAt <= endToday;
-    } else if (timeFilter === 'custom') {
-      const hasFrom = !!customFrom;
-      const hasTo = !!customTo;
-      if (hasFrom || hasTo) {
-        const fromDate = hasFrom ? toStartOfDay(new Date(customFrom)) : null;
-        const toDate = hasTo ? toEndOfDay(new Date(customTo)) : null;
-        if (fromDate && toDate) {
-          // Tolérant: si l'utilisateur inverse les dates, on corrige automatiquement.
-          const start = fromDate <= toDate ? fromDate : toStartOfDay(new Date(customTo));
-          const end = fromDate <= toDate ? toDate : toEndOfDay(new Date(customFrom));
-          matchesTime = recordedAt >= start && recordedAt <= end;
-        } else if (fromDate) {
-          matchesTime = recordedAt >= fromDate;
-        } else if (toDate) {
-          matchesTime = recordedAt <= toDate;
-        }
-      }
-    }
-
-    return matchesSearch && matchesTime;
-  });
-
-  const filterControlStyle = {
-    ...styles.input,
-    marginBottom: 0,
-    height: '52px',
-    padding: '0 14px',
-    lineHeight: '52px'
-  };
-
-  const selectControlStyle = {
-    ...filterControlStyle,
-    appearance: 'none',
-    WebkitAppearance: 'none',
-    MozAppearance: 'none',
-    paddingRight: '42px',
-    backgroundImage:
-      "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23111827' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")",
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right 16px center',
-    backgroundSize: '14px'
-  };
-
-  const formatHistoryDate = (dateValue) => {
-    if (!(dateValue instanceof Date) || Number.isNaN(dateValue.getTime())) return '';
-    return dateValue.toLocaleDateString('fr-FR', {
-      day: '2-digit',
-      month: 'short'
-    });
-  };
-
-  const formatHistoryTime = (dateValue) => {
-    if (!(dateValue instanceof Date) || Number.isNaN(dateValue.getTime())) return '';
-    return dateValue.toLocaleTimeString('fr-FR', {
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-  };
-
-  return (
-    <div>
-      <div style={{ marginBottom: '24px' }}>
-        <h1 style={{ fontSize: '32px', margin: '0 0 8px 0', fontWeight: 800, letterSpacing: '-1px' }}>Historique</h1>
-        <p style={{ margin: 0, color: '#666' }}>Suivez toutes les interactions audio et leur état de traitement.</p>
-      </div>
-
-      <div style={{ ...styles.card, marginBottom: '16px', display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-        <div style={{ position: 'relative', flex: 1, minWidth: '280px' }}>
-          <Search size={16} style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', color: '#9ca3af' }} />
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Rechercher un ID, un client ou un résumé..."
-            style={{ ...styles.input, paddingLeft: '22px', paddingRight: '38px', marginBottom: 0 }}
-          />
-        </div>
-        <select
-          value={timeFilter}
-          onChange={(e) => setTimeFilter(e.target.value)}
-          style={{ ...selectControlStyle, width: 'fit-content', minWidth: 'unset', flexShrink: 0 }}
-        >
-          <option value="all">Tout le temps</option>
-          <option value="today">Aujourd'hui</option>
-          <option value="7d">7 derniers jours</option>
-          <option value="30d">30 derniers jours</option>
-          <option value="custom">Personnalisé</option>
-        </select>
-      </div>
-
-      {timeFilter === 'custom' && (
-        <div style={{ ...styles.card, marginBottom: '16px', display: 'grid', gridTemplateColumns: '1fr 1fr auto', gap: '12px', alignItems: 'end' }}>
-          <div>
-            <label style={{ ...styles.label, marginBottom: '6px' }}>Du</label>
-            <input
-              type="date"
-              value={customFrom}
-              onChange={(e) => setCustomFrom(e.target.value)}
-              max={dateToInputValue(now)}
-              style={filterControlStyle}
-            />
-          </div>
-          <div>
-            <label style={{ ...styles.label, marginBottom: '6px' }}>Au</label>
-            <input
-              type="date"
-              value={customTo}
-              onChange={(e) => setCustomTo(e.target.value)}
-              max={dateToInputValue(now)}
-              style={filterControlStyle}
-            />
-          </div>
+    <div className="flex flex-row h-full w-full gap-4 items-center select-none pl-1 pr-1">
+      {/* LEFT: DYNAMIC 7-COL GRID (Standard Week) */}
+      <div className="flex-1 grid grid-cols-7 grid-rows-5 gap-1.5 h-full max-h-[110px]">
+        {days.map(d => (
           <button
-            type="button"
-            onClick={() => {
-              setCustomFrom('');
-              setCustomTo('');
-            }}
-            style={{ height: '52px', padding: '0 14px', borderRadius: '12px', border: '1px solid #d1d5db', background: '#fff', cursor: 'pointer', fontWeight: 600 }}
+            key={d}
+            onMouseDown={() => handleMouseDown(d)}
+            onMouseEnter={() => handleMouseEnter(d)}
+            className={`
+              w-full h-full rounded-md flex items-center justify-center text-[9px] font-medium transition-all duration-150 relative
+              ${selectedDays.includes(d)
+                ? 'bg-[#C87961] text-white shadow-sm scale-110'
+                : 'bg-gray-100 text-gray-400 hover:bg-gray-200'}
+            `}
           >
-            Réinitialiser
+            {d}
+            {/* Dot for activity */}
+            {activeDays.includes(d) && (
+              <div className="absolute bottom-1 h-1 w-1 rounded-full bg-emerald-500" />
+            )}
           </button>
-        </div>
-      )}
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-        {filteredHistory.map((item) => (
-          <div key={item.id} style={{ ...styles.card, padding: '16px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '10px' }}>
-              <div>
-                <div style={{ fontWeight: 800, fontSize: '16px', marginBottom: '2px' }}>{item.client}</div>
-                <div style={{ fontSize: '12px', color: '#6b7280', fontWeight: 600 }}>ID: {item.id}</div>
-              </div>
-              <button
-                type="button"
-                onClick={() => onDeleteHistoryItem?.(item.id)}
-                aria-label={`Supprimer ${item.client}`}
-                title="Supprimer cet enregistrement"
-                style={{
-                  width: '34px',
-                  height: '34px',
-                  borderRadius: '10px',
-                  border: '1px solid #e5e7eb',
-                  background: '#fff',
-                  color: '#6b7280',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}
-              >
-                <Trash2 size={15} />
-              </button>
-            </div>
-
-            <div style={{ display: 'flex', gap: '16px', marginTop: '10px', fontSize: '13px', color: '#4b5563', flexWrap: 'wrap' }}>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                <Calendar size={14} /> {formatHistoryDate(item.recordedAt instanceof Date ? item.recordedAt : new Date(item.recordedAt))}
-              </span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                <Clock3 size={14} /> {formatHistoryTime(item.recordedAt instanceof Date ? item.recordedAt : new Date(item.recordedAt))}
-              </span>
-              <span>Tags: <strong>{item.tags}</strong></span>
-              <span>Confiance: <strong>{item.confidence}%</strong></span>
-            </div>
-
-            <div style={{ marginTop: '10px', padding: '10px 12px', borderRadius: '10px', backgroundColor: '#f9fafb', border: '1px solid #eef2f7', color: '#374151', fontSize: '13px', lineHeight: '1.5' }}>
-              {item.summary}
-            </div>
-          </div>
         ))}
+      </div>
 
-        {filteredHistory.length === 0 && <div style={{ ...styles.card, textAlign: 'center', color: '#6b7280' }}>Aucun résultat pour ce filtre.</div>}
+      {/* RIGHT: Selectors */}
+      <div className="flex flex-col gap-2 min-w-[50px] justify-center items-end py-1">
+        {/* Year */}
+        <div
+          onClick={() => setYear(prev => prev === 2026 ? 2025 : 2026)}
+          className="flex items-center gap-1 border-b-2 border-gray-100 pb-1 cursor-pointer hover:border-[#C87961] transition-colors"
+        >
+          <span className="text-[14px] font-bold text-[#111]">{year}</span>
+          <ChevronDown size={14} className="text-[#C87961]" />
+        </div>
+
+        {/* Month List */}
+        <div className="flex flex-col items-end gap-1 h-[90px] overflow-hidden mask-gradient relative">
+          {(() => {
+            const startMode = months.indexOf(month);
+            const rotated = [...months.slice(startMode), ...months.slice(0, startMode)];
+            return rotated.slice(0, 5).map(m => (
+              <span
+                key={m}
+                onClick={() => setMonth(m)}
+                className={`text-[12px] cursor-pointer transition-colors ${m === month
+                  ? 'font-bold text-[#111] border-r-2 border-[#C87961] pr-2'
+                  : 'font-medium text-gray-300 hover:text-gray-500 pr-2 border-r-2 border-transparent'
+                  }`}
+              >
+                {m}
+              </span>
+            ));
+          })()}
+        </div>
       </div>
     </div>
   );
-}
-
-function DatabaseTab() {
-  return (
-    <div>
-      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Base de données</h1>
-      <div style={{ ...styles.card, marginTop: '24px' }}>
-        <p style={{ margin: 0, color: '#555' }}>Section base de données prête.</p>
-      </div>
-    </div>
-  );
-}
-
-function EmptyAnalyticsState({ title }) {
-  return (
-    <div>
-      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>{title}</h1>
-      <div style={{ ...styles.card, marginTop: '24px' }}>
-        <p style={{ margin: 0, color: '#555' }}>
-          Importe une base de données dans `Ingestion & Tags` pour afficher les graphiques et insights.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-const CHART_COLORS = ['#111827', '#374151', '#6b7280', '#9ca3af', '#d1d5db', '#4b5563', '#1f2937', '#94a3b8'];
-
-const formatCompactNumber = (value) => {
-  const num = Number(value);
-  if (!Number.isFinite(num)) return '0';
-  return new Intl.NumberFormat('fr-FR').format(Math.round(num));
 };
 
-function GlobalTab({ analyticsData }) {
-  if (!analyticsData) return <EmptyAnalyticsState title="Vue Globale" />;
+const MiniBars = ({ color = '#C87961', alt = '#E8D5CF' }) => {
+  const h = [40, 65, 35, 80, 50, 70, 45, 60, 75, 30];
+  return (
+    <div className="flex items-end gap-[4px] h-20">
+      {h.map((v, i) => (
+        <div key={i} className="w-[6px] rounded-full transition-all" style={{ height: `${v}%`, backgroundColor: i % 2 === 0 ? color : alt }} />
+      ))}
+    </div>
+  );
+};
 
-  const missingData = (analyticsData.missing_by_column || []).slice(0, 8);
-  const firstCategory = analyticsData.top_categories?.[0];
-  const pieData = (firstCategory?.values || []).map((x) => ({ name: String(x.name).slice(0, 22), value: Number(x.count) || 0 }));
-  const completionRate = analyticsData.row_count > 0 && analyticsData.column_count > 0
-    ? Math.max(
-        0,
-        Math.min(
-          100,
-          Math.round(
-            100 *
-              (1 -
-                (analyticsData.missing_by_column || []).reduce((acc, item) => acc + (Number(item.missing) || 0), 0) /
-                  (analyticsData.row_count * analyticsData.column_count)
-              )
-          )
+const Spark = ({ color = '#C87961' }) => (
+  <svg viewBox="0 0 100 28" className="w-full h-7">
+    <path d="M0,20 C10,18 15,14 25,12 S40,16 50,10 S65,18 75,8 S90,14 100,12" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+
+
+/* ═══ ANIMATED NUMBER ═══ */
+const AnimatedNumber = ({ value }) => {
+  const [display, setDisplay] = useState(value);
+  useEffect(() => {
+    const start = display;
+    const diff = value - start;
+    if (diff === 0) return;
+    const steps = 20;
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      setDisplay(Math.round(start + (diff * step) / steps));
+      if (step >= steps) clearInterval(timer);
+    }, 40);
+    return () => clearInterval(timer);
+  }, [value]);
+  return <span>{display.toLocaleString()}</span>;
+};
+
+/* ═══════════════════════════════════════════════════════════
+   MAIN DASHBOARD — Connected to Supabase
+   ═══════════════════════════════════════════════════════════ */
+export default function App() {
+  const [showModal, setShowModal] = useState(false);
+  const [showDbModal, setShowDbModal] = useState(false);
+  // Error Modal State
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [showClientProfile, setShowClientProfile] = useState(false);
+
+  // View State (Dashboard vs Database)
+  const [currentView, setCurrentView] = useState('dashboard');
+
+  // ── Auth / Role State ──
+  const [userRole, setUserRole] = useState(null); // 'analyste' | 'vendeur' | null
+
+  useEffect(() => {
+    const savedRole = localStorage.getItem('lvmh_user_role');
+    if (savedRole) setUserRole(savedRole);
+  }, []);
+
+  const handleLogin = (role) => {
+    setUserRole(role);
+    localStorage.setItem('lvmh_user_role', role);
+  };
+
+  const handleLogout = () => {
+    setUserRole(null);
+    localStorage.removeItem('lvmh_user_role');
+    setCurrentView('dashboard'); // Reset view for next login
+  };
+
+  const copyError = () => {
+    navigator.clipboard.writeText(errorMessage);
+    alert("Code erreur copié !");
+  };
+
+  // ── Upload states ──
+  const [uploadPhase, setUploadPhase] = useState('idle'); // idle | processing | done
+  const [lastBatchId, setLastBatchId] = useState(null);
+  const [lastTransCount, setLastTransCount] = useState(0);
+
+  // ── KPI states ──
+  const [totalCount, setTotalCount] = useState(0);
+  const [tagCounts, setTagCounts] = useState([]);
+  const [recentTranscriptions, setRecentTranscriptions] = useState([]);
+
+  // V2 New States
+  const [leadsCount, setLeadsCount] = useState(0);
+  const [matchRate, setMatchRate] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [uploadDates, setUploadDates] = useState([]); // Array of days (numbers) for current month
+
+  // ── Fetch total transcription count ──
+  const fetchCount = useCallback(async () => {
+    if (!supabase) return;
+    try {
+      // 1. Total Transcriptions
+      const { count: transCount, error: transErr } = await supabase
+        .from('transcriptions')
+        .select('*', { count: 'exact', head: true });
+      if (!transErr && transCount !== null) setTotalCount(transCount);
+
+      // 2. Leads (Clients with > 0 transcriptions? Or just all clients)
+      // "Leads Qualifiés" -> We'll use Total Clients for now.
+      const { count: clientCount, error: clientErr } = await supabase
+        .from('clients')
+        .select('*', { count: 'exact', head: true });
+      if (!clientErr && clientCount !== null) setLeadsCount(clientCount);
+
+      // 3. Match Rate (Avg Sentiment Positif %)
+      // Fetch sentiment of last 100?
+      const { data: sentData, error: sentErr } = await supabase
+        .from('transcriptions')
+        .select('sentiment')
+        .limit(100);
+
+      if (!sentErr && sentData && sentData.length > 0) {
+        const positive = sentData.filter(r => r.sentiment === 'positif').length;
+        const rate = Math.round((positive / sentData.length) * 100);
+        setMatchRate(rate);
+      } else {
+        setMatchRate(0);
+      }
+    } catch (e) { console.warn('fetchCount error:', e); }
+  }, []);
+
+  // ── Fetch tag aggregation ──
+  const fetchTags = useCallback(async () => {
+    if (!supabase) return;
+    try {
+      const { data, error } = await supabase
+        .from('tags')
+        .select('tag_name');
+      if (!error && data) {
+        const counts = {};
+        data.forEach(t => { counts[t.tag_name] = (counts[t.tag_name] || 0) + 1; });
+        const sorted = Object.entries(counts)
+          .map(([name, count]) => ({ name, count }))
+          .sort((a, b) => b.count - a.count);
+        setTagCounts(sorted);
+      }
+    } catch (e) { console.warn('fetchTags error:', e); }
+  }, []);
+
+  // ── Fetch recent transcriptions (for DB modal) ──
+  const fetchRecent = useCallback(async () => {
+    if (!supabase) return;
+    try {
+      let query = supabase
+        .from('transcriptions')
+        .select(`
+          id, 
+          client_name, 
+          content_summary, 
+          sentiment, 
+          created_at,
+          raw_text,
+          tags ( tag_name )
+        `)
+        .order('created_at', { ascending: false })
+        .limit(10);
+
+      // Apply Search Filter (Client Name OR Summary)
+      if (searchQuery) {
+        query = query.or(`client_name.ilike.%${searchQuery}%,content_summary.ilike.%${searchQuery}%`);
+      }
+
+      const { data, error } = await query;
+      if (!error && data) {
+        setRecentTranscriptions(data);
+
+        // Extract dates for Calendar (simple heuristic: day of month)
+        // Only for these visible 10, ideally we fetch a separate distinct list
+        const days = data.map(t => new Date(t.created_at).getDate());
+        setUploadDates([...new Set(days)]);
+      }
+    } catch (e) { console.warn('fetchRecent error:', e); }
+  }, []);
+
+  // ... (skipping unchanged parts) ...
+
+  {/* DATABASE TABLE */ }
+  <div className="overflow-x-auto">
+    <table className="w-full text-left border-collapse">
+      <thead>
+        <tr className="text-sm text-gray-500 border-b">
+          <th className="p-3 font-medium">Client</th>
+          <th className="p-3 font-medium">Résumé</th>
+          <th className="p-3 font-medium">Contenu (Raw)</th>
+          <th className="p-3 font-medium">Tags</th>
+          <th className="p-3 font-medium">Sentiment</th>
+          <th className="p-3 font-medium">Date</th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-gray-100">
+        {recentTranscriptions.map((t) => (
+          <tr key={t.id} className="hover:bg-gray-50 transition-colors">
+            <td className="p-3 font-medium text-gray-900">{t.client_name || 'Anonyme'}</td>
+            <td className="p-3 text-gray-600 text-sm max-w-xs truncate" title={t.content_summary}>{t.content_summary}</td>
+            <td className="p-3 text-gray-400 text-xs max-w-xs truncate font-mono" title={t.raw_text}>{t.raw_text || '-'}</td>
+            <td className="p-3">
+              <div className="flex flex-wrap gap-1">
+                {t.tags && t.tags.length > 0 ? (
+                  t.tags.map((tag, i) => (
+                    <span key={i} className="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs rounded-full border border-indigo-100">
+                      {tag.tag_name}
+                    </span>
+                  ))
+                ) : (
+                  <span className="text-gray-300 text-xs italic">Aucun tag</span>
+                )}
+              </div>
+            </td>
+            <td className="p-3">
+              <span className={`px-2 py-1 rounded-full text-xs font-medium ${t.sentiment === 'positif' ? 'bg-green-100 text-green-700' :
+                t.sentiment === 'négatif' ? 'bg-red-100 text-red-700' : 'bg-gray-100 text-gray-700'
+                }`}>
+                {t.sentiment || 'Neutre'}
+              </span>
+            </td>
+            <td className="p-3 text-gray-400 text-xs whitespace-nowrap">
+              {new Date(t.created_at).toLocaleDateString()}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  // ── Initial load ──
+  useEffect(() => {
+    fetchCount();
+    fetchTags();
+    fetchClients();
+  }, [fetchCount, fetchTags]);
+
+  // Trigger Fetch when search query changes (debounce ideally, but simple here)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      fetchRecent();
+      // Also refetch clients filtered?
+      fetchClients();
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [searchQuery, fetchRecent]);
+
+  // ── Fetch Real Clients ──
+  const [clients, setClients] = useState([]);
+  const [selectedClientId, setSelectedClientId] = useState(null);
+
+  const fetchClients = async () => {
+    if (!supabase) return;
+    let query = supabase.from('clients').select('*').order('created_at', { ascending: false });
+
+    if (searchQuery) {
+      query = query.ilike('full_name', `%${searchQuery}%`);
+    }
+
+    const { data } = await query;
+    if (data) setClients(data);
+  };
+
+  const handleClientClick = (id) => {
+    setSelectedClientId(id);
+    setShowClientProfile(true);
+  };
+
+  // ── THE BRAIN: Real File Upload & Processing ──
+  const fileInputRef = React.useRef(null);
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files?.[0];
+    if (!file || !supabase) return;
+
+    setUploadPhase('processing');
+    setLastBatchId(file.name);
+
+    try {
+      // Step 1: Upload to local backend for analysis
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('/api/analyze', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const text = await response.text();
+      let result;
+      try { result = JSON.parse(text); } catch (e) { }
+
+      if (!response.ok) {
+        throw new Error(result?.details || result?.error || result?.message || text || response.statusText);
+      }
+      if (!result) result = {};
+
+      const taxonomyRows = result.taxonomy_rows || [];
+
+
+
+      // Step 2: Smart Ingestion (Upsert)
+      // We process each row as a unique transcription event
+      let transcriptionsToUpsert = [];
+
+      if (taxonomyRows.length > 0) {
+        transcriptionsToUpsert = taxonomyRows.map((row, index) => {
+          // Generate a deterministic ID: filename + client (or index)
+          const uniqueRef = `${file.name}_${row.client || index}_${new Date().toISOString().split('T')[0]}`;
+
+          return {
+            unique_reference_id: uniqueRef,
+            source_filename: file.name,
+            client_name: row.client || `Client ${index + 1}`,
+            raw_text: row.raw_text || "", // Save the actual text content
+            content_summary: "Analyse terminologique effectuée",
+            sentiment: Math.random() > 0.5 ? 'positif' : 'neutre',
+            transcription_date: new Date(), // In real app, extract from file content
+            upload_date: new Date(),
+            updated_at: new Date(),
+            metadata: {
+              row_index: index,
+              source: 'smart_ingestion_v1',
+              raw_tags: row.tags
+            }
+          };
+        });
+      } else {
+        // Fallback Simulation with Smart Schema
+        const clients = pick(FAKE_CLIENTS, 3 + Math.floor(Math.random() * 4));
+        transcriptionsToUpsert = clients.map((c, index) => ({
+          unique_reference_id: `${file.name}_${c.name}_SIM`,
+          source_filename: file.name,
+          client_name: c.name,
+          raw_text: `[SIMULATION] Transcription fictive pour ${c.name}. Sujet: ${c.summary}`,
+          content_summary: c.summary,
+          sentiment: c.sentiment,
+          transcription_date: new Date(),
+          metadata: { is_simulated: true }
+        }));
+      }
+
+      // ── Step 2.5: SYNC CLIENTS (Auto-create profile if missing) ──
+      // Extract unique client names
+      const uniqueClientNames = [...new Set(transcriptionsToUpsert.map(t => t.client_name))];
+
+      // Upsert these clients (Get IDs)
+      const { data: clientsData, error: clientErr } = await supabase
+        .from('clients')
+        .upsert(
+          uniqueClientNames.map(name => ({
+            full_name: name,
+            status: 'Nouveau', // Default status for auto-created
+            updated_at: new Date()
+          })),
+          { onConflict: 'full_name' }
         )
-      )
-    : 0;
+        .select('id, full_name');
+
+      if (clientErr) console.error("Client Sync Error:", clientErr);
+
+      // Map back Client IDs to Transcriptions
+      if (clientsData) {
+        const clientMap = {};
+        clientsData.forEach(c => clientMap[c.full_name] = c.id);
+
+        transcriptionsToUpsert = transcriptionsToUpsert.map(t => ({
+          ...t,
+          client_id: clientMap[t.client_name] || null // Link FK
+        }));
+      }
+
+      // Perform UPSERT (Update on Duplicate)
+      const { data: upsertedData, error: upsertErr } = await supabase
+        .from('transcriptions')
+        .upsert(transcriptionsToUpsert, { onConflict: 'unique_reference_id' })
+        .select('id, metadata');
+
+      if (upsertErr) throw upsertErr;
+
+      // Step 3: Handle Tags (Re-calculate for upserted rows)
+      // First, we delete old tags for these specific transcriptions to avoid duplicates
+      const transcriptionIds = upsertedData.map(t => t.id);
+      if (transcriptionIds.length > 0) {
+        await supabase.from('tags').delete().in('transcription_id', transcriptionIds);
+
+        let tagsToAdd = [];
+        upsertedData.forEach(t => {
+          const rawTags = t.metadata?.raw_tags || {}; // Retrieve tags from metadata we just saved
+          // If simulated, generate random tags
+          if (t.metadata?.is_simulated) {
+            const randomTags = pick(FAKE_TAGS, 1 + Math.floor(Math.random() * 3));
+            randomTags.forEach(tag => tagsToAdd.push({ transcription_id: t.id, tag_name: tag }));
+          } else {
+            // Real tags
+            Object.entries(rawTags).forEach(([category, val]) => {
+              const values = Array.isArray(val) ? val : [val];
+              values.forEach(v => tagsToAdd.push({ transcription_id: t.id, tag_name: v }));
+            });
+          }
+        });
+
+        if (tagsToAdd.length > 0) {
+          await supabase.from('tags').insert(tagsToAdd);
+        }
+      }
+
+      // Step 4: Success state
+      setLastTransCount(transcriptionsToUpsert.length);
+      setUploadPhase('done');
+      await Promise.all([fetchCount(), fetchTags(), fetchRecent(), fetchClients()]);
+
+    } catch (e) {
+      console.error('Upload pipeline failed:', e);
+      setUploadPhase('done');
+      setLastTransCount(0);
+      setErrorMessage(e.message);
+      setShowErrorModal(true);
+    }
+
+    // Reset input
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
+  // ── Open DB Modal ──
+  const openDbModal = async () => {
+    await fetchRecent();
+    setShowDbModal(true);
+  };
+
+  // ── Tag icons ──
+  const TAG_ICONS = {
+    'Maroquinerie': '👜', 'Anniversaire': '🎂', 'VIP': '💎', 'Cross-sell': '🔄',
+    'Souliers': '👞', 'Montres': '⌚', 'Voyage': '✈️', 'Parfum': '🌸',
+    'Joaillerie': '💍', 'Haute Couture': '👗',
+  };
+
+  // ── CONDITIONAL RENDERING FOR AUTH ──
+  if (!userRole) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
+
+  if (userRole === 'vendeur') {
+    return <VendeurPage onLogout={handleLogout} />;
+  }
+
+  // ── ANALYSTE VIEW (Dashboard) ──
+
+  if (currentView === 'database') {
+    return <DatabaseFilterPage onBack={() => setCurrentView('dashboard')} />;
+  }
 
   return (
-    <div>
-      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Vue Globale</h1>
-      <p style={{ color: '#555', marginTop: 0 }}>
-        Fichier: <strong>{analyticsData.file_name}</strong>
-      </p>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '14px', marginTop: '20px' }}>
-        <div style={styles.card}><div style={{ color: '#6b7280', fontSize: '12px' }}>Lignes</div><div style={{ fontSize: '28px', fontWeight: 800 }}>{formatCompactNumber(analyticsData.row_count)}</div></div>
-        <div style={styles.card}><div style={{ color: '#6b7280', fontSize: '12px' }}>Colonnes</div><div style={{ fontSize: '28px', fontWeight: 800 }}>{formatCompactNumber(analyticsData.column_count)}</div></div>
-        <div style={styles.card}><div style={{ color: '#6b7280', fontSize: '12px' }}>Complétude</div><div style={{ fontSize: '28px', fontWeight: 800 }}>{completionRate}%</div></div>
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '16px', marginTop: '18px' }}>
-        <div style={styles.card}>
-          <div style={{ fontWeight: 700, marginBottom: '10px' }}>Valeurs manquantes par colonne</div>
-          <div style={{ width: '100%', height: 280 }}>
-            <ResponsiveContainer>
-              <BarChart data={missingData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="column" tick={{ fontSize: 11 }} />
-                <YAxis />
-                <Tooltip />
-                <Bar dataKey="missing" fill="#111827" radius={[6, 6, 0, 0]} />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-        <div style={styles.card}>
-          <div style={{ fontWeight: 700, marginBottom: '10px' }}>
-            Répartition: {firstCategory?.column || 'N/A'}
-          </div>
-          <div style={{ width: '100%', height: 280 }}>
-            <ResponsiveContainer>
-              <PieChart>
-                <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={92} label>
-                  {pieData.map((entry, idx) => (
-                    <Cell key={`${entry.name}-${idx}`} fill={CHART_COLORS[idx % CHART_COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function AITab({ analyticsData }) {
-  if (!analyticsData) return <EmptyAnalyticsState title="Analyse IA" />;
-
-  const numericSeries = (analyticsData.numeric_metrics || [])
-    .filter((m) => Number.isFinite(Number(m.mean)))
-    .map((m) => ({ column: m.column, mean: Number(m.mean), min: Number(m.min) || 0, max: Number(m.max) || 0 }))
-    .slice(0, 8);
-
-  return (
-    <div>
-      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Analyse IA</h1>
-      <p style={{ color: '#555', marginTop: 0 }}>Synthèse automatique des colonnes numériques et catégories détectées.</p>
-      <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '16px', marginTop: '18px' }}>
-        <div style={styles.card}>
-          <div style={{ fontWeight: 700, marginBottom: '10px' }}>Moyennes par colonne numérique</div>
-          <div style={{ width: '100%', height: 300 }}>
-            <ResponsiveContainer>
-              <LineChart data={numericSeries}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="column" tick={{ fontSize: 11 }} />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="mean" stroke="#111827" strokeWidth={2.2} dot={{ r: 3 }} />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-        <div style={styles.card}>
-          <div style={{ fontWeight: 700, marginBottom: '10px' }}>Colonnes détectées</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-            {(analyticsData.columns || []).slice(0, 30).map((col) => (
-              <TagBadge key={col} label={col} color="#f3f4f6" textColor="#111827" />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function BuilderTab({ analyticsData }) {
-  const [selectedCategory, setSelectedCategory] = useState('');
-  if (!analyticsData) return <EmptyAnalyticsState title="Studio Builder" />;
-
-  const categories = analyticsData.top_categories || [];
-  const initialCategory = categories[0]?.column || '';
-  const activeCategory = selectedCategory || initialCategory;
-  const activeData = categories.find((c) => c.column === activeCategory)?.values || [];
-
-  return (
-    <div>
-      <h1 style={{ fontSize: '32px', margin: '0 0 8px 0' }}>Studio Builder</h1>
-      <p style={{ color: '#555', marginTop: 0 }}>Construis un graphique à partir des dimensions détectées.</p>
-
-      <div style={{ ...styles.card, marginTop: '18px' }}>
-        <div style={{ display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '12px' }}>
-          <label style={{ ...styles.label, marginBottom: 0 }}>Dimension X</label>
-          <select
-            value={activeCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            style={{ ...styles.input, maxWidth: '320px', marginBottom: 0 }}
+    <div className="min-h-screen xl:h-screen h-auto w-full bg-[#F3F5F7] p-4 md:p-7 xl:overflow-hidden overflow-x-hidden flex flex-col" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      {/* CLIENT PROFILE MODAL */}
+      <AnimatePresence>
+        {showClientProfile && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-[9999] flex items-center justify-center p-4 md:p-8 backdrop-blur-sm"
+            onClick={() => setShowClientProfile(false)}
           >
-            {categories.map((c) => (
-              <option key={c.column} value={c.column}>{c.column}</option>
-            ))}
-          </select>
-        </div>
-        <div style={{ width: '100%', height: 320 }}>
-          <ResponsiveContainer>
-            <BarChart data={activeData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" tick={{ fontSize: 11 }} />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="count" fill="#111827" radius={[6, 6, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-    </div>
+            <motion.div
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="w-full max-w-5xl max-h-full overflow-y-auto"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="flex justify-end mb-2">
+                <button onClick={() => setShowClientProfile(false)} className="bg-white rounded-full p-2 hover:bg-gray-100 transition"><X size={20} /></button>
+              </div>
+              {/* Dynamic Client ID */}
+              {selectedClientId && <ClientProfileCard clientId={selectedClientId} />}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ERROR MODAL */}
+      <AnimatePresence>
+        {showErrorModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-[9999] flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.95 }}
+              className="bg-white rounded-2xl w-[95%] md:w-full max-w-lg shadow-2xl p-6 relative overflow-hidden"
+            >
+              <div className="flex items-center gap-3 mb-4 text-red-600">
+                <AlertCircle size={28} />
+                <h3 className="text-xl font-bold">Erreur d'analyse</h3>
+              </div>
+
+              <p className="text-sm text-gray-600 mb-2">Une erreur est survenue. Copiez ce code pour le support :</p>
+
+              <div className="bg-gray-100 p-4 rounded-lg font-mono text-xs text-gray-800 break-all overflow-y-auto max-h-40 border border-gray-200 mb-4 select-all">
+                {errorMessage}
+              </div>
+
+              <div className="flex gap-3 justify-end">
+                <button
+                  onClick={() => setShowErrorModal(false)}
+                  className="px-5 py-2.5 rounded-full text-sm font-medium text-gray-600 hover:bg-gray-100 transition"
+                >
+                  Fermer
+                </button>
+                <button
+                  onClick={copyError}
+                  className="px-5 py-2.5 rounded-full text-sm font-medium bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-2"
+                >
+                  <Clipboard size={16} /> Copier
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <input
+        type="file"
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        className="hidden"
+        accept=".csv,.xlsx,.xls,.json,.txt"
+      />
+      <div className="mx-auto max-w-[1440px] h-full flex flex-col">
+
+        {/* ═══ NAVBAR ═══ */}
+        <nav className="flex flex-col md:flex-row items-center justify-between mb-4 shrink-0 gap-4 md:gap-0">
+          <div className="flex items-center gap-4">
+            <button className="h-11 w-11 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-white transition"><Menu size={18} /></button>
+            <div className="flex items-center gap-3">
+              <div className="h-11 w-11 rounded-full bg-[#1A1A1A] flex items-center justify-center"><span className="text-white font-extrabold text-[13px]">N°</span></div>
+              <div className="hidden md:block">
+                <p className="font-semibold text-[15px] text-[#111] tracking-tight">LVMH</p>
+                <p className="text-[12px] text-[#9CA3AF] font-medium">Pulse Dashboard</p>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <button className="h-9 w-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-white"><Plus size={15} /></button>
+            <div className="flex items-center gap-3 ml-1">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#C87961] to-[#A8604A] flex items-center justify-center text-white font-bold text-sm">D</div>
+              <div>
+                <p className="font-semibold text-[13px] text-[#111]">Dave Martin</p>
+                <p className="text-[11px] text-[#9CA3AF]">Marketing Director</p>
+              </div>
+            </div>
+          </div>
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Start searching here ..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-4 pr-10 py-2 rounded-full border border-gray-200 text-[13px] text-[#111] focus:outline-none focus:border-[#C87961] w-full md:w-64 transition-all"
+            />
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 h-7 w-7 rounded-full flex items-center justify-center text-gray-400 hover:text-[#C87961]">
+              <Search size={14} />
+            </button>
+          </div>
+        </nav>
+
+        {/* ═══ SUB-HEADER ═══ */}
+        <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between mb-5 px-1 shrink-0 gap-4 md:gap-0">
+          <div className="flex items-center gap-4">
+            <div className="h-14 w-14 rounded-full border-2 border-gray-200 flex items-center justify-center bg-white">
+              <span className="text-[22px] font-light text-[#111]">15</span>
+            </div>
+            <div className="mr-1">
+              <p className="font-semibold text-[13px] text-[#111]">Sam,</p>
+              <p className="text-[13px] text-[#111]">Février</p>
+            </div>
+            {/* TASKS BUTTON */}
+            <button className="flex items-center gap-2 bg-[#C87961] text-white px-5 py-2.5 rounded-full text-[13px] font-semibold hover:bg-[#B06851] transition shadow-sm">
+              Show my Tasks <ArrowRight size={15} />
+            </button>
+
+            {/* NEW DNA BUTTON */}
+            <button className="h-10 w-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-white relative">
+              <CalIcon size={16} />
+              <div className="absolute -top-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-[#C87961] border-2 border-[#F3F5F7]" />
+            </button>
+          </div>
+          <div className="flex items-center gap-4 md:gap-6 self-end md:self-auto">
+            <div className="text-right md:text-left">
+              <h2 className="text-[24px] md:text-[30px] font-semibold text-[#111] tracking-tight leading-tight">Hello, Dave 👋</h2>
+              <p className="text-[16px] md:text-[20px] text-[#B0B5BC] font-light italic">Your marketing pulse today!</p>
+            </div>
+            <button className="h-14 w-14 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center text-[#555] hover:shadow-md transition">
+              <Mic size={20} />
+            </button>
+            <button
+              onClick={handleLogout}
+              className="h-14 w-14 rounded-full bg-white shadow-sm border-2 border-red-50 flex items-center justify-center text-red-400 hover:bg-red-50 hover:text-red-500 transition"
+              title="Déconnexion"
+            >
+              <LogOut size={20} />
+            </button>
+          </div>
+        </div >
+
+        {/* ═══ TOP CARDS BAND (Responsive Grid) ═══ */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[2.5fr_2.5fr_1.5fr_2.5fr_1.5fr] auto-rows-auto xl:grid-rows-[1fr_1fr] gap-5 mb-5 shrink-0 xl:h-[40vh] xl:min-h-[340px]">
+
+          {/* ══ CARD 1 — INGESTION ENGINE ══ */}
+          < C className="row-span-2 flex flex-col justify-between max-w-[320px] w-full mx-auto h-full max-h-[320px]" >
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="font-extrabold text-[15px] tracking-wide">INGESTION</h3>
+              <span className="flex items-center gap-1 px-3 py-1 rounded-full border border-gray-200 text-[11px] font-medium text-[#666]">Audio Files <ChevronDown size={13} /></span>
+            </div>
+
+            {
+              uploadPhase === 'idle' && (
+                <>
+                  <div className="border-2 border-dashed border-gray-200 rounded-xl flex flex-col items-center justify-center p-4 mb-3 h-[180px]">
+                    <UploadCloud size={32} className="text-[#B0B5BC] mb-2" />
+                    <p className="text-[12px] font-semibold text-[#111] text-center">Drop CVC file</p>
+                    <p className="text-[9px] text-[#9CA3AF] mt-1">.cvc only</p>
+                  </div>
+                  <button
+                    onClick={handleUploadClick}
+                    className="w-full bg-[#1A1A1A] text-white rounded-full py-3 text-[12px] font-medium hover:bg-[#333] transition"
+                  >
+                    Upload CVC
+                  </button>
+                </>
+              )
+            }
+
+            {
+              uploadPhase === 'processing' && (
+                <div className="flex-1 flex flex-col items-center justify-center gap-4">
+                  <Loader2 size={40} className="animate-spin text-[#C87961]" />
+                  <div className="text-center">
+                    <p className="text-[14px] font-semibold text-[#111]">Processing...</p>
+                    <p className="text-[10px] text-[#9CA3AF] mt-1">Cleaning → Tagging → Scripting</p>
+                  </div>
+                  <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                    <motion.div
+                      className="h-full bg-[#C87961] rounded-full"
+                      initial={{ width: '0%' }}
+                      animate={{ width: '100%' }}
+                      transition={{ duration: 2, ease: 'linear' }}
+                    />
+                  </div>
+                </div>
+              )
+            }
+
+            {
+              uploadPhase === 'done' && (
+                <>
+                  <div className="flex-1 flex flex-col gap-3 mt-1">
+                    <p className="text-[18px] font-semibold text-[#111] tracking-tight">{lastBatchId}</p>
+                    <div className="flex items-start gap-2.5 bg-green-50 rounded-xl p-3">
+                      <CheckCircle2 size={18} className="text-green-500 mt-0.5 shrink-0" />
+                      <div>
+                        <p className="text-[12px] font-semibold text-green-700">CVC successfully processed</p>
+                        <p className="text-[10px] text-green-600 mt-0.5">{lastTransCount} transcriptions linked</p>
+                      </div>
+                    </div>
+                    <p className="text-[10px] text-[#9CA3AF] italic">AI analysis complete — tags generated</p>
+                  </div>
+                  <div className="flex gap-3 mb-4">
+                    <button onClick={() => setUploadPhase('idle')} className="flex-1 bg-[#1A1A1A] text-white py-3 rounded-full text-[12px] font-medium hover:bg-[#333] transition">New Upload</button>
+                    <button onClick={() => setCurrentView('database')} className="flex-1 border border-gray-200 text-[#111] py-3 rounded-full text-[12px] font-medium bg-white hover:bg-gray-50 transition">Browse DB</button>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div><p className="text-[10px] text-[#9CA3AF]">Batch traité</p><p className="text-[16px] font-semibold text-[#111]">{lastTransCount} fichiers</p></div>
+                    <span className="text-[11px] text-[#C87961] font-semibold flex items-center gap-1 cursor-pointer"><AlertTriangle size={13} /> Voir pipeline</span>
+                  </div>
+                </>
+              )
+            }
+          </C >
+
+          {/* ══ CARD 2 — REAL-TIME KPI MONITOR ══ */}
+          < C className="row-span-2 flex flex-col justify-between max-w-[320px] w-full mx-auto h-full max-h-[320px]" >
+            <div>
+              <div className="flex items-center justify-between mb-3">
+                <div className="h-9 w-9 rounded-full bg-[#F3F5F7] flex items-center justify-center"><BarChart3 size={16} className="text-[#666]" /></div>
+                <span className="flex items-center gap-1 px-3 py-1 rounded-full border border-gray-200 text-[11px] font-medium text-[#666]">Live <ChevronDown size={13} /></span>
+              </div>
+              <p className="text-[11px] text-[#9CA3AF] font-medium mt-3">Total transcriptions</p>
+              <p className="text-[34px] font-semibold text-[#111] tracking-tight leading-none mt-1">
+                <AnimatedNumber value={totalCount} />
+              </p>
+              {uploadPhase === 'done' && (
+                <motion.span
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="inline-flex items-center gap-1 mt-2 px-2 py-0.5 rounded-full bg-green-50 text-[10px] font-bold text-green-600"
+                >
+                  ↑ +{lastTransCount} new
+                </motion.span>
+              )}
+            </div>
+            <div className="border-t border-gray-100 pt-4">
+              <div className="flex items-center justify-between mb-3">
+                <div className="h-9 w-9 rounded-full bg-[#F3F5F7] flex items-center justify-center"><Database size={15} className="text-[#666]" /></div>
+                <button
+                  onClick={() => setCurrentView('database')}
+                  className="flex items-center gap-1 px-3 py-1 rounded-full bg-[#C87961] text-white text-[11px] font-semibold hover:bg-[#B06851] transition"
+                >
+                  <Eye size={12} /> Voir Base de Données
+                </button>
+              </div>
+              <p className="text-[11px] text-[#9CA3AF]">Qualified leads</p>
+              <p className="text-[22px] font-semibold text-[#111]">{matchRate}%</p>
+              <span className="text-[11px] text-[#C87961] font-medium flex items-center gap-1 mt-1 cursor-pointer">👁 View insights</span>
+            </div>
+          </C >
+
+          {/* 3 — Tags Lock */}
+          < C className="flex flex-col items-center justify-center gap-2" >
+            <div className="h-11 w-11 rounded-2xl bg-[#F3F5F7] flex items-center justify-center"><Lock size={18} className="text-[#555]" /></div>
+            <p className="text-[12px] font-semibold text-[#111]">Data Tags</p>
+            {
+              tagCounts.length > 0 && (
+                <p className="text-[10px] text-[#C87961] font-medium">{tagCounts.length} catégories</p>
+              )
+            }
+          </C >
+
+          {/* 4 — Calendar */}
+          <C className="flex flex-col justify-center relative overflow-hidden">
+            <CalendarWidget activeDays={uploadDates} />
+          </C>
+
+          {/* 5 — Chart icon */}
+          < C className="flex items-center justify-center" > <BarChart3 size={28} className="text-[#C87961]" /></C >
+
+          {/* 6 — Growth Circle */}
+          < div className="flex items-center justify-center" >
+            <div className="relative h-[130px] w-[130px]">
+              <svg className="h-full w-full -rotate-90" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="16" fill="#1A1A1A" />
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2.5" />
+                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#C87961" strokeWidth="2.8" strokeLinecap="round" strokeDasharray="92, 100" />
+              </svg>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <span className="text-[20px] font-bold text-white"><AnimatedNumber value={matchRate} />%</span>
+                <span className="text-[9px] text-gray-400 font-medium">Match Rate</span>
+              </div>
+            </div>
+          </div >
+
+          {/* 7 — Leads */}
+          <C className="flex items-center gap-3">
+            <div className="h-9 w-9 rounded-xl bg-[#F3F5F7] flex items-center justify-center"><TrendingUp size={16} className="text-[#C87961]" /></div>
+            <div>
+              <p className="text-[20px] font-semibold text-[#111] tracking-tight leading-none">
+                <AnimatedNumber value={leadsCount} />
+              </p>
+              <p className="text-[10px] text-[#9CA3AF] mt-1">Leads qualifiés</p>
+            </div>
+          </C>
+
+          {/* 8 — Sparkline */}
+          < C className="flex flex-col justify-center px-5" > <Spark /></C >
+        </div >
+
+        {/* ═══ LEFT ICONS ═══ */}
+        < div className="flex gap-2 mb-3 pl-1 shrink-0" >
+          <button className="h-8 w-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-white text-[14px]">⊕</button>
+          <button className="h-8 w-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-white text-[14px]">⤴</button>
+        </div >
+
+        {/* ═══ BOTTOM CARDS BAND (Responsive Grid) ═══ */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1.2fr] auto-rows-auto lg:grid-rows-[1fr_1fr] gap-5 flex-1 min-h-0">
+
+          {/* 9 — Client List (Real DB) */}
+          < C className="row-span-2 flex flex-col" >
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-[15px] font-semibold text-[#111]">Recent Clients</h3>
+              <span className="flex items-center gap-1 px-3 py-1 rounded-full border border-gray-200 text-[11px] font-medium text-[#666]">View All <ChevronDown size={13} /></span>
+            </div>
+            <div className="flex-1 overflow-y-auto flex flex-col gap-2 min-h-0" style={{ scrollbarWidth: 'none' }}>
+              {clients.length === 0 ? (
+                <div className="flex-1 flex flex-col items-center justify-center text-gray-400">
+                  <User size={24} />
+                  <p className="text-[12px] mt-2">No clients found</p>
+                </div>
+              ) : (
+                clients.map((client, i) => (
+                  <div
+                    key={client.id}
+                    onClick={() => handleClientClick(client.id)}
+                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors group"
+                  >
+                    <div className="h-10 w-10 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center text-[14px] font-bold">
+                      {client.full_name.charAt(0)}
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-[13px] font-semibold text-[#111]">{client.full_name}</p>
+                      <p className="text-[11px] text-gray-500">{client.status} • {client.email}</p>
+                    </div>
+                    <ArrowRight size={14} className="text-gray-300 group-hover:text-[#C87961] transition-colors" />
+                  </div>
+                ))
+              )}
+            </div>
+          </C >
+
+          {/* ══ CARD 10 — ACTIVATION STRATEGIES (from DB tags) ══ */}
+          < C className="row-span-2 flex flex-col" >
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-[15px] font-semibold text-[#111]">Activation Strategies</h3>
+              <div className="flex items-center gap-2">
+                <button className="text-gray-400 hover:text-gray-600"><MoreVertical size={16} /></button>
+                <button className="text-gray-400 hover:text-gray-600"><Sparkles size={16} /></button>
+                <button className="flex items-center gap-1 text-[11px] font-medium text-[#666]"><Filter size={13} /> Filters</button>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="flex-1 flex items-center gap-2 px-4 py-2 rounded-full bg-[#F3F5F7] text-[12px] text-[#9CA3AF]"><Search size={14} /> Rechercher...</div>
+              <span className="px-3 py-1.5 rounded-full bg-[#1A1A1A] text-white text-[11px] font-semibold flex items-center gap-1">Active <span className="h-1.5 w-1.5 rounded-full bg-[#C87961]" /></span>
+              <span className="px-3 py-1.5 rounded-full border border-gray-200 text-[11px] font-medium text-[#666] flex items-center gap-1">Tags <X size={11} /></span>
+            </div>
+            <div className="flex-1 overflow-y-auto flex flex-col gap-2 min-h-0" style={{ scrollbarWidth: 'none' }}>
+              {tagCounts.length === 0 ? (
+                <div className="flex-1 flex flex-col items-center justify-center gap-2">
+                  <Database size={24} className="text-[#B0B5BC]" />
+                  <p className="text-[12px] text-[#B0B5BC]">Upload un fichier CVC pour générer les stratégies</p>
+                </div>
+              ) : (
+                tagCounts.map((t, i) => (
+                  <motion.div
+                    key={t.name}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    className="flex items-center justify-between p-3.5 rounded-2xl bg-[#FAFBFC] hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-[18px]">{TAG_ICONS[t.name] || '📌'}</span>
+                      <div>
+                        <p className="text-[13px] font-semibold text-[#111]">{t.name}</p>
+                        <p className="text-[10px] text-[#9CA3AF]">{t.count} {t.count > 1 ? 'occurrences' : 'occurrence'}</p>
+                      </div>
+                    </div>
+                    <button className="px-3 py-1.5 rounded-xl bg-[#C87961] text-white text-[11px] font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Activer</button>
+                  </motion.div>
+                ))
+              )}
+            </div>
+          </C >
+
+          {/* 11 — Campaign Perf */}
+          < C className="flex flex-col justify-between" >
+            <div>
+              <p className="text-[14px] font-semibold text-[#111]">Campaign Perf.</p>
+              <p className="text-[11px] text-[#9CA3AF]">Extended & Limited</p>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">+9.3%</span>
+            </div>
+            <Spark />
+            <div className="flex gap-2 items-center">
+              <div className="h-2 w-5 rounded-full bg-gray-300" />
+              <div className="h-2 w-5 rounded-full bg-[#1A1A1A]" />
+            </div>
+          </C >
+
+          {/* 12 — Review */}
+          < C className="flex flex-col justify-between" >
+            <div>
+              <button className="absolute top-4 right-4 text-gray-300 hover:text-gray-500"><X size={14} /></button>
+              <p className="text-[11px] text-[#9CA3AF] font-medium">Satisfaction équipe</p>
+              <p className="text-[15px] font-semibold text-[#111] mt-1 leading-snug">Comment évaluez-vous la campagne ?</p>
+            </div>
+            <div className="flex justify-between mt-3">
+              {['😟', '😕', '😐', '🙂', '😍'].map((e, i) => (
+                <button key={i} className="h-10 w-10 rounded-full border border-gray-100 flex items-center justify-center text-[18px] hover:bg-[#F8EBE6] hover:border-[#C87961] transition">
+                  {e}
+                </button>
+              ))}
+            </div>
+          </C >
+        </div >
+      </div >
+
+      {/* ═══ CAMPAIGN SUCCESS MODAL ═══ */}
+      < AnimatePresence >
+        {showModal && (
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-[95%] md:w-full max-w-md rounded-[40px] bg-white p-10 shadow-2xl"
+            >
+              <button onClick={() => setShowModal(false)} className="absolute right-6 top-6 text-gray-400 hover:text-gray-600"><X size={16} /></button>
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-green-50">
+                <CheckCircle2 size={32} className="text-green-500" />
+              </div>
+              <h3 className="text-center text-xl font-semibold text-[#111]">Campagne Activée ✨</h3>
+              <p className="mt-3 text-center text-[13px] text-[#9CA3AF]">3 drafts personnalisés synchronisés avec Salesforce Marketing Cloud.</p>
+              <button onClick={() => setShowModal(false)} className="mx-auto mt-6 flex rounded-full bg-[#1A1A1A] px-6 py-2.5 text-[13px] font-semibold text-white hover:bg-[#333]">Fermer</button>
+            </motion.div>
+          </motion.div>
+        )
+        }
+      </AnimatePresence >
+
+      {/* ═══ DATABASE VIEWER MODAL ═══ */}
+      < AnimatePresence >
+        {showDbModal && (
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-[95%] md:w-full max-w-lg rounded-[40px] bg-white p-8 shadow-2xl max-h-[80vh] overflow-hidden flex flex-col"
+            >
+              <button onClick={() => setShowDbModal(false)} className="absolute right-6 top-6 text-gray-400 hover:text-gray-600"><X size={16} /></button>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-12 w-12 rounded-2xl bg-[#F3F5F7] flex items-center justify-center"><Database size={22} className="text-[#C87961]" /></div>
+                <div>
+                  <h3 className="text-[18px] font-semibold text-[#111]">Base de Données</h3>
+                  <p className="text-[12px] text-[#9CA3AF]">10 dernières transcriptions</p>
+                </div>
+              </div>
+
+              {/* TABLE LAYOUT LIKE SUPABASE */}
+              <div className="flex-1 overflow-auto border border-gray-100 rounded-xl">
+                <table className="w-full text-left border-collapse min-w-[600px]">
+                  <thead className="bg-gray-50 sticky top-0 z-10">
+                    <tr className="text-xs font-semibold text-gray-500 border-b border-gray-100">
+                      <th className="p-3 w-12 text-center">Icon</th>
+                      <th className="p-3">Client</th>
+                      <th className="p-3">Contenu</th>
+                      <th className="p-3">Tags & Analyse</th>
+                      <th className="p-3">Sentiment</th>
+                      <th className="p-3">Date</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-50 text-sm">
+                    {recentTranscriptions.length === 0 ? (
+                      <tr>
+                        <td colSpan="6" className="p-8 text-center text-gray-400 text-xs">
+                          Aucune donnée trouvée.
+                        </td>
+                      </tr>
+                    ) : (
+                      recentTranscriptions.map((t) => (
+                        <tr key={t.id} className="hover:bg-[#FAFBFC] transition-colors group">
+                          <td className="p-3 text-center">
+                            <div className={`h-8 w-8 mx-auto rounded-full flex items-center justify-center text-white text-[10px] font-bold shadow-sm ${t.sentiment === 'positif' ? 'bg-emerald-500' :
+                              t.sentiment === 'négatif' ? 'bg-rose-500' : 'bg-slate-400'
+                              }`}>
+                              {t.client_name?.charAt(0) || '?'}
+                            </div>
+                          </td>
+                          <td className="p-3 font-medium text-gray-900">
+                            {t.client_name}
+                            <div className="text-[10px] text-gray-400 font-normal">{t.source_filename || 'Upload manuel'}</div>
+                          </td>
+                          <td className="p-3 max-w-[200px]">
+                            <div className="truncate text-gray-600 font-medium" title={t.content_summary}>{t.content_summary}</div>
+                            <div className="truncate text-gray-400 text-[11px] font-mono mt-0.5" title={t.raw_text}>{t.raw_text || '-'}</div>
+                          </td>
+                          <td className="p-3 max-w-[200px]">
+                            <div className="flex flex-wrap gap-1">
+                              {t.tags && t.tags.length > 0 ? (
+                                t.tags.slice(0, 3).map((tag, i) => (
+                                  <span key={i} className="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[10px] font-medium rounded-md border border-indigo-100">
+                                    {tag.tag_name}
+                                  </span>
+                                ))
+                              ) : (
+                                <span className="text-gray-300 text-[10px] italic">No tags</span>
+                              )}
+                              {t.tags && t.tags.length > 3 && <span className="text-[10px] text-gray-400">+{t.tags.length - 3}</span>}
+                            </div>
+                          </td>
+                          <td className="p-3">
+                            <span className={`px-2.5 py-1 rounded-full text-[11px] font-medium border ${t.sentiment === 'positif' ? 'bg-emerald-50 text-emerald-700 border-emerald-100' :
+                              t.sentiment === 'négatif' ? 'bg-rose-50 text-rose-700 border-rose-100' : 'bg-slate-50 text-slate-600 border-slate-100'
+                              }`}>
+                              {t.sentiment || 'Neutre'}
+                            </span>
+                          </td>
+                          <td className="p-3 text-gray-400 text-xs tabular-nums">
+                            {new Date(t.created_at).toLocaleDateString('fr-FR')}
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+              <button onClick={() => setShowDbModal(false)} className="mx-auto mt-6 flex rounded-full bg-[#1A1A1A] px-6 py-2.5 text-[13px] font-semibold text-white hover:bg-[#333]">Fermer</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence >
+    </div >
   );
 }
-
-export default App;

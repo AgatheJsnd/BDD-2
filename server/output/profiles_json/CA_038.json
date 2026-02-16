@@ -1,0 +1,53 @@
+{
+  "client_id": "CA_038",
+  "metadata": {
+    "date_conversation": "2026-02-03",
+    "duration": "30 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sra. Ruiz, 45 años, cardióloga hospital privado, nueva cliente buen potencial. Busca renovar accesorios profesionales después ascenso jefa departamento. Presupuesto 9K flexible. Estilo profesional elegante discreto, prefiere negro navy cognac. Practica natación competitiva master, entrena madrugadas antes trabajo. Viaja conferencias médicas Europa Asia frecuente. Colecciona fotografía médica histórica curiosidad profesional. Vegetariana estricta eventos. Alergia látex importante nota. Mencionó hija adolescente 16 estudia piano conservatorio podría interesar accesorios jóvenes futuro. Marido arquitecto también potencial cliente. Aniversario matrimonio julio cada año. Buen potencial largo plazo profesional establecida. Llamar marzo mostrar novedades primavera.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

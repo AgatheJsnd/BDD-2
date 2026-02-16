@@ -1,0 +1,80 @@
+{
+  "client_id": "CA_031",
+  "metadata": {
+    "date_conversation": "2026-01-29",
+    "duration": "25 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mme Fontaine, 43 ans, consultante stratégie, cliente occasionnelle. Cherche cadeau sœur 40 ans manager finance. Budget 4K. Sœur adore voyages aventure, trek régulier Himalaya Patagonie. Style pratique élégant, cuir noir marron. Sœur végétarienne. Anniversaire sœur février prochain. Cliente satisfaite achats précédents. Mentionné mère 70 ans anniversaire été pourrait revenir. Rappeler avril.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Cadre_Manager": [],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {},
+    "voyage": {
+      "experience": [
+        "Aventure"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

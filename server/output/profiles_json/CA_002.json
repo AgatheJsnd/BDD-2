@@ -1,0 +1,91 @@
+{
+  "client_id": "CA_002",
+  "metadata": {
+    "date_conversation": "2026-01-08",
+    "duration": "25 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Meeting with Mr. Anderson, first time customer, investment banker from London, around 38. Looking for travel bag, travels frequently Asia for work. Budget around 5K, wants something durable and elegant. He plays tennis weekends at Queens Club, mentioned Wimbledon member. Prefers black or navy leather, classic style but modern touch. Pescatarian diet noted for store events. Wife's birthday coming up in May, possible gift opportunity. Good potential client, works in Mayfair so convenient location. Follow up end of month to show new arrivals.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "raquette": [
+          "Tennis"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

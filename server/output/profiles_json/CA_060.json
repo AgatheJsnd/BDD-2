@@ -1,0 +1,58 @@
+{
+  "client_id": "CA_060",
+  "metadata": {
+    "date_conversation": "2026-02-18",
+    "duration": "40 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sr. Ortiz, 55 años, empresario construcción, cliente regular. Compra regalos esposa cumpleaños 50 celebración grande familia. Budget 13K. Esposa decoradora interiores proyectos lujo, ama diseño arte. Celebración fiesta sorpresa 100 invitados casa. Viajan frecuente Italia Francia inspiración diseño. Ella estilo elegante sofisticado, prefiere beige cognac hardware dorado. Colecciona muebles diseño mid-century. Pescetariana ella. Cumpleaños abril próximo. Tres hijos: dos hijas casadas, hijo soltero arquitecto. Esposa mencionó siempre quiso piezas especiales únicas. Cliente muy fiel, compra regular ocasiones. Llamar marzo confirmar piezas antes fiesta. Preguntó posibilidad personalización mensaje amor grabado. Excelente cliente apreciado.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

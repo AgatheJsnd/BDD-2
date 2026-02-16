@@ -17,6 +17,6 @@ echo ========================================
 echo.
 
 REM Lancer Streamlit avec l'application optimisée
-.\venv\Scripts\python -m streamlit run app.py
+.\.venv\Scripts\python -m streamlit run app.py --server.port 8503
 
 pause

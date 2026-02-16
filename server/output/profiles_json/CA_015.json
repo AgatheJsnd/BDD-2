@@ -1,0 +1,78 @@
+{
+  "client_id": "CA_015",
+  "metadata": {
+    "date_conversation": "2026-01-17",
+    "duration": "30 min",
+    "language": "Allemand",
+    "profile_version": "2.0"
+  },
+  "transcription": "Herr und Frau Weber, beide 52 Jahre, regelmäßige Kunden seit 2018. Er Chirurg Universitätsklinik, sie Galeristin eigene Galerie zeitgenössische Kunst. Suchen Geschenke Hochzeitstag 25 Jahre nächsten Monat. Budget zusammen 8-10K. Sie liebt moderne Kunst, kuratiert Ausstellungen junge Künstler. Er spielt Golf Wochenende, Mitglied lokaler Club. Beide reisen gern kulturelle Städte, nächste Reise Florenz Biennale geplant Mai. Sie bevorzugt außergewöhnliche Stücke, cognac rosé Gold. Er klassisch funktional schwarz navy. Beide Vegetarier für Events. Sie Nickelallergie beachten Hardware. Tochter studiert Medizin folgt Vater Schritte, Sohn Architekt Berlin. Exzellente Kunden, kaufen regelmäßig, empfehlen Freunde. Nachfassen März private Vorschau neue Kollektion. Interesse an Künstlerkooperationen limitierte Editionen.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Berlin"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

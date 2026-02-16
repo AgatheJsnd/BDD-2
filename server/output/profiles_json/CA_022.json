@@ -1,0 +1,77 @@
+{
+  "client_id": "CA_022",
+  "metadata": {
+    "date_conversation": "2026-01-22",
+    "duration": "40 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Ms. Rodriguez, 31, startup founder raised Series B funding, new client excellent potential. Looking for professional wardrobe upgrade post-fundraising. Budget 15K flexible. She's building fintech company, works between London and NYC. Passionate about sailing, weekend racer member yacht club. Collects modern art prints, follows emerging Latin American artists. Travels constantly investor meetings, next trip San Francisco then Mexico City. Vegan lifestyle choice for events. Shellfish allergy note for boutique lunches. Mentioned younger brother getting married summer, gift opportunity. Very interested sustainability, asked about supply chain transparency materials. Good social media presence tech circles 80K followers. Follow up two weeks with curated selection. Potential excellent long-term client, scaling company fast.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    },
+    "pieces_favorites": {}
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

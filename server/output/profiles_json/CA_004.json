@@ -1,0 +1,76 @@
+{
+  "client_id": "CA_004",
+  "metadata": {
+    "date_conversation": "2026-01-09",
+    "duration": "20 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. Dubois, 62 ans retraité, ancien dirigeant bancaire, client régulier. Achat rapide portefeuille cadeau gendre architecte. Budget 1500€. Cuir noir classique sobre. Gendre amateur photographie voyage beaucoup Asie Amérique Sud. Anniversaire gendre février. Client fidèle depuis 2015, achète toujours cadeaux famille ici. Satisfait comme toujours, parti rapidement.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

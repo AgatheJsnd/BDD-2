@@ -1,0 +1,62 @@
+{
+  "client_id": "CA_012",
+  "metadata": {
+    "date_conversation": "2026-01-15",
+    "duration": "45 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sra. Martínez y madre juntas, clientas ocasionales. Sra. 42 años abogada, madre 68 años jubilada profesora universidad. Buscan regalos múltiples: madre busca bolso hija, hija busca regalo madre y marido. Presupuesto combinado 14K aproximadamente. Madre estilo clásico elegante, colecciona libros raros primera edición, frecuenta subastas. Hija estilo profesional sofisticado, práctica tenis club local, viaja frecuente trabajo Buenos Aires Madrid. Madre prefiere cuero cognac burdeos, hija negro navy. Marido hija arquitecto pasión vela, compete regatas verano. Madre vegetariana, hija pescetariana para eventos. Hija alergia níquel importante hardware. Mencionaron aniversario boda hija junio cada año, madre cumpleaños octubre. Familia unida, potencial compras multi-generacional excelente. Llamar abril presentar colección verano privada. Invitar madre eventos culturales boutique aprecia arte.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Madrid"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

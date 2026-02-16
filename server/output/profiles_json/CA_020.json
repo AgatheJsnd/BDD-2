@@ -1,0 +1,72 @@
+{
+  "client_id": "CA_020",
+  "metadata": {
+    "date_conversation": "2026-01-21",
+    "duration": "30 min",
+    "language": "Espagnol",
+    "profile_version": "2.0"
+  },
+  "transcription": "Sra. López, 39 años, influencer moda lifestyle 2M seguidores Instagram TikTok, primera visita importante. Busca piezas contenido redes sociales y uso personal. Presupuesto 10-12K hoy, potencial compras regulares. Estilo moderno trendy pero aprecia calidad artesanía. Interesada bolsos statement, accesorios únicos, pequeña marroquinería. Viaja constantemente eventos moda, semanas moda París Milán Nueva York. Practica pilates yoga diario, wellness contenido también. Vegana estricta valores éticos fuertes para eventos. Sin alergias. Mencionó colaboraciones marcas importante visibilidad, posible partnership boutique contenido redes. Novio empresario tech también influencia. Excelente potencial nuevo cliente segmento joven, gran alcance social media. Follow-up inmediato después compra fidelizar. Invitar todos eventos VIP, aprecia exclusividad contenido. Interesada sostenibilidad transparencia materiales proceso.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    },
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "client_id": "CA_030",
+  "metadata": {
+    "date_conversation": "2026-01-28",
+    "duration": "50 min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Famiglia Ricci completa, tre generazioni shopping insieme evento speciale. Nonna 72 anni, genitori 48-50, figlia 22 anni, figlio 19 anni. Budget familiare combinato eccezionale 28K+. Nonna eleganza classica senza tempo, colleziona porcellane antiche frequenta aste. Madre architetto progetta ville lusso, padre cardiologo. Entrambi genitori appassionati vela, possiedono barca, participano regate estate. Figlia appena laurea economia Bocconi, cerca pezzi vita professionale inizia. Figlio studia ingegneria Politecnico appassionato tecnologia. Nonna preferisce cognac bordeaux stile tradizionale. Genitori moderno sofisticato, madre beige grigio, padre nero marrone. Figlia stile giovane trendy ma qualità. Nonna vegetariana, genitori pescetariani, figli onnivori eventi. Madre allergia nichel hardware importante. Famiglia unita tradizione shopping lusso insieme, potenziale multi-generazionale straordinario. Celebrano matrimonio genitori anniversario 25 anni, compleanno nonna 73 ottobre. Rete sociale estesa professionale alto livello, riferito amici già. Richiamare marzo preview esclusiva primavera estate. Interessati pezzi personalizzati storia famiglia incisione. Cliente eccezionale lifetime value altissimo priorità massima.",
+  "identite": {
+    "genre": "Autre",
+    "statut_relationnel": "VIP",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Beige"
+      ],
+      "tons_chauds": [
+        "Bordeaux",
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "25k+"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

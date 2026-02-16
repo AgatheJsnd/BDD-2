@@ -124,6 +124,7 @@ def main():
                 "row_index": int(idx + 1),
                 "client": client_name,
                 "client_id": client_id,
+                "raw_text": text,
                 "tags": tags,
             }
         )

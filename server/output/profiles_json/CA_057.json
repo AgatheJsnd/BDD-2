@@ -1,0 +1,63 @@
+{
+  "client_id": "CA_057",
+  "metadata": {
+    "date_conversation": "2026-02-17",
+    "duration": "30 min",
+    "language": "Allemand",
+    "profile_version": "2.0"
+  },
+  "transcription": "Herr Becker, 51 Jahre, Rechtsanwalt Partner Kanzlei, Stammkunde. Kauft Geschenk Ehefrau Muttertag Mai. Budget 6K. Ehefrau Lehrerin Gymnasium, liebt Literatur Theater. Reisen Theaterfestivals Salzburg Avignon. Stil klassisch elegant, bevorzugt bordeaux navy. Vegetarierin. Drei Kinder, älteste Tochter Medizinstudium, Zwillinge Söhne Gymnasium. Muttertag wichtig Familie Tradition. Kunde sehr zufrieden immer, kauft regelmäßig Anlässe. Nachfassen April Auswahl zeigen.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {}
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

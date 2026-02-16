@@ -1,0 +1,68 @@
+{
+  "client_id": "CA_036",
+  "metadata": {
+    "date_conversation": "2026-01-31",
+    "duration": "25 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. Simon, 59 ans, entrepreneur import-export, client occasionnel. Cherche cadeau épouse anniversaire 30 ans mariage. Budget 8K. Épouse galeriste art africain contemporain, organise expositions. Elle voyage fréquent Afrique recherche artistes. Style élégant bohème, aime couleurs tissus africains. Épouse végane convictions éthiques événements. Anniversaire mars. Client satisfait service, mentionné épouse collectionne sculptures bois africain. Fils travaille ONG environnement. Rappeler février montrer sélection.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire",
+        "Mariage"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

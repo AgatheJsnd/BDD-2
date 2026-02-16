@@ -1,0 +1,72 @@
+{
+  "client_id": "CA_007",
+  "metadata": {
+    "date_conversation": "2026-01-13",
+    "duration": "40 min",
+    "language": "Allemand",
+    "profile_version": "2.0"
+  },
+  "transcription": "Frau Schneider, 47 Jahre, Unternehmerin Modebranche, gelegentliche Kundin. Sucht Geschenk Geschäftspartnerin 50. Geburtstag nächsten Monat. Budget um 5K flexibel. Partnerin liebt Reisen, Segelpassion, fährt oft Mittelmeer Karibik. Klassischer Stil bevorzugt, marine oder cognac Leder. Kundin selbst sammelt Design Möbel, besucht Salone Milano jährlich. Erwähnt Partnerin vegetarisch, Laktoseintoleranz für Events notieren. Tochter Kundin studiert Architektur Berlin, mögliches Geschenk Abschluss Sommer. Gutes Potenzial, empfohlen von anderer Kundin. Nachfassen Ende Februar Kollektion Vorschau. Kundin plant Event eigene Modemarke März, könnte Boutique-Kooperation interessant sein.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Occasionnel",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Milan",
+      "Berlin"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

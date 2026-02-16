@@ -1,0 +1,65 @@
+{
+  "client_id": "CA_048",
+  "metadata": {
+    "date_conversation": "2026-02-10",
+    "duration": "40 min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Signora Colombo, 60 anni, collezionista arte importante, cliente VIP 2013. Acquista regalo nipote laureata economia Bocconi summa cum laude. Budget generoso 8K. Nipote 25 anni inizia lavoro consulenza Milano, serve pezzi professionali eleganti. Nonna colleziona arte moderna contemporanea, casa galleria privata. Nipote stile giovane professionale sofisticato, pratica corsa maratone. Cuoio nero cognac funzionale elegante. Nipote vegetariana eventi. Allergia nichel nipote importante. Nonna orgogliosissima nipote, menzionato altro nipote maschio studia medicina, laurea prossimo anno opportunità. Famiglia unita benestante, nonna generosa regali sempre qualità. Richiamare maggio nuova collezione estate. Cliente eccezionale lifetime value, rete sociale alto livello arte cultura.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "56+",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Milan"
+    ]
+  },
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

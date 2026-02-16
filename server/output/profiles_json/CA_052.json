@@ -1,0 +1,78 @@
+{
+  "client_id": "CA_052",
+  "metadata": {
+    "date_conversation": "2026-02-12",
+    "duration": "45 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Dr. and Mrs. Montgomery, both 56, long-time VIP clients since 2012. Shopping for daughter's wedding gifts bridesmaids and family. Combined budget 25K+ very generous. He's orthopedic surgeon, she's retired former diplomat. Daughter getting married June destination wedding Tuscany. Looking for gifts 6 bridesmaids, mother of groom, special pieces family members. Daughter works UN sustainable development passionate ethics. Bridesmaids age range 28-32 varied tastes. Mother groom Italian traditional elegant. Both passionate about opera theater, season ticket holders. Travel extensively cultural trips, just back from Prague planning Vienna. She prefers classic elegant pieces rose gold burgundy cognac. He wants quality timeless pieces. Both vegetarian for events. She has severe nut allergy critical boutique events. Mentioned son studying medicine Oxford, graduation next year gift opportunity. Wedding June big family affair 200 guests. Excellent lifetime value family occasions always shop here. Follow up April final selections confirm. Very interested ethical sourcing for daughter's values, asked detailed questions supply chain workers conditions. Could be advocates sustainable luxury line. Top priority clients maintain relationship carefully.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Médecin"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Rouge",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "25k+",
+    "motif_role": {
+      "offrir": [
+        "Diplome",
+        "Cadeau",
+        "Mariage"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

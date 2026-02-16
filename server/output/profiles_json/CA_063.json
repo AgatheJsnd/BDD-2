@@ -1,0 +1,62 @@
+{
+  "client_id": "CA_063",
+  "metadata": {
+    "date_conversation": "2026-02-20",
+    "duration": "45 min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Signora e Signor Moretti, coppia 44-46 anni, clienti regolari 2018. Acquisto multiplo viaggio anniversario 20 anni più regali famiglia. Budget combinato 19K. Lui dermatologo clinica propria, lei farmacista. Entrambi passione vela, possiedono barca, regate costiere estate. Viaggio anniversario Grecia isole giugno. Collezionano ceramiche greche antiche, frequentano aste. Lei stile elegante mediterraneo, preferisce azzurro bianco cognac. Lui classico nautico, navy blu marrone. Entrambi pescetariani eventi. Lui intolleranza lattosio importante. Due figli: figlia 18 studia farmacia segue madre, figlio 15 passione calcio gioca squadra giovanile. Anniversario giugno ogni anno shopping tradizione. Ottimi clienti lifetime value, rete medica professionale. Richiamare aprile confermare pezzi viaggio. Interessati personalizzazione simboli nautici greci.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {},
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Blanc",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "tons_froids": [
+        "Bleu"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

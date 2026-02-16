@@ -1,0 +1,79 @@
+{
+  "client_id": "CA_028",
+  "metadata": {
+    "date_conversation": "2026-01-27",
+    "duration": "30 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. Dubois et fille, 65 et 32 ans, clients réguliers. Lui retraité ancien dirigeant telecom, elle avocate droit affaires. Shopping ensemble cadeaux famille événement familial. Budget combiné 11K. Fille style professionnel moderne, pratique yoga, voyage souvent travail Bruxelles. Père style classique traditionnel. Fille végétarienne père pescetarien événements. Fille allergique latex important. Mentionné petit-fils père né récemment, cadeau baptême opportunité. Épouse père collectionne bijoux anciens. Excellente relation multi-générationnelle, shopping rituel régulier. Rappeler avril nouveautés.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "26-35",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    },
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Pescetarien",
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "client_id": "CA_049",
+  "metadata": {
+    "date_conversation": "2026-02-11",
+    "duration": "25 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. Martin, 50 ans, banquier affaires, client régulier. Achat cadeau fille 21 ans anniversaire. Budget 4500€. Fille étudie design mode Londres Central Saint Martins. Style jeune créatif moderne apprécie avant-garde. Fille pratique danse contemporaine. Cuir cognac rosé gold. Fille végane génération Z valeurs. Anniversaire mars prochain. Client fidèle achats réguliers famille. Fils aussi étudiant architecture pourrait intéresser futur. Rappeler été.",
+  "identite": {
+    "genre": "Homme",
+    "statut_relationnel": "Fidèle",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Cognac"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Anniversaire"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

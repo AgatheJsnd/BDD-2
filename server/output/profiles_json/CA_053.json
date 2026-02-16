@@ -1,0 +1,79 @@
+{
+  "client_id": "CA_053",
+  "metadata": {
+    "date_conversation": "2026-02-13",
+    "duration": "20 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mme Perrin, 39 ans, avocate, nouvelle. Achat urgent cadeau collègue départ retraite. Budget 2K. Collègue homme 65 ans aime golf voyages. Cuir marron classique. Simple rapide. Contente. Reviendra.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "outdoor": [
+          "Golf"
+        ]
+      }
+    },
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Cognac"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

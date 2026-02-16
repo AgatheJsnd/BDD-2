@@ -1,0 +1,68 @@
+{
+  "client_id": "CA_091",
+  "metadata": {
+    "date_conversation": "2026-03-12",
+    "duration": "25 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mme Mercier, 37 ans, dentiste, nouvelle. Achat rapide cadeau meilleure amie mariage. Budget 4K. Amie designer graphique freelance style créatif. Pratique escalade week-ends. Cuir noir rosé gold. Amie végane. Mariage mai Bretagne. Satisfaite. Mentionné cabinet ouvre associée bientôt, futures opportunités cadeaux professionnels. Rappeler été.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Nouveau",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "offrir": [
+        "Cadeau",
+        "Mariage"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

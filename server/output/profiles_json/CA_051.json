@@ -1,0 +1,57 @@
+{
+  "client_id": "CA_051",
+  "metadata": {
+    "date_conversation": "2026-02-12",
+    "duration": "30 min",
+    "language": "Allemand",
+    "profile_version": "2.0"
+  },
+  "transcription": "Frau Koch, 44 Jahre, Architektin eigenes Büro, regelmäßige Kundin. Kauft Geschenk Geschäftspartnerin gemeinsames Projekt erfolgreich abgeschlossen. Budget 5K. Partnerin liebt Reisen Fotografie, dokumentiert Architektur weltweit. Stil modern minimalistisch funktional. Schwarz navy bevorzugt. Kundin selbst sammelt Designobjekte Bauhaus. Partnerin Vegetarierin. Projekt Fertigstellung nächste Woche. Zufrieden immer Service. Erwähnt großes Projekt kommend international könnte mehr Geschenke Team. Nachfassen März. Interessiert Firmenrabatt Mengenbestellungen.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "voyage": {
+      "experience": [
+        "Détente"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

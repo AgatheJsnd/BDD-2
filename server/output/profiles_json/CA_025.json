@@ -1,0 +1,73 @@
+{
+  "client_id": "CA_025",
+  "metadata": {
+    "date_conversation": "2026-01-24",
+    "duration": "20 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mme Girard, 38 ans, dentiste, nouvelle cliente. Achat rapide sac travail professionnel. Budget 3500€. Style sobre élégant noir. Pratique course pied régulièrement. Pas allergies mentionnées. Satisfaite achat, demandé programme fidélité informations. Rappeler dans deux mois nouveautés. Potentiel correct.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
+    },
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "pour_soi": [
+        "Plaisir personnel"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

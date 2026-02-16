@@ -1,0 +1,95 @@
+{
+  "client_id": "CA_019",
+  "metadata": {
+    "date_conversation": "2026-01-21",
+    "duration": "50 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "M. et Mme Moreau, couple 48-50 ans, excellents clients depuis 2016. Achat multiple pièces collection printemps plus cadeaux famille. Budget combiné 20K très flexible. Lui dirigeant entreprise familiale vins Bordeaux, elle architecte intérieur projets haut de gamme. Tous deux passionnés voile, possèdent yacht, participent régates Méditerranée été. Collectionnent art contemporain, maison remplie œuvres, fréquentent toutes foires importantes. Voyagent constamment affaires plaisir, prochains voyages Napa Valley puis Toscane. Elle adore design scandinave minimaliste, préfère cuirs naturels beige gris. Lui style plus traditionnel classique, cognac marine. Les deux végétariens pour événements. Lui allergie fruits coque sévère crucial événements. Trois enfants: aîné reprend entreprise familiale, cadette étudie œnologie, benjamin lycée passionné musique. Anniversaire mariage juillet chaque année shopping rituel. Potentiel vie entière exceptionnel, réseau important vignobles luxe. Rappeler avril preview privée exclusive. Proposer collaboration événement vendanges boutique château possibilité.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "46-55",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Profession_liberale": [
+        "Architecte"
+      ],
+      "Art_Creation": [
+        "Artiste"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "musique": {
+      "classique_elegant": [
+        "Classique"
+      ]
+    },
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Gris",
+        "Beige",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Plaisir",
+        "Cadeau",
+        "Anniversaire",
+        "Mariage"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegetarien"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

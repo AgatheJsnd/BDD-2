@@ -1,0 +1,61 @@
+{
+  "client_id": "CA_043",
+  "metadata": {
+    "date_conversation": "2026-02-06",
+    "duration": "40 min",
+    "language": "Italien",
+    "profile_version": "2.0"
+  },
+  "transcription": "Signor Galli, 36 anni, giornalista moda Vogue Italia, primo cliente alto potenziale. Cerca pezzi shooting editoriali e uso personale. Budget 9K. Stile avanguardia creativo, apprezza innovazione design. Viaggia settimane moda tutte città mondiali. Colleziona libri moda vintage rarità. Pratica yoga meditazione routine quotidiana. Vegano stretto eventi. Senza allergie. Menzionato contatti industry vasti, possibile visibilità editoriale boutique. Fidanzato fotografo moda anche influenza. Ottimo potenziale networking moda. Follow-up immediato fidelizzazione. Invitare eventi VIP lanci. Interessato collaborazioni editoriali shooting location boutique.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

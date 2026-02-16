@@ -1,0 +1,76 @@
+{
+  "client_id": "CA_046",
+  "metadata": {
+    "date_conversation": "2026-02-07",
+    "duration": "30 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mme Leroy, 33 ans, influenceuse lifestyle Instagram 600K, nouvelle cliente potentiel élevé. Cherche pièces contenu social et usage personnel. Budget 11K aujourd'hui. Style moderne féminin élégant, apprécie qualité artisanat. Voyage constamment contenu destinations luxe. Pratique pilates yoga quotidien wellness contenu aussi. Végane stricte valeurs éthiques événements. Aucune allergie. Fiancé entrepreneur tech aussi influence. Mariage planifié été, opportunités contenus collaborations. Excellente potentielle visibilité réseaux sociaux. Follow-up immédiat fidélisation. Inviter événements VIP exclusivité apprécie. Très intéressée durabilité transparence matériaux histoire artisans. Pourrait devenir ambassadrice marque si relation développée bien.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "age": "26-35",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    },
+    "voyage": {
+      "experience": [
+        "Luxe",
+        "Détente",
+        "Culturel"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "25k+",
+    "motif_role": {
+      "pour_soi": [
+        "Plaisir personnel"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Éthique / durable",
+      "Qualité & savoir-faire"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

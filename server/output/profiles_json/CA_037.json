@@ -1,0 +1,97 @@
+{
+  "client_id": "CA_037",
+  "metadata": {
+    "date_conversation": "2026-02-03",
+    "duration": "50 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mrs. Wilson and daughter shopping together, excellent multi-generational clients. Mother 67 retired publisher, daughter 39 environmental lawyer. Combined budget 19K. Mother elegant classic style, collects rare books first editions, attends literary events auctions. Daughter modern professional sophisticated, practices marathon running training for London Marathon. Mother prefers burgundy cognac traditional pieces. Daughter wants functional elegant black navy. Both passionate about sustainability conservation, daughter works environmental NGO part-time pro bono. Mother vegetarian daughter vegan strict for events. Daughter latex allergy important. Mentioned mother's 70th birthday coming this year in June, big celebration planned family gathering. Daughter's husband architect, son 8 years daughter 5 years. Family very close, regular shopping tradition together. Mother's anniversary in October annually. Excellent lifetime value multi-generational, referred friends family already. Follow up March private preview spring collection. Very interested ethical sourcing, daughter asked detailed questions supply chain carbon footprint. Could be advocates for sustainable luxury line if developed.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Profession_liberale": [
+        "Avocat",
+        "Architecte"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "London"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
+    },
+    "voyage": {
+      "experience": [
+        "Luxe"
+      ]
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "tons_chauds": [
+        "Cognac",
+        "Rouge",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin"
+      ],
+      "alternatives": [
+        "Matières vegan"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "15–25k",
+    "motif_role": {
+      "offrir": [
+        "Anniversaire"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane",
+      "Vegetarien"
+    ],
+    "valeurs": [
+      "Exclusivité"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

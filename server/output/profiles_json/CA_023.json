@@ -1,0 +1,63 @@
+{
+  "client_id": "CA_023",
+  "metadata": {
+    "date_conversation": "2026-01-23",
+    "duration": "30 min",
+    "language": "Allemand",
+    "profile_version": "2.0"
+  },
+  "transcription": "Herr Fischer, 44 Jahre, Investmentbanker Frankfurt, regelmäßiger Kunde seit 2019. Kauft Geschenke Ehefrau Geburtstag April. Budget 7-8K. Ehefrau Innenarchitektin, liebt Design Bauhaus mid-century. Sie praktiziert Pilates täglich, Mitglied exklusives Studio. Reisen oft kulturelle Städte, nächste Reise Kopenhagen Design Week geplant. Sie bevorzugt minimalistische Ästhetik, beige grau schwarz. Pescetarier beide für Events. Keine Allergien. Zwei Töchter Teenager, älteste interessiert Mode könnte zukünftige Kundin. Kunde immer zufrieden Service, empfohlen Kollegen bereits. Nachfassen März Vorschau Frühjahrskollektion. Interesse Designerkooperationen limitierte Stücke.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Régulier",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Finance_Investissement": [
+        "Banquier"
+      ],
+      "Mode_Luxe": [
+        "Styliste"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "bien_etre": [
+          "Yoga"
+        ]
+      }
+    }
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Beige"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "5–10k"
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "client_id": "CA_018",
+  "metadata": {
+    "date_conversation": "2026-01-20",
+    "duration": "35 min",
+    "language": "Anglais",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mr. Davis, 41, professional tennis player recently retired, new client high potential. Looking for lifestyle pieces post-sports career, starting coaching academy. Budget around 12K initial. Wants travel bags, small leather goods, professional pieces for coaching. Still plays tennis daily, member multiple clubs, attends Wimbledon every year. Passionate about wine, taking sommelier courses, planning vineyard visit Bordeaux. Wife's birthday coming March, married to physiotherapist. Follows plant-based diet athlete habits. No allergies. Mentioned starting foundation for young athletes, could be partnership opportunity boutique. Good media presence former professional, 300K followers social media. Interested in durability quality pieces for active lifestyle. Follow up in month with personalized selection. Invite to sports-related VIP events.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "VIP",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Entrepreneur_Dirigeant": [],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Sport": [
+        "Athlète"
+      ]
+    }
+  },
+  "localisation": {},
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "raquette": [
+          "Tennis"
+        ],
+        "endurance": [
+          "Running"
+        ]
+      }
+    },
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "tons_chauds": [
+        "Rouge",
+        "Bordeaux"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "10–15k",
+    "motif_role": {
+      "offrir": [
+        "Anniversaire"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Aucun"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}

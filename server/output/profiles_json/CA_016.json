@@ -1,0 +1,93 @@
+{
+  "client_id": "CA_016",
+  "metadata": {
+    "date_conversation": "2026-01-17",
+    "duration": "25 min",
+    "language": "Français",
+    "profile_version": "2.0"
+  },
+  "transcription": "Mme Rousseau, 44 ans, directrice communication grand groupe, nouvelle cliente. Cherche sac professionnel élégant polyvalent. Budget 4K environ. Style moderne épuré, cuir noir ou navy. Pratique course à pied, marathons réguliers, prépare Berlin septembre. Amateur photographie voyage, Instagram 50K followers lifestyle running. Végane convictions éthiques pour événements. Pas allergies. Mentionné changement vie récent divorce, renouvelle complètement style personnel. Opportunité accompagner transformation. Mari ancien collectionne montres mais plus pertinent. Fils adolescent passion skate. Bon potentiel nouveau départ vie, à suivre attentivement. Rappeler mars montrer nouveautés printemps.",
+  "identite": {
+    "genre": "Femme",
+    "statut_relationnel": "Fidèle",
+    "age": "36-45",
+    "langue_parlee": [
+      "Français"
+    ],
+    "profession_secteur": {
+      "Mode_Luxe": [
+        "Styliste"
+      ],
+      "Tech_Digital": [
+        "Ingénieur"
+      ],
+      "Medias_Communication": [
+        "Marketing"
+      ]
+    }
+  },
+  "localisation": {
+    "europe": [
+      "Berlin"
+    ]
+  },
+  "lifestyle_centres_interet": {
+    "sport": {
+      "collectif": [],
+      "individuel": {
+        "endurance": [
+          "Running"
+        ]
+      }
+    },
+    "musique": {}
+  },
+  "style_personnel": {
+    "couleurs_preferees": {
+      "neutres_intemporelles": [
+        "Noir",
+        "Marine"
+      ],
+      "metalliques": [
+        "Or"
+      ]
+    },
+    "matieres_preferees": {
+      "naturelles": [
+        "Lin",
+        "Cuir"
+      ]
+    },
+    "pieces_favorites": {
+      "sacs": [
+        "Sac à main"
+      ],
+      "accessoires": [
+        "Montres"
+      ]
+    }
+  },
+  "projet_achat": {
+    "budget": "<5k",
+    "motif_role": {
+      "pour_soi": [
+        "Plaisir personnel"
+      ]
+    }
+  },
+  "preferences_contraintes": {
+    "regime": [
+      "Vegane"
+    ],
+    "valeurs": [
+      "Éthique / durable"
+    ]
+  },
+  "suivi": {
+    "action": [
+      "Rappeler"
+    ],
+    "echeance": "M+1",
+    "canal_contact": "Email"
+  }
+}
