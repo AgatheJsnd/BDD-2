@@ -4,6 +4,7 @@ import os
 import re
 from mistralai import Mistral
 from dotenv import load_dotenv
+import concurrent.futures
 
 # Force UTF-8
 sys.stdin.reconfigure(encoding='utf-8')
@@ -60,57 +61,60 @@ def generate_insights(data):
 
     log_debug(f"Starting analysis for {len(transcripts)} transcripts (Batch Size: {BATCH_SIZE})")
 
-    # 1. Chunking & Silent Loop
-    batches = list(chunk_list(transcripts, BATCH_SIZE))
+    # 1. Chunking & Parallel Execution - ULTRA FAST MODE
+    BATCH_SIZE_OPTIMIZED = 100 # Maximize Context Window Usage (1 call > many calls)
+    batches = list(chunk_list(transcripts, BATCH_SIZE_OPTIMIZED))
     batch_results = []
 
-    for i, batch in enumerate(batches):
-        log_debug(f"Processing Batch {i+1}/{len(batches)} ({len(batch)} items)")
+    def process_batch(batch_data):
+        batch_index, batch_items = batch_data
+        log_debug(f"Processing Batch {batch_index+1}/{len(batches)} ({len(batch_items)} items) - FAST MODE...")
         
-        # Truncate for token safety
+        # Truncate slightly less aggressively to keep context, but enough for speed
         batch_short = [
-            {k: (v[:500] + "...") if k == 'text' and len(v) > 500 else v for k, v in t.items()}
-            for t in batch
+            {k: (v[:400] + "...") if k == 'text' and len(v) > 400 else v for k, v in t.items()}
+            for t in batch_items
         ]
 
         prompt = f"""
-Rôle : Tu es un analyste expert de données textuelles et de tendances dans le secteur du Luxe (LVMH).
+Rôle : Analyste Expert Luxe LVMH.
+Tâche : Analyse RAPIDE de ce lot de {len(batch_items)} transcriptions.
 
-Tâche : Analyser ce lot de {len(batch)} transcriptions.
+Instructions Tags (STYLE STRICT : Pascal_Case, ex: "Sac_Main", "Client_VIP") :
+- Extrais les thèmes clés et opportunités.
+- Pas de visuel/couleur sauf emblématique.
+- Inspire-toi de : {', '.join(current_taxonomy[:30])}...
 
-Instructions pour les Tags :
-- Génère les tags les plus pertinents résumant les thèmes clés, sentiments ou sujets affaires.
-- STYLE OBLIGATOIRE : Format "PascalCase" ou "Snake_Case_Capitalized".
-  - Exemples valides : "Sac_main", "Art_contemporain", "Bien_etre", "Client_VIP".
-  - Exemples invalides : "sac à main", "art contemporain", "très content".
-- Mots uniques de préférence. Si concept composé, utiliser un UNDERSCORE "_".
-- FILTRAGE STRICT : Exclus les descripteurs visuels simples (couleurs, "grand", "petit"), sauf si couleur emblématique (ex: "Rose_gold").
-- Identifie de nouvelles opportunités en respectant ce format strictement.
-- Basé sur la taxonomie existante : {', '.join(current_taxonomy[:50])}... (pour style).
+Instructions Marketing :
+- 2-3 Actions concrètes à fort impact.
 
-Instructions pour Marketing :
-- Déduis des actions marketing concrètes basées sur ce lot.
-
-Format de sortie JSON STRICT :
+Format JSON STRICT :
 {{
   "taxonomy_suggestions": [ {{ "term": "...", "reason": "...", "category": "..." }} ],
-  "marketing_actions": [ {{ "insight": "...", "suggested_action": "...", "priority": "High/Medium/Low" }} ],
+  "marketing_actions": [ {{ "insight": "...", "suggested_action": "...", "priority": "High" }} ],
   "graph_data": {{
     "top_tags_global": [ {{ "tag": "...", "count": 1 }} ],
     "top_tags_by_language": {{ "fr": ["..."], "en": ["..."] }}
   }}
 }}
 
-Transcriptions du lot :
-{json.dumps(batch_short, indent=2, ensure_ascii=False)}
+Transcriptions :
+{json.dumps(batch_short, indent=0, ensure_ascii=False)}
 
-RÈGLE IMPERATIVE : JSON UNIQUEMENT.
+RÈGLE : JSON RAW UNIQUEMENT.
 """
-        res = call_mistral(mistral, prompt)
-        if res:
-            batch_results.append(res)
-        else:
-            log_debug(f"Batch {i+1} failed to produce valid JSON.")
+        return call_mistral(mistral, prompt)
+
+    # Run in parallel with high concurrency
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        future_to_batch = {executor.submit(process_batch, (i, b)): i for i, b in enumerate(batches)}
+        for future in concurrent.futures.as_completed(future_to_batch):
+            try:
+                res = future.result()
+                if res:
+                    batch_results.append(res)
+            except Exception as exc:
+                log_debug(f"Batch execution failed: {exc}")
 
     # 2. Aggregation
     log_debug("Aggregating results...")
