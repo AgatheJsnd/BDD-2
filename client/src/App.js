@@ -124,10 +124,6 @@ const CalendarWidget = ({
             `}
           >
             {d}
-            {/* Dot for activity */}
-            {activeDays.includes(d) && !isToday(d) && (
-              <div className="absolute bottom-1 h-1 w-1 rounded-full bg-emerald-500" />
-            )}
           </button>
         ))}
       </div>
@@ -147,16 +143,20 @@ const CalendarWidget = ({
           </button>
         </div>
 
-        {/* Month List */}
-        <div className="flex flex-col items-end gap-1 h-[90px] overflow-hidden mask-gradient relative">
+        {/* Month List - Chronological & Scrollable */}
+        <div className="flex flex-col items-end gap-1 h-[90px] overflow-y-auto custom-scrollbar relative w-full">
           {(() => {
-            const startMode = months.indexOf(month);
-            const rotated = [...months.slice(startMode), ...months.slice(0, startMode)];
-            return rotated.slice(0, 5).map(m => (
+            // Filter future months
+            let availableMonths = months;
+            if (year === todayInitial.getFullYear()) {
+              availableMonths = months.slice(0, todayInitial.getMonth() + 1);
+            }
+
+            return availableMonths.map(m => (
               <span
                 key={m}
                 onClick={() => setMonth(m)}
-                className={`text-[12px] cursor-pointer transition-colors ${m === month
+                className={`text-[12px] cursor-pointer transition-colors shrink-0 ${m === month
                   ? 'font-bold text-[#111] border-r-2 border-[#C87961] pr-2'
                   : 'font-medium text-gray-300 hover:text-gray-500 pr-2 border-r-2 border-transparent'
                   }`}
