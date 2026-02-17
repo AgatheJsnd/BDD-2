@@ -19,6 +19,7 @@ import ClientProfileCard from './components/ClientProfileCard';
 import DatabaseFilterPage from './components/DatabaseFilterPage';
 import LoginPage from './components/LoginPage';
 import VendeurPage from './components/VendeurPage';
+import ActivationStrategiesCard from './components/ActivationStrategiesCard';
 
 /* ═══ SIMULATED AI DATA ═══ */
 const FAKE_CLIENTS = [
@@ -226,7 +227,7 @@ export default function App() {
   const handleLogout = () => {
     setUserRole(null);
     localStorage.removeItem('lvmh_user_role');
-    setCurrentView('dashboard'); // Reset view for next login
+    setCurrentView('dashboard');
   };
 
   const copyError = () => {
@@ -675,6 +676,16 @@ export default function App() {
                 >
                   Fermer
                 </button>
+                <button onClick={onLogout} className="p-2 bg-gray-100 rounded-full text-gray-600 hover:bg-red-50 hover:text-red-500 transition">
+                  <LogOut size={18} />
+                </button>
+                {/* DEV SWITCH */}
+                <button onClick={() => {
+                  const event = new CustomEvent('toggleRole');
+                  window.dispatchEvent(event);
+                }} className="ml-2 px-3 py-1 bg-gray-800 text-white text-xs rounded-full opacity-50 hover:opacity-100">
+                  ↔ Switch
+                </button>
                 <button
                   onClick={copyError}
                   className="px-5 py-2.5 rounded-full text-sm font-medium bg-red-600 text-white hover:bg-red-700 transition flex items-center gap-2"
@@ -974,49 +985,8 @@ export default function App() {
             </div>
           </C >
 
-          {/* ══ CARD 10 — ACTIVATION STRATEGIES (from DB tags) ══ */}
-          < C className="row-span-2 flex flex-col" >
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[15px] font-semibold text-[#111]">Activation Strategies</h3>
-              <div className="flex items-center gap-2">
-                <button className="text-gray-400 hover:text-gray-600"><MoreVertical size={16} /></button>
-                <button className="text-gray-400 hover:text-gray-600"><Sparkles size={16} /></button>
-                <button className="flex items-center gap-1 text-[11px] font-medium text-[#666]"><Filter size={13} /> Filters</button>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex-1 flex items-center gap-2 px-4 py-2 rounded-full bg-[#F3F5F7] text-[12px] text-[#9CA3AF]"><Search size={14} /> Rechercher...</div>
-              <span className="px-3 py-1.5 rounded-full bg-[#1A1A1A] text-white text-[11px] font-semibold flex items-center gap-1">Active <span className="h-1.5 w-1.5 rounded-full bg-[#C87961]" /></span>
-              <span className="px-3 py-1.5 rounded-full border border-gray-200 text-[11px] font-medium text-[#666] flex items-center gap-1">Tags <X size={11} /></span>
-            </div>
-            <div className="flex-1 overflow-y-auto flex flex-col gap-2 min-h-0" style={{ scrollbarWidth: 'none' }}>
-              {tagCounts.length === 0 ? (
-                <div className="flex-1 flex flex-col items-center justify-center gap-2">
-                  <Database size={24} className="text-[#B0B5BC]" />
-                  <p className="text-[12px] text-[#B0B5BC]">Upload un fichier CVC pour générer les stratégies</p>
-                </div>
-              ) : (
-                tagCounts.map((t, i) => (
-                  <motion.div
-                    key={t.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="flex items-center justify-between p-3.5 rounded-2xl bg-[#FAFBFC] hover:bg-white hover:shadow-sm border border-transparent hover:border-gray-100 transition-all group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="text-[18px]">{TAG_ICONS[t.name] || '📌'}</span>
-                      <div>
-                        <p className="text-[13px] font-semibold text-[#111]">{t.name}</p>
-                        <p className="text-[10px] text-[#9CA3AF]">{t.count} {t.count > 1 ? 'occurrences' : 'occurrence'}</p>
-                      </div>
-                    </div>
-                    <button className="px-3 py-1.5 rounded-xl bg-[#C87961] text-white text-[11px] font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Activer</button>
-                  </motion.div>
-                ))
-              )}
-            </div>
-          </C >
+          {/* ══ CARD 10 — ACTIVATION STRATEGIES (Reinvented) ══ */}
+          <ActivationStrategiesCard className="row-span-2" />
 
           {/* 11 — Campaign Perf */}
           < C className="flex flex-col justify-between" >
