@@ -123,10 +123,6 @@ const CalendarWidget = ({
             `}
           >
             {d}
-            {/* Dot for activity */}
-            {activeDays.includes(d) && !isToday(d) && (
-              <div className="absolute bottom-1 h-1 w-1 rounded-full bg-emerald-500" />
-            )}
           </button>
         ))}
       </div>
@@ -149,8 +145,19 @@ const CalendarWidget = ({
         {/* Month List */}
         <div className="flex flex-col items-end gap-1 h-[90px] overflow-hidden mask-gradient relative">
           {(() => {
-            const startMode = months.indexOf(month);
-            const rotated = [...months.slice(startMode), ...months.slice(0, startMode)];
+            // Filter future months
+            let availableMonths = months;
+            if (year === todayInitial.getFullYear()) {
+              availableMonths = months.slice(0, todayInitial.getMonth() + 1);
+            }
+
+            // Auto-clamp if selected is out of bounds
+            const selectedIdx = availableMonths.indexOf(month);
+            // We use a safe fallback for display logic without forcing state update inside render
+            const startMode = selectedIdx === -1 ? availableMonths.length - 1 : selectedIdx;
+
+            const rotated = [...availableMonths.slice(startMode), ...availableMonths.slice(0, startMode)];
+
             return rotated.slice(0, 5).map(m => (
               <span
                 key={m}
