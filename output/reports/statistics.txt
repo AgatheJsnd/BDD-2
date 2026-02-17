@@ -10,7 +10,7 @@ Répartition par genre :
   - Homme: 18 (4.0%)
 
 Répartition par âge :
-  - 36-45: 129 (28.4%)
+  - 36-45: 130 (28.6%)
   - 46-55: 65 (14.3%)
   - 26-35: 35 (7.7%)
   - 56+: 21 (4.6%)
@@ -31,13 +31,13 @@ Top 5 sports :
   - Ski: 8 clients
 
 Top 5 couleurs :
-  - Or: 360 clients
+  - Or: 362 clients
   - Noir: 186 clients
   - Beige: 169 clients
   - Rouge: 134 clients
   - Cognac: 128 clients
 
 Régimes alimentaires :
-  - Vegetarien: 112 clients
-  - Vegane: 60 clients
+  - Vegetarien: 113 clients
+  - Vegane: 62 clients
   - Pescetarien: 49 clients
