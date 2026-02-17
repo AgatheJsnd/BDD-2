@@ -142,8 +142,8 @@ const CalendarWidget = ({
           </button>
         </div>
 
-        {/* Month List */}
-        <div className="flex flex-col items-end gap-1 h-[90px] overflow-hidden mask-gradient relative">
+        {/* Month List - Chronological & Scrollable */}
+        <div className="flex flex-col items-end gap-1 h-[90px] overflow-y-auto custom-scrollbar relative w-full">
           {(() => {
             // Filter future months
             let availableMonths = months;
@@ -151,18 +151,11 @@ const CalendarWidget = ({
               availableMonths = months.slice(0, todayInitial.getMonth() + 1);
             }
 
-            // Auto-clamp if selected is out of bounds
-            const selectedIdx = availableMonths.indexOf(month);
-            // We use a safe fallback for display logic without forcing state update inside render
-            const startMode = selectedIdx === -1 ? availableMonths.length - 1 : selectedIdx;
-
-            const rotated = [...availableMonths.slice(startMode), ...availableMonths.slice(0, startMode)];
-
-            return rotated.slice(0, 5).map(m => (
+            return availableMonths.map(m => (
               <span
                 key={m}
                 onClick={() => setMonth(m)}
-                className={`text-[12px] cursor-pointer transition-colors ${m === month
+                className={`text-[12px] cursor-pointer transition-colors shrink-0 ${m === month
                   ? 'font-bold text-[#111] border-r-2 border-[#C87961] pr-2'
                   : 'font-medium text-gray-300 hover:text-gray-500 pr-2 border-r-2 border-transparent'
                   }`}
